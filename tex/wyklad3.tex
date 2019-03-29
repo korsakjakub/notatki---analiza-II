@@ -1,0 +1,184 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{
+    {"../img/"}
+    {"img/"}
+}
+\begin{document}
+
+\begin{large}
+Uwaga:
+\end{large}
+Jeżeli np. $f: \mathbb{R}^{2} \to \mathbb{R}^{2}$, to znaczy, że\\
+$f(x,y) =
+\left [
+\begin{matrix}
+    f_1 (x,y)\\
+    f_2 (x,y)
+\end{matrix}
+\right ], f_1 : \mathbb{R}^{2} \to \mathbb{R}^{1}, f_2 : \mathbb{R}^{2} \to \mathbb{R}^{1}$
+, wówczas
+$$\frac{\partial f}{\partial x} =
+\left [
+    \begin{matrix}
+        \frac{\partial}{\partial x} f_1 \\
+        \frac{\partial}{\partial x} f_2
+    \end{matrix}
+\right ]$$
+
+$$\frac{\partial}{\partial y} f =
+\left [
+    \begin{matrix}
+        \frac{\partial}{\partial y} f_1 \\
+        \frac{\partial}{\partial y} f_2
+    \end{matrix}
+\right ]$$
+
+\begin{przyklad}
+\end{przyklad}
+$$f(x,y) = \left [
+\begin{matrix}
+    2xy^2\\
+    x^3 y
+\end{matrix}\right ]$$
+Wtedy pochodne czątkowe: $\frac{\partial f}{\partial x} = \left [ \begin{matrix} 2y^2\\
+3x^2 y
+    \end{matrix}\right ], \frac{\partial f}{\partial y} = \left [ \begin{matrix} 4xy\\
+x^3
+\end{matrix}\right ] $\\
+$f(x+h)-f(x) = \frac{\partial f}{\partial x} h^x + \frac{\partial f}{\partial y} h^y + r((x,y),h) = \left [ \begin{matrix}
+2y^2\\
+3x^2 y\\
+    \end{matrix}\right ] h^x + \left [ \begin{matrix}
+4xy\\
+x^3\\
+\end{matrix}\right ] h^y + r((x,y),h)
+= \left [ \begin{matrix}
+2y^2    &4xy\\
+3x^2 y  &x^3\\
+\end{matrix}\right ]
+\left [ \begin{matrix}
+h^x\\
+h^y\\
+\end{matrix}\right ]
++ r((x,y),h)$
+
+$$\text{Czyli } f' = \left [ \begin{matrix}
+\frac{\partial f_1}{\partial x}     &\frac{\partial f_1}{\partial y}\\
+\frac{\partial f_2}{\partial x}     &\frac{\partial f_2}{\partial y}\\
+\end{matrix}\right ] $$
+
+i ogólniej: jeżeli $f: \mathbb{R}^n \to \mathbb{R}^k$, to \\
+$$f' = \left [ \begin{matrix}
+    \frac{\partial f_1}{\partial x^1}   &\dots   &\frac{\partial f_1}{\partial x^n}\\
+    \vdots                              &\ddots  &\vdots\\
+    \frac{\partial f_k}{\partial x^1}   &\dots   &\frac{\partial f_k}{\partial x^n}\\\end{matrix}\right ] $$
+
+\subsection{
+    Uzupełnienie:
+}
+
+Niech $V$ - przestrzeń wektorowa z normą $||.||$ i $x_0\in V$, \\wówczas $f(x)=||x||, f: V\to\mathbb{R}^1$ - ciągła w $x_0$.
+
+\vspace{0.5cm}
+\begin{dowod}
+\end{dowod}
+
+Chccemy pokazać, że $\underset{\epsilon > 0}{\forall} \underset{\delta}{\exists} \underset{x}{\forall} \quad d_x (x,x_0) < \delta \implies d_{\mathbb{R}} (f(x),f(x_0)) < \epsilon$\\
+ale $d_x(x,y) = ||x-y||, d_{\mathbb{R}^1} (x,y) = |x-y|$.
+\vspace{0.3cm}
+
+Chcemy pokazać, że $\underset{\epsilon > 0}{\forall} \underset{\delta}{\exists} \underset{x}{\forall} \quad ||x - x_0|| < \delta \implies \big | ||x|| - ||x_0|| \big | < \epsilon$\\
+ale $||x|| = ||x-y+y|| \leq ||x-y|| + ||y||, ||x||-||y||\leq ||x-y||$,\\
+$||y|| = ||y-x+x||\leq ||y-x|| + ||x||$,\\
+$||y||-||x||\leq ||x-y||$, czyli $\big | ||x|| - ||y|| \big | \leq ||x-y||$. Niech $\delta = \frac{\epsilon}{2}$, otrzymujemy $\epsilon > \frac{\epsilon}{2} > ||x-y|| \leq \big | ||x|| - ||y|| \big | \geq 0 \Box$
+
+\begin{pytanie}
+Niech $f(x,y) = 7x+6y^2 \text{ i } g(t) = \left [ \begin{matrix}
+cos(t) \\
+sin(t) \\
+\end{matrix}\right ]$. Wówczas $h(t) = (f \circ g)(t) : \mathbb{R}\to \mathbb{R}$. Ile wynosi pochodna?
+\end{pytanie}
+
+$f' = [7,12y] , g' = \left [ \begin{matrix}
+-sin(t)\\
+cos(t)\\
+\end{matrix}\right ]$
+
+\begin{tw}
+Niech $G:U \to Y, U\subset X, U \text{ - otwarte }, X$ - przestrzeń wektorowa unormowana, $F: G(U) \to Z, G(U) \subset V$\\
+$G$ - różniczkowalna w $x_0\in U$, $F$ - różniczkowalna w $G(x_0)\in U$.\\
+$$G(x_0 + h_1) - G(x_0) = G'(x_0)h_1+r_1(x_0,h_1)\text{, gdy }\frac{r(x_0,h_1)}{||h_1||_x} \to 0$$
+$$F(y_0 + h_2) - F(y_0) = F'(y_0)h_2+r_2(y_0,h_2)\text{, gdy }\frac{r(y_0,h_2)}{||h_2||_y} \to 0$$
+$$\text{Wówczas: } (F \circ G ) \text{ - różniczkowalna w } x_0$$
+$$\text{oraz } (F \circ G)' (x_0) = \left . F'(x)\right |_{x=G(x_0)} G'(x_0)$$
+\end{tw}
+
+
+\begin{dowod}
+
+\end{dowod}
+
+\begin{align*}
+    &F(G(x_0 + h)) - F(G(x_0)) =\\
+    &F(G(x_0) + G'(x_0)h_1 + r_1(x_0,h_1)) - F(G(x_0)) =\\
+    &F(G(x_0)) + F'(G(x_0)) (G'(x_0)h_1 + r_1(x_0,h_1)) + r_2(G(x_0))\\
+    &G'(x_0)h_1 + r_1(x_0,h_1)) - F(G(x_0))
+\end{align*}\\
+zatem:\\
+$F(G(x_0))+F(G(x_0+h))=F'(G(x_0))G'(x_0)h_1+F'(G(x_0))r_1(x_0,h_1)+r_2(G(x_0),G'(x_0)h_1+r_1(x_0,h_1))$
+
+Wystarczy pokazać, że $\frac{r_3}{||h_1||}\to 0$, ale $\frac{r_3}{||h_1||} = F'(G(x_0)) \frac{r_1(x_0,h_1)}{||h_1||} +
+\underbrace{\frac{r_2(G(x_0),G'(x_0)h_1+r_1(x_0,h_1))}{||G'(x_0)h_1 + r_1(x_0,h_1)||}}_{\to 0 \text{ kiedy } h_1 \to 0}\\
+\underbrace{\frac{||G'(x_0)h_1+r_1(x_0,h_1)||}{||h_1||}}_{\text{jest ograniczony}}$, ale jeżeli $h_1\to 0$, to $h_2 = G'(x_0)h_1+r_1(x_0,h_1)$, zatem $F(G(x))$ - różniczkowalna w $x_0 \quad\Box$
+
+\begin{przyklad}
+
+\end{przyklad}
+$f(x,y) = \left [ \begin{matrix}
+2xy^2\\
+x^3 y\\\end{matrix}\right ],
+\varphi(t) = \left [ \begin{matrix}
+2t^2\\
+t^3\\
+\end{matrix}\right ],
+h(t) = (f \circ \varphi) (t), h: \mathbb{R}\to \mathbb{R}^2$.
+
+\vspace{0.5cm}
+Policzmy $h'$. $f' = \left [ \begin{matrix}
+2y^2    &4xy\\
+3x^2y   &x^3\\
+\end{matrix}\right ], \varphi '(t) = \left [ \begin{matrix}
+4t\\
+3t^2\\
+    \end{matrix}\right ]$, tzn. $H' = \left [ \left .\begin{matrix}
+2y^2    &4xy\\
+3x^2y   &x^3\\
+    \end{matrix}\right ]\right |_{x=2t^2, y=t^3} \left [ \begin{matrix}
+4t\\
+3t^2\\
+\end{matrix}\right ] = \\
+\left [ \begin{matrix} 2(2t^2)^2 4t + 4(2t^2)(t^3) 3t^2\\
+3(2t^2)^2 t^3 4 + (2t^3)^3 3t^2\\\end{matrix}\right ] $
+
+Weźmy przykład:
+Niech $f: \mathbb{R}^2 \to \mathbb{R}, \Psi: \mathbb{R}^2 \to \mathbb{R}^2, \Psi(r,\varphi) = \left [ \begin{matrix}
+\Psi_1(r,\varphi)\\
+\Psi_2(r,\varphi)\\\end{matrix}\right ]\\
+\Psi_1: \mathbb{R}^2 \to \mathbb{R}\\
+\Psi_2: \mathbb{R}^2 \to \mathbb{R}$
+
+\vspace{0.3cm}
+Niech $H(r,\varphi) = (f \circ \Psi) (r, \varphi)$, czyli $H : \mathbb{R}^2 \to \mathbb{R}$.
+
+Szukamy pochodnej $H$, ale $f' = [\frac{\partial f}{\partial x} , \frac{\partial f}{\partial y} ], \Psi ' = \left [ \begin{matrix}
+\frac{\partial \Psi_1}{\partial r}  &\frac{\partial \Psi_1}{\partial \varphi} \\
+\frac{\partial \Psi_2}{\partial r}  &\frac{\partial \Psi_2}{\partial \varphi}
+\end{matrix}\right ]$
+
+$$ \text{Czyli } H' = \left . \Big [ \frac{\partial f}{\partial x} , \frac{\partial f}{\partial y} \Big ] \right |_{x=\Psi_1(r,\varphi), y=\Psi_1(r,\varphi)} \left [ \begin{matrix}
+\frac{\partial \Psi_1}{\partial r}  &\frac{\partial \Psi_1}{\partial \varphi} \\
+\frac{\partial \Psi_2}{\partial r}  &\frac{\partial \Psi_2}{\partial \varphi}
+\end{matrix}\right ]$$
+
+$$ \text{Co daje: } \left . \Big [ \frac{\partial H}{\partial r} , \frac{\partial H}{\partial \varphi} \Big ] = \Big [ \frac{\partial f}{\partial x} \frac{\partial \Psi_1}{\partial r} + \frac{\partial f}{\partial y} \frac{\partial \Psi_2}{\partial r} , \frac{\partial f}{\partial x} \frac{\partial \Psi_1}{\partial \varphi} + \frac{\partial f}{\partial y} \frac{\partial \Psi_2}{\partial \varphi} \Big ] \right |_{x = \Psi_1 (r,\varphi), y = \Psi_2 (r,\varphi)} $$
+\end{document}

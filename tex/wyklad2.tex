@@ -1,0 +1,175 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\begin{definicja}
+Norma: niech $X$ - przestrzeń wektorowa.\\
+Odwzorowanie $||.||: \mathbb{X}\to \mathbb{R}$ nazywamy normą, jeżeli:
+\end{definicja}
+
+\begin{align}
+    \underset{x\in X}{\forall} \quad &||x|| \geq 0\\
+    \underset{\alpha\in\mathbb{R}}{\forall}, \underset{x\in \mathbb{X}}{\forall} \quad &|| \alpha x|| = |\alpha| ||x||\\
+    \underset{x,y \in X}{\forall} \quad &||x+y|| \leq ||x|| + ||y||\\
+    \underset{x\in X}{\forall} \quad &||x|| = 0 \iff x = 0
+\end{align}
+
+Przestrzeń $X$ wraz z normą $||.||$ nazywamy przestrzenią unormowaną (\textit{spoiler:} przestrzenią Banacha).
+
+\begin{przyklad}
+\end{przyklad}
+
+$||v|| = \sqrt{(x)^2 + (y)^2}, X \to \mathbb{R}^{n} \quad (v\in X)\implies||v|| = sup(|x^1|,\dots), f\in C([a,b])$, to $||f|| = sup_{x\in{[a,b]}} (f(x))$
+
+\vspace{0.3cm}
+UWAGA: mając normę możemy zdefiniować metrykę $\underset{x,y\in X}{\forall} d(x,y) = ||x-y||$, natomiast niekażdą metryką da się utworzyć przy pomocy normy.
+\vspace{0.3cm}
+
+\begin{przyklad}
+    metryka zdefiniowana przy pomocy normy ma np. taką własność: $$d(a_x,a_y) = ||a_x - a_y|| = |a| ||x-y|| = a d(x,y),$$ czyli taka metryka się skaluje natomiast funkcja
+\end{przyklad}
+
+\[ d(x,y) =
+\begin{cases}
+    1 & \quad x\neq y\\
+    0 & \quad x=y\\
+\end{cases}
+\]  jest metryką, ale tej własności nie posiada.
+
+\begin{definicja}
+    Pochodna mocna (trzecie podejście)
+\[
+ \lim\limits_{h \to 0}\frac{f(x+h) - f(x)}{h} = f'(x_0), \text{ dla }x\in V\subset \mathbb{R}^{n}
+ .\]
+ - taka definicja jest niemożliwa (nie mamy dzielenia wektorów).
+\end{definicja}
+
+
+$$f(x+h)-f(x)=f'(x_0) h + r(x_0,h), \text{ gdzie } \frac{r(x_0,h)}{||h||}\to 0 \text{ przy } ||h||\to 0$$ ale to może mieć już inną dziedzinę
+
+\begin{definicja}
+
+Niech $U \subset X, V\subset Y$\\
+$U,V\text{ - otwarte, }\quad T:U\to V; x,h\in U$
+
+Mówimy, że $T$ - różniczkowalne w punkcie $x_0$, jeżeli prawdziwy jest wzór $$\underset{h\in U}{\forall} \quad T(x_0+h) - T(x_0) = L_{x_0} (h) + r(x_0,h),$$
+gdzie $\frac{r(x_0,h)}{||h||}\to 0$, a $L_{x_0}$ - liniowe $: X\to Y$.
+\end{definicja}
+
+
+\vspace{0.3cm}
+Odwzorowanie $L_{x_0} (h)$ nazywamy pochodną T w punkcie $x_0$.
+Czasami $L_{x_0}(h)$ możemy przedstawić w postaci $L_{x_0} (h) = T'(x_0) h$, to $T'(x_0)$ nazywamy pochodną odwzorowania T.
+
+\vspace{0.3cm}
+\begin{large}
+    UWAGI:
+\end{large} Dlaczego $L_{x_0}(h)$, a nie $T'(x_0) h$?
+\vspace{0.3cm}
+
+Dlatego, że czasami pochodna może wyglądać tak:
+
+$$\int_0^1 h(x)\sin{x}dx$$, a tego nie da sie przedstawić jako
+$$\left ( \int_0^1 \sin{x}dx \right ) h(x)$$
+
+\begin{przyklad}
+
+\end{przyklad}
+
+$T(x+h) - T(x) = T'(x_0)h+r(x_0,h)$\\
+\vspace{0.3cm}
+1. Niech $T: \mathbb{R}\to \mathbb{R}^{3}$, czyli $x_0\in \mathbb{R}, h\in R$. Wtedy $T(x)$ - wektor (3 el.), $T'(x)$ - wektor (3 el.)\\
+\vspace{0.3cm}
+2. $T:\mathbb{R}^{3}\to\mathbb{R}\quad x_0$ - wektor (3 el.), $h$ - wektor (3.el), $T'(x)$ - p.wektor (3 el.)\\
+\vspace{0.3cm}
+3. $T:\mathbb{R}^2\to\mathbb{R}^3\quad x_0$ - wektor (2 el.), $h$ - wektor (2 el.), $T(x)$ - wektor (3 el.), $T'(x)$ - macierz (3x2)\\
+\vspace{0.3cm}
+4. $f(x,y) = xy^2, h=\binom{h_x}{h_y}$\\
+$f(x_0+hx,y_0+hy) - f(x_0,y_0) = (x_0+hx)(y_0+hy)^2 - x_0y_0^2 = x_0y_0^2 + 2y_0x_0h_y + x_0h_y^2 + h_yy_0^2 + h_xh_y 2y_0 + h_xh_y) = (y_0^2,2xx_0) \binom{h_x}{h_y} + x_0h_y^2+h_xh_y^2+2y_0h_xh_y$.
+
+\vspace{0.3cm}
+Czy $\frac{r(x_0,h)}{||h||}\to 0$?
+
+\vspace{0.3cm}
+Weźmy $||\binom{h_x}{h_y}|| = \sup\{|h_x|,|h_y|\}$.\\
+Wówczas $x_0h_y^2 + h_xh_y^2 + 2y_0h_xh_y \leq x_0 ||h||^2 + ||h||^3 + 2y_0||h||^2 = ||h||^2(x_0 +2y_0 + ||h||)$\\
+Zatem $\frac{r(x_0,h)}{||h||} \leq \frac{||h||^2(|x_0|+2y_0+||h||)}{||h||} \to 0$.
+
+$f(x,y)=xy^2, T'(x)=[y^2,2xy]$.\\
+\vspace{0.3cm}
+zauważmy, że $y^2= \frac{\partial}{\partial x} f, 2xy = \frac{\partial}{\partial y} f$\\
+\begin{large}
+    UWAGA:
+\end{large}skąd wiemy, że gdy $h\to 0$, to $||h||\to 0$?\\
+Czyli: czy norma jest odwzorowaniem ciągłym w $h=0$?
+
+$<$odpowiedź za tydzień$>$
+
+\begin{tw}
+Jeżeli $f$ - różniczkowalna w $x_0 \in U$, to dla dowolnego $e\in U$, $$\nabla_e f(x_0) = f'(x_0)e$$
+\end{tw}
+
+\begin{dowod}
+\end{dowod}
+
+
+\begin{pytanie}
+Czy z faktu istnienia pochodnych cząstkowych wynika różniczkowalność funkcji?
+\end{pytanie}
+
+\begin{przyklad}
+\end{przyklad}
+$f(x,y) = \sqrt{|xy|}, x_0=\binom{0}{0}$, dla $f(x,y)$ policzyliśmy pochodne cząstkowe w $x_0 \quad \frac{\partial}{\partial x} f = 0, \frac{\partial}{\partial y} f = 0$.
+\vspace{0.3cm}
+
+$h=\binom{h_x}{h_y}, x_0=\binom{0}{0}, f(x_0+h)-f(x_0) = \sqrt{h_xh_y} - \sqrt{0} = \sqrt{h_xh_y} = (0,0)\binom{h_x}{h_y} + \sqrt{h_xh_y}$, gdzie $r(x_0,h) = \sqrt{h_xh_y}$.\\
+Czyli $f$ - różniczkowalna, jeżeli $\underset{h_x,h_y}{\forall}\quad \frac{\sqrt{h_xh_y}}{||h||}\to0$.\\
+\vspace{0.3cm}
+Niech $||h|| = \sup\{|h_x|,|h_y|\}$ i niech $|h_x|>|h_y|$. $||h|| = |h_x|.$\\
+Dalej mamy: $\frac{\sqrt{h_xh_y}}{|h_x|}\sqrt{\frac{h_y}{h_x}} \not\to 0 \text{ przy }h_x\to0$, $\sqrt{\frac{|h_y|}{|h_x|}}=\sqrt{\frac{1}{2}}$
+\vspace{0.3cm}
+
+\textbf{Czyli istnienie pochodnych cząstkowych nie oznacza różniczkowalności.}
+
+\begin{tw}
+Niech $O\subset\mathbb{R}^{n}, O$ - otwarty. $f: O\to Y, x_0\in O$.
+
+Jeżeli istnieją pochodne cząstkowe $\frac{\partial}{\partial x_i} f, i=1,\dots,n$ i są ciągłe w $x_0$, wtedy $\underset{h\in\mathbb{R}^n}{\forall} f(x_0+h)-f(x_0)=\sum_{i=1}^{n} \frac{\partial f}{\partial x_i} h^i+r(x_0,h)$, gdzie $\frac{r(x_0,h)}{||h||}\to0$
+
+\end{tw}
+
+\begin{dowod}
+    (dla $O=\mathbb{R}^3$)
+\end{dowod}
+
+Niech $x_0 = \left [ \begin{matrix}
+    x_0^1\\
+    x_0^2\\
+    x_0^3
+\end{matrix}
+\right ], h = \left [ \begin{matrix}
+    h^1\\
+    h^2\\
+    h^3
+\end{matrix} \right ]$
+
+$f(x_0^1+h^1,x_0^2+h_2,x_0^3+h^3)-f(x_0^1,x_0^2,x_0^3)=\\
+=f(x_0^1+h^1,x_0^2+h^2,x_0^3+h^3)-f(x_0^1+h^1,x_0^2+h^2,x_0^3)+\\
++f(x_0^1+h^1,x_0^2+h^2,x_0^3)-f(x_0^1+h^1,x_0^2,x_0^3)+\\
++f(x_0^1+h^1,x_0^2,x_0^3)-f(x_0^1,x_0^2,x_0^3)
+\overbrace{=}^\text{tw. o w. średniej}\\
+\frac{\partial}{\partial x_0^1} f (c_1)h^1 + \frac{\partial}{\partial x_0^2} f (x_0^1+h^1,c_2,x_0^3)h^2+\frac{\partial}{\partial x_0^3} f (x_0^1+h^1,x_0^2+h_2,c_3)h^3=\\
+(\frac{\partial f}{\partial x^1} (c_1,x_0^2,x_0^3) - \frac{\partial f}{\partial x^1} (x_0^1,x_0^2,x_0^3))h^1 +\\
++ (\frac{\partial f}{\partial x^2} (x_0^1 + h^1, c_2, x_0^3) - \frac{\partial f}{\partial x^2} (x_0^1, x_0^2, x_0^3))h^2 +\\
++ (\frac{\partial f}{\partial x^3} (x_0^1+h^1,x_0^2+h^2,c_3) - \frac{\partial f}{\partial x^3} (x_0^1, x_0^2, x_0^3))h^3$\\
+gdzie $c_1\in ]x_0^1,x_0^1+h^1[,\quad c_2\in ]x_0^2,x_0^2+h^2[,\quad c_3\in ]x_0^3,x_0^3+h^3[$
+
+Wystarczy pokazać, że $\frac{r(x_0,h)}{||h||}\to 0$, gdy $h\to 0$.
+
+Zauważmy, że każde wyrażenie tworzące resztę jest postaci \textit{coś} $h^i$, a $\lim\limits_{||h|| \to 0}\frac{h^i}{||h||} =$ \{\{ \textit{dla normy np.} $||h|| = max{|h^i|}$ \}\} $\neq 0$.
+(np. $\frac{h^1}{h^1} \to 1$)
+
+Oznacza to, że jeżeli $\frac{r(x,h)}{||h||}\to 0$ - spełniony, to każde wyrażenie typu
+$$ \Big ( \frac{\partial f}{\partial x^1} (c_1,x_0^2,x_0^3) - \frac{\partial f}{\partial x^1} (x_0^1,x_0^2,x_0^3)\Big ) h^1 \to 0$$
+
+Czyli np. $\lim\limits_{||h|| \to 0}\frac{\partial f}{\partial x^1} (c_1,x_0^2,x_0^3) = \frac{\partial f}{\partial x^1} (x_0^1,x_0^2,x_0^3) \iff (\frac{\partial f}{\partial x^1}  \text{ - ciągła} ) \Box$
+\end{document}

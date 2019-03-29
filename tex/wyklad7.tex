@@ -1,0 +1,179 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{
+    {"../img/"}
+    {"img/"}
+}
+\begin{document}
+
+\begin{tw}
+    (o lokalnej odwracalności)\\
+
+    Niech $f: E \to E, E$ - otwarty, $E\subset \mathbb{R}^N, f$ - różniczkowalna w sposób ciągły na $E$.
+
+    $(f \text{ - klasy } \mathcal{C}^1 (E)), \underset{a,b\in E}{\exists}:f(a) = b \land f'(a) \text{ - odwracalna } (det(f'(a))\neq 0)$, to:
+    \begin{align*}
+        &1. \underset{U,V\subset E}{\exists}, \underset{a\in U, b\in V}{\exists}, U,V \text{ - otwarte, }f \text{ - bijekcja między } U,V\\
+        &2. \underset{g: V\to U}{\exists}.\underset{x\in V}{\forall}, f(g(x)) = x, g\text{ - ciągła i różniczkowalna na } V\\
+    \end{align*}
+\end{tw}
+
+
+\begin{large}
+Uwaga:
+\end{large}
+Dowód składa się z trzech części:
+\vspace{0.5cm}
+
+\noindent1. Pokażemy, że $\underset{U,V}{\exists}: f \text{ - bijekcja na }U,V$\\
+2. Pokażemy, że $U,V$ - otwarte\\
+3. Pokażemy, że $\underset{g: V\to U}{\exists}, g$ - różniczkowalna na $V$ i ciągła.
+
+\begin{przyklad}
+
+\end{przyklad}
+
+$f(x,y) = \left [ \begin{matrix}
+e^x \cos y\\
+e^x \sin y\\ \end{matrix}\right ]
+,
+f'(x,y) = \left [ \begin{matrix}
+e^x \cos y &-e^x \sin y\\
+e^x \sin y &e^x \cos y\\
+ \end{matrix}\right ] $
+
+$det(f'(x,y)) = e^{2x} \neq 0$, ale $f(x,y) = f(x,y+2\pi)$
+\begin{tiny}
+(czyli funkcja jest okresowa)
+\end{tiny}
+
+
+\begin{dowod}
+
+\end{dowod}
+
+Część I:\\
+Szukamy $U,V: f$ - bijekcja miedzy $U$ i $V$
+Skoro $f'(a)$ - odwracalne, to znaczy, że $\underset{(f'(a))^{-1}}{\exists}$, zatem $\underset{\lambda}{\exists}: 2\lambda \Vert (f'(a))^{-1} \Vert = 1$
+
+Wiemy, że $f'(x)$ - ciągła w $x=a$, czyli
+\begin{equation}
+    \underset{\varepsilon>0}{\forall}.\underset{\delta}{\exists}.\underset{x}{\forall},d(x,a)<\delta \implies \Vert f'(x) - f(a) \Vert < \varepsilon
+\end{equation}
+
+Połóżmy $\varepsilon = \lambda$.\\
+Oznacza to, że \begin{equation}
+\underset{\delta_\lambda}{\exists}.\underset{x}{\forall}x\in K(a,\delta_\lambda) \implies \Vert f'(x) - f'(a) \Vert < \lambda
+\end{equation}
+
+Więc $U = K(a,\delta_\lambda)$, niech $V = f(U)$. Chcemy pokazać, że $f$ - bijekcja między $U$ i $V$.
+
+Wprowadźmy funkcję pomocniczą:
+\begin{equation}
+\varphi_y(x) = x+[f'(a)]^{-1} (y-f(x)), x,y\in E
+\end{equation}
+
+\begin{pytanie}
+    Co by było gdyby $\varphi_y(x)$ posiadała punkt stały? (jakie własności $x$ by z tego faktu wynikały)\\
+dla $x\in U, y\in V, (y\in f(a))?$
+\end{pytanie}
+
+Z zasady Banacha wiemy, że odwzorowanie zwężające ma dokładnie jeden punkt stały, czyli $\underset{y\in V}{\forall}.\underset{x\in U}{\exists}: f(x) = y$
+
+O $f$ - z taką własnością mówimy, że jest 1-1 na $U$.
+\begin{tiny}(iksa nie obchodzą sąsiedzi, f musi być ciągłe to będzie bijekcja)\end{tiny}
+
+Policzmy $\varphi_y '(x) = \mathbb{I} + (f'(a))^{-1} (-f'(x)) = (f'(a))^{-1}(f'(a) - f'(x))$, więc $\Vert \varphi_y '(x) \Vert = \Vert f'(a)^{-1} (f'(a) - f'(x))\Vert \leq \Vert (f'(a)^{-1})\Vert \Vert f'(a) - f'(x) \Vert \leq \underset{x\in U}{\forall}\frac{1}{2\lambda} \lambda = \frac{1}{2}$
+
+Pamiętamy, że jeżeli $\underset{M}{\exists}\Vert\varphi_y '(x)\Vert \leq M$, to $\underset{x,y}{\forall}\Vert \varphi(x) - \varphi(y)\Vert < M\Vert x-y \Vert$
+
+Zatem skoro $\Vert \varphi_y '(x) \Vert \leq \frac{1}{2}$, to
+$$\underset{x_1,x_2\in U}{\forall}\Vert \varphi_y(x_1) - \varphi_y (x_2) \Vert \leq \frac{1}{2} \Vert x_1 - x_2 \Vert,$$
+więc $\varphi$ - zwężający na $U$, więc posiada dokładnie jeden punkt stały $\underset{y\in V}{\forall}$. Zatem $f$ - bijekcja między $U$ i $V$.
+
+Część II - otwartość $U$ i $V$
+
+1. Zbiór $U$ - otwarty (bo tak go zdefiniowaliśmy) ($U = K(a,\delta_1)$), więc $\underset{x_0\in U}{\exists}, \underset{r}{\exists}K(x_0,r)\subset U$, lub równoważnie $\Vert x-x_0 \Vert \leq r \land x\in U$.\\
+Chcemy pokazać, że dla $y_0 = f(x_0) \underset{K(y_0,\lambda r)\subset V}{\exists}$, czyli że $V$ - otwarty.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig_18}
+    \caption{Trochę jak listy do św. Mikołaja (??)}
+    \label{fig:fig_18}
+\end{figure}
+
+Weźmy $y\in K(y_0,\lambda r)$. Zauważmy, że $\varphi_{y_1}(x_1)$ - zwężające, jeżeli $y_1\in V, x_1\in U$\\
+Jeżeli pokażemy, że dla $\Vert y-y_0\Vert < \lambda r, \varphi_y(x)$ - zwężająca na $K(x_0,r)\subset U$, to będziemy wiedzieli, że $\Vert y - y_0 \Vert < \lambda r$ oraz $y\in V \iff K(y_0,\lambda r)\subset V$
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{fig_19}
+    \caption{Nie ok.}
+    \label{fig:fig_19}
+\end{figure}
+
+Żeby pokazać, że $\varphi_y(x)$ - zwężające na $K(x_0,r)$, zbadamy tę wielkośc dla $x\in K(x_0,r)$.
+$\Vert \varphi_y(x) - x_0 \Vert$, chcielibyśmy, aby $\Vert \varphi_y(x) - x_0 \Vert \leq r $ i $\Vert y - y_0 \Vert < \lambda r$, ale z drugiej strony
+$$\Vert \varphi_y(x) - x_0 \Vert = \Vert \varphi_y(x) - \varphi_y(x_0) + \varphi_y(x_0) - x_0 \Vert \leq \Vert \varphi_y(x) - \varphi_y(x_0) \Vert + \Vert \varphi y(x_0 - x_0) \Vert$$
+
+Ale $\Vert \varphi_y(x_0) - x_0 \Vert \leq \Vert (f'(a))^{-1} \Vert \Vert y - y_0 \Vert \leq \frac{1}{2\lambda} \lambda r = \frac{r}{2}$, więc $\Vert \varphi_y(x) - x_0 \Vert \leq r$, jeżeli $\Vert y - y_0 \Vert < \lambda r, \Vert x - x_0 \Vert \leq r$.
+
+Stąd wiemy , że punkt stały dla $\varphi_y(x):x\in K(x_0,r)$ należy do $K(x_0,r)$ i $\Vert y - y_0 \Vert <\lambda r$, zatem $y=f(x)$, czyli $V$ - otwarty.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{fig_20}
+    \caption{}
+    \label{fig:fig_20}
+\end{figure}
+
+Część III:
+
+Szukamy $g: V\to U$\\
+Skoro $f$ - bijekcja między $U$ i $V$, to znaczy, że $\underset{g: V\to U}{\exists}f(g(x)) = x \underset{x\in V}{\forall}$.\\
+Chcemy pokazać, że $g(x)$ - różniczkowalne. Wiemy, że $f$ - różniczkowalna w $x\in U$, czyli
+$$\frac{f(x+h) - f(x) - f'(x)h}{\Vert h \Vert} \overset{h\to 0}{\to} 0, x,x+h\in V$$
+Jeżeli pokażemy, że
+\begin{equation}
+    \frac{g(y+k) - g(y) - [f'(x)]^{-1} k}{\Vert k \Vert} \overset{k\to 0}{\to} 0
+\end{equation}
+to będziemy wiedzieli, że:\\
+1. $g$ - różniczkowalne dla $y\in V$\\
+2. $g'(y)=[f'(x)]^{-1}$.\\
+W tym celu pokażemy, że:\\
+1. $(\Vert k \Vert \to 0) \implies (\Vert h \Vert \to 0)$\\
+2. $[f'(x)]^{-1}$ istnieje dla $x\in U$. (na razie wiemy, że $(f'(a))^{-1}$ istnieje)
+
+\begin{large}
+    \textit{Ad 1.}
+\end{large}
+Zauważmy, że $$\varphi_y(x+h) - \varphi_y(x) = x+h+[f'(a)]^{-1}(y-f(x+h)) - x - [f'(a)]^{-1}(y-f(x))=$$
+$$=h+[f'(a)]^{-1}(y-f(x+h)-y+f(x)) = h - (f'(a))^{-1}(f(x+h) - f(x)),$$
+$$czyli \Vert \varphi_y(x+h) - \varphi_y(x) \Vert = \Vert h - (f'(a))^{-1}(k) \Vert \leq \frac{1}{2} \Vert h \Vert,$$
+zatem $\Vert h - (f'(a))^{-1}k\Vert \leq \frac{1}{2}\Vert h \Vert \implies \Vert k \Vert \geq \Vert h \Vert, k = f(x+h) - f(x)$
+
+Stąd ostatecznie mamy:
+$\frac{g(y+k)-g(y) - [f'(x)]^{-1}k}{\Vert k \Vert} = [f'(x)]^{-1} \frac{hf'(x) - f(x+h) + f(x)}{\Vert k \Vert} \leq \frac{[f'(x)]^{-1}}{\lambda} \frac{hf'(x) - f(x+h) + f(x)}{\Vert h \Vert} \to 0$, o ile $\underset{[f'(x)]^{-1}}{\exists}$
+
+\begin{pytanie}
+    skąd wiadomo, że $(f'(x))^{-1}$?\\
+\end{pytanie}
+Wiemy, że $f'(a)$ jest odwracalna, więc $(f'(a))^{-1}$ istnieje, $a  \in U$.\\
+Chcemy pokazać, że $f'(x)$ jest odwracalna dla $x\in U$. Oznacza to, że
+\[
+    0 < \Vert f'(x) y \Vert \text{ dla } y\neq 0, x\in U
+.\]
+Pamiętamy, że  $2\lambda \Vert (f'(a))^{-1} = 1$ oraz $U$ - taka, że
+\[
+    \underset{x\in U}{\forall} \Vert f'(x) - f'(a) \Vert < \lambda
+.\]
+Zatem \[
+    0 \le \frac{1}{\Vert (f'(a))^{-1} \Vert } \Vert y \Vert = \Vert (f'(x) + f'(a) - f'(x))y \Vert \le \Vert f'(a) - f'(x) \Vert \Vert y \Vert + \Vert f'(x) \Vert \Vert y \Vert
+.\]
+
+Dalej $2\lambda \Vert y \Vert \le \lambda \Vert y \Vert + \Vert f'(x) y \Vert $ dla $x\in U$ \\
+$0 \le \lambda \Vert y \Vert \le \Vert f'(x) y \Vert $ dla $y = 0$ \\
+Czyli \[
+    \underset{x\in U}{\forall} \Vert f'(x) y \Vert > 0 \quad\Box
+.\]
+
+\end{document}
