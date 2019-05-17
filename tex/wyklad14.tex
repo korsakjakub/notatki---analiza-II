@@ -1,0 +1,157 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{
+    {"../img/"}
+    {"img/"}
+}
+
+\begin{document}
+\begin{przyklad}
+    \[
+        \frac{d}{dt}\begin{bmatrix} x(t)\\p(t) \end{bmatrix} = \begin{bmatrix} 1&0\\0&-1 \end{bmatrix} \begin{bmatrix} x(t)\\p(t) \end{bmatrix},\quad \begin{bmatrix} x(t=0)\\p(t=0) \end{bmatrix} = \begin{bmatrix} x_0\\p_0 \end{bmatrix}
+    .\]
+    \[
+        \begin{bmatrix} x(t)\\p(t) \end{bmatrix} = e^{(t-0)\begin{bmatrix} 1&0\\0&-1 \end{bmatrix} }\begin{bmatrix} x_0\\p_0 \end{bmatrix}
+    .\]
+    \[
+        A = \begin{bmatrix} 1&0\\0&-1 \end{bmatrix}
+    .\]
+    \[
+        w(\lambda) = \det \begin{bmatrix} 1-\lambda&0\\0&-1-\lambda \end{bmatrix} = -(1-\lambda)(1+\lambda) = -(1-\lambda^2) = 0 \iff \lambda_1 = 1, \lambda_2 = 1
+    .\]
+    \[
+        f(\lambda) = e^{\lambda t}, f(\lambda) = q(\lambda)w(\lambda) + a\lambda+b
+    .\] \[
+    f(-1) = -a+b, f(1) = a+b
+    .\] \[
+    b = \frac{f(-1)+f(1)}{2}= \frac{e^{-t}+e^{t}}{2}, a = \frac{f(1)-f(-1)}{2} = \frac{e^t - e^{-t}}{2}
+    .\]
+    \[
+        \begin{bmatrix} x(t)\\p(t) \end{bmatrix} = \underbrace{ \left( \frac{e^t-e^{-t}}{2}\begin{bmatrix} 1&0\\0&-1 \end{bmatrix} + \frac{e^t+e^{-t}}{2}\begin{bmatrix} 1&0\\0&1  \end{bmatrix}\right) }_{R(t,t_0)} \begin{bmatrix} x_0\\p_0 \end{bmatrix}
+    .\]
+\end{przyklad}
+\begin{pytanie}
+    Czy można znaleźć rozwiązanie bez liczenia $R(t,t_0)?$
+\end{pytanie}
+\begin{obserwacja}
+    Załóżmy, że macierz $A: \mathbb{R}^n\to\mathbb{R}^n$ ma $n$ różnych wartości własnych.
+    \begin{align*}
+        &\lambda_1,&\lambda_2, &\lambda_3,\ldots\\
+        &v_1,&v_2, &v_3,\ldots
+    .\end{align*}
+\end{obserwacja}
+\begin{obserwacja}
+    Jeśli $v\in ker(A - \lambda \mathbb{I})$, to znaczy, że
+    \begin{align*}
+        &A v = \lambda v\\
+        &A^2 v = \lambda^2 v\\
+        &A^nv = \lambda^n v\\
+        &e^{A}v = e^{\lambda t}v
+    .\end{align*}
+\end{obserwacja}
+Jeżeli zatem przdstawimy warunek początkowy jako sumę:
+\begin{align*}
+    \overline{x_0} = x_0' + x_0^2 + \ldots + x_0^n\\
+    e^{A(t-t_0)}\overline{x_0} = sum_{i=1}^{n}e^{A(t-t_0)}x_0^i = sum_{i=1}^n e^{\lambda_i(t-t_0)}x_0^i\\
+.\end{align*}
+\begin{obserwacja}
+    najogólniesza postać $\lambda_j$(pierwiastki równania $w(\lambda) = 0$) to
+    \[
+    \lambda_j = a_j + ib_j
+    .\]
+\end{obserwacja}
+Zatem dowolne rozwiązanie problemu jednorodnego przy $n$ różnych wartościach własnych może być jedynie kombinacją funkcji typu
+\[
+    \cos(bt),\quad \sin(bt),\quad e^{at},\quad ch(at),\quad sh(at),\quad e^{at}\sin(bt),\quad e^{at}\cos(bt)
+.\] I niewiele więcej.
+
+\begin{align*}
+    \ddot{x} + a\dot{x} + \omega^2 x = 0\\
+    \dot{x} = p\\
+    \dot{p} = \ddot{x} = -a \dot{x} - \omega^2 x\\
+    \frac{d}{dt}\begin{bmatrix} x\\p \end{bmatrix} = \begin{bmatrix} 0&1\\-\omega^2&-a \end{bmatrix} \begin{bmatrix} x\\p \end{bmatrix}
+.\end{align*}
+
+Załóżmy, że macierz $A\in M^n_n$ ma $k$ różnych wartości własnych i $A$ nie zależy od czasu
+\begin{align*}
+    \lambda_1\rightarrow n_1\\
+    \lambda_2\rightarrow n_2\\
+    \vdots\\
+    \lambda_k\rightarrow n_k - V_k = ker(A-\lambda_k \mathbb{I})^{n_k}
+.\end{align*}
+(gdzie $n_1+n_2+\ldots+n_k = n$)
+\[
+    \mathbb{R}^n = V_{\lambda_1} \bigoplus V_{\lambda_2} \bigoplus ..\bigoplus V_{\lambda_k}
+.\]
+i teraz rozkładamy warunek początkowy:
+\[
+    x_0 = \underset{V_{\lambda_1}}{x_0^1}  + \underset{V_{\lambda_2}}{x_0^{2}} +\ldots+x_0^{k}
+.\]
+Wówczas
+\begin{align*}
+    x(t) &= e^{A(t-t_0)}x_0 = \sum_{i=1}^{k} e^{A(t-t_0)}x_0^i = \sum_{i=1}^k e^{\lambda_i(t-t_0)\mathbb{I}+A(t-t_0) - \lambda\mathbb{I}(t-t_0)}x_0^i=\\
+         &=\sum_{i=1}^k e^{\lambda_i(t-t_0)\mathbb{I}}e^{(A-\lambda\mathbb{I})(t-t_0)}x_0^i=\\
+         &=\sum_{i=1}^k e^{\lambda_i(t-t_0)\mathbb{I}}\left( \sum_{j=0}^{\infty} \frac{(t-t_0)^j (A-\lambda_j \mathbb{I})^j}{j!} x_0^i \right)\\
+         &\text{ale $x_0^i\in ker(A-\lambda_i\mathbb{I}^{n_i}) = \lambda_\lambda$}=\\
+         &=\sum_{i=1}^k e^{\lambda_i(t-t_0)\mathbb{I}}\left( \sum_{j=0}^{n-1}\frac{(t-t_0)^j}{j!}(A-\lambda_i \mathbb{I})^j \right)x_0^i
+.\end{align*}
+\begin{przyklad}
+    Rozwiązać równanie:
+    \begin{align*}
+        &\frac{dx_1}{dt} = x_1+x_2+2x_3\\
+        &\frac{dx_2}{dt} = x_2+x_3\\
+        &\frac{dx_3}{dt} = 2x_3\\
+        &\begin{bmatrix} x_1\\x_2\\x_3 \end{bmatrix} = \begin{bmatrix} 1\\2\\1 \end{bmatrix}
+    .\end{align*}
+    \[
+        A = \begin{bmatrix} 1&1&2\\0&1&1\\0&0&2 \end{bmatrix}, w(\lambda) = det\left( \begin{bmatrix} 1-\lambda&1&2\\0&1-\lambda&1\\0&0&2-\lambda \end{bmatrix}  \right)
+    .\]
+    \[
+        w(\lambda) = (2-\lambda)(1-\lambda)^2
+    .\]
+    \begin{align*}
+        \lambda_1 = 1, n_1 = 2\\
+        \lambda_2 = 2, n_2 = 1
+    .\end{align*}
+    \[
+        ker(A-\lambda_2\mathbb{I})
+    .\]
+    \begin{align*}
+        &\begin{bmatrix} 1-2&1&2\\0&1-2&1\\0&0&2-2 \end{bmatrix} \begin{bmatrix} a\\b\\c \end{bmatrix} = \begin{bmatrix} 0\\0\\0 \end{bmatrix}\\
+        &\begin{bmatrix} -1&1&2\\0&-1&1\\0&0&0 \end{bmatrix} \begin{bmatrix} a\\b\\c\end{bmatrix} = 0\\
+        &-a+b+2c = 0\\
+        &-b+c = 0\\
+        &c=b\\
+        &-a-b+2b=0\\
+        &a=3b\\
+    &v\in V_{\lambda_2}\iff v = \begin{bmatrix} 3b\\b\\b \end{bmatrix} = b\begin{bmatrix} 3\\1\\1 \end{bmatrix} , V_{\lambda_2} = \left< \begin{bmatrix} 3\\1\\1 \end{bmatrix}  \right>\\
+        &V_{\lambda_1} = ker(A-\lambda_1\mathbb{I})^2\\
+        &\begin{bmatrix} 1-1&1&2\\0&1-1&1\\0&0&2-1 \end{bmatrix} ^2 = \begin{bmatrix} 0&1&2\\0&0&1\\0&0&1 \end{bmatrix} \begin{bmatrix} 0&1&2\\0&0&1\\0&0&1 \end{bmatrix} = \\
+        &=\begin{bmatrix} 0&0&3\\0&0&1\\0&0&1 \end{bmatrix}\\
+        &\begin{bmatrix} 0&0&3\\0&0&1\\0&0&1 \end{bmatrix} \begin{bmatrix} a\\b\\c \end{bmatrix} = \begin{bmatrix} 0\\0\\0 \end{bmatrix}\\
+    &c = 0, v\in V_{\lambda_1}\iff v = \begin{bmatrix} a\\b\\c \end{bmatrix}  = a \begin{bmatrix} 1\\0\\0 \end{bmatrix} +b \begin{bmatrix} 0\\1\\0 \end{bmatrix}\\
+    &V_{\lambda_1} = \left<\begin{bmatrix} 1\\0\\0 \end{bmatrix}, \begin{bmatrix} 0\\1\\0 \end{bmatrix}  \right>\\
+    &\begin{bmatrix} 1\\2\\1 \end{bmatrix} = x_0^1\in V_{\lambda_1} + x_0^2\in V_{\lambda_2}
+    &\begin{bmatrix} 1\\2\\1 \end{bmatrix} = (-2)\begin{bmatrix} 1\\0\\0 \end{bmatrix} + 1\begin{bmatrix} 0\\1\\0 \end{bmatrix} + 1\begin{bmatrix} 3\\1\\1 \end{bmatrix} \\
+    &\begin{bmatrix} 1\\2\\1 \end{bmatrix} = \begin{bmatrix} -2\\0\\0 \end{bmatrix} + \begin{bmatrix} 0\\1\\0 \end{bmatrix} + \begin{bmatrix} 3\\1\\1 \end{bmatrix}\\
+        &\sum_{i=1}^k e^{\lambda_i (t-to)\mathbb{I}}\left( \sum_{j=0}^{n-1} \frac{(t-t_0)^j}{j!} (A-\lambda_i\mathbb{I})^j \right) x_0^i=  \\\\
+        &= e^{\lambda_1(t)\mathbb{I}}\left( \sum_{j=0}^{2-1}\frac{t^j}{j!}(A-\lambda_1)^j \right) x_0^1 + e^{\lambda_2 t \mathbb{I}}\left( \mathbb{I} \right)x_0^2=\\
+        &= \begin{bmatrix} x_1(t)\\x_2(t)\\x_3(t) \end{bmatrix} = e^{t}\begin{bmatrix} 1&0&0\\0&1&0\\0&0&1 \end{bmatrix} \left( \begin{bmatrix} 1&0&0\\0&1&0\\0&0&1 \end{bmatrix} + \frac{t^1}{1!} \begin{bmatrix} 1-1&1&2\\0&1-1&1\\0&0&2-1 \end{bmatrix} \right) \begin{bmatrix} -2\\1\\0 \end{bmatrix} + e^{2t}\mathbb{I}\begin{bmatrix} 3\\1\\1 \end{bmatrix}=  \\
+        &= e^{t}(a+bt) + e^{2t}+C
+    .\end{align*}
+\end{przyklad}
+\subsection{Baza rozwiązań}
+\begin{obserwacja}
+    Jeżeli $x(t) = R(t,t_0)x_0$ i $R(t,t_0)\in M_n^n$, to znaczy, że
+    \[
+        x(t) = \begin{bmatrix} \Vert  \Vert \Vert  \Vert  \end{bmatrix} \begin{bmatrix} x_0^1\\ \vdots\\ x_0^n \end{bmatrix} = x_0^1 \begin{bmatrix} | \end{bmatrix} + x_0^2 \begin{bmatrix} | \end{bmatrix} + \ldots + x_0^n \begin{bmatrix} | \end{bmatrix}
+    .\]
+\end{obserwacja}
+\begin{pytanie}
+    Czy $\det (R(t,t_0)) \neq 0$?
+\end{pytanie}
+Jeżeli tak, to kolumny $R(t,t_0)$ możemy potraktować jako wektory rozpinające przestrzeń rozwiązań i $\det R(t,t_0)\neq 0 \underset{t\in[a,b]}{\forall} $.\\
+W bazie wektorów własnych macierz $e^{At}$ wygląda tak (zakładamy $n$ wartości własnych):
+\[
+    \det \begin{bmatrix} e^{\lambda_1 t}&\ldots&0\\ \vdots&\ddots&\vdots \\ 0 &\ldots&e^{\lambda_n t} \end{bmatrix} = e^{t(\lambda_1+\ldots+\lambda_n)} = e^{t* Tr A} \neq 0
+.\]
+\end{document}

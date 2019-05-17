@@ -1,0 +1,121 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{
+    {"../img/"}
+    {"img/"}
+}
+
+\begin{document}
+    Chcemy wygenerować wzór na zamianę zmiennych.
+    Dawno dawno temu mogliśmy zrobić tak:
+    \[
+    \int_2^4 2xe^{x^2}dx =  \mid x^2 = t, 2xdx = dt  \mid=  \int_4^{16}e^{t}dt
+    .\]
+    Czyli w ogólności
+    \[
+        \int_{\varphi(a)}^{\varphi(b)}f(x)dx = \int_a^b f(\varphi(t))\varphi'(t)dt
+    .\]
+    Jak weźmiemy całkę
+    \[
+        \int f(x,y) dxdy = \int dx \int f(x,y)dy = \mid r=\sqrt{x^2+y^2} , \varphi = arctg(\frac{y}{x})   \mid =  \int dr \int d  \varphi f(r,\varphi) ??
+    .\]
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{fig_45}
+        \caption{zmieniamy zmienne pojedynczo a nie jednocześnie $(x,y)\to (x,\varphi)\to (r,\varphi)$}
+    \end{figure}
+    \begin{align*}
+    &\int dx \int dy f(x,y) = \Vert y = x \tg \varphi, dy = \frac{x}{\cos^2 \varphi}d \varphi \Vert = \int dx \int \frac{x}{\cos^2 \varphi} \varphi f(x,y(x,\varphi))= \\
+    &=\Vert x=r \cos \varphi, dx =dr \cos \varphi \Vert = \int d \varphi \int \frac{dr \cos\varphi r \cos \varphi}{\cos^2 \varphi} f(x(r,\varphi), y(x(r,\varphi))) =\\
+    &= \int d \varphi \int dr f(r,\varphi) r \text{, czyli } "??" = r
+    .\end{align*}
+    To teraz w drugą stronę. ($y\to r$), ( $x\to \varphi$ )
+    \begin{align*}
+        &\int \int f(x,y) dxdy = \Vert y = \sqrt{r^2 - x^2} , dy = \frac{2r dr}{2 \sqrt{r^2-x^2} } \Vert = \\
+        &= \int dx \int \frac{r dr}{\sqrt{r^2 - x^2} } f(x,y(x,r)) = \Vert x=r \cos \varphi, dx = -r \sin\varphi d\varphi \Vert = \\
+        &=-\int dr \int \frac{r \sin\varphi d \varphi r}{\sqrt{r^2 - x^2} } f(x(r,\varphi),y(x(r,\varphi),r)) = \\
+        &= -\int dr r^2 \int d\varphi \frac{\sin\varphi f(r,\varphi)}{\sqrt{r^2 - r^2 \cos^2 \varphi} } = -\int dr \int d\varphi f(r,\varphi) r
+    .\end{align*}
+    Dostaliśmy prawie to co trzeba ($r$ ). Tylko wpadł jakiś dziwny minus. Podobno minus zniknie gdy doprowadzimy do porządku granice zmiennej $\varphi$, bo $x = r \cos \varphi$ a $\cos$ jest malejący w tym przedziale. (tablica dalej nie działa - minęły 3 miesiące - z marsa by już doszła więc wysyłają pewnie z Saturna - MK$\texttrademark$)
+
+    Niech $\psi \begin{bmatrix} r\\\varphi \end{bmatrix} \to \begin{bmatrix} r \cos \varphi\\ r \sin \varphi \end{bmatrix}  $.
+    \begin{align*}
+        &\psi' = \begin{bmatrix} \cos \varphi &- r \sin \varphi\\ \sin \varphi & r \cos \varphi \end{bmatrix}\\
+        &\Vert \psi' \Vert = r\cos^2 \varphi - (-r\sin^2 \varphi) = r
+    .\end{align*}
+    Chcemy pokazać, że jeżeli $\varphi: A\to A$, $A\subset\mathbb{R}^n$, $\varphi$ - klasy $\mathcal{C}^1, \varphi^{-1}$ - klasy $\mathcal{C}^1$, to możemy przedstawić $\varphi$ jako złożenie dwóch transformacji, z których pierwsza nie zmienia $n-1$ zmiennych a druga nie zmienia $1$ zmiennej (transformacje pierwotne/prymitywne albo inne ubogacające nazwy).
+    \begin{dowod}
+        (coś w rodzaju dowodu)\\
+        $\varphi$ możemy przedstawić jako
+        \[
+            \varphi \begin{bmatrix} t_1\\ \vdots \\ t_n \end{bmatrix} \to \begin{bmatrix} \varphi_1(t_1,\ldots,t_n)\\ \vdots \\ \varphi_n(t_1,\ldots,t_n) \end{bmatrix} = \begin{bmatrix} x_1 \\ \vdots \\ x_n \end{bmatrix}
+        .\]
+        \begin{pytanie}
+            Czy istnieje odwzorowanie $\Theta^{-1}: A\to A$ takie, że
+            \[
+                \Theta = \begin{bmatrix} t_1\\ \vdots \\ t_n \end{bmatrix} = \begin{bmatrix} t_1 \\ \vdots \\ t_{j-1} \\ \varphi_j(t_1,\ldots,t_n)\\ t_{j+1} \\ \vdots \\ t_n \end{bmatrix} = \begin{bmatrix} x_1 \\ \vdots \\ x_{j-1} \\ x_j \\ x_{j+1} \\ \vdots \\ x_n \end{bmatrix}
+            .\]
+            ($t_{i\neq j}$ ) mogą zostać zamiast zamieniać je na $x_i$.
+            Dlaczego interesuje nas czy istnieje funkcja odwrotna? Bo jeżeli istnieje, to możemy zapisać
+            \[
+                \varphi = \varphi \circ \Theta^{-1} \circ \Theta = \left(\varphi \circ \Theta^{-1}\right) \circ \Theta
+            .\]
+        \end{pytanie}
+        Wiemy, że $\varphi$ - klasy $\mathcal{C}^1$ i $\varphi^{-1}$ - klasy $\mathcal{C}^1$ i $\varphi: A\to A$. Mamy twierdzenie o lokalnej odwracalności!\\
+        $det \varphi' \neq 0$ , czyli w macierzy $\varphi'$ istnieje prznajmniej $1$ element niezerowy. (w rzeczywistości to zawsze będzie trochę więcej - nieśmiały warunek)
+
+        np. $\frac{\partial \varphi^i}{\partial t^i} \neq 0$. Oznacza to, że odwzorowanie
+        \[
+            \eta : \begin{bmatrix} t_1 \\ t_2 \\ \vdots \\ t_{i-1} \\t_i \\ t_{i+1} \\ \vdots \\ t_n \end{bmatrix} \to \begin{bmatrix} x_1\\ x_2 \\ \vdots \\ x_{j-1} \\ x_j = \varphi^i (t_1,\ldots,t_n) \\ \vdots \\ x_n \end{bmatrix}
+        .\]
+        Wtedy
+        \[
+            \eta' = \begin{bmatrix} 1&&&&\\ &1&&& \\ \ldots&\ldots& \frac{\partial \varphi^i}{\partial x^i} &\ldots&\ldots \\ &&&1& \\ &&&&1\end{bmatrix}
+        .\]
+        i $\det \eta' \neq 0$, więc istnieje $\eta^{-1}$. \\
+        Czyli $\varphi = \varphi \circ \eta \circ \eta^{-1} = (\varphi \circ \eta ) \circ \eta^{-1} \quad\Box$
+    \end{dowod}
+
+    \begin{equation}
+        \int_{-1}^{1}dx\int_{-\sqrt{1-x^2} }^{\sqrt{1-x^2} }dy f(x,y) = \int_0^1 r dr \int_0^{2\pi} d\varphi f(r,\varphi)
+    \end{equation}
+    \begin{tw}
+        (O zamianie zmiennych)\\
+        Niech $\Theta, \Omega$ - zbiory otwarte w $\mathbb{R}^n$ i $\xi: \Omega\to \Theta$, $f: \Theta\to \mathbb{R}$, $f$ - ograniczona i całkowalna. $\xi$ - klasy $\mathcal{C}^1$ na $\Omega$, $\xi^{-1}$ klasy $\mathcal{C}^{1}$ na $\Theta$. Wtedy
+        \begin{equation}
+            \int_{\Theta} f(x) dx =  \int_{\Omega} f(\xi(t)) | \det \xi'(t) | dt.
+        \end{equation}
+        $x=(x^1,\ldots,x^n)\in \Theta, t=(t^1,\ldots,t^n)\in \Omega$
+    \end{tw}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{fig_46}
+        \caption{$\Omega\to\Theta - f - \mathbb{R}$}
+    \end{figure}
+    \begin{dowod}
+        (przez indukcję względem wymiaru przestrzeni)\\
+        \begin{itemize}
+            \item dla $n=1$ - zrobione w I semetrze.
+            \item zakładamy, że prawdziwy jest napis
+                \[
+                    \int_{A'\subset\mathbb{R}^{n-1}} f(x)dx = \int_{\Omega' \subset\mathbb{R}^{n-1}} f(\xi(t)) | det(\xi'(t)) |, (\xi: \mathbb{R}^{n-1}\to \mathbb{R}^{n-1})
+                .\]
+        \end{itemize}
+        Chcem pokazać, że prawdziwy jest napis
+        \[
+            \int_{A\subset\mathbb{R}} f(x) dx = \int_{\Omega \subset \mathbb{R}^n} f(\xi(t)) | det(\xi'(t)) |
+        .\]
+        Uwaga: wartośc bezwzględna oznacza, że musimy uważać przy rozstawianiu granic:\\
+        $\left( \int_a^b f \right) $ oznacza, że zakładamy, że $a\le b$. Dowód przeprowadzamy dla $\xi: \Theta\subset\mathbb{R}^n\to \Omega\subset\mathbb{R}^n$ takiego, że $\xi$ nie zamienia jednej zmiennej.
+        \begin{obserwacja}
+            Niech $K = \left\{ (x,y), x^2+y^2 \le 1 \right\} $, niech $K_a = \left\{ (x,a), x^2+a^2 \le 1 \right\}.$\\
+            Wówczas $K = \bigcup_{a\in[-1,1]}K_a$, zatem $\int_K f = \int_{-1}^1 da \int _{K_a} f$
+
+        \end{obserwacja}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{fig_47}
+    \end{figure}
+
+    \end{dowod}
+\end{document}

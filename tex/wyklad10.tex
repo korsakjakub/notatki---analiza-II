@@ -134,6 +134,61 @@ czyli \[
 .\]
 W małym otoczeniu $h$ będzie bardziej decydował $h_\parallel$, bo zawsze mogę zmniejszyć $h$ i w efekcie $h_\perp$ się zmniejszy
 
+Wiemy, że
+\[
+    f(x_0+h) - f(x_0) = f'(x_0) h + \frac{1}{2!} f''(x_0)(h,h) + r_1(x_0,h)
+.\] bo $f$ - różniczkowalna
+\[
+    G(x_0+h) - G(x_0) = G'(x_0)h + \frac{1}{2!} G''(x_0)(h, h) + r_2(x_0,h)
+.\] bo $G$ - różniczkowalna
+
+niech \[
+    \Lambda = \left[ \lambda_1,\ldots,\lambda_m \right] , \lambda_i \in \mathbb{R}
+.\]
+Wtedy \[
+    f(x_0+h) - f(x_0) = f(x_0 + h) - f(x_0) - \Lambda (G (x_0+h) - G(x_0)) = (f'(x_0) - \Lambda G'(x_0)) h
+.\]
+Dalej dostajemy \[
+    (f'(x_0) - \Lambda G'(x_0))h + \frac{1}{2!} (f''(x_0) - \Lambda G''(x_0))(h, h) + r_1(x_0,h) + r_2 (x_0,h)
+.\]
+Ale dla minimum lub maksimum chcemy, aby \[
+    f'(x_0) = \Lambda G'(x_0)
+.\]
+więc dla minimum / maksimum $f(x_0+h) - f(x_0) = \frac{1}{2} (f''(x_0) - \Lambda G''(x_0))(h,h) + r_1(x_0,h)+r_2(x_0,h)$
+
+Zatem jako, że $\frac{r_1(0,h)}{\Vert h \Vert ^2} \underset{\Vert h \Vert^2}{\to}  0$, $\frac{r_2(0,h)}{\Vert h \Vert ^2} \underset{\Vert h \Vert ^2}{\to} 0$, to o znaku $f(x_0+h) - f(x_0)$ decyduje znak \[
+    (f''(x_0) - \Lambda G''(x_0))(h,h)
+.\]
+Wiemy, że $h\in \mathbb{R}^{n} i \mathbb{R}^n = X_1 \bigoplus X_2$, czyli $ h = h_\perp + h_\parallel$
+
+ \[
+     f''(x_0) - \Lambda G''(x_0))(h,h) = \underbrace{f''(x_0) \Lambda G''(x_0)}_{\Box} (h_\parallel + h_\perp, h_\perp + h_\parallel)
+.\]
+\[
+ = (\Box)(h_\perp, h_\perp) + (\Box)(h_\perp, h_\parallel) + (\Box)(h_\parallel, h_\perp) + (\Box)(h_\parallel, h_\parallel)
+.\]
+
+\begin{pytanie}
+    Króre z powyższych wyrażeń jest najmniejsze (które z powyższych wyrażeń są o rząd mniejsze od pozostałych dla $\Vert h \Vert \to 0$
+\end{pytanie}
+
+Wiemy, że
+\[
+\Vert h_\perp \Vert ~ \Vert h_\parallel \Vert
+.\]
+Oznacza to, że dla małych $\Vert h_\parallel \Vert$ o znaku decyduje \[
+    (f''(x_0) - \Lambda G''(x_0))(h_\parallel,h_\parallel)
+.\]
+
+\begin{tw}
+    Niech $f:U\subset \mathbb{R}^n \to \mathbb{R}^1, f\in \mathcal{C}^2(U), G: U_2\subset\mathbb{R}^n\to\mathbb{R}^m, G\in \mathcal{C}^2(U_2), \underset{x_0}{\exists} G(x_0) = 0, G'(x_0)$ - ma rząd maksymalny $(m)$ oraz \[
+        \underset{\Lambda}{\exists} \Lambda = \left[ \lambda_1,\ldots,\lambda_m \right], \lambda_i \in \mathbb{R}, f'(x_0) - \Lambda G'(x_0) = 0
+    .\] to jeżeli
+    \[
+        (f''(x_0)-\Lambda G''(x_0))(h_\parallel,h_\parallel) > 0,
+        h_\parallel \overset{\text{def}}{=} \left \{G'(x_0) h_\parallel = 0 \right \}
+    .\] to $f$ posiada w $x_0$ minimum lokalne $(<0$, to maksimum lokalne$)$ na zbiorze $M = \left\{ x\in \mathbb{R}^n, G(x) = 0 \right\} $
+\end{tw}
 
 
 \end{document}
