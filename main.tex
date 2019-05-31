@@ -8,7 +8,15 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{polski}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
 
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{img/}{#1.pdf_tex}
+}
 \newmdtheoremenv{tw}{Twierdzenie}
 \newmdtheoremenv{stw}{Stwierdzenie}
 \newtheorem{obserwacja}{Obserwacja}
@@ -79,6 +87,12 @@
 \pagebreak
 \section{Wykład (21.05.2019)}
 \subfile{tex/wyklad20.tex}
+\pagebreak
+\section{Wykład (24.05.2019)}
+\subfile{tex/wyklad21.tex}
+\pagebreak
+\section{Wykład (28.05.2019)}
+\subfile{tex/wyklad22.tex}
 \pagebreak
 
 
