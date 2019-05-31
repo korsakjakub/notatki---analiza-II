@@ -1,0 +1,146 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{
+    {"../img/"}
+    {"img/"}
+}
+
+\begin{document}
+\begin{definicja}
+    Niech $\alpha_1,\alpha_2,\ldots,\alpha_k\in T_p^*M\in\Lambda'(M)$, wówczas $\alpha_1\land\alpha_2\land\ldots\land\alpha_k\in \Lambda^k(M)$ i dla $v_1,v_2,\ldots,v_k\in T_p^*M$,
+    \[
+        \left<\alpha_1\land\alpha_2\land\ldots\land\alpha_k; v_1,v_2,\ldots,v_k \right> \overset{\text{def}}{=}  \begin{bmatrix} \alpha_1(v_1)\alpha_2(v_1)\ldots\alpha_k(v_1)\\ \vdots \\ \alpha_1(v_k)\alpha_2(v_k)\ldots\alpha_k(v_k) \end{bmatrix}
+    .\]
+\end{definicja}
+Uwagi do operatora $d$ ($dd=0$ ):\\
+Niech $M = \mathbb{R}^3, f:\mathbb{R}^3\to\mathbb{R}^1\in\Lambda^0(M)$
+\begin{align*}
+&df = \frac{\partial f}{\partial x} dx+ \frac{\partial f}{\partial y} dy + \frac{\partial f}{\partial z} dz\\
+&ddf = d\left( \frac{\partial f}{\partial x}  \right) \land dx + d\left( \frac{\partial f}{\partial y}  \right) \land dy + d\left( \frac{\partial f}{\partial z}  \right) \land dz = \\
+&= \left( \frac{\partial^2 f}{\partial x^2} dx + \frac{\partial ^2 f}{\partial y \partial x} dy + \frac{\partial ^2 f}{\partial z \partial x} dz \right) \land dx \left( \frac{\partial ^2 f}{\partial x \partial z} dx + \frac{\partial ^2 f}{\partial y \partial z} dy \right) \land dy \\
+&\left( \frac{\partial ^2 f}{\partial x \partial z} dx + \frac{\partial ^2 f}{\partial y \partial z} dz \right) \land dz \\
+&= \left( \frac{\partial ^2 f}{\partial y\partial x} - \frac{\partial ^2f}{\partial x\partial y}  \right) dy\land dx + \left( \frac{\partial ^2f}{\partial z\partial y} - \frac{\partial ^2f}{\partial y\partial z}  \right) dz\land dy +\\
+&= \left( \frac{\partial ^2f}{\partial z\partial x} -\frac{\partial ^2f}{\partial x\partial z}  \right)dz\land dx = 0
+.\end{align*}
+Niech $\alpha = A_x dx + A_ydy + A_zdz$ \\
+ \begin{align*}
+     &d\alpha = \left( \frac{\partial A_x}{\partial y} - \frac{\partial A_y}{\partial x}  \right) dy\land dx + \left( \frac{\partial A_z}{\partial y} - \frac{\partial y}{\partial z}  \right) dz\land dy +\\
+     &+ \left( \frac{\partial A_z}{\partial x} - \frac{\partial A_x}{\partial z}  \right)dz\land dx  \\
+     &dd\alpha = \left( \pm \left( \frac{\partial ^2A_x}{\partial z\partial y} - \frac{\partial ^2A_x}{\partial z \partial x}  \right) \pm \left( \frac{\partial ^2A_z}{\partial x\partial y}  - \frac{\partial ^2A_y}{\partial x\partial z}\right) \pm \left( \frac{\partial ^2A_z}{\partial y\partial x}  - \frac{\partial ^2A_x}{\partial y\partial z} \right)  \right)dx\land dy\land dz  \\
+.\end{align*}
+\begin{align*}
+    &\beta = A_xdy\land dz + A_ydx\land dz + A_zdy\land dz\\
+    &d\beta = \left(  \right) dx\land dy\land dz\\
+    &dd\beta = 0
+.\end{align*}
+Niech $M = \mathbb{R}^4$, $A = \phi dt + A_x dx + A_y dy + A_z dz$.
+\begin{align*}
+    &dA = \left( \underbrace{\frac{\partial \phi}{\partial x} - \frac{\partial A_x}{\partial t}}_{E_x}  \right) dx\land dt + \left( \underbrace{\frac{\partial \phi}{\partial y} - \frac{\partial A_y}{\partial t}}_{E_y}  \right) dy\land dt + \left( \underbrace{\frac{\partial \phi}{\partial z}  - \frac{\partial A_z}{\partial t}}_{E_z} \right) dz\land dt+\\
+    &\left( \underbrace{\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y} }_{B_z} \right) dx\land dy + \left( \underbrace{\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}}_{B_x}  \right) dy\land dz + \left( \underbrace{\frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x}}_{B_y}  \right) dz\land dx\\
+    &ddA = 0
+.\end{align*}
+niech $dA = F$
+\[
+dF = 0
+.\]
+
+Pytanie: niech $M$ - rozmaitość wymiaru $3$ (bo mamy bijekcję między $\theta\in M$ i $\mathbb{R}^3$ ). Czy istnieje $\Lambda^4(M)$?
+
+niech $M = \mathbb{R}^3$
+\begin{align*}
+    &\Lambda^0(M) &&f: \mathbb{R}^3\to M &\dim \Lambda^1(M) = 3\\
+    &\Lambda^1(M) &&\alpha = A_xdx + A_ydy + A_zdz &\Lambda^1(\eta) = \left<dx,dy,dz \right>\\
+    &\Lambda^2(M) &&\beta = A_zdx\land dy + A_ydz\land dx + A_z dy \land dz & \Lambda^2(M) = \left<dx\land dy, dz\land dx, dy\land dz \right>\\
+    &\dim(\Lambda^2(M)) = 3\\
+    &\Lambda^3(\eta) &&\gamma = f dx\land dy \land dz & \Lambda^3(M) = \left<dx\land dy\land dz \right>\\
+    &\dim(\Lambda^3(M)) = 1
+.\end{align*}
+
+Niech $M = \mathbb{R}^4$.
+\begin{align*}
+    &\Lambda^0(M) &&f(t,x,y,z) \to \mathbb{R} &&\dim \Lambda^0(M) =1\\
+    &\Lambda^1(M) &&\alpha = A_t dt + A_xdx + A_ydy + A_zdz &&\dim \Lambda^1(M) = 4\\
+    &\Lambda^2(M) &&\beta = A_1 dt\land dx+A_2dt\land dy + A_3dt\land dz + B_1dy\land dx + B_2 dz\land dx + C_1dz\land dy &&\dim \Lambda^2(M) = 6\\
+    &\Lambda^3(M): &&\gamma = C_1dy\land dt\land dx + C_2dz\land dt\land dx + D_1dz\land dt\land dy + E_1dx\land dy\land dz &&\dim \Lambda^3(M) = 4\\
+    &\Lambda^4(M) &&\delta = gdt\land dx\land dy\land dz && \dim\Lambda^4(M) = 1
+.\end{align*}
+
+\subsection{Pchnięcia i cofnięcia}
+Niech $M,N$ - rozmaitości $\dim M = n, \dim N = k$ i niech $h: M\to N.$ ($h$ nie musi być bijekcją !!!)
+
+Niech $p\in M$. Pchnięciem punktu $p$ w odwzorowaniu $h$ nazywamy punkt $h_*(p) \overset{\text{def}}{=} h(p)$
+\begin{przyklad}
+    Niech $M = \mathbb{R}^2$, $N = \mathbb{R}$, $h(x,y) = x+y, h: \mathbb{R}^2\to \mathbb{R}$.\\
+    $p = \begin{bmatrix} 1\\2 \end{bmatrix} , h_*(p) = 3$ \\
+
+    $M = \mathbb{R}^1$, $N = \mathbb{R}^3$, $h(t) = \begin{bmatrix} \cos t \\ \sin t \\ t \end{bmatrix}, p = \frac{\pi}{2}$.\\
+    $h_x(\frac{\pi}{2}) = \begin{bmatrix} \cos \frac{\pi}{2}\\ \sin \frac{\pi}{2} \\ \frac{\pi}{2} \end{bmatrix} $
+\end{przyklad}
+
+\begin{figure}
+    \centering
+    \incfig{fig_54}
+    \label{fig:fig_54}
+\end{figure}
+
+Niech $\sigma(t)$ - krzywa na $M$. Pchnięciem krzywej $\sigma$ w odwzorowaniu $h$ nazywamy krzywą $h_*(\sigma(t)) \overset{\text{def}}{=} h(\sigma(t))$
+
+\begin{figure}[h]
+    \centering
+    \incfig{fig_55}
+    \label{fig:}
+\end{figure}
+
+Niech $f: N\to \mathbb{R}^2$. Cofnięciem funkcji $f$ w odwzorowaniu $h$ nazywamy funkcję
+\[
+    h^*f(p) = f(h(p))
+.\]
+
+\begin{przyklad}
+    $M = \mathbb{R}^2, N = \mathbb{R}, f: N\to \mathbb{R}^2, f(t) = \begin{bmatrix} 2t\\t \end{bmatrix}, h(x,y) = x+y $.
+    \[
+        h^*f(x,y) = f(h(x,y)) = \begin{bmatrix} 2(x+y)\\x+y \end{bmatrix}
+    .\]
+\end{przyklad}
+Pchnięciem wektora $V$ w odwzorowaniu $h$ nazywamy wektor
+\[
+    h_* V = \left[ h(\sigma) \right], h_*v\in T_{h(p)}N
+.\]
+\begin{przyklad}
+    Niech $M = \mathbb{R}^2, N = \mathbb{R}, h(x,y) = x+2y, v = 2 \frac{\partial }{\partial x} + 3 \frac{\partial }{\partial y}$. Co to jest $h_*v$?
+
+    $p = (1,2) = (\varphi^1(p),\varphi^1(p))$
+
+    \begin{align*}
+        &\sigma(t): \frac{d}{dt}(\varphi(\sigma(t)))\vert_{t=0}\\
+        &\varphi(\sigma(t)) = \begin{bmatrix} 2t+1\\3t+2 \end{bmatrix}\\
+        &h[\sigma(t)] = 2t+1 + 2(3t+2)\\
+        &h[\sigma(t)] = 8t+5\\
+        &\left[ h[\sigma(t)] \right] = 8 \frac{\partial }{\partial t} \in t_sN
+    .\end{align*}
+    $\dim M = n$, $\varphi(\sigma(t)) = \left( \varphi^1(\sigma(t)), \varphi^2(\sigma(t)),\ldots,\varphi^n(\sigma(t)) \right), v\in T_pM $.\\
+    \[
+        v = \frac{\partial \varphi^1(\sigma(t))}{\partial t} \vert_{t=0} \frac{\partial }{\partial x^1} + \frac{\partial \varphi^2(\sigma(t))}{\partial t} \vert_{t=0} \frac{\partial }{\partial x^2} \ldots \frac{\partial \varphi^n(\sigma(t))}{\partial t} \vert_{t=0} \frac{\partial }{\partial x^n}
+    .\]
+\[
+    \frac{d(\varphi\circ h(\sigma(t)))}{dt}\vert_{t=0} = \frac{d}{dt}\left( \psi \circ h \circ \varphi^{-1} \sigma \right)_{t=0} = \frac{d}{dt}\left( \tilde h \circ \tilde \sigma(t) \right)
+.\]
+\[
+    = \frac{d}{dt}\tilde h\left( \tilde \sigma_1(t), \tilde \sigma_2(t), \ldots, \tilde \sigma^n(t) \right)_{t=0} = \tilde h'_{\tilde \sigma(0)} \frac{d\tilde \sigma}{dt}_{t=0} = \tilde h'\cdot v
+.\]
+
+Czyli ostatecznie $v = \begin{bmatrix} 2\\3 \end{bmatrix}_{\frac{\partial }{\partial x}, \frac{\partial }{\partial y} }, \tilde h(x,y) = x+2y \to \tilde h(x,y) = \left[ 1,2 \right] $.\\
+\[
+    h_* v = \left[ 1,2 \right] \begin{bmatrix} 2\\3 \end{bmatrix} = 2\cdot 1+ 6 = 8 \frac{\partial }{\partial t}
+.\]
+\end{przyklad}
+
+Niech $\alpha\in \Lambda^1(?)$ - pytanie: czy formy się pcha, czy cofa?
+
+
+\begin{figure}[h]
+    \centering
+    \incfig{fig_56}
+    \caption{$\tilde h = \psi h \varphi^{-1}$ }
+    \label{fig:fig_56}
+\end{figure}
+\end{document}
