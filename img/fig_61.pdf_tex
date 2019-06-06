@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'fig_55.pdf' (pdf, eps, ps)
+%% Accompanies image file 'fig_61.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,12 +53,22 @@
   \begin{picture}(1,0.84375)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_61.pdf}}%
     \put(-1.65354331,0.87696853){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.70866142\unitlength}\raggedright \end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_55.pdf}}%
-    \put(0.3046875,0.41406251){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.078125\unitlength}\raggedright $M$\end{minipage}}}%
-    \put(0.80468749,0.42968751){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.09375\unitlength}\raggedright $N$\end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_55.pdf}}%
-    \put(0.171875,0.6953125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0625\unitlength}\raggedright $\sigma(t)$\end{minipage}}}%
-    \put(0.60937499,0.734375){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.125\unitlength}\raggedright $h(\sigma(t))$\end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_61.pdf}}%
+    \put(0.28125,0.78125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.140625\unitlength}\raggedright $M$\end{minipage}}}%
+    \put(0.76562499,0.71875){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.15625\unitlength}\raggedright $N$\end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{fig_61.pdf}}%
+    \put(0.15625,0.29687501){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.140625\unitlength}\raggedright $\mathbb{R}^n$\\ \end{minipage}}}%
+    \put(0.59374999,0.25000001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.296875\unitlength}\raggedright $\mathbb{R}^k$\\ \end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{fig_61.pdf}}%
+    \put(0.34375,0.28125001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.109375\unitlength}\raggedright $\tilde h$\\ \end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{fig_61.pdf}}%
+    \put(0.45312499,0.6875){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.125\unitlength}\raggedright $h$\end{minipage}}}%
+    \put(0.125,0.6875){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.109375\unitlength}\raggedright $h^*f$\\ \end{minipage}}}%
+    \put(0.70312499,0.625){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.140625\unitlength}\raggedright $f\in \Lambda(N)$\\ \end{minipage}}}%
+    \put(0.71874999,0.578125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.078125\unitlength}\raggedright $h(p)$\end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{fig_61.pdf}}%
+    \put(0.71874999,0.53125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.109375\unitlength}\raggedright $dP\in \Lambda^1(N)$\\ \end{minipage}}}%
   \end{picture}%
 \endgroup%

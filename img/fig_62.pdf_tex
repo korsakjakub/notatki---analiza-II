@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'fig_55.pdf' (pdf, eps, ps)
+%% Accompanies image file 'fig_62.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,12 +53,11 @@
   \begin{picture}(1,0.84375)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(-1.65354331,0.87696853){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.70866142\unitlength}\raggedright \end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_55.pdf}}%
-    \put(0.3046875,0.41406251){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.078125\unitlength}\raggedright $M$\end{minipage}}}%
-    \put(0.80468749,0.42968751){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.09375\unitlength}\raggedright $N$\end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_55.pdf}}%
-    \put(0.171875,0.6953125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0625\unitlength}\raggedright $\sigma(t)$\end{minipage}}}%
-    \put(0.60937499,0.734375){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.125\unitlength}\raggedright $h(\sigma(t))$\end{minipage}}}%
+    \put(0.0625,0.8125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.234375\unitlength}\raggedright \begin{align*}\\     &h: M\to N\\\\     &\tilde h: \mathbb{R}^n\to \mathbb{R}^k\\ .\end{align*}\\ \end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_62.pdf}}%
+    \put(0.34375,0.6875){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.140625\unitlength}\raggedright $M$\end{minipage}}}%
+    \put(0.84374999,0.6875){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.109375\unitlength}\raggedright $N$\end{minipage}}}%
+    \put(0.09375,0.34375001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.359375\unitlength}\raggedright $\left( t^1,\ldots,t^k \right) $,\\\\ $\left( \frac{\partial }{\partial t^1} ,\ldots, \frac{\partial }{\partial t_k}  \right) = T_pM$\\ \end{minipage}}}%
+    \put(0.67187499,0.18750001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.234375\unitlength}\raggedright $\left( x^1,\ldots,x^k \right) $\\\\ $\frac{\partial }{\partial x^1} ,\ldots,\frac{\partial }{\partial x^k} $\\ \end{minipage}}}%
   \end{picture}%
 \endgroup%

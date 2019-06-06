@@ -15,7 +15,12 @@
 
 \newcommand{\incfig}[1]{%
     \def\svgwidth{\columnwidth}
-    \import{img/}{#1.pdf_tex}
+    \IfFileExists{img/#1.pdf_tex}{
+        \import{"img/"}{#1.pdf_tex}
+    }
+    {
+        \import{"../img/"}{#1.pdf_tex}
+    }
 }
 \newmdtheoremenv{tw}{Twierdzenie}
 \newmdtheoremenv{stw}{Stwierdzenie}
@@ -97,8 +102,8 @@
 \section{Wykład (31.05.2019)}
 \subfile{tex/wyklad23.tex}
 \pagebreak
-
-
-
+\section{Wykład (04.06.2019)}
+\subfile{tex/wyklad24.tex}
+\pagebreak
 
 \end{document}

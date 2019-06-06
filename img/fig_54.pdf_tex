@@ -20,7 +20,7 @@
 %%   \import{<path to file>}{<filename>.pdf_tex}
 %% Alternatively, one can specify
 %%   \graphicspath{{<path to file>/}}
-%% 
+%%
 %% For more information, please see info/svg-inkscape on CTAN:
 %%   http://tug.ctan.org/tex-archive/info/svg-inkscape
 %%
@@ -55,19 +55,16 @@
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_54.pdf}}%
     \put(-1.65354331,0.87696853){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.70866142\unitlength}\raggedright \end{minipage}}}%
-    \put(-0.32494703,0.7778072){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.171875\unitlength}\raggedright $\mathbb{R}$\end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_54.pdf}}%
-    \put(0.45029309,0.48187294){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.11076096\unitlength}\raggedright M\end{minipage}}}%
-    \put(0.6828911,0.5815578){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.06645657\unitlength}\raggedright N\end{minipage}}}%
-    \put(0.45029309,0.61478609){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.04430438\unitlength}\raggedright h\end{minipage}}}%
+    \put(0.42699889,0.46993467){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.11076096\unitlength}\raggedright M\end{minipage}}}%
+    \put(0.65959689,0.56961953){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.06645657\unitlength}\raggedright N\end{minipage}}}%
+    \put(0.42699889,0.60284781){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.04430438\unitlength}\raggedright h\end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{fig_54.pdf}}%
-    \put(0.25646141,0.62032414){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.03322829\unitlength}\raggedright $\Lambda(M)$\end{minipage}}}%
-    \put(0.25900221,0.57978437){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.04153536\unitlength}\raggedright $T_pM$\\ \end{minipage}}}%
-    \put(0.59151331,0.64801438){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.03599731\unitlength}\raggedright $h(p)$\\ \end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{fig_54.pdf}}%
-    \put(0.109375,0.20312501){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0546875\unitlength}\raggedright $2$\end{minipage}}}%
-    \put(0.2265625,0.05468751){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0546875\unitlength}\raggedright $1$\end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=5]{fig_54.pdf}}%
-    \put(0.75390624,0.11328126){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.046875\unitlength}\raggedright $3$\end{minipage}}}%
+    \put(0.23316721,0.60838586){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.03322829\unitlength}\raggedright $\Lambda(M)$\end{minipage}}}%
+    \put(0.23570801,0.56784609){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.04153536\unitlength}\raggedright $T_pM$\\ \end{minipage}}}%
+    \put(0.56821911,0.6360761){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.03599731\unitlength}\raggedright $h(p)$\\ \end{minipage}}}%
+    \put(0.0860808,0.19118673){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0546875\unitlength}\raggedright $2$\end{minipage}}}%
+    \put(0.20326829,0.04274923){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0546875\unitlength}\raggedright $1$\end{minipage}}}%
+    \put(0.73061204,0.10134298){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.046875\unitlength}\raggedright $3$\end{minipage}}}%
   \end{picture}%
 \endgroup%

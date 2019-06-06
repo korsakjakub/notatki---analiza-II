@@ -1,0 +1,72 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'fig_57.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{960bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.84375)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_57.pdf}}%
+    \put(0.89053672,0.27003887){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.15624999\unitlength}\raggedright $x$\end{minipage}}}%
+    \put(0.43414549,0.73790609){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.15624999\unitlength}\raggedright $y$\end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_57.pdf}}%
+    \put(0.05481991,0.19332628){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.125\unitlength}\raggedright $\mathbb{R}^1$\\ \end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{fig_57.pdf}}%
+    \put(0.2242217,0.17547408){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.046875\unitlength}\raggedright $a$\end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{fig_57.pdf}}%
+    \put(0.19921875,0.14453126){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.03125\unitlength}\raggedright $p$\end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{fig_57.pdf}}%
+    \put(0.1735964,0.76102357){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.125\unitlength}\raggedright $T_{h(p)}$\end{minipage}}}%
+    \put(0.56249999,0.484375){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.1875\unitlength}\raggedright $\left[ \frac{\partial }{\partial x} , \frac{\partial }{\partial y} , \frac{\partial }{\partial z}  \right] \mathbb{R}^3$\\ \end{minipage}}}%
+    \put(0.49999999,0.20312501){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.125\unitlength}\raggedright $\tilde h$\\ \end{minipage}}}%
+    \put(0.45312499,0.609375){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.140625\unitlength}\raggedright $\psi$\\ \end{minipage}}}%
+    \put(0.140625,0.453125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.09375\unitlength}\raggedright $M$\\ \end{minipage}}}%
+  \end{picture}%
+\endgroup%

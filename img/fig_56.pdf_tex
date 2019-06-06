@@ -53,20 +53,18 @@
   \begin{picture}(1,0.84375)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_56.pdf}}%
     \put(-1.65354331,0.87696853){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.70866142\unitlength}\raggedright \end{minipage}}}%
-    \put(-0.32494703,0.7778072){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.171875\unitlength}\raggedright $\mathbb{R}$\end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_56.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_56.pdf}}%
     \put(0.84374999,0.79687497){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0625\unitlength}\raggedright $M$\end{minipage}}}%
-    \put(0.03125,0.62499997){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.140625\unitlength}\raggedright $\sigma(0) = p$\\ \end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{fig_56.pdf}}%
+    \put(0.02750473,0.62499997){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.140625\unitlength}\raggedright $\sigma(0) = p$\\ \end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_56.pdf}}%
     \put(0.76562499,0.60937497){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.09375\unitlength}\raggedright $\sigma$\\ \end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{fig_56.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{fig_56.pdf}}%
     \put(0.296875,0.28125001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.078125\unitlength}\raggedright $\varphi$\\ \end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=5]{fig_56.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{fig_56.pdf}}%
     \put(0.31640625,0.16406251){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.1015625\unitlength}\raggedright $\begin{bmatrix} 2\\-3 \end{bmatrix} $\\ \end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=6]{fig_56.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{fig_56.pdf}}%
     \put(0.51562499,0.28125001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.109375\unitlength}\raggedright $\tilde h$\\ \end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=7]{fig_56.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{fig_56.pdf}}%
   \end{picture}%
 \endgroup%

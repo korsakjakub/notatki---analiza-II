@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'fig_55.pdf' (pdf, eps, ps)
+%% Accompanies image file 'fig_58.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,12 +53,18 @@
   \begin{picture}(1,0.84375)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(-1.65354331,0.87696853){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.70866142\unitlength}\raggedright \end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_55.pdf}}%
-    \put(0.3046875,0.41406251){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.078125\unitlength}\raggedright $M$\end{minipage}}}%
-    \put(0.80468749,0.42968751){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.09375\unitlength}\raggedright $N$\end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_55.pdf}}%
-    \put(0.171875,0.6953125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0625\unitlength}\raggedright $\sigma(t)$\end{minipage}}}%
-    \put(0.60937499,0.734375){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.125\unitlength}\raggedright $h(\sigma(t))$\end{minipage}}}%
+    \put(-1.60666831,0.78321855){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.70866142\unitlength}\raggedright \end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_58.pdf}}%
+    \put(0.17872161,0.4931534){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.171875\unitlength}\raggedright $M$\end{minipage}}}%
+    \put(0.70312499,0.54687501){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.109375\unitlength}\raggedright $N$\end{minipage}}}%
+    \put(0.4296875,0.50000001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.078125\unitlength}\raggedright $h$\end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_58.pdf}}%
+    \put(0.28125,0.32812502){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0703125\unitlength}\raggedright $p$\end{minipage}}}%
+    \put(0.75781249,0.32812502){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0546875\unitlength}\raggedright $h(p)$\end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{fig_58.pdf}}%
+    \put(0.64843749,0.32031252){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0859375\unitlength}\raggedright $h_*v$\end{minipage}}}%
+    \put(0.1328125,0.35156252){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0703125\unitlength}\raggedright $v$\end{minipage}}}%
+    \put(0.71874999,0.42187502){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.09375\unitlength}\raggedright $\alpha$\end{minipage}}}%
+    \put(0.15625,0.41406252){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.0859375\unitlength}\raggedright $h^*\alpha$\end{minipage}}}%
   \end{picture}%
 \endgroup%

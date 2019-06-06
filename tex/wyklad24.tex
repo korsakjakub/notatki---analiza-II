@@ -1,0 +1,158 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{
+    {"../img/"}
+    {"img/"}
+}
+
+\begin{document}
+    \begin{przyklad}
+        (na pchnięcie wektora)\\
+        Niech $M = \mathbb{R}^1, N=\mathbb{R}^3, h(t) = \begin{bmatrix} f(t)\\g(t)\\r(t) \end{bmatrix} $\\
+        Niech $p\in \mathbb{R}^1$, niech $v\in T_pM, v = a \frac{\partial }{\partial t} $. $v = [\sigma], \tilde \sigma(t) = at+p$, $\sigma(c) = p, \frac{d \tilde \sigma(t)}{dt}\vert_{t=0} = a$.\\
+        \[
+            h_x \sigma = \begin{bmatrix} f(at+p)\\g(at+p)\\r(at+p) \end{bmatrix}, h_x v = [h_x \sigma], \frac{d}{dt}(\tilde h_x \sigma)\vert_{t=0}
+        .\]
+        \[
+            h_xv = \begin{bmatrix} af'(p)\\ ag'(p) \\ ar'(p) \end{bmatrix} = af'(p) \frac{\partial }{\partial x} + ag'(p) \frac{\partial }{\partial y} + ar'(p) \frac{\partial }{\partial z}
+        .\]
+    \end{przyklad}
+    \begin{figure}[h]
+        \centering
+        \incfig{fig_57}
+        \label{fig:fig_57}
+    \end{figure}
+    \begin{definicja}
+    Niech $M, N$ - rozmaitości, $h: M\to N$ i niech $p\in M, \alpha\in T^*_{h(p)}N$.\\
+    Cofnięciem formy $\alpha$ w odwzorowaniu $h$ nazywamy formę $h^*\alpha \in T_pM$, taką, że $\left<h^*\alpha,v \right> = \left<\alpha,hv \right>\underset{v\in T_pM}{\forall} $ i caaa. Jeżeli $\alpha_1,\alpha_2,\ldots,\alpha_k \in \Lambda^1(N)$ i $v_1,\ldots,v_k\in T_p(M)$, to
+    \[
+        h^*(\alpha_1\land\ldots\land\alpha_k), v_1,\ldots,v_k \overset{\text{def}}{=} \begin{bmatrix} \left<h^*\alpha_1,v_1 \right>&\left<h^*\alpha_2,v_1 \right>&\ldots&\left<h^*\alpha_k,v_1 \right> \\
+            \vdots &&&\\
+            \left<h^*\alpha_k,v_k \right>&\left<h^*\alpha_k, v_k \right>&\ldots&\left<h^*\alpha_k,v_k \right>
+        \end{bmatrix}
+    .\]
+    Czyli
+    \[
+        h^*(\alpha_1\land\ldots\land\alpha_k) = (h^*\alpha_1)\land(h^*\alpha_2)\land\ldots\land h^*(\alpha_k)
+    .\]
+    \end{definicja}
+    \begin{figure}[h]
+        \centering
+        \incfig{fig_58}
+        \caption{$\left<h^*\alpha,v \right> \overset{\text{def}}{=}  \left<\alpha, h_*v \right>$}
+        \label{fig:fig_58}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \incfig{fig_59}
+        \label{fig:fig_59}
+    \end{figure}
+    \begin{przyklad}
+        (wstępny)\\
+        Niech $\alpha = 3(x^2+y^2)dx - 2xdy + 2z^2dz, \alpha\in \Lambda^1(N)$ (jednoformy nad $N$, $\dim N = 3$, chociaż można dać więcej jak się chce).\\
+        $h(t) = \begin{bmatrix} \sin(t)\\ \cos(t)\\ t \end{bmatrix} $. Czym jest $h^*\alpha$?\\
+        \[
+        \left<h^*\alpha,v \right> = \left<\alpha,h_xv \right>
+        .\]
+        Niech $v\in T_pM$ i  $v = a \frac{\partial }{\partial t} $. Zatem $h_x v = a \cos(p) \frac{\partial }{\partial x} - a \sin(p) \frac{\partial }{\partial y} + a\cdot 1 \frac{\partial }{\partial t} $.
+        \begin{align*}
+            &\left<\alpha,h_*v \right> = \left< 3 \left( \sin^2(t) + \cos^2(t)\right) dx - 2\left( \sin(t) \right) dy + 2\left( t^2 \right) dz, h_xv\right> =\\
+            &= \left<3dx - 2\sin(t)dy + 2t'dz, a \cos(t) \frac{\partial }{\partial x} - a \sin(t) \frac{\partial }{\partial y} + a\cdot 1 \frac{\partial }{\partial z}  \right>_{t=p} \\
+            &= 3a \cos(t) + 2a \sin^2(t) + at^2 \vert_{t=p} = \\
+            &= \left< \left(3\cos(t)dt + 2a\sin^2(t) + at^2\right)\vert_{t=p}, a \frac{\partial }{\partial t}  \right> = \\
+            & \text{czyli } h^*\alpha = \left( 3\cos(t) + 2 \sin^2(t) + t^2 \right) dt \\
+        .\end{align*}
+        Na skróty!\\
+        \begin{align*}
+            &x = \sin(t) &&dx = \cos(t)dt\\
+            &y = \cos(t) &&dy = -\sin(t) dt\\
+            &z = t &&dz = dt
+        .\end{align*}
+        Zatem
+         \begin{align*}
+             h^*\alpha &= 3\left( \sin^2(t) + \cos^2(t) \right) \cos(t)dt - 2\sin(t) \left( -\sin t dt \right) + 2t^2dt \\
+                       &= \left( 3\cos(t) + 2\sin^2(t) + 2t^2 \right) dt
+        .\end{align*}
+    \end{przyklad}
+
+    \begin{przyklad}
+        Niech $M = \mathbb{R}^4, N = \mathbb{R}^4$.\\
+        \begin{align*}
+            &\gamma = \frac{1}{\sqrt{1-v^2} },\\
+            &c = 1\\
+            h:\quad &t = \gamma(t'-vx')\\
+               &x = \gamma(x'-vt')\\
+               &y = y'\\
+               &z = z'
+        .\end{align*}
+        Czyli
+        \begin{align*}
+            &dt = \gamma(dt' - v dx')\\
+            &dx = \gamma(dx' - v dt')\\
+            &dy = dy'\\
+            &dz = dz'
+        .\end{align*}
+        Chcemy cofnąć naszą formę. Na fizyce nie używamy słowa \textit{cofnięte}.
+        \begin{align*}
+            &F' = -E_x\left( \gamma\left( dt' - vdx' \right)  \right) \land \gamma \left( dx'-vdt' \right) - E_y \gamma\left( dt' - vdx' \right) \land dy'=\\
+            &= -E_x \gamma^2 \left( 1 - v^2 \right) dt' \land dx' - E_y\gamma dt'\land dy' + E_y\gamma v dx'\land dy'= \\
+            &= -E_x \frac{1}{1-v^2}\left( 1-v^2 \right) dt'\land dx' - E_y \gamma dt'\land dy' + \gamma v E_x dx'\land dy' \\
+            &F' = -E'_x dt'\land dx' - E'_y dt' \land dy' + B'_z dx'\land dy' \\
+        .\end{align*}
+        Czyli
+        \begin{align*}
+            &E'_x = E_x\\
+            &E'_y = \gamma E_y\\
+            &B'_z = \gamma v E_y
+        .\end{align*}
+    \end{przyklad}
+
+    \begin{figure}[h]
+        \centering
+        \incfig{fig_60}
+        \label{fig:fig_60}
+    \end{figure}
+
+    Obserwacja: Niech $\alpha \in \Lambda^1(N)$, $\dim N = k$, niech $M$ - rozmaitość, $\dim M = n$ i $h: M\to N$. Wówczas
+    \[
+        h^*f\in \Lambda^0(M)
+    .\]
+    Oraz
+    \[
+        d(h^*f) = h^*(df)
+    .\]
+
+%   \begin{figure}[h]
+%       \centering
+%       \incfig{fig_61}
+%       \label{fig:fig_61}
+%   \end{figure}
+
+    \begin{dowod}
+        Skoro $f\in \Lambda^0(N)$, to $f(x^1,x^2,\ldots,x^k)$,\\
+        $df = \frac{\partial f}{\partial x^1} dx^1 + \frac{\partial f}{\partial x^2} dx^2 + \ldots + \frac{\partial f}{\partial x^k} x^k$.
+        \[
+            \left<h^*(df),v \right> = \left<df,h_xv \right>, v\in T^pM
+        .\]
+        Niech $V\in T_pM$.\\
+        \[
+            \tilde h(t_1,\ldots,t_n) = \begin{bmatrix} h_1(t_1,\ldots,t_n)\\ \vdots \\ h_k(t_1,\ldots,t_n) \end{bmatrix}
+        .\]
+        Jeżeli $v = a_1 \frac{\partial }{\partial t^1} + a_2 \frac{\partial }{\partial t^2} + \ldots + a_n \frac{\partial }{\partial t_n} $, to $h_*v = \left( \begin{bmatrix} h' \end{bmatrix} \begin{bmatrix} a_1\\ \vdots \\ a_n \end{bmatrix}  \right)_{\frac{\partial }{\partial x^1} , \ldots, \frac{\partial }{\partial x^k} } $.\\
+        \begin{align*}
+            &h_xv = \left( \begin{bmatrix} \frac{\partial h_1}{\partial t^1} & \ldots & \frac{\partial h_k}{\partial t^k} \\ \vdots \\ \frac{\partial h_k}{\partial t^1} & \ldots & \frac{\partial h_k}{\partial t^k}  \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix}  \right)_{\frac{\partial }{\partial x^1} ,\ldots, \frac{\partial }{\partial x^k} } = \left( \frac{\partial h_1}{\partial t^1} a_1 + \ldots + \frac{\partial h_1}{\partial t^n} a_n \right) \frac{\partial }{\partial x^1} +\\
+&+ \ldots + \left( \frac{\partial h_k}{\partial t^1} a_1 + \ldots + \frac{\partial h_k}{\partial t^n} a_n \right) \frac{\partial }{\partial x^k}
+        .\end{align*}
+        Dalej
+        \begin{align*}
+            &\left<df,h_*v \right> = \frac{\partial f_1}{\partial x^1} \left( \frac{\partial h_1}{\partial t^1} a_1 + \ldots + \frac{\partial h_1}{\partial t^n} a_n \right)  + \ldots + \frac{\partial f}{\partial x^k} \left( \frac{\partial h_k}{\partial t^1} a_n + \ldots + \frac{\partial h_k}{\partial t^n} a_n \right) =\\
+            &= \left<df(h_1(t_1,\ldots,t_n),h_2(t_1,\ldots,t_n),\ldots,h_k(t_1,\ldots,t_n)), a_1 \frac{\partial }{\partial t^1} + \ldots + a_n \frac{\partial }{\partial t^n}  \right> \\
+        .\end{align*}
+    \end{dowod}
+%   \begin{figure}[h]
+%       \centering
+%       \incfig{fig_62}
+%       \label{fig:fig_62}
+%   \end{figure}
+
+\end{document}
