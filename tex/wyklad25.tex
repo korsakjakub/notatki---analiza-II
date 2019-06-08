@@ -1,0 +1,104 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{
+    {"../img/"}
+    {"img/"}
+}
+
+\begin{document}
+    W ostatnim odcinku:\\
+    $M, N$ - rozmaitości, $\dim M = n, \dim N = k, h: M\to N$, $\left<h^*\alpha,v \right> = \left<\alpha,h_xv \right>$ i ogólnie, jeżeli $\alpha_1,\ldots,\alpha_k\in \Lambda^1(N)$ to $\left< h^*(\alpha_1\land \alpha_2\land\ldots\land\alpha_k), v_1,\ldots,v_n\right> = \left<\alpha_1\land\ldots\land\alpha_k,h_xv_1,\ldots,h_xv_n \right>$.
+
+    \begin{przyklad}
+        Niech $N = \mathbb{R}^2$ i $M = \mathbb{R}^1$, $\alpha = 7dx\land dy\in \Lambda^2(N)$, \\
+        \[
+            h(t) = \begin{bmatrix} 2t\\3t \end{bmatrix} \to (x = 2t, y = 3t \implies dx = 2dt, dy = 3dt)
+        .\]
+        \[
+        h^*\alpha = 7\cdot 2dt\land 3dt = h^*\alpha = 0
+        .\]
+    \end{przyklad}
+    Ostatino chcieliśmy pokazać, że $d(h^*f) = h^*(df)$. To jest istotne w kontekście tej dwuformy przekształcenia transormacji Lorentza co była ostatnio. ($d(h^*F) = 0 \implies dF = 0, h^*F \overset{h}{\to} F$).\\
+    Wzięliśmy sobie $f: N\to \mathbb{R}: f(x_1,\ldots,x_k)$. Potem mieliśmy $h: M\to N: h(t_1,\ldots,t_n) = \begin{bmatrix} h^1(t_1,\ldots,t_n)\\ \vdots \\ h^k(t_1,\ldots,t_n) \end{bmatrix} $ i chcieliśmy pokazać, że $h^*(df) = d(h^*f)$. \\
+Wiemy, że  $\left<h^*(df),v \right> = \left<df,h_*v \right> (v\in T_pM: v = a_1 \frac{\partial }{\partial t^1} + \ldots + a_n \frac{\partial }{\partial t^n} )$. Przepchnięcie wektorka $h_*v = \left(\left[ h' \right] \begin{bmatrix} a_1\\ \vdots \\ a_n \end{bmatrix}\right)_{\frac{\partial }{\partial x^1} ,\ldots,\frac{\partial }{\partial x^k} } = \begin{bmatrix} \frac{\partial h^1}{\partial t^1} & \ldots & \frac{\partial h^1}{\partial t^n} \\ \vdots & \ddots & \\ \frac{\partial h^k}{\partial t^1} & \ldots & \frac{\partial h^k}{\partial t^n}  \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \left( a_1 \frac{\partial h^1}{\partial t^1} + \ldots + a_n \frac{\partial h^1}{\partial t^n}  \right) \frac{\partial }{\partial x^1} + \ldots + \left( a_1 \frac{\partial h^k}{\partial t^1} + \ldots + a_n \frac{\partial h^k}{\partial t^n} \right)\frac{\partial }{\partial x^k}$.\\
+\[
+df = \frac{\partial f}{\partial x^1} dx^1 + \ldots + \frac{\partial f}{\partial x^k} dx^k
+.\]
+
+\begin{align*}
+&\left<df, h_xv \right> = \frac{\partial f}{\partial x^1} \frac{\partial h^1}{\partial t^1} a_1 + \frac{\partial f}{\partial x^1} \frac{\partial h^1}{\partial t^2} a_2 + \ldots + \frac{\partial f}{\partial x^1} \frac{\partial h^1}{\partial t^n} a_n + \ldots + \frac{\partial f}{\partial x^1} \frac{\partial h^k}{\partial t^1} a_1 + \ldots + \frac{\partial f}{\partial x^k} \frac{\partial h^k}{\partial t^n} a_n = \\
+&= a_1 \left( \frac{\partial f}{\partial x^1} \frac{\partial h^1}{\partial t^1} + \frac{\partial f}{\partial x^2} \frac{\partial h^2}{\partial t^1} + \ldots + \frac{\partial f}{\partial x^k} \frac{\partial h^k}{\partial t^1} \right) + \ldots + a_n \left( \frac{\partial f}{\partial x^1} \frac{\partial h^1}{\partial t^n} + \frac{\partial f}{\partial x^2} \frac{\partial h^2}{\partial x^n} + \ldots + \frac{\partial f}{\partial x^k} \frac{\partial h^k}{\partial t^n}  \right) = \\
+&= \left< ?, a_1 \frac{\partial }{\partial t^1} + a_2 \frac{\partial }{\partial t^2} + \ldots + a_n \frac{\partial }{\partial t^n}  \right> \\
+&= \left< \left( \frac{\partial f}{\partial x^1} \frac{\partial h^1}{\partial t^1} + \frac{\partial f}{\partial x^2} \frac{\partial h^2}{\partial t^1} + \ldots + \frac{\partial f}{\partial x^k} \frac{\partial h^k}{\partial t^1}\right)dt^1 + \ldots + \left( \frac{\partial f}{\partial x^1} \frac{\partial h^1}{\partial t^n} + \ldots + \frac{\partial f}{\partial x^k} \frac{\partial h^k}{\partial t^n}  \right) dt^n , a_1 \frac{\partial }{\partial t^1} , \ldots, a_n \frac{\partial }{\partial t^n}  \right> = \\
+&= \left< \underbrace{f\left(h^1(t^1,\ldots, t^n), h^2(t^1,\ldots,t^n), \ldots, h^k(t^1,\ldots,t^n)\right)}_{h^*f} \right.,  \\
+&\left. \frac{\partial }{\partial t^1} ,\ldots,a_n \frac{\partial }{\partial t_n}\right> = \left<d\left( h^*f \right) , v \right> \\
+\end{align*}
+co daje
+\[
+    d\left( h^*(\alpha_1\land\ldots\land \alpha_k) \right) = h^* \left( d\left( \alpha_1\land\ldots\land \alpha_k \right)  \right) \quad\Box
+.\]
+\subsection{Bazy w $T_pM$ }
+Obserwacja: Niech $M$ - rozmaitość i $\left< | \right>$ - iloczyn skalarny. Niech $e_1,\ldots,e_n$ - baza $T_pM$. Wówczas, jeżeli $v = a_1e_1+\ldots+a_ne_n$ i $w = b_1e_1+\ldots+b_ne_n$ ($a_i,b_i\in \mathbb{R}, i= 1,\ldots,n$).
+\begin{align*}
+    &\left<v|w \right> = \left<a_1e_1+\ldots+a_ne_n, b_1e_1+\ldots+b_ne_n \right> = \\
+    &= a_1b_1\left<e_1|e_1 \right> + a_1b_2\left<e_1|e_2 \right>+ \ldots + a_1b_n \left<e_1|e_n \right> + \ldots + a_nb_n\left<e_n|e_n \right> = \\
+    & = \begin{bmatrix} a_1\\ \vdots \\ a_n\end{bmatrix}^T \begin{bmatrix} \left<e_1|e_1 \right> & \left<e_1|e_2 \right>&\ldots&\left<e_1|e_n \right>\\ \vdots & \ddots & \\ \left<e_n|e_1 \right> & \ldots & & \left<e_n|e_n \right> \end{bmatrix} \begin{bmatrix} b_1 \\ \vdots \\ b_n \end{bmatrix}
+.\end{align*}
+Macierz $\left[ g_{ij} \right] $ nazywamy tensorem metrycznym $\det \left[ g_{ij} \right] \overset{\text{ozn}}{=} g$. $\left[ g_{ij} \right] ^{-1} \overset{\text{ozn}}{=} \left[ g^{ij} \right] $ - macierz odwrotna.\\
+W zwykłym $\mathbb{R}^4: \left[ g_{ij} \right] = \begin{bmatrix} 1&&\\ &1&\\ &&1 \end{bmatrix} $, p. Minkowskiego: $g_{\mu v} = \begin{bmatrix} -1&&&\\ &1&& \\ &&1& \\ &&&1 \end{bmatrix}, \mu,v = 0,\ldots,3 $
+
+Bazy w $\mathbb{R}$
+\begin{align*}
+ &M = \mathbb{R}^2, && &N = \mathbb{R}^2\\
+ &\begin{bmatrix} x,y\\ e_x,e_y\\ \frac{\partial }{\partial x} , \frac{\partial }{\partial y}  \end{bmatrix} && \overset{x=r\cos\varphi, y = r\sin\varphi}{\to}& \begin{bmatrix} r,\varphi\\ e_r, e_\varphi \\ \frac{\partial }{\partial r}, \frac{\partial }{\partial \varphi}   \end{bmatrix}\\
+ &g_{ij} = \begin{bmatrix} 1&0\\0&1 \end{bmatrix} &&  &\begin{bmatrix} ? \end{bmatrix}
+.\end{align*}
+\begin{align*}
+    &h^*(e_r) = \left( \begin{bmatrix} h' \end{bmatrix} \begin{bmatrix} 1\\0 \end{bmatrix}  \right) _{\frac{\partial }{\partial x} , \frac{\partial }{\partial y} }, h^*(e_\varphi)\\
+    &h(r,\varphi) = \begin{bmatrix} r \cos\varphi\\ r \sin \varphi \end{bmatrix} , h' = \begin{bmatrix} \cos\varphi& - r\sin\varphi \\ \sin \varphi & r \cos \varphi \end{bmatrix}\\
+    & h^*(e_r) = \begin{bmatrix} \cos\varphi \\ \sin \varphi \end{bmatrix} _{e_x,e_y}, e_r = \cos \varphi e_x + \sin \varphi e_y \\
+    &z = \cos \varphi e_x + \sin \varphi e_y \\
+    &h^*(e_\varphi) = \left[ h' \right] \begin{bmatrix} 0\\1 \end{bmatrix} = \begin{bmatrix} -r\sin\varphi\\ r\cos\varphi \end{bmatrix}, e_\varphi = -r\sin\varphi e_x + r \cos \varphi e_y   \\
+    &\frac{\partial }{\partial \varphi} = -r\sin\varphi \frac{\partial }{\partial x} + r\cos\varphi \frac{\partial }{\partial y}  \\
+    &g_{ij} = \begin{bmatrix} \left<e_1|e_1 \right>& \left<e_1|e_2 \right>\\ \left<e_2|e_1 \right> & \left<e_2|e_2 \right> \end{bmatrix}, \left[ g_{ij} \right]_{x,y} = \begin{bmatrix} 1&0\\0&1 \end{bmatrix}, \left<e_x|e_x \right> =1, \left< e_x|e_y\right> =0\\
+    &\left<e_r|e_r \right> = \left<\cos\varphi e_x + \cos\varphi e_y | \cos\varphi e_x + \sin \varphi e_y \right> = \cos^2\varphi \left<e_x|e_x \right> + \sin^2\varphi\left<e_y|e_y \right>\\
+    &\left<e_r|e_\varphi \right> = \left<\cos\varphi e_x + \sin \varphi e_y| -r\sin\varphi e_x + r\cos\varphi e_y \right> =0\\
+    &\Vert \frac{\partial }{\partial \varphi}  \Vert ^2 = \left<e_\varphi|e_\varphi \right> = \left<-r\sin\varphi e_x + r\cos\varphi e_y| -r\sin\varphi e_x + r\cos\varphi e_y \right> = r^2
+.\end{align*}
+    $\Vert \frac{\partial }{\partial \varphi}  \Vert = r,  \left[ g_{ij} \right]_{r,\varphi} = \begin{bmatrix} 1&0\\0&r^2 \end{bmatrix}$. \\
+baza $\left<\frac{\partial }{\partial r} , \frac{\partial }{\partial \varphi}  \right>$ nie jest bazą ortonormalną!!!
+
+$e_x,e_y,e_z \to g_{ij} = \begin{bmatrix} 1&&\\&1&\\&&1 \end{bmatrix} $ - jest fajnie.\\
+$e_r,e_\theta,e_\varphi \to \begin{bmatrix} 1&&\\&r^2&\\&r^2&\sin^2\theta \end{bmatrix}, \Vert e_\theta \Vert = r, \Vert e_\varphi \Vert = r\sin\theta $
+\begin{przyklad}
+    Dostałem wektorek $\begin{bmatrix} 2\\3\\4 \end{bmatrix} $ w sferycznych. Ale w jakiej konkretnie bazie?
+\end{przyklad}
+W fizyce mierzone wielkości np. wektorowe podajemy zawsze we współrzędnych \underline{ortonormalnych}.\\
+We współrzędnych sferycznych mamy dwie bazy:
+- ortogonalną: $e_r, e_\theta, e_\varphi: \left( \frac{\partial }{\partial r} , \frac{\partial }{\partial \theta} , \frac{\partial }{\partial \varphi}  \right) $ \\
+- ortonormalną: $i_r, i_\theta, i_\varphi: \left( \frac{\partial }{\partial r} , \frac{1}{r}\frac{\partial }{\partial \theta} , \frac{1}{r\sin\theta}\frac{\partial }{\partial \varphi}  \right) $.
+Więc jeżeli ktoś powiedział, że dostał $\begin{bmatrix} 2\\3\\4 \end{bmatrix} $ to znaczy, że ma $2 \frac{\partial }{\partial r} + 3 \frac{1}{r} \frac{\partial }{\partial \theta} + 4 \frac{1}{r\sin\theta} \frac{\partial }{\partial \varphi} $.
+
+Obserwacja: niech $v = a_1e_1 + a_2e_2 + a_3e_3$ i niech $w = b_1e_1 + b_2e_2 + b_3e_3$ i niech $g_{ij} = \begin{bmatrix} g_{11}&g_{12}&g_{13}\\ g_{21}& g_{22}&g_{23}\\ g_{31}&g_{32}&g_{33} \end{bmatrix} $ - tensor metryczny. Wówczas wiemy, że $\left<v|w \right> = \left[v\right]^T\left[ g_{ij} \right] \left[ w \right] = \underbrace{\left[ a_1g_{11}+a_2g_{21}+a_3g_{31},\sum_{i=1}^{3}a_ig_{i2},\sum_{i=1}^3a_ig_{i3} \right]}_{\left< v\right|}\left[ w \right]  $. \\
+Ale w sumie to mogę wziąć coś takiego $\left< v \right|$.\\
+\[
+    \left( \sum_{i=1}^3 a^ig_{i1} \right) dx^1 + \left( \sum_{i=1}^3a^ig_{i2} \right) dx^2 + \left( \sum_{i=1}^3a^ig_{i3} \right)dx^3=
+.\]
+\[
+= \sum_{i=1}^3\sum_{j=1}^3 a^ig_{ij}dx^j = a^ig_{ij}dx^j
+.\]
+Zapomniałem o sumach, bo $a^ib_i \overset{\text{ozn}}{=}  a^1b_1 + a^2b_2 + a^3b_3$, w odróżnieniu od $a^{\mu}b_\mu = a^0b_0+a^1b_1+\ldots$ (Konwencja sumacyjna Einsteina).\\
+Ozn. $\sum_{i=1}^3 a^ig_{ik} \overset{\text{ozn}}{=} a^ig_{ik} = a_k$
+\begin{definicja}
+    niech $M$ - rozmaitość wymiaru $n$, $g_{ij}$ - tensor metryczny na $M$, operacją $\#: T_pM \to T_p^*M$ taką, że dla $v = a^1 \frac{\partial }{\partial x^1} + \ldots + a^n \frac{\partial }{\partial x^n} $,\\
+    \[
+    v^{\#}=a^ig_{i1}dx^1 + a^ig_{i2}dx^2 + \ldots + a^ig_{in}dx^n, i=1,\ldots,n
+    .\]
+    zadaje izomorfizm między $T_pM$ a $T_p^*M$.
+\end{definicja}
+\begin{przyklad}
+    $v = 7 \frac{\partial }{\partial r} + 8 \frac{\partial }{\partial \theta} + 9 \frac{\partial }{\partial \varphi}$.
+    \[
+    \alpha\in T_p^*M  = v^{\#} = 7q_{11}dr+8q_{22}d\theta + 9q_{33}d\varphi = 7dr + 8r^2d\theta + 9r^2\sin^2\theta d\varphi
+    .\]
+\end{przyklad}
+\end{document}
