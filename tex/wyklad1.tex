@@ -21,8 +21,11 @@ $\mathbb{R}^{1}\rightarrow\mathbb{R}^{6}$\\
 $\mathbb{R}^{6}\rightarrow\mathbb{R}^{1}$\\
 $\mathbb{R}^{8}\rightarrow\mathbb{R}^{1}$\\
 
+\begin{definicja}
+    (Ciągłość Heine)\\
 Niech $X\subset\mathbb{R}^n, x_{0} \in X, Y\subset\mathbb{R}^m$. Mówimy, że odwzorowanie $T: X\rightarrow Y$ jest ciągłe, jeżeli $$\underset{x_n \to x_0}{\forall}, T(x_{n})\rightarrow T(x_{0})$$\\
 UWAGA: $x_{0} = (x_{1}, x_{2}, ..., x_{n})$.
+\end{definicja}
 
 \vspace{1cm}
 \begin{large}
@@ -64,8 +67,11 @@ $$f(x_{n},y_{n}) = \frac{\frac{1}{n^{2}} \frac{1}{n^{2}}}{\frac{1}{n^{4}}+\frac{
 
 $(X,d_{X})$ - przestrzeń wektorowa z metryką $d_{X},\\ (Y,d_{Y})$ - p.w. z metryką $d_{Y}$
 
+\begin{definicja}
+    (Ciągłość Cauchy)\\
 Niech $x_{0}\in X$. Mówimy, że $T: X\to Y$ - ciągłe, jeżeli
 $$\underset{\epsilon > 0}{\forall} \quad\underset{\delta}{\exists} \quad\underset{x\in X}{\forall}, \quad d_{X} (x,x_{0}) < \delta \implies d_{Y} (T(x_{0}), T(x)) < \epsilon$$
+\end{definicja}
 
 \begin{dowod}
     Heine $\iff$ Cauchy
@@ -76,7 +82,7 @@ $$\underset{\epsilon > 0}{\forall} \quad\underset{\delta}{\exists} \quad\underse
 \end{large}
 \vspace{0.5cm}
 
-zakładamy, że $$\underset{x_n \to x_0}{\forall} T(x_{n}) \to T(x_{0}) \quad\land\quad \underset{\epsilon > 0}{\exists}, \underset{\delta > 0}{\forall}, \underset{x\in X}{\exists} (*): d_{X} (x,x_{0}) < \delta \implies d_{Y} (T(x_{n}),T(x_{0})) \geq \epsilon$$
+zakładamy, że $$\underset{x_n \to x_0}{\forall} T(x_{n}) \to T(x_{0}) \quad\land\quad \underset{\epsilon > 0}{\exists}, \underset{\delta > 0}{\forall}, \underset{x\in X}{\exists} (*): d_{X} (x,x_{0}) < \delta \quad\land\quad d_{Y} (T(x_{n}),T(x_{0})) \geq \epsilon$$
 
 Skoro $T(x_{n})\to T(x_{0}) \underset{x_n \to x_0}{\forall}$, to w szczególności warunek spełniony dla ciągu, który jest taki:
 
@@ -94,7 +100,7 @@ skoro $(*)$, to dla $\epsilon>0$ weźmy $\delta = 1$,
     &\delta=\frac{1}{n}: \underset{x_n}{\exists} \quad d_{X}(x_{n},x_{0}) < \frac{1}{n} \land d_{Y} (T(x_{n}),T(x_{0})) \geq \epsilon
 .\end{align*}
 
-Zauważmy, że taki ciąg $x_{n} \to x_{0} \land T(x_{n})\not{\to} T(x_{0})$ i sprzeczność $\Box$
+Zauważmy, że taki ciąg $x_{n} \to x_{0} \land T(x_{n}) \not\rightarrow T(x_{0})$ i sprzeczność $\Box$
 
 \vspace{0.5cm}
 \begin{large}
