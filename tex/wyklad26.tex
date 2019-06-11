@@ -1,0 +1,149 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{
+    {"../img/"}
+    {"img/"}
+}
+
+\begin{document}
+    Mając $\sharp$ możemy zdefiniować operację odwrotną:
+    \[
+        \flat: T_p^*M\to T_pM\text{, taką, że } \alpha\in T_p^*M, \alpha = v_idx^i
+    \]
+    to wtedy
+    \[
+    T_pM \ni v \overset{\text{def}}{=} \alpha^\flat = \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n g^{ij}v_j \frac{\partial }{\partial x^i}
+    .\]
+    Jeżeli wprowadzimy oznaczenie: $v^i = \sum_{j=1}^n g^{ij}v_j$, to mamy
+    \[
+    \alpha^\flat = \sum_{i=1}^n v^i \frac{\partial }{\partial x^i}
+    .\]
+
+    \begin{przyklad}
+        \begin{align*}
+            &\left[ g_{ij} \right] = \begin{bmatrix} 1&&\\ &r^2& \\ &&r^2\sin^2\theta \end{bmatrix}\\
+            &v = a \frac{\partial }{\partial r} + b \frac{\partial }{\partial \theta}  + c \frac{\partial }{\partial \varphi}, \alpha = v^{\sharp} = \frac{1}{2}\sum_{i=1}^3\sum_{j=1}^3 g_{ij}v^j dx^i = \\
+            &= \frac{1}{2}\left( g_{11}v^1dx^1 + g_{12}v^2dx^1+g_{13}v^3dx^1 \right) + \left( g_{21}v^1dx^2 + g_{22}v^2dx^2 + g_{23}v^3dx^2 \right) +\\
+            &+ \left(  g_{31}v^1dx^3 + g_{32}v^2dx^3 + g_{33}v^3dx^3 \right)
+        .\end{align*}
+        czyli mamy
+        \begin{align*}
+            \alpha = v^{\sharp} = 1\cdot a dr + r^2 b d\theta + r^2\sin^2\theta c d\varphi
+        .\end{align*}
+        Dostaliśmy z laboratorium wektor: $v = \begin{bmatrix} a\\b\\c \end{bmatrix} = a i_r + b i_\theta + c i_\varphi = a \frac{\partial }{\partial r} + b \frac{1}{r} \frac{\partial }{\partial \theta} + c \frac{1}{r\sin\theta} \frac{\partial }{\partial \varphi} $.
+Chcemy ten wektorek podnieść.\\
+\begin{align*}
+    &\alpha = v^{\sharp} = \left( g \right) dr + \left( r^2 \frac{b}{r} \right) d\theta + \left( r^2 \sin^2\theta \frac{1}{r\sin\theta}c \right) d\varphi=\\
+    &= a dr + r b d\theta + r \sin\theta c d\varphi \\
+.\end{align*}
+    \end{przyklad}
+    \begin{przyklad}
+        Niech $\alpha = a dr + b d\theta + c d\varphi$. Chcemy zrobić wektorek $v$, który jest dokładnie tyle:
+        \begin{align*}
+            v = \alpha^\flat = \left( 1\cdot a \right) \frac{\partial }{\partial r} + \left( \frac{1}{r^2}b \right) \frac{\partial }{\partial \theta} + \left( \frac{1}{r^2\sin^2\theta} c \right) \frac{\partial }{\partial \varphi}
+        .\end{align*}
+        Czyli ta nasza $\alpha^\flat = \begin{bmatrix} a \\ \frac{b}{r^2} \\ \frac{c}{r^2 \sin^2\theta} \end{bmatrix}_{\frac{\partial }{\partial r} , \frac{\partial }{\partial \theta} , \frac{\partial }{\partial \varphi} } = a \frac{\partial }{\partial r} + \frac{b}{r} \cdot \frac{1}{r} \frac{\partial }{\partial \theta} + \frac{c}{r\sin\theta} \cdot \frac{1}{r\sin\theta} \frac{\partial }{\partial \varphi} $.\\
+        Okazuje się, że $\alpha^\flat = \begin{bmatrix} b\\ \frac{b}{r} \\ \frac{c}{r\sin\theta} \end{bmatrix}_{i_r, i_\theta, i_\varphi}$
+    \end{przyklad}
+    \begin{definicja}
+        niech $M = \mathbb{R}^3$,
+        \[
+            \Lambda^0(M)\ni f \overset{\text{d}}{\to} df\in \Lambda^1(M) \overset{\flat}{\to} \left( df \right) ^\flat \in T_pM
+        \]
+        nazywamy gradientem funkcji $f$ : $\nabla f \overset{\text{def}}{=} \left( df \right) ^\flat$, gdzie $f: M\to \mathbb{R}^1$, $f$ - klasy $\mathcal{C}^k(M)$
+    \end{definicja}
+    \begin{przyklad}
+        $f(r,\theta,\varphi): \mathbb{R}^3\to \mathbb{R}^1$,\\
+        $df = \frac{\partial f}{\partial r}dr + \frac{\partial f}{\partial \theta}d\theta + \frac{\partial f}{\partial \varphi}d\varphi $
+        \begin{align*}
+            &\left( df \right) ^\flat = 1 \frac{\partial f}{\partial r} \frac{\partial }{\partial r} + \frac{1}{r^2} \frac{\partial f}{\partial \theta} \frac{\partial }{\partial \theta} + \frac{1}{r^2\sin^2\theta}\frac{\partial f}{\partial \varphi} \frac{\partial }{\partial \varphi}=\\
+            &= \frac{\partial f}{\partial r} \frac{\partial }{\partial r} + \frac{1}{r} \frac{\partial f}{\partial \theta} \frac{1}{r} \frac{\partial }{\partial \theta} + \frac{1}{r\sin\theta} \frac{\partial f}{\partial \varphi} \frac{1}{r\sin\theta} \frac{\partial }{\partial \varphi}
+        .\end{align*}
+        Siła tego polega na tym, że jak dostaniemy na ulicy tensor metryczny, to przez 3 minuty w cieniu możemy obliczyć np. gradient funkcji:
+        \[
+        \nabla f = \begin{bmatrix} \frac{\partial f}{\partial r} \\ \frac{1}{r} \frac{\partial f}{\partial \theta} \\ \frac{1}{r\sin\theta} \frac{\partial f}{\partial \varphi}  \end{bmatrix}
+        .\]
+    \end{przyklad}
+    \begin{przyklad}
+        Dostaliśmy tensor metryczny i chcemy obliczyć $\nabla f(\xi, \eta, \delta)$, $\begin{bmatrix} \heartsuit &&\\ &\triangle& \\ &&\square \end{bmatrix} $.
+        \[
+        \nabla f = \begin{bmatrix} \frac{1}{\sqrt{\heartsuit} } \frac{\partial f}{\partial \xi} \\ \frac{1}{\sqrt{\triangle} } \frac{\partial f}{\partial \eta} \\ \frac{1}{\sqrt{\square} } \frac{\partial f}{\partial \delta} \end{bmatrix}
+        .\]
+    \end{przyklad}
+
+    \begin{align*}
+        &M = \mathbb{R}^3\\
+        f\to &\Lambda^0(M) &&\dim \Lambda^0(M) = 1 \downarrow d\\
+        T_pM \overset{\overset{\flat}{\leftarrow}}{\underset{\underset{\sharp}{\rightarrow}}{\longleftrightarrow}} &\Lambda^1(M) &&\dim \Lambda^1(M) = 3 \downarrow d\\
+        &\Lambda^2(M) &&\dim \Lambda^2(M) = 3 \downarrow d\\
+        &\Lambda^3(M) &&\dim \Lambda^3(M) = 1
+    .\end{align*}
+
+    \begin{definicja}
+        Niech $M$ - rozmaitość, $\dim M = n$, $\left[ g_{ij} \right] $ - tensor metryczny. Operację $\Lambda^L(M)\to \Lambda^{n-L}(M)$ nazywamy gwiazdką "$\ast$" Hodge'a i definiujemy następująco:
+        \begin{align*}
+            \ast\left( dx^{i_1}\land dx^{i_2}\land \ldots \land dx^{i_L} \right) = \frac{\sqrt{g} }{(n-L)!} g^{i_1j_1}g^{i_2j_2}g^{i_Lj_L}\in _{j_1j_2\ldots j_L k_1k_2\ldots k_{n-L}}dx^{k_1}\land dx^{k_2}\land \ldots \land dx^{k_{n-1}}
+        ,\end{align*}
+        gdzie $\in _{i_1,\ldots,i_n} = \left\{ sgn(i_1,\ldots,i_n) \text{ jeżeli } i_m \neq i_p,\quad 0 \text{ w.p.p} \right\}$
+    \end{definicja}
+    \begin{przyklad}
+        $M = \mathbb{R}^3$, $\left[ g_{ij} \right] = \begin{bmatrix} 1&&\\&1&\\&&1 \end{bmatrix} $\\
+        \begin{align*}
+           \ast(dx) &= \frac{1}{(3-1)!}g^{1 j_1}\in _{j_1 k_1k_2}dx^{k_1}\land dx^{k_2} = \frac{1}{(3-1)!}g^{11}\in _{1k_1k_2}dx^{k_1}\land dx^{k_2} =\\
+                    &= \frac{1}{(3-1)!}g^{11} \left[ \in_{1 2 3}dx^2\land dx^3 + \in_{1 3 2}dx^3\land dx^2 \right] = \frac{1}{2} \left[ 1\cdot dx^2 \land dx^3 - dx^3 \land dx^2 \right]  \\
+                    &= dx^2\land dx^3
+        .\end{align*}
+        Czyli $\ast(dx) = dy \land dz$.\\
+        \begin{align*}
+            &\ast(dy) = \ast(dx^2) = \frac{1}{(3-1)!}g^{22}\in_{2k_1k_2} dx^{k_1}\land dx^{k_2} = \frac{1}{(3-1)!} \cdot \\
+            &g^{22} \left[ \in_{2 1 3} dx^1\land dx^3 + \in _{2 3 1}dx^3\land dx^1 \right] = \frac{1}{(3-1)!} 1 \left[ -dx^1\land dx^2 + 1 dx^3 \land dx^1 \right] =\\
+            &= dx^3 \land dx^1
+        .\end{align*}
+        Więc $\ast (dy) = dz\land dx$.\\
+         \begin{align*}
+             &\ast(dz) = \frac{1}{(3-1)!}g^{33}\in_{3k_1k_2}dx^{k_1}\land dx^{k_2} = \frac{1}{2}g^{33}\left[ \in_{321}dx^2\land dx^1 + \in_{312} dx^1 \land dx^2 \right]=\\
+             &= \frac{1}{2} 1 \left[ -dx^2\land dx^1 + dx^1\land dx^2 \right]
+        .\end{align*}
+        Więc $\ast(dz) = dx\land dy$
+    \end{przyklad}
+    \begin{przyklad}
+        $M = \mathbb{R}^3, (r,\theta,\varphi), \left[ g_{ij} \right] = \begin{bmatrix} 1&&\\&r^2&\\&&r^2\sin^2\theta \end{bmatrix}$.\\
+        \begin{align*}
+            &\ast(dr) = \overset{\sqrt{g}}{r^2\sin\varphi} d\theta \land d\varphi\\
+            &\ast(d\theta) = r^2 \sin\theta \frac{1}{r^2} d\varphi \land dr\\
+            &\ast(d\varphi) = \frac{r^2\sin\theta}{r^2\sin^2\theta} dr \land d\theta  \\
+        .\end{align*}
+    \end{przyklad}
+    Pytanko jest takie: Chcemy zapytać co to jest $\ast(dx\land dy)$?\\
+     \begin{align*}
+         &\ast(dx^1\land dx^2) = \frac{\sqrt{g} }{(3-2)!} g^{1 j_1}g^{2 j_2} \in_{j_1j_2k_1} dx^{k_1} = \\
+         &= \frac{1}{(3-2)!}g^{11}g^{22}\in_{123}dx^3
+    .\end{align*}
+    Więc $\ast(dx\land dy) = dz$.\\
+    A np.  $\ast(dx\land dz)$ :
+    \begin{align*}
+        &\ast(dx\land dz) = \frac{1}{(3-2)!}\in_{132}dx^2 = -dy\\
+        &\ast(dr\land d\theta) = r^2\sin\theta \cdot \frac{1}{1}\cdot \frac{1}{r^2}d\varphi \\
+        &\ast(dr\land d\varphi) = -r^2\sin\theta \frac{1}{1} \frac{1}{r^2\sin^2\theta} d\theta \\
+        &\ast(dx\land dy\land dz) = \frac{\sqrt{g} }{(3-3)!}g^{1 j_1}g^{2 j_2}g^{3 j_3} \in_{j_1 j_2 j_3} = \sqrt{g} g^{11}g^{22}g^{33}\in_{123} = 1\\
+        &\ast(dr\land d\theta \land d\varphi) = r^2\sin\theta \cdot \frac{1}{r^2}\cdot \frac{1}{r^2\sin^2\theta} = \frac{1}{r^2\sin\theta}
+    .\end{align*}
+    \begin{definicja}
+        $M = \mathbb{R}^3$\\
+        niech $v\in T_pM$, operację
+        \[
+            rot(v) \overset{\text{def}}{=} \left( \ast\left( dv^\sharp \right)  \right) ^\flat
+        \]
+        nazywamy rotacją wektora $v$ i oznaczamy
+        $\text{rot } v \overset{\text{ozn}}{=} \nabla\times v$.\\
+        Operację \[
+            \text{div }v \overset{\text{def}}{=} d\left( \ast v^\sharp \right)
+        \]
+        nazywamy dywergencją i oznaczamy $\text{div }v \overset{\text{ozn}}{=} \nabla \cdot v$.\\
+        Uwaga: rotacji nie możemy wprowadzić np. na $M$ takim, że $\dim M = 4$, bo $\ast(\Lambda^2(M))\to \Lambda^2(M)$
+    \end{definicja}
+
+    Pozakonkursowo: chcemy zrobić z funkcji funkcję:
+    \begin{align*}
+        f \overset{d}{\longrightarrow} df \in \Lambda^1(M) \longrightarrow \underset{\text{operator Laplace}}{\ast d \ast df}
+    .\end{align*}
+\end{document}
