@@ -115,5 +115,88 @@ Pytanie: Co się stanie, jeśli przemnożymy pierwszy wiersz $A$ przez drugą ko
                 &\lambda_1 = i\omega, &&n_1 = 1\\
                 &\lambda_2 = -i\omega, &&n_2 = 1
             .\end{align*}
+            gdzie $A$ i $B$ nieznane, ale wiemy, że $x(0) = 0$ i $x'(0) = 1$ i $x'(t) = Ai\omega e^{i\omega t} - Bi\omega e^{-i\omega t}.$\\
+            Czyli
+            \begin{align*}
+            &Ae^{0}+Be^{-0}= 0 \implies -A = +B\\
+            &Ai\omega e^{0}- Bi\omega e^{-0} = 1\\
+            &2Ai\omega = 1\\
+            &A = \frac{1}{2i\omega}\\
+            &B = -\frac{1}{2i\omega}
+            .\end{align*}
+            Czyli
+            \[
+                x(t) = \frac{1}{2i\omega}\left( e^{i\omega t}- e^{-i\omega t} \right) = \frac{1}{\omega}\sin(\omega t)
+            .\]
+        \end{przyklad}
+        \begin{pytanie}
+            Czy możemy zmienić bazę w równaniu (*)?
+        \end{pytanie}
+        Odp: Możemy. Na przykład przyjmując $x(t) = A \cos(\omega t) + B \sin(\omega t)$. Wówczas
+        \begin{align*}
+            &x'(t) = -A\omega \sin(\omega t) + B \omega \cos(\omega t)\\
+            &x(0) = A = 0\\
+            &x'(0) = B\omega = 1 \to B = \frac{1}{\omega} \implies x(t) = \frac{1}{\omega}\sin(\omega t)
+        .\end{align*}
+        \begin{pytanie}
+            Co robić z niejednorością? (Dla równań wyższych rzędów)
+        \end{pytanie}
+        \[
+            \frac{d}{dt}\vec{x} = A \vec{x} + b, \frac{d}{dt} \vec{x} = A \vec{x}, \vec{x} = R(t,t_0)x_0
+        .\]
+        \begin{przyklad}
+            \[
+                \ddot{x} + \omega^2 x = e^t (\Delta)
+            .\]
+            Wiemy, że rozwiązaniem problemu $\ddot{x} + \omega^2 x = 0$ jest $x(t) = A \cos(\omega t) + B \sin(\omega t)$.\\
+            Może uzmiennimy stałe:
+            \begin{align*}
+                &x(t) = A(t) \cos(\omega t) + B(t) \sin(\omega t)\\
+                &\dot{x}(t) = \dot{A}(t) \cos(\omega t) - A t \sin (\omega t) + \dot{B} \sin(\omega t) + B(t) t \cos(\omega t)
+            .\end{align*}
+            W efekcie dostaniemy równanie drugiego rzędu na $A(t)$ i $B(t)$ :(\\
+            Zapiszmy więc równanie $(\Delta)$ w postaci macierzowej.
+            \[
+                \frac{d}{dt}\begin{bmatrix} x\\x' \end{bmatrix} = \begin{bmatrix} 0&1\\-\omega^2&0 \end{bmatrix} \begin{bmatrix} x\\x' \end{bmatrix} + \begin{bmatrix} 0\\e^t \end{bmatrix} (\Delta\nabla)
+            .\]
+            Jak wygląda rezolwenta?
+            \[
+                R(t,t_0) = \begin{bmatrix} u_{11}(t)&u_{12}(t)\\ u_{21}(t) & u_{22}(t) \end{bmatrix} \text{ i } \frac{d}{dt}R(t,t_0) = A R(t,t_0), R(t_0,t_0) = 1
+            .\]
+            $\left(\begin{bmatrix} x\\x' \end{bmatrix} = R(t,t_0)x_0 \right)$.\\
+            Zauważmy, że skoro
+            \begin{align*}
+                &x(t) = A\cos(\omega t) + B \sin(\omega t)\\
+                &x'(t) = A\left( \cos(\omega t) \right)' + B\left( \sin(\omega t) \right)'\\
+                &\text{to wtedy } \begin{bmatrix} x(t)\\x'(t) \end{bmatrix} = \begin{bmatrix} \cos(\omega t) & \sin(\omega t)\\ -\omega \sin(\omega t) & \omega \cos(\omega t) \end{bmatrix} \begin{bmatrix} A\\B \end{bmatrix}
+            .\end{align*}
+            I możemy zbudować macierz
+            \[
+                \begin{bmatrix} u_{11}&u_{12}\\u'_{11}&u'_{12} \end{bmatrix}
+            ,\]
+            która od rezolwenty różni się tym, że w $t = t_0$ nie zmienia się w macierz jednostkową.\\
+            Uzmienniamy stałe:
+            \begin{align*}
+                (_{\tilde \tilde} ) \begin{bmatrix} x(t)\\x'(t) \end{bmatrix} = \begin{bmatrix} \cos\omega t & \sin\omega t\\ -\omega \sin\omega t & \omega \cos \omega t \end{bmatrix} \begin{bmatrix} A(t) \\B(t)\end{bmatrix}
+            \end{align*}
+            i wstawiamy do $(\Delta\nabla)$
+            \[
+                \frac{d}{dt}\begin{bmatrix} \cos\omega t&\sin\omega t\\ -\omega \sin\omega t & \omega \cos\omega t \end{bmatrix} \begin{bmatrix} A(t)\\B(t) \end{bmatrix} = \begin{bmatrix} \ldots \end{bmatrix} + \begin{bmatrix} 0\\e^t \end{bmatrix}
+            .\]
+            \begin{align*}
+                &\begin{bmatrix} \cos\omega t&\sin\omega t\\ -\omega \sin\omega t& \omega \cos\omega t \end{bmatrix} \begin{bmatrix} \dot{A}(t)\\ \dot{B}(t) \end{bmatrix} + \left( \begin{bmatrix} \cos\omega t & \sin\omega t\\ -\omega \sin\omega t & \omega \cos \omega t \end{bmatrix}  \right)'\begin{bmatrix} A(t)\\B(t) \end{bmatrix} = \\
+                &\begin{bmatrix} 0&1\\-\omega^2&0 \end{bmatrix} \cdot (_{\tilde \tilde }) + \begin{bmatrix} 0\\e^t \end{bmatrix} \text{, ale }\\
+                &\left( \begin{bmatrix} \cos\omega t&\sin\omega t\\ -\omega \sin\omega t & \omega \cos \omega t \end{bmatrix}  \right)' \begin{bmatrix} A(t)\\B(t) \end{bmatrix} = \begin{bmatrix} -\omega \sin\omega t & \omega \cos\omega t\\ -\omega^2\cos\omega t&-\omega^2\sin\omega t \end{bmatrix} \begin{bmatrix} A(t)\\B(t) \end{bmatrix}\\
+                &\begin{bmatrix} 0&1\\-\omega^2&0 \end{bmatrix} \begin{bmatrix} \cos\omega t&\sin\omega t\\ -\omega \sin\omega t & \omega \cos\omega t \end{bmatrix} \begin{bmatrix} A(t)\\B(t) \end{bmatrix} = \begin{bmatrix} -\omega \sin\omega t & \omega \cos\omega t \\ -\omega^2\cos\omega t & -\omega^2 \sin\omega t \end{bmatrix}\begin{bmatrix} A(t)\\B(t) \end{bmatrix}\\
+                &\begin{bmatrix} \cos\omega t& \sin\omega t\\ \left( \cos\omega t \right) ' & \left( \sin\omega t \right) '  \end{bmatrix} \begin{bmatrix} A'(t)\\B'(t) \end{bmatrix} = \begin{bmatrix} 0\\e^t \end{bmatrix}
+            .\end{align*}
+            Czyli mamy:
+            \begin{align*}
+                &A'(t) \cos\omega t + B'(t) \sin\omega t = 0\\
+                &A'(t) \left( \cos\omega t \right) ' + B'(t) \left( \sin\omega t \right) ' = e^t\\
+                &x(t) = A \cos\omega t+ B\sin\omega t\\
+                &x(t) = A(t) \cos\omega t + B(t) \sin\omega t\\
+                &x'(t) = A'(t) \cos\omega t+ B'(t) \sin\omega t + A(t) \left( \cos\omega t \right) ' + B(t)\left( \sin\omega t \right) '
+            .\end{align*}
         \end{przyklad}
 \end{document}

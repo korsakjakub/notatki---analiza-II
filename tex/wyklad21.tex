@@ -5,111 +5,124 @@
 }
 
 \begin{document}
-    Chcemy powiedzieć co to są wektory w takim świecie? Zaczniemy rysować krzywą po powierzchni.
+    Widzimy, że ten obrazek, który nam się jawi jest w miarę rozbudowany.
+    Ostatnio wprowadziliśmy na baloniku układ współrzędnych.\\
+    \begin{align*}
+        &v = [\sigma], v\in T_pM, v\left(  \right) \in D_pM\\
+        &v(f) = \frac{d}{dt}f(\sigma(t))|_{t=0} \\
+        &v\left(  \right) = ?\cdot ? + ?\cdot ? + ?\cdot ? = \frac{d}{dt}(f\circ \varphi^{-1} \circ \varphi \circ \sigma(t))|_{t=0}=\\
+        &= \frac{d}{dt}(\tilde f\circ \varphi(\sigma(t)))|_{t=0} = \frac{d}{dt}(\tilde f(\varphi^1(\sigma(t)),\varphi^2(\sigma(t)),\ldots,\varphi^n(\sigma(t))))|_{t=0}= \\
+        &= \frac{\partial \tilde f}{\partial x^1} \frac{\partial \varphi^1(\sigma(t))}{\partial t} +\ldots+\frac{\partial \tilde f}{\partial x^n} \frac{\partial \varphi^n(\sigma(t))}{\partial t}
+    .\end{align*}
+    Czyli jeżeli $v\in T_pM$ i $v\in[\sigma]$, to wiemy, że
+    \begin{align*}
+        &v = \frac{\partial \varphi^1(\sigma(t))}{\partial t}|_{t=0} e_1 + \frac{\partial \varphi^2(\sigma(t))}{\partial t}|_{t=0} e_2 + \ldots + \frac{\partial \varphi^n(\sigma(t))}{\partial t}|_{t=0} e_n= \\
+        &= \xi^1e_1 + \xi^2e_2 + \ldots + \xi^ne_n = \\
+        &= \xi_1 \frac{\partial \tilde f}{\partial x^1} + \xi_2 \frac{\partial \tilde f}{\partial x^2} +\ldots+ \xi_n \frac{\partial \tilde f}{\partial x^n} = v(f)
+    .\end{align*}
+    Zatem \[
+        v\left(  \right) = \xi_1 \frac{\partial }{\partial x^1} + \xi_2 \frac{\partial }{\partial x^2}  + \ldots + \xi_n \frac{\partial }{\partial x^n}
+    .\]
+    \begin{przyklad}
+        Więc niech $v = 2e_x + 3e_y \to v\left(  \right) = 2 \cdot \frac{\partial }{\partial x} + 3 \cdot \frac{\partial }{\partial y} $.
+    \end{przyklad}
+    Wniosek: mając izomorfizm między $T_pM$ i $D_pM$ możemy zapisać bazy:
+    \[
+    T_pM = \left<e_1,e_2,\ldots,e_n \right>
+    .\]
+    To wtedy
+    \[
+    D_pM = \left<\frac{\partial }{\partial x^1} , \frac{\partial }{\partial x^2} ,\ldots,\frac{\partial }{\partial x^n}  \right>
+    .\]
+    np. $v = 7 e_r + 8 e_\varphi \to v\left(  \right) = 7 \frac{\partial }{\partial r} + 8 \frac{\partial }{\partial \varphi} $ (często użyjemy bazy z $D_pM$ jako bazy $T_pM$ ).
+    \begin{definicja}
+        Wektorem kostycznym (albo jednoformą) nazywamy odwzorowanie liniowe  $\omega: T_pM\to\mathbb{R}$.
+        Zbiór jednoform ($p\in M$) oznaczamy przez $T_p^* M$ (lub $\Lambda^1(M)$, $\Lambda^1(\theta), \theta\in M$)
+    \end{definicja}
+    Skoro $T_p^* M$ jest dualna do $T_pM$, to ma ten sam wymiar i możemy wprowadzić bazę dualną. $T_p^*M = \left< dx^1, dx^2, \ldots, dx^n \right>$, gdzie $\left<dx^i, \frac{\partial }{\partial x^i}  \right> = \delta^i_j$
+    \begin{przyklad}
+        Niech $\Lambda^1(M)\to\omega = 7dx + 3dy, v\in T_pM = 2 \frac{\partial }{\partial x} +4 \frac{\partial }{\partial y} $, wówczas
+        \begin{align*}
+            &\left<\omega,v \right> = \left<7dx+3dy,2 \frac{\partial }{\partial x} + 4 \frac{\partial }{\partial y}  \right> =\\
+            &= \left<7dx, 2 \frac{\partial }{\partial x} + 4 \frac{\partial }{\partial y}  \right> + 3 \left< dy, 2 \frac{\partial }{\partial x} + 4 \frac{\partial }{\partial y}  \right> = \\
+            &= 7\cdot 2\left<dx,\frac{\partial }{\partial x}  \right> + 7\cdot 4 \left<dx, \frac{\partial }{\partial y}  \right> + 3\cdot 2 \left<dy,\frac{\partial }{\partial x}\right> + 3\cdot 4 \left<dy , \frac{\partial }{\partial y} \right> \\
+            &= 7\cdot 2+ 3\cdot 4
+        .\end{align*}
+    \end{przyklad}
+    \begin{przyklad}
+        \begin{align*}
+            &v = A^x \frac{\partial }{\partial x} + A^y \frac{\partial }{\partial y} + A^z \frac{\partial }{\partial z} , \omega = B_xdx + B_ydy + B_zdz=\\
+            &= \left<\omega,v \right> = A^xB_x + A^yB_y + A^zB_z
+        .\end{align*}
+    \end{przyklad}
     \begin{figure}
         \centering
-        \incfig{fig_51}
-        \caption{Wymiar pączka może być większy! $m>n$}
-        \label{fig:}
+        \includegraphics[width=\textwidth]{fig_50}
+        \caption{Strumień przez balonik}
     \end{figure}
-
-    Niech $M$ - rozmaitość. Odwzorowanie $\sigma: ]-\varepsilon,\varepsilon[ \subset\mathbb{R} \to \sigma(t)\in M$ nazywamy krzywą na $M$. $\sigma$ jest klasy $\mathcal{C}^\infty$
-     \begin{przyklad}
-         (spirala na walcu)
-         \[
-             \sigma: ]-\varepsilon,\varepsilon[ \to \begin{bmatrix} \cos(t)\\ \sin(t) \\ t \end{bmatrix}
-         .\]
-    \end{przyklad}
     \begin{definicja}
-        Niech $p\in M$, $\sigma_1,\sigma_2$ - krzywe na $M$ takie, że $\sigma_1(0) = \sigma_2(0) = P$. Mówimy, że $\sigma_1$ i $\sigma_2$ są \underline{styczne w punkcie $P$}, jeżeli
-         \[
-             \left.\frac{d(\varphi_0\cdot \sigma_1(t))}{d t}\right|_{t=0} = \left.\frac{d(\varphi_0 \cdot \sigma_2(t))}{dt}\right|_{t=0}
-        .\]
+        Zbiór wszystkich odwzorowań $T_pM \times \ldots \times T_pM \to \mathbb{R}$ k - liniowych w każdej zmiennej i antysymetrycznych oznaczamy przez $\Lambda^k(M)$ i nazywamy k-formami.
     \end{definicja}
-    Rozważmy wszystkie krzywe przechodzące przez punkt $P\in M$. Na tym zbiorze wprowadzamy relację: $\sigma_1 \sim \sigma_2$ jeżeli $\sigma_1$ i $\sigma_2$ są styczne. Jeżeli $\sigma$ krzywa przechodząca przez punkt $P$, to wektorem stycznym zaczepionym w punkcie $P$ nazwiemy $v = \underset{\substack{\text{klasa}\\ \text{równoważności}}}{[\sigma]} $
-
-    \begin{przyklad}
-        Weźmy krzywą $\sigma(t) = \begin{bmatrix} \cos(t) \\ \sin(t) \\ t \end{bmatrix} , p = \begin{bmatrix} 1\\0\\0 \end{bmatrix} $.\\
-        \[
-            \sigma'(t) = \begin{bmatrix} -\sin(t)\\ \cos(t)\\ 1 \end{bmatrix}, \sigma'(0) = \begin{bmatrix} 0\\1\\1 \end{bmatrix}
-        .\]
-
-    \end{przyklad}
-
-    \begin{figure}[h]
-        \centering
-        \incfig{fig_52}
-        \label{fig:fig_52}
-    \end{figure}
-
-    \begin{przyklad}
-        Niech $f(p) = C \underset{p\in M}{\forall} $. Ile wynosi $v(f)?$
-         \begin{align*}
-            &v(f) = v(c) = v(c \cdot 1) = c \cdot v(1) = \\
-            &=  c \cdot v(1\cdot 1) = c \cdot (1 \cdot v(1) + 1v(1)) =\\
-            &= c \cdot 2v(1) = 2v(c) = 2v(f)
-        .\end{align*}
-        Czyli $v(f) = 2v(f)$, czyli $v(f) = 0$ (pochodna stałej $=0$ )
-    \end{przyklad}
-    Każdy operator, który to umie to różniczkowanie.
-    \begin{pytanie}
-        Jak można w praktyce zrealizować taki operator?\\
-        Niech $v\in T_pM, v=[\sigma]$
-         \[
-             v(f) = \frac{d}{dt}f(\sigma(t))|_{t=0}
-        .\]
-    \end{pytanie}
-    \begin{definicja}
-        Zbiór wszystkich różniczkowań w punkcie $P$ oznaczamy przez $D_pM$
-    \end{definicja}
-    Chcemy nadać $D_pM$ strukturę przestrzeni wektorowej.
-    \begin{align*}
-        &v_1,v_2\in D_pM, f\in \mathcal{C}^{\infty}(M) \implies (v_1 \diamond v_2)f \overset{\text{def}}{=} v_1(f) + v_2(f)\\
-        &\underset{\alpha\in\mathbb{R}}{\forall} (\alpha \bowtie v_1)f = \alpha \cdot v_1(f) \\
-    .\end{align*}
-    \begin{pytanie}
-        Co to znaczy, że $f$ - klasy $C^{\infty}(M)$?
-    \end{pytanie}
-    \begin{figure}[h]
-        \centering
-        \incfig{fig_53}
-        \caption{$f$ nie musi być bijekcją jakby co}
-        \label{fig:fig_53}
-    \end{figure}
-
-    Jeżeli $\psi \circ f \circ \varphi^{-1}$ - jest klasy $\mathcal{C}^{\infty}$.\\
-    Związek między $T_pM$, a $D_pM$ :\\
-    Niech $v = 5e_x + 6e_y \in T_pM$. Czy znajdziemy odwzorowanie z  $T_pM$ do $D_pM$, (które dokładnie jednemu $v$ przyporządkowałoby jeden element).$\rightarrow$ izomorfizm między $T_pM$ i $D_pM$.
-
-    \subsection{asdasdasd}
-    Zbiór wszystkich wektorów stycznych zaczepionych w punkcie $p\in M$ oznaczamy przez  $T_pM$ i nazywamy przestrzenią styczną. (Uwaga: warunek (*) nie zależy od wyboru mapy).
-
-    Chcemy wyposażyć $T_pM$ w strukturę przestrzeni wektorowej. Potrzebujemy działań.\\
-    Niech $v_1,v_2\in T_pM$ i $v_1 = [\sigma_1], v_2 = [\sigma_2]$. Wówczas\\
-
-    \begin{align*}
-         &v_1 \diamond v_2 \overset{\text{def}}{=} \left[ \varphi^{-1}(\varphi(\sigma_1))+\varphi(\sigma_2) \right]\\
-         &\underset{\alpha\in\mathbb{R}}{\forall} \alpha\cdot v_1 \overset{\text{def}}{=} \left[ \varphi^{-1}(\alpha\cdot \varphi(\sigma_1) \right]
-    .\end{align*}
-    $T_pM$ wraz z działaniami ($\diamond, \cdot $ ) ma strukturę przestrzeni wektorowej. Zbiór
+    Wersja 1:\\
+    Niech $\alpha\in T_p^*M, \beta\in T_p^*M ( \alpha\in \Lambda_p^1 M, \beta \in \Lambda_p^1 M )$.\\
+    Odwzorowanie $\land : T_p^* M \times T_p^* M \to \Lambda^2(\theta), \theta\in M$ nazywamy iloczynem zewnętrznym i definiujemy tak:
     \[
-        TM \overset{\text{def}}{=} \left\{ p\in M, T_pM \right\}
-    \]  nazywamy wiązką styczną.
+        \left<\alpha\land\beta;v,w \right> \overset{\text{def}}{=} \begin{vmatrix}\alpha(v)&\beta(v)\\ \alpha(w)&\beta(w) \end{vmatrix}
+    .\]
 
-    \begin{pytanie}
-        Czy w $TM$ możemy zadać strukturę przestrzeni wektorowej?\\
-        Odpowiedź: NIE DA SIĘ
-    \end{pytanie}
-
-    \subsection{Przestrzeń różniczkowa}
-    Niech $f: M\to \mathbb{R}$, $f$ - klasy $\mathcal{C}^{\infty}(M)$ \\
-    niech $v\left(  \right) : \mathcal{C}^{\infty}(M)\to\mathbb{R}$, takie, że
-    \begin{align*}
-    &\underset{f,g\in\mathcal{C}^{\infty}\left( M \right) }{\forall}v(f\cdot g) = v(f) + v(g)\\
-    &\underset{\alpha\in\mathbb{R}}{\forall} \underset{f\in\mathcal{C}^\infty(M)}{\forall} v(\alpha f) = \alpha v(f)\\
-    & \underset{f,g\in\mathcal{C}^\infty (M)}{\forall} v(f\cdot g) = f(p) \cdot v(g) + g(p)v(f)
-    .\end{align*}
-    $v\left(  \right) $ spełniający te warunki nazywamy różniczkowaniem w punkcie $p$.
+    \begin{przyklad}
+        Niech $\alpha = 7dx + 4dy, \beta = 2dx+3dy, v = 1 \frac{\partial }{\partial x} + 4 \frac{\partial }{\partial y} , w = 2 \frac{\partial }{\partial x} + \frac{\partial }{\partial y}$\\
+        Wtedy
+        \[
+            \left<\alpha\land\beta;v,w \right> = \begin{vmatrix}\alpha(v)&\beta(v)\\ \alpha(w)&\beta(w)\end{vmatrix} = \begin{vmatrix}7\cdot 1+4\cdot 4& 2\cdot 1+3\cdot 4 \\ 7\cdot 2+4 & 2\cdot 2+3 \end{vmatrix}
+        .\]
+    \end{przyklad}
+    Obserwacja: $\alpha\land\beta = -\beta\land\alpha$. Tzn. $\alpha\land\alpha = 0$.
+    Ważny przykład:
+    \begin{przyklad}
+        \begin{align*}
+            &\alpha = A_xdx + A_ydy + A_zdz, \beta = B_xdx + B_ydy + B_zdz\\
+            & \alpha\land\beta = \left( A_xdx + A_ydy + A_zdz \right) \land \left( B_xdx + B_ydy + B_zdz \right) = \\
+            &= \left( A_xdx+A_ydy+A_zdz \right) \land B_xdx + \left( A_xdx+A_ydy+A_zdz \right) \land B_ydy + \\
+            &+ \left( A_xdx+A_ydy+A_zdz \right) \land B_zdz = A_yB_xdy\land dx + A_zB_x dz\land dx +   \\
+            &+ A_xB_y dx\land dy + A_zB_ydz\land dy + A_xB_zdx\land dz + A_yB_zdy\land dz = \\
+            &=  \left( A_xB_y - A_yB_x \right) dx\land dy + \left( A_yB_z - A_zB_y \right) dy\land dz + \left( A_zB_x - A_xB_z \right) dz\land dx\\
+        .\end{align*}
+    \end{przyklad}
+    Potrzebujemy jeszcze jednego klocka, żeby zobaczyć gdzie tu siedzi fizyka.
+    \begin{definicja}
+        Odwzorowanie $d: \Lambda^k(M)\to\Lambda^{k+1}(M)$ nazywamy różniczką zewnętrzną (ewentualnie pochodną zewnętrzną) i definiujemy następująco:
+        \begin{align*}
+            &df = \frac{\partial f}{\partial x^1} dx^1 + \frac{\partial f}{\partial x^2} dx^2 + \ldots + \frac{\partial f}{\partial x^n} dx^n, f: \theta \to \mathbb{R}\\
+            &(\text{funkcje nazywamy zero-formami }f\in Lambda^0(\theta))\\
+            &\omega\in\Lambda^p(\theta), \eta\in \Lambda^L(\theta) \implies d(\omega\land\eta) = d\omega\land\eta + (-1)^p\omega\land d\eta \\
+            &dd\omega = 0, \omega\in\Lambda^k(\theta)
+        .\end{align*}
+    \end{definicja}
+    \begin{przyklad}
+        $f(r,\theta,\varphi)$ - funkcja z $\mathbb{R}^3$ w $\mathbb{R}^1$.\\
+        \begin{align*}
+            &df = \frac{\partial f}{\partial r} dr + \frac{\partial f}{\partial \theta} d\theta + \frac{\partial f}{\partial \varphi} d\varphi\\
+            &\alpha = 7x^2y dx\\
+            &d\alpha = d(7x^2y)\land dx = \left( \frac{\partial }{\partial x} (7x^2y)dx + \frac{\partial }{\partial y} (7x^2y)dy \right) \land dx = 7x^2dy\land dx
+        .\end{align*}
+    \end{przyklad}
+    \begin{przyklad}
+        Niech $F = -E_xdt\land dx - E_xdt\land dy - E_z dt\land dz + B_xdy\land dz + B_y dz\land dx + B_zdx \land dy$
+        \begin{align*}
+            &dF = \left( -\frac{\partial E_x}{\partial y} dy - \frac{\partial E_x}{\partial z} dz \right) \land dt\land dx +\\
+            &+ \left( - \frac{\partial E_y}{\partial x}dx - \frac{\partial E_y}{\partial z}dz  \right)\land dt \land dy + \\
+            &+ \left( -\frac{\partial E_z}{\partial x} dx - \frac{\partial E_z}{\partial y} dy \right)\land dt \land dz + \\
+            &+ \left( \frac{\partial B_x}{\partial t} dt + \frac{\partial B_x}{\partial x} dx \right) \land dy \land dz + \\
+            &+ \left( \frac{\partial B_y}{\partial t} dt + \frac{\partial B_y}{\partial y} dy \right) \land dz \land dx + \\
+            &+ \left( \frac{\partial B_z}{\partial t} dt + \frac{\partial B_z}{\partial z} dz \right) \land dx \land dy = \\
+            &= \underbrace{\left( -\frac{\partial E_x}{\partial y} + \frac{\partial E_y}{\partial x} + \frac{\partial B_z}{\partial t}  \right)} dt\land dx\land dy + \\
+            &+ \underbrace{\left( -\frac{\partial E_y}{\partial z} + \frac{\partial E_z}{\partial y} + \frac{\partial B_x}{\partial t}  \right)} dt\land dy\land dz + \\
+            &+ \underbrace{\left( -\frac{\partial E_x}{\partial z} + \frac{\partial E_z}{\partial x} - \frac{\partial B_y}{\partial t}  \right)}_{rot E - \frac{\partial B}{\partial t} } dt\land dx\land dz + \\
+            &+ \underbrace{\left( \frac{\partial B_x}{\partial x} + \frac{\partial B_y}{\partial y} + \frac{\partial B_z}{\partial z}  \right)}_{\nabla B} dx\land dy\land dz
+        .\end{align*}
+        I to są równania Maxwella (przynajmniej pierwsza ich część) $dF = 0$
+    \end{przyklad}
 
 
 \end{document}

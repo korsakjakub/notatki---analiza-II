@@ -5,151 +5,158 @@
 }
 
 \begin{document}
-    Chcemy dojść do tw Lebesque.
+    Ostatnio było:
+    \begin{align*}
+        &A\subset D : \underset{x\in A}{\forall} \mathcal{O}(f,x)<\varepsilon; A - \text{kostka, to}\\
+        &\underset{\Pi}{\exists} | \overline{S}(f,\Pi) - \underline{S}(f,\Pi)| < \varepsilon |A|
+    .\end{align*}
     \begin{tw}
-        (Lebesque) Niech $P$ - zbiór nieciągłości funkcji $f: D\to\mathbb{R}$, $f$ - ograniczona na $D$, $D$ - \ldots jest zbiorem miary Lebesque'a zera  $\iff$ $f$ - całkowalna na $D$.
+        (Lebesgue'a) niech $D$ - kostka, $D\subset \mathbb{R}^n$, $f: D\to \mathbb{R}$, $f$ - ograniczona.\\
+        Wówczas $f$ - (całkowalna na $D$ ) $\iff$ (zbiór nieciągłości funkcji $f$ jest miary Lebesgue'a zero)
     \end{tw}
-
-    Wiemy, że $f$ - całkowalna $\iff$
-    \[
-        \underset{\varepsilon>0}{\forall} .\underset{\Pi}{\exists}. |\overline{S}(f,\Pi) - \underline{S}(f,\Pi) | < \varepsilon
-    .\]
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.5\textwidth]{fig_33}
-    \end{figure}
-
-    Ostatnio pokazaliśmy, że
-    \[
-        A_{\varepsilon} = \left\{ x\in A, O(f,x) \ge \varepsilon \right\} \text{, to $A_\varepsilon$ jest zbiorem domkniętym}
-    .\]
-    (PS funkcja $f$ na zbiorze $A$ powinna być ograniczona!!!)
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.5\textwidth]{fig_34}
-    \end{figure}
-
-    \begin{obserwacja}
-        Jeżeli weźmiemy stól o jakiejś długości to mogę wziąć ileś kartek (albo naleśników. Nie wiadomo czy działa dla czego innego) i go nimi przykryć. Co więcej, jeżeli będzie promocja, to mogę nawet rzucić ich przeliczalnie dużo. Pytanie: czy dla każdego zbioru mogę (niezależnie od kształtu kartek) przykryć go skończoną liczbą kartek?
-    \end{obserwacja}
-
-    Weźmy długi stół:
-    \begin{align*}
-        &R = \bigcup_{n=0}^\infty ] n-2, n+2 [ \cup ]-n-2, -n+2[\\
-        &]0,1[ \subset [-2,2]\\
-        &]0,1[ \subset [-2019,2018]\cup[-2,2]\\
-        &]0,1[ = \bigcup_{n=2}^\infty ]\frac{1}{n},1-\frac{1}{n}[
-    .\end{align*}
-    Ostatnie jest słabe, bo nie mogę wybrać pokrycia ze skończonej ilości elementów.
-
-    \begin{definicja}
-        Niech $X$ - zbiór a $F = \left\{ A_\alpha, \alpha\in\mathbb{R}, A_i, i\in\mathbb{N} \right\} $ - rodzina zbiorów. Mówimy, że $F$ jest pokryciem zbioru $X$, jeżeli $X\subset \bigcup_{i,\alpha}A_\alpha$. Jeżeli zbiory $A_\alpha$ są otwarte, to mówimy, że $F$ jest pokryciem otwartym, jeżeli ilość zbiorów $A_\alpha$ jest skończona, to mówimy, że pokrycie jest skończone. Dowolny podzbiór $F$ taki, że jest też pokryciem zbioru $X$ nazywamy podpokryciem.
-    \end{definicja}
-    \begin{definicja}
-        Zbiór $X$ nazywamy zwartym, jeżeli z \textbf{każdego} pokrycia otwartego możemy wybrać skończone podpokrycie.
-    \end{definicja}
-    Jak sprawdzamy, czy zbiór jest zwarty, to nie szukamy skończonych pokryć, tylko takie które nie są skończone.
-    \begin{stw}
-        ($X$ - domknięty,ograniczony) $\iff$ ($X$-zbiór zwarty)
-    \end{stw}
     \begin{dowod}
-        niech $X\in\mathbb{X}$, $\mathbb{X}$ - przestrzeń metryczna\\
-        $\impliedby_1$ Pokażemy, że jeżeli $X$ - zwarty, to $X$ - ograniczony. (przypomnienie: zbiór $A\subset\mathbb{X}$ jest ograniczony jeżeli $\underset{r}{\exists} . \underset{x_0\in A}{\exists} $, że $A\subset K(x_0,r)$
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=0.5\textwidth]{fig_35}
-            \caption{Nieważne, co $A$ myśli o sobie, jeżeli otoczymy je kulą, to jest ograniczone i koniec}
-        \end{figure}
-        Skoro $X$ - zwarty, to niech $F$ będzie pokryciem złożonym z $K(x,1), x\i X$. $F = \left\{ K(x,1), \underset{x\in X}{\forall}  \right\} $. $F$ jest pokryciem zbioru $X$, ale ponieważ $X$ - zwarty, to znaczy, że z pokrycia $F$ możemy wybrać \textbf{skończone} podpokrycie, co oznacza, że zbiór $X$ możemy ułożyć w kulę o skończonym promieniu. Zatem $X$ - ograniczony.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=0.8\textwidth]{fig_36}
-            \caption{Przykrywanie zbioru kulami}
-        \end{figure}
-
-        $\impliedby_2$ Pokażemy, że $X$ - zwarty, to $X$ - domknięty. Pokażemy, że $X'$ - zbiór otwarty.
-        Czyli, że dla dowolnego $p\in X' \underset{K(p,\tilde r)}{\exists} $, że $K(p,\tilde r)\cap X = \phi$ co będzie oznaczało, że $X'$ składa się wyłącznie z punktów wewnętrznych.
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=0.8\textwidth]{fig_37}
-        \end{figure}
-    Weźmy $q\in X$, utwórzmy dwa otoczenia:
-    \[
-        K(q,r), K(p,r); r=\frac{1}{2}d(p,q)
-    .\]
-    Widać, że $K(q,r) \cap K(p,r) = \phi$. Powtarzamy taką procedurę dla każdego $q\subset X$,
-    oznacza to, że dostaniemy pokrycie zbioru $X$ kulami $K(q,r_q), q\in X$, ale $X$ jest zbiorem zwartym więc mogę wybrać \textbf{skończoną} ilość kul \\
-    $K(q_1,r_1), K(q_2,r_2),\ldots,K(q_k,r_k)$ będącą pokryciem zbioru $X$.
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.8\textwidth]{fig_38}
-    \end{figure}
-    A to znaczy, że
-    \[
-        \underbrace{\left( K(p,r_1)\cap K(p,r_2) \cap \ldots \cap K(p,r_k) \right)}_{\text{jest do zbiór niepusty i \textbf{otwarty}}} \cap \underbrace{\left( K(q_1,r_1) \cup K(q_2,r_2) \cup \ldots \cup K(q_k,r_k) \right)}_{\text{Pokrywa cały $X$}} = \phi
-    .\]
-    czyli np. \[
-        \bigcap_{n=1}^\infty ]-\frac{1}{n}, \frac{1}{n}[ = [0]
-    .\]
-    Znaleźliśmy otoczenie otwarte punktu $P$ : $K(p,r_k) \cap \ldots K(p,r_k)$, takie, że nie ma punktów wspólnych z $X$, więc $p$ jest punktem wewnętrznym, czyli  $X'$ - otwarty, czyli $X$ - domknięty.
-
-     $X$ - domknięty i ograniczony $\implies$ $X$ - zwarty. Niech $P$ - kostka z $\mathbb{R}^n$, metryka $d_2$. Pokażemy, że $P$ jest zwarta.
-    \[
-        P = [a_1,b_1]\times\ldots\times[a_n,b_n]
-    .\]
-    \[
-        \lnot(p\implies q)\iff p\land \lnot q
-    .\]
-    Dowód przez sprzeczność:\\
-    Załóżmy, że $P$ - domknięty i ograniczony i $P$ nie jest zwarty. Co to znaczy, że $P$ nie jest zwarte? Oznacza to, że istnieje pokrycie zbioru $P$ takie, że nie da się wyciągnąć z niego skończonego podpokrycia.
-
-    Jeżeli $P$ nie da się pokryć skończoną ilością zbiorów, to znaczy, że jeżeli weźmiemy kostkę $[a_1,c_1]\times[a_2,c_2]\times\ldots\times[a_n,c_n]$ gdzie $c_1 = \frac{a_1+b_1}{2}, c_2 = \frac{a_2+b_2}{2}, \ldots, c_n = \frac{a_n+b_n}{2}$,\\
-    to jej też nie możemy podzielić na skończoną ilość elementów. Czyli $P_1\subset P$, kulę $P_1$ też możemy podzielić na cztery części itd\ldots W efekcie dostaniemy ciąg kostek $P P_1 P_2 P_3 \ldots P_n \ldots$.
-    Weźmy ciąg elementów
-    \begin{align*}
-        &x_0\in P\\
-        &x_1\in P_1\\
-        &\vdots\\
-        &x_n\in P_n\\
-        &\vdots
-    .\end{align*}
-    Znaczy, że ciąg $\left\{ x_n \right\}$ jest ciągiem Cauchy (bo każdy element ciągu asdasd). Ciąg $\left\{ x_n \right\} \in\mathbb{R}^n$ czyli $X_n$ jest zbieżny.
-    (bo $\mathbb{R}^n$ - zupełna). Niech $\tilde x$ będzie granicą $\left\{ x_n \right\} $ a zbiór $\left\{ P,P_1,P_2,\ldots,P_n,\ldots \right\} $ jest pokryciem $P$ takim, z którego nie możemy wyciągnąć skończonego podpokrycia. Ale skoro $\lim_{n\to\infty}x_n = \tilde x$, to znaczy, że
-    \[
-        \underset{\varepsilon>0}{\forall} . \underset{n}{\exists} . \underset{n>N}{\forall} . x_n\in K(\tilde x,\varepsilon)
-    .\]
-    Oznacza to, że mogę tak dobrać $\varepsilon$, że w $K(\tilde x,\varepsilon)$ będą się zawierać wszystkie $P_{i}, i>n$. Mogę wtedy wybrać \textbf{skończone} podpokrycia kostki $P$.\\
-    \[
-        \left\{ P_1,P_2,P_3,\ldots,P_{n_i}, K(\tilde x,\varepsilon) \right\}
-    .\] i sprzeczność
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.5\textwidth]{fig_39}
-        \caption{mogę wybrać sobie takie kółko, że wszytkie następne kwadraty będą już leżały w tym kółku!}
-    \end{figure}
-    \end{dowod}
-
-    Wracamy do tw. Lebesque'a.
-    Obserwacja: Niech $D$ - zwarty, $D\subset \mathbb{R}^n$, $f: D\to \mathbb{R}$ - ograniczona i niech $A = \left\{ x\in D, o(f,x) < \varepsilon \right\} $. Wówczas:
-    \[
-        \underset{\Pi}{\exists} . |\overline{S}(f,\Pi) - \underline{S}(f,\Pi)|<\varepsilon |D|
-    .\]
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.8\textwidth]{fig_40}
-    \end{figure}
-    \begin{dowod}
-        Skoro $\underset{x\in A}{\forall} \lim_{r\to 0} | \underset{K(x',r)}{sup} f(x') - \underset{x'\in K(x',r)}{inf} f(x') | < \varepsilon$
-        To znaczy, że
-        $\underset{r_\varepsilon}{\exists} $ takie, że $|sup f(x') - inf f(x') | < \varepsilon$.
-        Jeżeli zbadamy wszystkie kule $K(x,r_\varepsilon) \underset{x\in D}{\forall} $ to otrzymamy pokrycie $A$. Ale $A$ jest zbiorem zwartym, więc możemy wybrać skończone podpokrycie, czyli skończoną ilość kul takich, że
-        \[(*)
-            A \subset K(x_1,r_\varepsilon^1)\cup K(x_2,r_\varepsilon^2)\cup\ldots\cup K(x_n,r_\varepsilon^n)
-        .\]
-        Możemy zatem wybrać podział $\Pi$ zbioru $D$ zgodny z podziałem $(*)$, w wyniku czego,
+        $\impliedby$ \\
+        Chcemy pokazać, że \[
+            \underset{\Pi}{\exists} |\overline{S}(f,\Pi) - \underline{S}(f,\Pi) | < \varepsilon
+        ,\]
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.8\textwidth]{fig_41}
+            \end{figure}
+        przy założeniu, że zbiór nieciągłośći jest miary L. zero.\\
+        Wprowadźmy zbiór $A_n = \left\{ x\in D, \mathcal{O}(f,x) \ge \frac{1}{n} \right\} $
         \[
-            |\overline{S}(f,\Pi) - \underline{S}(f,\Pi)|<\varepsilon |D|
+            \text{np. } A_2 = \left\{ x\in D, \mathcal{O}(f,x) \ge \frac{1}{2} \right\}
         .\]
+        \begin{obserwacja}
+            $A_1\subset A_2\subset A_3\subset \ldots$\\
+            a zbiór $A = \bigcup_{n=1}^{\infty}A_n$ będzie zbiorem wszystkich punktów nieciągłości funkcji $f$ na  $D$.\\
+        \end{obserwacja}
+            Tw. Lebesgue'a udowodnimy dla wybranego $A_n$, bo przeliczalna suma zbiórów miary L. zero też jest zbiorem miary L. zero.
+        \begin{uwaga}
+            Zbiór $A_n$ jest zbiorem domkniętym (bo lemat).\\
+            Wiemy, że $A_n$ jest zbiorem miary L. zero gdy itnieje $P_i \subset D$, ($P_i$ - kostki), że $A_n \subset \bigcup P_i $, $\sum |P_i |$ - dowolnie mała (skończona lub nieskończona suma).\\
+        \end{uwaga}
+        Niech $\varepsilon > 0$. Wiemy, że
+        \[
+        \underset{\varepsilon>0}{\forall} . \underset{N}{\exists} . \underset{n > N}{\forall} \frac{1}{n} < \varepsilon
+        .\] Wybierzmy zatem taki indeks $n$ dla zbioru $A_n$, że $\frac{1}{n} < \varepsilon$.
+        Wiemy, że $A_n$ - domknięty i ograniczony (bo $A_n \subset D$, a $D$ - kostka w $\mathbb{R}^n$), to znaczy, że $A_n$ jest zbiorem zwartym, a $\left\{ P_i \right\} $ jest jego pokryciem.
+        Możemy więc wybrać z niej skończone podpokrycie $\left\{ P_1, P_2, \ldots, P_k \right\} $ takie, że
+        \begin{align*}
+        &A_n \subset \bigcup_{j=1}^k P_j\\
+        &\sum_{j=1}^{k} |P_j| < \frac{1}{n}
+        .\end{align*}
+        (możemy tak zrobić, bo zawsze możemy wybrać taką rodzinę $\left\{ P_i \right\} $, że $\sum |P_i|$ - dowolnie mała.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.8\textwidth]{fig_42}
+        \end{figure}
+        Wybierzmy podział $\Pi$ zbioru $D$ taki, że $\Pi$ jest na tyle drobny, że odtwarza pokrycie $A_n$ zbioru $\bigcup P_j$. Oznacza to, że podział $\Pi$ możemy podzielić na dwa podziały
+        \begin{align*}
+            &\Pi = \Pi_1 \cup \Pi_2 \text{, takie że}\\
+            &\Delta\\
+            &\Pi_1 \cap \left\{ \bigcup_{j} P_j \right\} \neq \phi\\
+            &\text{oraz } \Pi_2 \cap \left\{ \bigcup_{j} P_j \right\} = \phi
+        .\end{align*}
+        $\Delta$ : każda kostka z $\left\{ P_j \right\} $ składa się z kostek należących do $\Pi_1$
+
+        $|\overline{S}(f,\Pi) - \underline{S}(f,\Pi)| = |\overline{S}(f,\Pi_1) - \underline(f,\Pi_1) + \overline{S}(f,\Pi_2) - \underline{S}(f,\Pi_2)|$, ale
+        \begin{equation}\label{eq:Q}
+            \overline{S}(f,\Pi_1) - \underline{S}(f,\Pi_1) = \sum_{Q_i\in\Pi_i}(\underset{x\in Q_i}{sup} f - \underset{x\in Q_I}{inf} f) Q_i |
+        \end{equation}
+        Gdzie wiemy, że $\sum |Q_i| < \frac{1}{n}$, a $f$ - ograniczona na $D$ czyli
+        \[
+            \underset{M}{\exists} .\underset{x\in D}{\forall} |f(x)| < \frac{M}{4}
+        .\] Czyli
+        \[
+        |\underset{x\in D}{\sup} f - \underset{x\in D}{\inf} f | < M
+        .\] Zatem
+        \[
+            \text{(\ref{eq:Q})} \le M \cdot \sum |Q_i| \le M \cdot  \frac{1}{n}
+        .\]
+        Ale
+        \begin{align*}
+            &\overline{S}(f,\Pi_2) - \underline{S}(f,\Pi_2) = \sum_{R_j \in \Pi_2}(\underset{x\in R_j}{\sup} f - \underset{x\in R_j}{\inf} f) |R_j|\\
+            &\le \frac{1}{n} \sum |R_j| \le \frac{1}{n} |D|
+        .\end{align*}
+        Zatem
+        \[
+            |\overline{S}(f,\Pi) - \underline{S}(f,\Pi) \le M \cdot \frac{1}{n} + \frac{1}{n} |D| = \frac{1}{n} \cdot  const
+        .\]
+        czyli możemy tak zwiększyć $n$, że $\underset{\varepsilon>0}{\forall} \frac{1}{n}\cdot const < \varepsilon \quad\Box$\\
+        Dlaczego wynika z tego prawdziwość dowodu dla całego $A$?\\
+        np. dla $A_{2019}$ działa, ale co dalej. Bo $A_k$ dla $k>n$ też spełniają warunek, że $\frac{1}{k}\cdot const < \varepsilon$, a $A_j$ dla $j<n$ jest takie, że $A_j \subset A_n$
+
+        $\implies$\\
+        Wiemy, że $f$ - całkowalne, czyli
+        \[
+            \underset{\varepsilon>0}{\forall} . \underset{\Pi}{\exists} |\overset{S}(f,\Pi) - \underset{S}(f,\Pi) | < \varepsilon / n
+        .\] (chcemy pokazać, że $A_n$ jest zbiorem miary L. zero)
+
+        \begin{align*}
+            &\Pi = \left\{ T_i \right\}\\
+            &\frac{\varepsilon}{n} > |\overline{S}(f,\Pi) - \underline{S}(f,\Pi)| = \\
+            &\sum | \underset{x\in T_i}{\sup} f - \underset{x\in T_i}{\inf} f| |T_i|
+            (*)
+        .\end{align*}
+        z podziału $T_i$ wybieram takie kostki $P_i$, że $|\underset{x\in P_i}{\sup} f - \underset{x\in P_i}{\inf} f \ge \frac{1}{n}$.\\
+        Wówczas
+        \begin{align*}
+            &(*) \ge \sum_{P_i} \frac{1}{n} | P_i | = \frac{1}{n} \sum |P_i|\\
+            &\text{czyli } \underset{\varepsilon>0}{\forall} \frac{\varepsilon}{n} > \frac{1}{n} \sum |P_i|\text{, gdzie $P_i$ jest pokryciem $A_n$}
+        .\end{align*}
+        Czyli $A_n$ jest zbiorem miary L. zero $\quad\Box$
     \end{dowod}
 
+    \begin{przyklad}
+        $f(x,y) = x \sin(xy), \quad A=[0,1]\times[0,1]$\\
+        $\int_A f \overset{\text{?}}{=} \int_{0}^{1} \varphi_1(x)dx \overset{\text{?}}{=} \int_0^1 \varphi_2(y)dy$,\\
+        gdzie $\varphi_1(x) = \int_0^1 x\sin(xy)dy$, $\varphi_2(y) = \int_0^1 x\sin(xy)dx$
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\textwidth]{fig_43}
+            \caption{życie było by proste gdybyśmy mogli tak robić}
+        \end{figure}
+        \[
+            \int_{A}f = \int_0^1 dx \int_0^1 dy f(x,y) \overset{\text{?}}{=} \int_0^1dy \int_0^1dx f(x,y)
+        .\]
+    \end{przyklad}
+    \begin{tw}
+        (Fubiniego)\\
+        Niech $f: A\times B\to \mathbb{R}$. $A\subset\mathbb{R}^l, B\subset\mathbb{R}^k, A\times B\subset\mathbb{R}^n$, $f$ - ograniczona i całkowalna na $A\times B$. Oznaczmy $x^l\in A, y^k\in B$, $A,B$ - kostki.\\
+        Niech \[
+            \varphi(x) = \overline{\int_B}f(x^l,y^k)dy^k, \psi(x) = \underline{\int_B} f(x^l, y^k)dy^k
+        .\]
+        Wówczas \[
+        \int_{A\times B} f = \int_A \varphi = \int_A \psi
+        .\]
+        \begin{uwaga}
+            całkowalnośc na $A\times B$ nie oznacza całkowalności na np. $B$.
+        \end{uwaga}
+    \end{tw}
+    \begin{dowod}
+        Niech $\left\{ Q_i \right\} = \Pi_1$ - podział zbioru $A$, $\left\{ R_j \right\} = \Pi_2$ - podział zbioru $B$.\\
+        Wówczas  $\Pi_1 \times \Pi_2$ - podział $A\times B$.
+        \begin{align*}
+            &\underline{S}(f,\Pi_1\times \Pi_2) = \\
+            &= \sum_{\substack{Q_i\\ R_j}} \underset{\substack{x\in Q_i\\ y\in R_j}}{\inf} f(x,y) |Q_i| |R_j| \le\\
+            &\sum_{Q_i}\sum_{R_j} \underset{x\in Q_i}{\inf} \underset{y\in R_j}{\inf} f(x,y) |Q_i| |R_j|\le\\
+            &\le \sum_{Q_i}\underset{x\in Q_i}{\inf} \underset{\text{suma dolna dla $\psi(x)$}}{\sum_{R_j}\underset{y\in R_j}{\inf} f(x,y) |R_j| |Q_i|}\le\\
+            &\le\sum_{Q_i}\underset{\text{bo suma dolna $\le$ całki dolnej}}{\underset{x\in Q_i}{\inf} \psi(x) |Q_i|} = \underset{S}(\psi,\Pi_1)
+        .\end{align*}
+        Ale $\underline{\int_A}\psi(x) = \underset{\Pi}{\sup} \left| \sum_{Q_i}\underset{x\in Q_i}{\inf} \psi(x) | Q_i | \right|$.\\
+        Czyli $\underline{S}(f,\Pi_1\times\Pi_2) \le \underline{S}(\psi,\Pi_1)$. Analogicznie możemy pokazać, że\\
+        \[\underline{S}(\psi,\Pi_1)\le\underline{S}(\varphi,\Pi_1)\le\overline{S}(\varphi,\Pi_1) \le\overline{S}(f,\Pi_1\times\Pi_2).\]
+        Zatem
+        \[
+            \underline{S}(f,\Pi_1\times\Pi_2) \le \underline{\underline{S}(\psi,\Pi_1)} \le \overline{S}(\psi, \Pi_1) \le \underline{\overline{S}(\varphi,\Pi_1)} \le \overline{S}(f,\Pi_1\times\Pi_2)
+        .\]
+        Skoro $f$ - całkowalna na $A\times B$, to
+    \[
+        \underset{\varepsilon>0}{\forall} .\underset{\Pi}{\exists} |\overline{S}(f,\Pi) - \underline{S}(f,\Pi)|<\varepsilon
+    .\]
+    Co oznacza, że $\int_A \psi$ i $\int_B \varphi$ - istnieją i wynoszą $\int_{A\times B} f \quad\Box$
+
+    \end{dowod}
 \end{document}
