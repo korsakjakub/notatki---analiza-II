@@ -1,4 +1,7 @@
 # Moje notatki z Analizy II z FUW, semestr letni 2019.
+
+[Tutaj](https://korsakjakub.github.io/notatki-analiza-II/) trochę bardziej mobilna wersja 
+
 ## Plan podboju kosmosu (TODO):
 * uzupełnić braki przed sesją
 * uładnić rysunki (if necessary)
