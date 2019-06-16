@@ -1,0 +1,140 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{mdframed}
+\usepackage{subfiles}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{polski}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \IfFileExists{img/#1.pdf_tex}{
+        \import{"img/"}{#1.pdf_tex}
+    }
+    {
+        \import{"../img/"}{#1.pdf_tex}
+    }
+}
+\begin{document}
+\newmdtheoremenv{tw}{Twierdzenie}
+\newmdtheoremenv{stw}{Stwierdzenie}
+\newtheorem{obserwacja}{Obserwacja}
+\newtheorem{dowod}{Dowód}
+\newmdtheoremenv{definicja}{Definicja}
+\newtheorem{przyklad}{Przykład}
+\newtheorem{pytanie}{Pytanie}
+\newtheorem{uwaga}{Uwaga}
+\begin{tw}
+Niech $f:U\subset \mathbb{R}^n \to \mathbb{R}^1, f\in \mathcal{C}^2(U), G: U_2\subset\mathbb{R}^n\to\mathbb{R}^m, G\in \mathcal{C}^2(U_2), \underset{x_0}{\exists} G(x_0) = 0, G'(x_0)$ - ma rząd maksymalny $(m)$ oraz \[\underset{\Lambda}{\exists} \Lambda = \left[ \lambda_1,\ldots,\lambda_m \right], \lambda_i \in \mathbb{R}, f'(x_0) - \Lambda G'(x_0) = 0.\] to jeżeli\[(f''(x_0)-\Lambda G''(x_0))(h_\parallel,h_\parallel) > 0,h_\parallel \overset{\text{def}}{=} \left \{G'(x_0) h_\parallel = 0 \right \}.\] to $f$ posiada w $x_0$ minimum lokalne $(<0$, to maksimum lokalne$)$ na zbiorze $M = \left\{ x\in \mathbb{R}^n, G(x) = 0 \right\} $\end{tw}
+\begin{tw}
+    Niech $[a,b] \subset \mathbb{R}, \mathcal{O}\subset\mathbb{R}^n, \mathcal{O}$ - domknięty i $f:[a,b]\times\mathcal{O}\to\mathcal{O}$ takie, że $f$ - ciągła na $[a,b]\times\mathcal{O}$ oraz $f$ spełnia warunek Lipschitza na $\mathcal{O}$, to znaczy:\[\underset{L>0}{\exists}. \underset{t\in[a,b]}{\forall}. \underset{x,x'\in\mathcal{O}}{\forall} \Vert f(t,x) - f(t,x') \Vert \leq L \Vert x-x' \Vert.\] Wówczas \[\underset{t_0\in[a,b]}{\forall} . \underset{x_0\in\mathcal{O}}{\forall} . \underset{\varepsilon>0}{\exists} \text{, że dla } t\in ]t_0-\varepsilon, t_0+\varepsilon[\]równanie ma jednoznaczne rozwiązania, które są ciągłe ze względu na $x_0$\begin{equation}\begin{cases}\label{eq:eq21}\frac{dx}{dt} = f(t,x)\\x(t_0) = x_0\end{cases}\end{equation}\end{tw}
+\begin{tw}
+    Jeżeli odwzorowania\begin{align*}&t\in [a,b]\to A(t)\\&t\in [a,b]\to b(t).\end{align*}Gdzie $A(t)\in L(x,x), b(t) : \mathbb{R}^1\to X$ są ciągłe, to równanie\[\frac{d}{dt}x(t) = A(t)x(t) + b(t),\quad x(t_0) = x_0.\]Ma dla dowolnych $t_0\in[a,b], x_0\in X$ jednoznacznie określone rozwiązanie na $t\in]a,b[$\\Czym to się różni od twierdzenia o jednoznaczności warunku Cauchy? Nie ma tutaj mowy o żadnej lipszycowalności. Zawężono za to klasę funkcji występującej w równaniu. Zamiast $]t_0-\varepsilon,t_0+\varepsilon[\times \mathcal{O}$, mamy $]a,b[ \times X$\end{tw}
+
+
+\begin{tw}
+    (Liouville)\\Jeżeli $R(t,t_0)$ - rezolwenta dla problemu\begin{align*}&\frac{dx}{dt} = A(x)x(t)\\&x(t_0) = x_0.\end{align*}i $x\in \mathbb{R}^n$, to $w(t) = w(t_0)e^{\int_{t_0}^t tr(A(s))ds}$, gdzie $w(t) = \det R(t,t_0)$ i $w(t)$ nazywamy wrońskianem.\\\end{tw}
+\begin{tw}
+    (Lebesque) Niech $P$ - zbiór nieciągłości funkcji $f: D\to\mathbb{R}$, $f$ - ograniczona na $D$, $D$ - \ldots jest zbiorem miary Lebesque'a zera  $\iff$ $f$ - całkowalna na $D$.\end{tw}
+    \begin{stw}
+    ($X$ - domknięty,ograniczony) $\iff$ ($X$-zbiór zwarty)\end{stw}
+\begin{tw}
+    (Lebesgue'a) niech $D$ - kostka, $D\subset \mathbb{R}^n$, $f: D\to \mathbb{R}$, $f$ - ograniczona.\\Wówczas $f$ - (całkowalna na $D$ ) $\iff$ (zbiór nieciągłości funkcji $f$ jest miary Lebesgue'a zero)\end{tw}
+    \begin{tw}
+    (Fubiniego)\\Niech $f: A\times B\to \mathbb{R}$. $A\subset\mathbb{R}^l, B\subset\mathbb{R}^k, A\times B\subset\mathbb{R}^n$, $f$ - ograniczona i całkowalna na $A\times B$. Oznaczmy $x^l\in A, y^k\in B$, $A,B$ - kostki.\\Niech \[\varphi(x) = \overline{\int_B}f(x^l,y^k)dy^k, \psi(x) = \underline{\int_B} f(x^l, y^k)dy^k.\]Wówczas \[\int_{A\times B} f = \int_A \varphi = \int_A \psi.\]\begin{uwaga}całkowalnośc na $A\times B$ nie oznacza całkowalności na np. $B$.\end{uwaga}\end{tw}
+\begin{tw}
+    (O zamianie zmiennych)\\Niech $\Theta, \Omega$ - zbiory otwarte w $\mathbb{R}^n$ i $\xi: \Omega\to \Theta$, $f: \Theta\to \mathbb{R}$, $f$ - ograniczona i całkowalna. $\xi$ - klasy $\mathcal{C}^1$ na $\Omega$, $\xi^{-1}$ klasy $\mathcal{C}^{1}$ na $\Theta$. Wtedy\begin{equation}\int_{\Theta} f(x) dx =  \int_{\Omega} f(\xi(t)) | \det \xi'(t) | dt.\end{equation}$x=(x^1,\ldots,x^n)\in \Theta, t=(t^1,\ldots,t^n)\in \Omega$\end{tw}
+
+
+
+
+
+
+
+
+
+\begin{tw}
+    Jeżeli $f$ - różniczkowalna w $x_0 \in U$, to dla dowolnego $e\in U$, $$\nabla_e f(x_0) = f'(x_0)e$$\end{tw}
+    \begin{tw}
+    Niech $O\subset\mathbb{R}^{n}, O$ - otwarty. $f: O\to Y, x_0\in O$.Jeżeli istnieją pochodne cząstkowe $\frac{\partial}{\partial x_i} f, i=1,\dots,n$ i są ciągłe w $x_0$, wtedy $\underset{h\in\mathbb{R}^n}{\forall} f(x_0+h)-f(x_0)=\sum_{i=1}^{n} \frac{\partial f}{\partial x_i} h^i+r(x_0,h)$, gdzie $\frac{r(x_0,h)}{||h||}\to0$\end{tw}
+\begin{tw}
+Niech $G:U \to Y, U\subset X, U \text{ - otwarte }, X$ - przestrzeń wektorowa unormowana, $F: G(U) \to Z, G(U) \subset V$\\$G$ - różniczkowalna w $x_0\in U$, $F$ - różniczkowalna w $G(x_0)\in U$.\\$$G(x_0 + h_1) - G(x_0) = G'(x_0)h_1+r_1(x_0,h_1)\text{, gdy }\frac{r(x_0,h_1)}{||h_1||_x} \to 0$$$$F(y_0 + h_2) - F(y_0) = F'(y_0)h_2+r_2(y_0,h_2)\text{, gdy }\frac{r(y_0,h_2)}{||h_2||_y} \to 0$$$$\text{Wówczas: } (F \circ G ) \text{ - różniczkowalna w } x_0$$$$\text{oraz } (F \circ G)' (x_0) = \left . F'(x)\right |_{x=G(x_0)} G'(x_0)$$\end{tw}
+\begin{tw}
+Niech $f: \mathcal{O}\to\mathbb{R}, \mathcal{O}\subset \mathbb{R}^n$, otwarty i $f\in\mathcal{C}^2(\mathcal{O})$, wówczas$$\frac{\partial^2 f}{\partial x^i \partial x^j} = \frac{\partial^2 f}{\partial x^j \partial x^i}; i,j=1,\dots,n$$\end{tw}
+\begin{stw}
+    jeżeli $f: \mathcal{O} \rightarrow \mathbb{R}, \mathcal{O}$ - otwarty, $x_0 \in \mathcal{O}, f$ - posiada w $x_0$ minimum lub maksimum lokalne, to $$\frac{\partial f}{\partial x^i} (x_0) = 0, i = 1,\dots,n$$(działa tylko w prawo, bo możliwe punkty przegięcia ((siodła)) )\end{stw}\begin{tw}
+Niech $f: \mathcal{O} \to \mathbb{R}, \quad\mathcal{O}\subset\mathbb{R}^n, \quad x_0\in\mathcal{O}, \quad \mathcal{O} \text{ - otwarty, a } f \text{ - klasy } C^{2p} (\mathcal{O})$ oraz $f'(x_0) = 0, f''(x_0) = 0,\dots,f^{(2p-1)} (x_0) = 0$i $$\underset{c > 0}{\exists} \quad\underset{\eta > 0}{\exists} \quad\underset{h\in K(x_0,\eta)}{\forall}: \quad \sum_{\substack{i_1 = 1\\ \vdots \\ i_{2p} = 1}}^n \frac{\partial^{(2p)} f}{\partial x^{i_1} \dots \partial x^{i_{2p}}} (x_0) h^{i_1} \dots h^{i_{2p}} \geq c ||h||^{2p} (\leq c||h||^{2p})$$to $f$ ma w $x_0$ minimum (maksimum) lokalne.\end{tw}
+\begin{tw}
+    Twierdzenie ($L$ - ograniczone) $\iff$ ($L$ - ciągłe)\end{tw}
+    \begin{stw}
+        Niech $f: U\subset \mathbb{R}^m \to \mathbb{R}^n, U$ - otwarte, wypukły$\underset{M}{\exists}.\underset{x\in U}{\forall}||f'(x)||\leq M$, to $\underset{a,b\in U}{\forall}||f(b)-f(a)||_n \leq M||b-a||_m$ \begin{tiny}(jakiekolwiek skojarzenia z Twierdzeniem Lagrange zupełnie przypadkowe *wink* *wink*)\end{tiny}\end{stw}
+    \begin{tw}
+        Jeżeli ciąg $\{x_0, P(x_0), \dots \} $ - zbieżny i $P$ - ciągłe, to jest on zbieżny do punktu stałego.\end{tw}
+        \begin{tw}
+            (Zasada Banacha o lustrach)\\Jeżeli $P: X \to X, P$ - zwężające, to\begin{align}\label{eq:banach}&\text{1. } \underset{x_0 \in X}{\forall}\quad \{x_0,P(x_0),P(P(x_0)),\dots\}) \text{ - Zbieżny do punktu stałego } \tilde x\\&\text{2. Istnieje tylko jedno }\tilde x\\&\text{3. } \underset{m}{\forall}\quad d(x_m,\tilde x) < \frac{q^m}{1-q} d(x_1, x_0)\end{align}\end{tw}
+\begin{tw}
+    (o lokalnej odwracalności)\\Niech $f: E \to E, E$ - otwarty, $E\subset \mathbb{R}^N, f$ - różniczkowalna w sposób ciągły na $E$.$(f \text{ - klasy } \mathcal{C}^1 (E)), \underset{a,b\in E}{\exists}:f(a) = b \land f'(a) \text{ - odwracalna } (det(f'(a))\neq 0)$, to:\begin{align*}&1. \underset{U,V\subset E}{\exists}, \underset{a\in U, b\in V}{\exists}, U,V \text{ - otwarte, }f \text{ - bijekcja między } U,V\\&2. \underset{g: V\to U}{\exists}.\underset{x\in V}{\forall}, f(g(x)) = x, g\text{ - ciągła i różniczkowalna na } V\\\end{align*}\end{tw}
+\begin{tw}
+(o funkcji uwikłanej)\\Niech $H:E\subset\mathbb{R}^{n+m}\to\mathbb{R}^{m},H\in\mathcal{C}^{1}$ na $E$. $(x_0,y_0)\in E, H(x_0,y_0)=0, (x_0,y_0) = (x_0^1,\ldots,x_0^n,y_0^1,\ldots,y_0^m), H$ - odwracalna.\\Wówczas istnieje  $U\subset E$ takie, że $(x_0,y_0)\in U, \underset{W\subset \mathbb{R}^{n}}{\exists} $, że $x_0\in W, \underset{x\in W}{\forall} \underset{y}{\exists !} H(x,y) = 0, (x,y) \in U$.\\Jeżeli $y= \varphi(x)$, to $\varphi:\mathbb{R}^{n}\to\mathbb{R}^{m}$ i $\varphi\in \mathcal{C}^{1}$ na $W$. $\varphi'(x) = -(H_y')^{-1}H_x'$\end{tw}
+
+\end{document}
+\begin{tw}Niech $f:U\subset \mathbb{R}^n \to \mathbb{R}^1, f\in \mathcal{C}^2(U), G: U_2\subset\mathbb{R}^n\to\mathbb{R}^m, G\in \mathcal{C}^2(U_2), \underset{x_0}{\exists} G(x_0) = 0, G'(x_0)$ - ma rząd maksymalny $(m)$ oraz \[\underset{\Lambda}{\exists} \Lambda = \left[ \lambda_1,\ldots,\lambda_m \right], \lambda_i \in \mathbb{R}, f'(x_0) - \Lambda G'(x_0) = 0.\] to jeżeli\[(f''(x_0)-\Lambda G''(x_0))(h_\parallel,h_\parallel) > 0,h_\parallel \overset{\text{def}}{=} \left \{G'(x_0) h_\parallel = 0 \right \}.\] to $f$ posiada w $x_0$ minimum lokalne $(<0$, to maksimum lokalne$)$ na zbiorze $M = \left\{ x\in \mathbb{R}^n, G(x) = 0 \right\} $\end{tw}
+\begin{tw}Niech $[a,b] \subset \mathbb{R}, \mathcal{O}\subset\mathbb{R}^n, \mathcal{O}$ - domknięty i $f:[a,b]\times\mathcal{O}\to\mathcal{O}$ takie, że $f$ - ciągła na $[a,b]\times\mathcal{O}$ oraz $f$ spełnia warunek Lipschitza na $\mathcal{O}$, to znaczy:\[\underset{L>0}{\exists}. \underset{t\in[a,b]}{\forall}. \underset{x,x'\in\mathcal{O}}{\forall} \Vert f(t,x) - f(t,x') \Vert \leq L \Vert x-x' \Vert.\] Wówczas \[\underset{t_0\in[a,b]}{\forall} . \underset{x_0\in\mathcal{O}}{\forall} . \underset{\varepsilon>0}{\exists} \text{, że dla } t\in ]t_0-\varepsilon, t_0+\varepsilon[\]równanie ma jednoznaczne rozwiązania, które są ciągłe ze względu na $x_0$\begin{equation}\begin{cases}\label{eq:eq21}\frac{dx}{dt} = f(t,x)\\x(t_0) = x_0\end{cases}\end{equation}\end{tw}
+\begin{tw}Jeżeli odwzorowania\begin{align*}&t\in [a,b]\to A(t)\\&t\in [a,b]\to b(t).\end{align*}Gdzie $A(t)\in L(x,x), b(t) : \mathbb{R}^1\to X$ są ciągłe, to równanie\[\frac{d}{dt}x(t) = A(t)x(t) + b(t),\quad x(t_0) = x_0.\]Ma dla dowolnych $t_0\in[a,b], x_0\in X$ jednoznacznie określone rozwiązanie na $t\in]a,b[$\\Czym to się różni od twierdzenia o jednoznaczności warunku Cauchy? Nie ma tutaj mowy o żadnej lipszycowalności. Zawężono za to klasę funkcji występującej w równaniu. Zamiast $]t_0-\varepsilon,t_0+\varepsilon[\times \mathcal{O}$, mamy $]a,b[ \times X$\end{tw}
+
+
+\begin{tw}(Liouville)\\Jeżeli $R(t,t_0)$ - rezolwenta dla problemu\begin{align*}&\frac{dx}{dt} = A(x)x(t)\\&x(t_0) = x_0.\end{align*}i $x\in \mathbb{R}^n$, to $w(t) = w(t_0)e^{\int_{t_0}^t tr(A(s))ds}$, gdzie $w(t) = \det R(t,t_0)$ i $w(t)$ nazywamy wrońskianem.\\\end{tw}
+\begin{tw}(Lebesque) Niech $P$ - zbiór nieciągłości funkcji $f: D\to\mathbb{R}$, $f$ - ograniczona na $D$, $D$ - \ldots jest zbiorem miary Lebesque'a zera  $\iff$ $f$ - całkowalna na $D$.\end{tw}\begin{stw}($X$ - domknięty,ograniczony) $\iff$ ($X$-zbiór zwarty)\end{stw}
+\begin{tw}(Lebesgue'a) niech $D$ - kostka, $D\subset \mathbb{R}^n$, $f: D\to \mathbb{R}$, $f$ - ograniczona.\\Wówczas $f$ - (całkowalna na $D$ ) $\iff$ (zbiór nieciągłości funkcji $f$ jest miary Lebesgue'a zero)\end{tw}\begin{tw}(Fubiniego)\\Niech $f: A\times B\to \mathbb{R}$. $A\subset\mathbb{R}^l, B\subset\mathbb{R}^k, A\times B\subset\mathbb{R}^n$, $f$ - ograniczona i całkowalna na $A\times B$. Oznaczmy $x^l\in A, y^k\in B$, $A,B$ - kostki.\\Niech \[\varphi(x) = \overline{\int_B}f(x^l,y^k)dy^k, \psi(x) = \underline{\int_B} f(x^l, y^k)dy^k.\]Wówczas \[\int_{A\times B} f = \int_A \varphi = \int_A \psi.\]\begin{uwaga}całkowalnośc na $A\times B$ nie oznacza całkowalności na np. $B$.\end{uwaga}\end{tw}
+\begin{tw}(O zamianie zmiennych)\\Niech $\Theta, \Omega$ - zbiory otwarte w $\mathbb{R}^n$ i $\xi: \Omega\to \Theta$, $f: \Theta\to \mathbb{R}$, $f$ - ograniczona i całkowalna. $\xi$ - klasy $\mathcal{C}^1$ na $\Omega$, $\xi^{-1}$ klasy $\mathcal{C}^{1}$ na $\Theta$. Wtedy\begin{equation}\int_{\Theta} f(x) dx =  \int_{\Omega} f(\xi(t)) | \det \xi'(t) | dt.\end{equation}$x=(x^1,\ldots,x^n)\in \Theta, t=(t^1,\ldots,t^n)\in \Omega$\end{tw}
+
+
+
+
+
+
+
+
+
+\begin{tw}Jeżeli $f$ - różniczkowalna w $x_0 \in U$, to dla dowolnego $e\in U$, $$\nabla_e f(x_0) = f'(x_0)e$$\end{tw}\begin{tw}Niech $O\subset\mathbb{R}^{n}, O$ - otwarty. $f: O\to Y, x_0\in O$.Jeżeli istnieją pochodne cząstkowe $\frac{\partial}{\partial x_i} f, i=1,\dots,n$ i są ciągłe w $x_0$, wtedy $\underset{h\in\mathbb{R}^n}{\forall} f(x_0+h)-f(x_0)=\sum_{i=1}^{n} \frac{\partial f}{\partial x_i} h^i+r(x_0,h)$, gdzie $\frac{r(x_0,h)}{||h||}\to0$\end{tw}
+\begin{tw}Niech $G:U \to Y, U\subset X, U \text{ - otwarte }, X$ - przestrzeń wektorowa unormowana, $F: G(U) \to Z, G(U) \subset V$\\$G$ - różniczkowalna w $x_0\in U$, $F$ - różniczkowalna w $G(x_0)\in U$.\\$$G(x_0 + h_1) - G(x_0) = G'(x_0)h_1+r_1(x_0,h_1)\text{, gdy }\frac{r(x_0,h_1)}{||h_1||_x} \to 0$$$$F(y_0 + h_2) - F(y_0) = F'(y_0)h_2+r_2(y_0,h_2)\text{, gdy }\frac{r(y_0,h_2)}{||h_2||_y} \to 0$$$$\text{Wówczas: } (F \circ G ) \text{ - różniczkowalna w } x_0$$$$\text{oraz } (F \circ G)' (x_0) = \left . F'(x)\right |_{x=G(x_0)} G'(x_0)$$\end{tw}
+\begin{tw}Niech $f: \mathcal{O}\to\mathbb{R}, \mathcal{O}\subset \mathbb{R}^n$, otwarty i $f\in\mathcal{C}^2(\mathcal{O})$, wówczas$$\frac{\partial^2 f}{\partial x^i \partial x^j} = \frac{\partial^2 f}{\partial x^j \partial x^i}; i,j=1,\dots,n$$\end{tw}
+\begin{stw}jeżeli $f: \mathcal{O} \rightarrow \mathbb{R}, \mathcal{O}$ - otwarty, $x_0 \in \mathcal{O}, f$ - posiada w $x_0$ minimum lub maksimum lokalne, to $$\frac{\partial f}{\partial x^i} (x_0) = 0, i = 1,\dots,n$$(działa tylko w prawo, bo możliwe punkty przegięcia ((siodła)) )\end{stw}\begin{tw}Niech $f: \mathcal{O} \to \mathbb{R}, \quad\mathcal{O}\subset\mathbb{R}^n, \quad x_0\in\mathcal{O}, \quad \mathcal{O} \text{ - otwarty, a } f \text{ - klasy } C^{2p} (\mathcal{O})$ oraz $f'(x_0) = 0, f''(x_0) = 0,\dots,f^{(2p-1)} (x_0) = 0$i $$\underset{c > 0}{\exists} \quad\underset{\eta > 0}{\exists} \quad\underset{h\in K(x_0,\eta)}{\forall}: \quad \sum_{\substack{i_1 = 1\\ \vdots \\ i_{2p} = 1}}^n \frac{\partial^{(2p)} f}{\partial x^{i_1} \dots \partial x^{i_{2p}}} (x_0) h^{i_1} \dots h^{i_{2p}} \geq c ||h||^{2p} (\leq c||h||^{2p})$$to $f$ ma w $x_0$ minimum (maksimum) lokalne.\end{tw}
+\begin{tw}Twierdzenie ($L$ - ograniczone) $\iff$ ($L$ - ciągłe)\end{tw}\begin{stw}Niech $f: U\subset \mathbb{R}^m \to \mathbb{R}^n, U$ - otwarte, wypukły$\underset{M}{\exists}.\underset{x\in U}{\forall}||f'(x)||\leq M$, to $\underset{a,b\in U}{\forall}||f(b)-f(a)||_n \leq M||b-a||_m$ \begin{tiny}(jakiekolwiek skojarzenia z Twierdzeniem Lagrange zupełnie przypadkowe *wink* *wink*)\end{tiny}\end{stw}\begin{tw}Jeżeli ciąg $\{x_0, P(x_0), \dots \} $ - zbieżny i $P$ - ciągłe, to jest on zbieżny do punktu stałego.\end{tw}\begin{tw}(Zasada Banacha o lustrach)\\Jeżeli $P: X \to X, P$ - zwężające, to\begin{align}\label{eq:banach}&\text{1. } \underset{x_0 \in X}{\forall}\quad \{x_0,P(x_0),P(P(x_0)),\dots\}) \text{ - Zbieżny do punktu stałego } \tilde x\\&\text{2. Istnieje tylko jedno }\tilde x\\&\text{3. } \underset{m}{\forall}\quad d(x_m,\tilde x) < \frac{q^m}{1-q} d(x_1, x_0)\end{align}\end{tw}
+\begin{tw}(o lokalnej odwracalności)\\Niech $f: E \to E, E$ - otwarty, $E\subset \mathbb{R}^N, f$ - różniczkowalna w sposób ciągły na $E$.$(f \text{ - klasy } \mathcal{C}^1 (E)), \underset{a,b\in E}{\exists}:f(a) = b \land f'(a) \text{ - odwracalna } (det(f'(a))\neq 0)$, to:\begin{align*}&1. \underset{U,V\subset E}{\exists}, \underset{a\in U, b\in V}{\exists}, U,V \text{ - otwarte, }f \text{ - bijekcja między } U,V\\&2. \underset{g: V\to U}{\exists}.\underset{x\in V}{\forall}, f(g(x)) = x, g\text{ - ciągła i różniczkowalna na } V\\\end{align*}\end{tw}
+\begin{tw}(o funkcji uwikłanej)\\Niech $H:E\subset\mathbb{R}^{n+m}\to\mathbb{R}^{m},H\in\mathcal{C}^{1}$ na $E$. $(x_0,y_0)\in E, H(x_0,y_0)=0, (x_0,y_0) = (x_0^1,\ldots,x_0^n,y_0^1,\ldots,y_0^m), H$ - odwracalna.\\Wówczas istnieje  $U\subset E$ takie, że $(x_0,y_0)\in U, \underset{W\subset \mathbb{R}^{n}}{\exists} $, że $x_0\in W, \underset{x\in W}{\forall} \underset{y}{\exists !} H(x,y) = 0, (x,y) \in U$.\\Jeżeli $y= \varphi(x)$, to $\varphi:\mathbb{R}^{n}\to\mathbb{R}^{m}$ i $\varphi\in \mathcal{C}^{1}$ na $W$. $\varphi'(x) = -(H_y')^{-1}H_x'$\end{tw}
+
+\begin{tw}Niech $f:U\subset \mathbb{R}^n \to \mathbb{R}^1, f\in \mathcal{C}^2(U), G: U_2\subset\mathbb{R}^n\to\mathbb{R}^m, G\in \mathcal{C}^2(U_2), \underset{x_0}{\exists} G(x_0) = 0, G'(x_0)$ - ma rząd maksymalny $(m)$ oraz \[\underset{\Lambda}{\exists} \Lambda = \left[ \lambda_1,\ldots,\lambda_m \right], \lambda_i \in \mathbb{R}, f'(x_0) - \Lambda G'(x_0) = 0.\] to jeżeli\[(f''(x_0)-\Lambda G''(x_0))(h_\parallel,h_\parallel) > 0,h_\parallel \overset{\text{def}}{=} \left \{G'(x_0) h_\parallel = 0 \right \}.\] to $f$ posiada w $x_0$ minimum lokalne $(<0$, to maksimum lokalne$)$ na zbiorze $M = \left\{ x\in \mathbb{R}^n, G(x) = 0 \right\} $\end{tw}
+\begin{tw}Niech $[a,b] \subset \mathbb{R}, \mathcal{O}\subset\mathbb{R}^n, \mathcal{O}$ - domknięty i $f:[a,b]\times\mathcal{O}\to\mathcal{O}$ takie, że $f$ - ciągła na $[a,b]\times\mathcal{O}$ oraz $f$ spełnia warunek Lipschitza na $\mathcal{O}$, to znaczy:\[\underset{L>0}{\exists}. \underset{t\in[a,b]}{\forall}. \underset{x,x'\in\mathcal{O}}{\forall} \Vert f(t,x) - f(t,x') \Vert \leq L \Vert x-x' \Vert.\] Wówczas \[\underset{t_0\in[a,b]}{\forall} . \underset{x_0\in\mathcal{O}}{\forall} . \underset{\varepsilon>0}{\exists} \text{, że dla } t\in ]t_0-\varepsilon, t_0+\varepsilon[\]równanie ma jednoznaczne rozwiązania, które są ciągłe ze względu na $x_0$\begin{equation}\begin{cases}\label{eq:eq21}\frac{dx}{dt} = f(t,x)\\x(t_0) = x_0\end{cases}\end{equation}\end{tw}
+\begin{tw}Jeżeli odwzorowania\begin{align*}&t\in [a,b]\to A(t)\\&t\in [a,b]\to b(t).\end{align*}Gdzie $A(t)\in L(x,x), b(t) : \mathbb{R}^1\to X$ są ciągłe, to równanie\[\frac{d}{dt}x(t) = A(t)x(t) + b(t),\quad x(t_0) = x_0.\]Ma dla dowolnych $t_0\in[a,b], x_0\in X$ jednoznacznie określone rozwiązanie na $t\in]a,b[$\\Czym to się różni od twierdzenia o jednoznaczności warunku Cauchy? Nie ma tutaj mowy o żadnej lipszycowalności. Zawężono za to klasę funkcji występującej w równaniu. Zamiast $]t_0-\varepsilon,t_0+\varepsilon[\times \mathcal{O}$, mamy $]a,b[ \times X$\end{tw}
+
+
+\begin{tw}(Liouville)\\Jeżeli $R(t,t_0)$ - rezolwenta dla problemu\begin{align*}&\frac{dx}{dt} = A(x)x(t)\\&x(t_0) = x_0.\end{align*}i $x\in \mathbb{R}^n$, to $w(t) = w(t_0)e^{\int_{t_0}^t tr(A(s))ds}$, gdzie $w(t) = \det R(t,t_0)$ i $w(t)$ nazywamy wrońskianem.\\\end{tw}
+\begin{tw}(Lebesque) Niech $P$ - zbiór nieciągłości funkcji $f: D\to\mathbb{R}$, $f$ - ograniczona na $D$, $D$ - \ldots jest zbiorem miary Lebesque'a zera  $\iff$ $f$ - całkowalna na $D$.\end{tw}\begin{stw}($X$ - domknięty,ograniczony) $\iff$ ($X$-zbiór zwarty)\end{stw}
+\begin{tw}(Lebesgue'a) niech $D$ - kostka, $D\subset \mathbb{R}^n$, $f: D\to \mathbb{R}$, $f$ - ograniczona.\\Wówczas $f$ - (całkowalna na $D$ ) $\iff$ (zbiór nieciągłości funkcji $f$ jest miary Lebesgue'a zero)\end{tw}\begin{tw}(Fubiniego)\\Niech $f: A\times B\to \mathbb{R}$. $A\subset\mathbb{R}^l, B\subset\mathbb{R}^k, A\times B\subset\mathbb{R}^n$, $f$ - ograniczona i całkowalna na $A\times B$. Oznaczmy $x^l\in A, y^k\in B$, $A,B$ - kostki.\\Niech \[\varphi(x) = \overline{\int_B}f(x^l,y^k)dy^k, \psi(x) = \underline{\int_B} f(x^l, y^k)dy^k.\]Wówczas \[\int_{A\times B} f = \int_A \varphi = \int_A \psi.\]\begin{uwaga}całkowalnośc na $A\times B$ nie oznacza całkowalności na np. $B$.\end{uwaga}\end{tw}
+\begin{tw}(O zamianie zmiennych)\\Niech $\Theta, \Omega$ - zbiory otwarte w $\mathbb{R}^n$ i $\xi: \Omega\to \Theta$, $f: \Theta\to \mathbb{R}$, $f$ - ograniczona i całkowalna. $\xi$ - klasy $\mathcal{C}^1$ na $\Omega$, $\xi^{-1}$ klasy $\mathcal{C}^{1}$ na $\Theta$. Wtedy\begin{equation}\int_{\Theta} f(x) dx =  \int_{\Omega} f(\xi(t)) | \det \xi'(t) | dt.\end{equation}$x=(x^1,\ldots,x^n)\in \Theta, t=(t^1,\ldots,t^n)\in \Omega$\end{tw}
+
+
+
+
+
+
+
+
+
+\begin{tw}Jeżeli $f$ - różniczkowalna w $x_0 \in U$, to dla dowolnego $e\in U$, $$\nabla_e f(x_0) = f'(x_0)e$$\end{tw}\begin{tw}Niech $O\subset\mathbb{R}^{n}, O$ - otwarty. $f: O\to Y, x_0\in O$.Jeżeli istnieją pochodne cząstkowe $\frac{\partial}{\partial x_i} f, i=1,\dots,n$ i są ciągłe w $x_0$, wtedy $\underset{h\in\mathbb{R}^n}{\forall} f(x_0+h)-f(x_0)=\sum_{i=1}^{n} \frac{\partial f}{\partial x_i} h^i+r(x_0,h)$, gdzie $\frac{r(x_0,h)}{||h||}\to0$\end{tw}
+\begin{tw}Niech $G:U \to Y, U\subset X, U \text{ - otwarte }, X$ - przestrzeń wektorowa unormowana, $F: G(U) \to Z, G(U) \subset V$\\$G$ - różniczkowalna w $x_0\in U$, $F$ - różniczkowalna w $G(x_0)\in U$.\\$$G(x_0 + h_1) - G(x_0) = G'(x_0)h_1+r_1(x_0,h_1)\text{, gdy }\frac{r(x_0,h_1)}{||h_1||_x} \to 0$$$$F(y_0 + h_2) - F(y_0) = F'(y_0)h_2+r_2(y_0,h_2)\text{, gdy }\frac{r(y_0,h_2)}{||h_2||_y} \to 0$$$$\text{Wówczas: } (F \circ G ) \text{ - różniczkowalna w } x_0$$$$\text{oraz } (F \circ G)' (x_0) = \left . F'(x)\right |_{x=G(x_0)} G'(x_0)$$\end{tw}
+\begin{tw}Niech $f: \mathcal{O}\to\mathbb{R}, \mathcal{O}\subset \mathbb{R}^n$, otwarty i $f\in\mathcal{C}^2(\mathcal{O})$, wówczas$$\frac{\partial^2 f}{\partial x^i \partial x^j} = \frac{\partial^2 f}{\partial x^j \partial x^i}; i,j=1,\dots,n$$\end{tw}
+\begin{stw}jeżeli $f: \mathcal{O} \rightarrow \mathbb{R}, \mathcal{O}$ - otwarty, $x_0 \in \mathcal{O}, f$ - posiada w $x_0$ minimum lub maksimum lokalne, to $$\frac{\partial f}{\partial x^i} (x_0) = 0, i = 1,\dots,n$$(działa tylko w prawo, bo możliwe punkty przegięcia ((siodła)) )\end{stw}\begin{tw}Niech $f: \mathcal{O} \to \mathbb{R}, \quad\mathcal{O}\subset\mathbb{R}^n, \quad x_0\in\mathcal{O}, \quad \mathcal{O} \text{ - otwarty, a } f \text{ - klasy } C^{2p} (\mathcal{O})$ oraz $f'(x_0) = 0, f''(x_0) = 0,\dots,f^{(2p-1)} (x_0) = 0$i $$\underset{c > 0}{\exists} \quad\underset{\eta > 0}{\exists} \quad\underset{h\in K(x_0,\eta)}{\forall}: \quad \sum_{\substack{i_1 = 1\\ \vdots \\ i_{2p} = 1}}^n \frac{\partial^{(2p)} f}{\partial x^{i_1} \dots \partial x^{i_{2p}}} (x_0) h^{i_1} \dots h^{i_{2p}} \geq c ||h||^{2p} (\leq c||h||^{2p})$$to $f$ ma w $x_0$ minimum (maksimum) lokalne.\end{tw}
+\begin{tw}Twierdzenie ($L$ - ograniczone) $\iff$ ($L$ - ciągłe)\end{tw}\begin{stw}Niech $f: U\subset \mathbb{R}^m \to \mathbb{R}^n, U$ - otwarte, wypukły$\underset{M}{\exists}.\underset{x\in U}{\forall}||f'(x)||\leq M$, to $\underset{a,b\in U}{\forall}||f(b)-f(a)||_n \leq M||b-a||_m$ \begin{tiny}(jakiekolwiek skojarzenia z Twierdzeniem Lagrange zupełnie przypadkowe *wink* *wink*)\end{tiny}\end{stw}\begin{tw}Jeżeli ciąg $\{x_0, P(x_0), \dots \} $ - zbieżny i $P$ - ciągłe, to jest on zbieżny do punktu stałego.\end{tw}\begin{tw}(Zasada Banacha o lustrach)\\Jeżeli $P: X \to X, P$ - zwężające, to\begin{align}\label{eq:banach}&\text{1. } \underset{x_0 \in X}{\forall}\quad \{x_0,P(x_0),P(P(x_0)),\dots\}) \text{ - Zbieżny do punktu stałego } \tilde x\\&\text{2. Istnieje tylko jedno }\tilde x\\&\text{3. } \underset{m}{\forall}\quad d(x_m,\tilde x) < \frac{q^m}{1-q} d(x_1, x_0)\end{align}\end{tw}
+\begin{tw}(o lokalnej odwracalności)\\Niech $f: E \to E, E$ - otwarty, $E\subset \mathbb{R}^N, f$ - różniczkowalna w sposób ciągły na $E$.$(f \text{ - klasy } \mathcal{C}^1 (E)), \underset{a,b\in E}{\exists}:f(a) = b \land f'(a) \text{ - odwracalna } (det(f'(a))\neq 0)$, to:\begin{align*}&1. \underset{U,V\subset E}{\exists}, \underset{a\in U, b\in V}{\exists}, U,V \text{ - otwarte, }f \text{ - bijekcja między } U,V\\&2. \underset{g: V\to U}{\exists}.\underset{x\in V}{\forall}, f(g(x)) = x, g\text{ - ciągła i różniczkowalna na } V\\\end{align*}\end{tw}
+\begin{tw}(o funkcji uwikłanej)\\Niech $H:E\subset\mathbb{R}^{n+m}\to\mathbb{R}^{m},H\in\mathcal{C}^{1}$ na $E$. $(x_0,y_0)\in E, H(x_0,y_0)=0, (x_0,y_0) = (x_0^1,\ldots,x_0^n,y_0^1,\ldots,y_0^m), H$ - odwracalna.\\Wówczas istnieje  $U\subset E$ takie, że $(x_0,y_0)\in U, \underset{W\subset \mathbb{R}^{n}}{\exists} $, że $x_0\in W, \underset{x\in W}{\forall} \underset{y}{\exists !} H(x,y) = 0, (x,y) \in U$.\\Jeżeli $y= \varphi(x)$, to $\varphi:\mathbb{R}^{n}\to\mathbb{R}^{m}$ i $\varphi\in \mathcal{C}^{1}$ na $W$. $\varphi'(x) = -(H_y')^{-1}H_x'$\end{tw}
+
