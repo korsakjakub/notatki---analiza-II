@@ -1,7 +1,7 @@
 #!/bin/sh
 # USAGE: parser.sh [input] [phrase] [output]
 
-output=""
+#output=""
 toggle=0
 
 echo "$1"
@@ -14,8 +14,7 @@ do
 
     if [[ $toggle == 1 ]];
     then
-        echo "$line"
-        output="$output""$line"
+        echo "$line" >> "$3"
     fi
 
     if [[ "$line" == *end{*"$2"* ]];
@@ -23,4 +22,4 @@ do
         toggle=0
     fi
 done <"$1"
-echo "$output" >> "$3"
+#echo "$output" >> "$3"

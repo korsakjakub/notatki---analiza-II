@@ -32,82 +32,175 @@
 \newtheorem{pytanie}{Pytanie}
 \newtheorem{uwaga}{Uwaga}
 \begin{document}
+\begin{definicja}
+Niech $I\subset \mathbb{R}, \mathcal{O}\subset \mathbb{R}^n$ \\
+$f: I\times\mathbb{R}^n \to \mathcal{O}$ taka, że $t\in I, x\in \mathbb{R}^n, f(t,x) \to f(t,x)$\\
+Mówimy, że $f$ spełnia warunek Lipschitza, jeżeli
+\[
+\underset{L>0}{\exists}. \underset{t\in I}{\forall}. \underset{x,x'\in \mathcal{O}}{\forall}. \Vert f(t,x) - f(t,x')  \Vert \leq L \Vert x - x' \Vert
+.\]
+\end{definicja}
+\begin{definicja}
+Rezolwenta\\
+\end{definicja}
+\begin{definicja}
+Niech $X$ - zbiór a $F = \left\{ A_\alpha, \alpha\in\mathbb{R}, A_i, i\in\mathbb{N} \right\} $ - rodzina zbiorów. Mówimy, że $F$ jest pokryciem zbioru $X$, jeżeli $X\subset \bigcup_{i,\alpha}A_\alpha$. Jeżeli zbiory $A_\alpha$ są otwarte, to mówimy, że $F$ jest pokryciem otwartym, jeżeli ilość zbiorów $A_\alpha$ jest skończona, to mówimy, że pokrycie jest skończone. Dowolny podzbiór $F$ taki, że jest też pokryciem zbioru $X$ nazywamy podpokryciem.
+\end{definicja}
+\begin{definicja}
+Zbiór $X$ nazywamy zwartym, jeżeli z \textbf{każdego} pokrycia otwartego możemy wybrać skończone podpokrycie.
+\end{definicja}
+\begin{definicja}
+Niech $U$ - zbiór otwarty $\subset M$ i niech odwzorowanie $\varphi: U\to \mathbb{R}^n$ takie, że $\varphi$ - klasy $\mathcal{C}^1$, (czasami $\mathcal{C}^\infty$ ), $\varphi^{-1}$ - klasy $\mathcal{C}^1$, (czasami $\mathcal{C}^\infty$ ) nazywamy mapą.\\
+Uwaga: mapa \underline{nie musi} pokrywać całego zbioru $M$.
+\end{definicja}
+\begin{definicja}
+$(U^1,\varphi^1), (U^2,\varphi^2)$ - mapy na $M$.\\
+$U_1$ i $U_2$ nazywamy zgodnymi jeżeli\\
+$a)$ $U_1\cap U_2 = \phi$\\
+albo odwzorowanie $\varphi_2 \circ \varphi_1^{-1}: \varphi_1(U_1\cap U_2)\to \varphi_2(U_2\cap U_1)$ jest bijekcją (klasy powiedzmy sobie $\mathcal{C}^1, \mathcal{C}^{\infty}$ )
+\end{definicja}
+\begin{definicja}
+Kolekcję zgodnych map nazywamy atlasem. Zbiór $M$ wraz z atlasem, który pokrywa cały $M$ nazywamy \textbf{rozmaitością} (\textit{ang. manifold}).
+\end{definicja}
+\begin{definicja}
+(Ciągłość Heine)\\
+Niech $X\subset\mathbb{R}^n, x_{0} \in X, Y\subset\mathbb{R}^m$. Mówimy, że odwzorowanie $T: X\rightarrow Y$ jest ciągłe, jeżeli $$\underset{x_n \to x_0}{\forall}, T(x_{n})\rightarrow T(x_{0})$$\\
+UWAGA: $x_{0} = (x_{1}, x_{2}, ..., x_{n})$.
+\end{definicja}
+\begin{definicja}
+(Ciągłość Cauchy)\\
+Niech $x_{0}\in X$. Mówimy, że $T: X\to Y$ - ciągłe, jeżeli
+$$\underset{\epsilon > 0}{\forall} \quad\underset{\delta}{\exists} \quad\underset{x\in X}{\forall}, \quad d_{X} (x,x_{0}) < \delta \implies d_{Y} (T(x_{0}), T(x)) < \epsilon$$
+\end{definicja}
+\begin{definicja}
+Niech $p\in M$, $\sigma_1,\sigma_2$ - krzywe na $M$ takie, że $\sigma_1(0) = \sigma_2(0) = P$. Mówimy, że $\sigma_1$ i $\sigma_2$ są \underline{styczne w punkcie $P$}, jeżeli
+\[
+\left.\frac{d(\varphi_0\cdot \sigma_1(t))}{d t}\right|_{t=0} = \left.\frac{d(\varphi_0 \cdot \sigma_2(t))}{dt}\right|_{t=0}
+.\]
+\end{definicja}
+\begin{definicja}
+Zbiór wszystkich różniczkowań w punkcie $P$ oznaczamy przez $D_pM$
+\end{definicja}
+\begin{definicja}
+Wektorem kostycznym (albo jednoformą) nazywamy odwzorowanie liniowe  $\omega: T_pM\to\mathbb{R}$.
+Zbiór jednoform ($p\in M$) oznaczamy przez $T_p^* M$ (lub $\Lambda^1(M)$, $\Lambda^1(\theta), \theta\in M$)
+\end{definicja}
+\begin{definicja}
+Zbiór wszystkich odwzorowań $T_pM \times \ldots \times T_pM \to \mathbb{R}$ k - liniowych w każdej zmiennej i antysymetrycznych oznaczamy przez $\Lambda^k(M)$ i nazywamy k-formami.
+\end{definicja}
+\begin{definicja}
+Odwzorowanie $d: \Lambda^k(M)\to\Lambda^{k+1}(M)$ nazywamy różniczką zewnętrzną (ewentualnie pochodną zewnętrzną) i definiujemy następująco:
+\begin{align*}
+&df = \frac{\partial f}{\partial x^1} dx^1 + \frac{\partial f}{\partial x^2} dx^2 + \ldots + \frac{\partial f}{\partial x^n} dx^n, f: \theta \to \mathbb{R}\\
+&(\text{funkcje nazywamy zero-formami }f\in Lambda^0(\theta))\\
+&\omega\in\Lambda^p(\theta), \eta\in \Lambda^L(\theta) \implies d(\omega\land\eta) = d\omega\land\eta + (-1)^p\omega\land d\eta \\
+&dd\omega = 0, \omega\in\Lambda^k(\theta)
+.\end{align*}
+\end{definicja}
+\begin{definicja}
+Niech $\alpha_1,\alpha_2,\ldots,\alpha_k\in T_p^*M\in\Lambda'(M)$, wówczas $\alpha_1\land\alpha_2\land\ldots\land\alpha_k\in \Lambda^k(M)$ i dla $v_1,v_2,\ldots,v_k\in T_p^*M$,
+\[
+\left<\alpha_1\land\alpha_2\land\ldots\land\alpha_k; v_1,v_2,\ldots,v_k \right> \overset{\text{def}}{=}  \begin{bmatrix} \alpha_1(v_1)\alpha_2(v_1)\ldots\alpha_k(v_1)\\ \vdots \\ \alpha_1(v_k)\alpha_2(v_k)\ldots\alpha_k(v_k) \end{bmatrix}
+.\]
+\end{definicja}
+\begin{definicja}
+Niech $M, N$ - rozmaitości, $h: M\to N$ i niech $p\in M, \alpha\in T^*_{h(p)}N$.\\
+Cofnięciem formy $\alpha$ w odwzorowaniu $h$ nazywamy formę $h^*\alpha \in T_pM$, taką, że $\left<h^*\alpha,v \right> = \left<\alpha,hv \right>\underset{v\in T_pM}{\forall} $ i caaa. Jeżeli $\alpha_1,\alpha_2,\ldots,\alpha_k \in \Lambda^1(N)$ i $v_1,\ldots,v_k\in T_p(M)$, to
+\[
+h^*(\alpha_1\land\ldots\land\alpha_k), v_1,\ldots,v_k \overset{\text{def}}{=} \begin{bmatrix} \left<h^*\alpha_1,v_1 \right>&\left<h^*\alpha_2,v_1 \right>&\ldots&\left<h^*\alpha_k,v_1 \right> \\
+\vdots &&&\\
+\left<h^*\alpha_k,v_k \right>&\left<h^*\alpha_k, v_k \right>&\ldots&\left<h^*\alpha_k,v_k \right>
+\end{bmatrix}
+.\]
+Czyli
+\[
+h^*(\alpha_1\land\ldots\land\alpha_k) = (h^*\alpha_1)\land(h^*\alpha_2)\land\ldots\land h^*(\alpha_k)
+.\]
+\end{definicja}
+\begin{definicja}
+niech $M$ - rozmaitość wymiaru $n$, $g_{ij}$ - tensor metryczny na $M$, operacją $\sharp: T_pM \to T_p^*M$ taką, że dla $v = a^1 \frac{\partial }{\partial x^1} + \ldots + a^n \frac{\partial }{\partial x^n} $,\\
+\[
+v^{\sharp}=a^ig_{i1}dx^1 + a^ig_{i2}dx^2 + \ldots + a^ig_{in}dx^n, i=1,\ldots,n
+.\]
+zadaje izomorfizm między $T_pM$ a $T_p^*M$.
+\end{definicja}
+\begin{definicja}
+niech $M = \mathbb{R}^3$,
+\[
+\Lambda^0(M)\ni f \overset{\text{d}}{\to} df\in \Lambda^1(M) \overset{\flat}{\to} \left( df \right) ^\flat \in T_pM
+\]
+nazywamy gradientem funkcji $f$ : $\nabla f \overset{\text{def}}{=} \left( df \right) ^\flat$, gdzie $f: M\to \mathbb{R}^1$, $f$ - klasy $\mathcal{C}^k(M)$
+\end{definicja}
+\begin{definicja}
+Niech $M$ - rozmaitość, $\dim M = n$, $\left[ g_{ij} \right] $ - tensor metryczny. Operację $\Lambda^L(M)\to \Lambda^{n-L}(M)$ nazywamy gwiazdką "$\ast$" Hodge'a i definiujemy następująco:
+\begin{align*}
+\ast\left( dx^{i_1}\land dx^{i_2}\land \ldots \land dx^{i_L} \right) = \frac{\sqrt{g} }{(n-L)!} g^{i_1j_1}g^{i_2j_2}g^{i_Lj_L}\in _{j_1j_2\ldots j_L k_1k_2\ldots k_{n-L}}dx^{k_1}\land dx^{k_2}\land \ldots \land dx^{k_{n-1}}
+,\end{align*}
+gdzie $\in _{i_1,\ldots,i_n} = \left\{ sgn(i_1,\ldots,i_n) \text{ jeżeli } i_m \neq i_p,\quad 0 \text{ w.p.p} \right\}$
+\end{definicja}
+\begin{definicja}
+$M = \mathbb{R}^3$\\
+niech $v\in T_pM$, operację
+\[
+rot(v) \overset{\text{def}}{=} \left( \ast\left( dv^\sharp \right)  \right) ^\flat
+\]
+nazywamy rotacją wektora $v$ i oznaczamy
+$\text{rot } v \overset{\text{ozn}}{=} \nabla\times v$.\\
+Operację \[
+\text{div }v \overset{\text{def}}{=} d\left( \ast v^\sharp \right)
+\]
+nazywamy dywergencją i oznaczamy $\text{div }v \overset{\text{ozn}}{=} \nabla \cdot v$.\\
+Uwaga: rotacji nie możemy wprowadzić np. na $M$ takim, że $\dim M = 4$, bo $\ast(\Lambda^2(M))\to \Lambda^2(M)$
+\end{definicja}
+\begin{definicja}
+Norma: niech $X$ - przestrzeń wektorowa.\\
+Odwzorowanie $||.||: \mathbb{X}\to \mathbb{R}$ nazywamy normą, jeżeli:
+\end{definicja}
+\begin{definicja}
+Pochodna mocna (trzecie podejście)
+\[
+\lim\limits_{h \to 0}\frac{f(x+h) - f(x)}{h} = f'(x_0), \text{ dla }x\in V\subset \mathbb{R}^{n}
+.\]
+- taka definicja jest niemożliwa (nie mamy dzielenia wektorów).
+\end{definicja}
+\pagebreak
+\begin{definicja}
 
-\begin{definicja}Niech $I\subset \mathbb{R}, \mathcal{O}\subset \mathbb{R}^n$ \\$f: I\times\mathbb{R}^n \to \mathcal{O}$ taka, że $t\in I, x\in \mathbb{R}^n, f(t,x) \to f(t,x)$\\Mówimy, że $f$ spełnia warunek Lipschitza, jeżeli\[\underset{L>0}{\exists}. \underset{t\in I}{\forall}. \underset{x,x'\in \mathcal{O}}{\forall}. \Vert f(t,x) - f(t,x')  \Vert \leq L \Vert x - x' \Vert.\]\end{definicja}
+Niech $U \subset X, V\subset Y$\\
+$U,V\text{ - otwarte, }\quad T:U\to V; x,h\in U$
 
-\begin{definicja}Rezolwenta\\\end{definicja}
+Mówimy, że $T$ - różniczkowalne w punkcie $x_0$, jeżeli prawdziwy jest wzór $$\underset{h\in U}{\forall} \quad T(x_0+h) - T(x_0) = L_{x_0} (h) + r(x_0,h),$$
+gdzie $\frac{r(x_0,h)}{||h||}\to 0$, a $L_{x_0}$ - liniowe $: X\to Y$.
+\end{definicja}
+\begin{definicja}
+Pochodna mieszana
+\end{definicja}
+\begin{definicja}
+Niech $L: V\to W, L$ - liniowe, $(V,||.||_v),(W,||.||_w)$ - unormowane.
+Mówimy, że $L$ jest ograniczone, jeżeli
+$$\underset{A>0}{\exists},\underset{x\in V}{\forall} ||L(x)||_w \leq A||x||_v$$
+\end{definicja}
+\begin{definicja}
+Wielkość $\underset{A}{inf} \{\underset{x\in V}{\forall}||L(x)||_w \leq A||x||_v\}$ nazywamy normą odwzorowania $L$ i oznaczamy $A\overset{\text{ozn}}{=}||L||$.
+\end{definicja}
+\begin{definicja}
+Niech $U\subset \mathbb{R}^m$ - jest zbiorem wypukłym, jeżeli $\underset{a,b\in U}{\forall}.\quad [a,b]\overset{\text{def}}{=} \left \{ a(1-t)+bt, t\in[0,1] \right \} \subset U$
+\end{definicja}
+\begin{definicja}
+$\tilde x \in X$ nazywamy punktem stałym, jeżeli $P(\tilde x) = \tilde x$
+\end{definicja}
+\begin{definicja}
+Funkcje uwikłane
+\end{definicja}
+\begin{definicja}
+Ekstrema związane\\
 
-
-\begin{definicja}Niech $X$ - zbiór a $F = \left\{ A_\alpha, \alpha\in\mathbb{R}, A_i, i\in\mathbb{N} \right\} $ - rodzina zbiorów. Mówimy, że $F$ jest pokryciem zbioru $X$, jeżeli $X\subset \bigcup_{i,\alpha}A_\alpha$. Jeżeli zbiory $A_\alpha$ są otwarte, to mówimy, że $F$ jest pokryciem otwartym, jeżeli ilość zbiorów $A_\alpha$ jest skończona, to mówimy, że pokrycie jest skończone. Dowolny podzbiór $F$ taki, że jest też pokryciem zbioru $X$ nazywamy podpokryciem.\end{definicja}\begin{definicja}Zbiór $X$ nazywamy zwartym, jeżeli z \textbf{każdego} pokrycia otwartego możemy wybrać skończone podpokrycie.\end{definicja}
-
-
-\begin{definicja}Niech $U$ - zbiór otwarty $\subset M$ i niech odwzorowanie $\varphi: U\to \mathbb{R}^n$ takie, że $\varphi$ - klasy $\mathcal{C}^1$, (czasami $\mathcal{C}^\infty$ ), $\varphi^{-1}$ - klasy $\mathcal{C}^1$, (czasami $\mathcal{C}^\infty$ ) nazywamy mapą.\\Uwaga: mapa \underline{nie musi} pokrywać całego zbioru $M$.\end{definicja}\begin{definicja}$(U^1,\varphi^1), (U^2,\varphi^2)$ - mapy na $M$.\\$U_1$ i $U_2$ nazywamy zgodnymi jeżeli\\$a)$ $U_1\cap U_2 = \phi$\\albo odwzorowanie $\varphi_2 \circ \varphi_1^{-1}: \varphi_1(U_1\cap U_2)\to \varphi_2(U_2\cap U_1)$ jest bijekcją (klasy powiedzmy sobie $\mathcal{C}^1, \mathcal{C}^{\infty}$ )\end{definicja}\begin{definicja}Kolekcję zgodnych map nazywamy atlasem. Zbiór $M$ wraz z atlasem, który pokrywa cały $M$ nazywamy \textbf{rozmaitością} (\textit{ang. manifold}).\end{definicja}
-\begin{definicja}(Ciągłość Heine)\\Niech $X\subset\mathbb{R}^n, x_{0} \in X, Y\subset\mathbb{R}^m$. Mówimy, że odwzorowanie $T: X\rightarrow Y$ jest ciągłe, jeżeli $$\underset{x_n \to x_0}{\forall}, T(x_{n})\rightarrow T(x_{0})$$\\UWAGA: $x_{0} = (x_{1}, x_{2}, ..., x_{n})$.\end{definicja}\begin{definicja}(Ciągłość Cauchy)\\Niech $x_{0}\in X$. Mówimy, że $T: X\to Y$ - ciągłe, jeżeli$$\underset{\epsilon > 0}{\forall} \quad\underset{\delta}{\exists} \quad\underset{x\in X}{\forall}, \quad d_{X} (x,x_{0}) < \delta \implies d_{Y} (T(x_{0}), T(x)) < \epsilon$$\end{definicja}
-\begin{definicja}Niech $p\in M$, $\sigma_1,\sigma_2$ - krzywe na $M$ takie, że $\sigma_1(0) = \sigma_2(0) = P$. Mówimy, że $\sigma_1$ i $\sigma_2$ są \underline{styczne w punkcie $P$}, jeżeli\[\left.\frac{d(\varphi_0\cdot \sigma_1(t))}{d t}\right|_{t=0} = \left.\frac{d(\varphi_0 \cdot \sigma_2(t))}{dt}\right|_{t=0}.\]\end{definicja}\begin{definicja}Zbiór wszystkich różniczkowań w punkcie $P$ oznaczamy przez $D_pM$\end{definicja}
-\begin{definicja}Wektorem kostycznym (albo jednoformą) nazywamy odwzorowanie liniowe  $\omega: T_pM\to\mathbb{R}$.Zbiór jednoform ($p\in M$) oznaczamy przez $T_p^* M$ (lub $\Lambda^1(M)$, $\Lambda^1(\theta), \theta\in M$)\end{definicja}\begin{definicja}Zbiór wszystkich odwzorowań $T_pM \times \ldots \times T_pM \to \mathbb{R}$ k - liniowych w każdej zmiennej i antysymetrycznych oznaczamy przez $\Lambda^k(M)$ i nazywamy k-formami.\end{definicja}\begin{definicja}Odwzorowanie $d: \Lambda^k(M)\to\Lambda^{k+1}(M)$ nazywamy różniczką zewnętrzną (ewentualnie pochodną zewnętrzną) i definiujemy następująco:\begin{align*}&df = \frac{\partial f}{\partial x^1} dx^1 + \frac{\partial f}{\partial x^2} dx^2 + \ldots + \frac{\partial f}{\partial x^n} dx^n, f: \theta \to \mathbb{R}\\&(\text{funkcje nazywamy zero-formami }f\in Lambda^0(\theta))\\&\omega\in\Lambda^p(\theta), \eta\in \Lambda^L(\theta) \implies d(\omega\land\eta) = d\omega\land\eta + (-1)^p\omega\land d\eta \\&dd\omega = 0, \omega\in\Lambda^k(\theta).\end{align*}\end{definicja}
-\begin{definicja}Niech $\alpha_1,\alpha_2,\ldots,\alpha_k\in T_p^*M\in\Lambda'(M)$, wówczas $\alpha_1\land\alpha_2\land\ldots\land\alpha_k\in \Lambda^k(M)$ i dla $v_1,v_2,\ldots,v_k\in T_p^*M$,\[\left<\alpha_1\land\alpha_2\land\ldots\land\alpha_k; v_1,v_2,\ldots,v_k \right> \overset{\text{def}}{=}  \begin{bmatrix} \alpha_1(v_1)\alpha_2(v_1)\ldots\alpha_k(v_1)\\ \vdots \\ \alpha_1(v_k)\alpha_2(v_k)\ldots\alpha_k(v_k) \end{bmatrix}.\]\end{definicja}
-\begin{definicja}Niech $M, N$ - rozmaitości, $h: M\to N$ i niech $p\in M, \alpha\in T^*_{h(p)}N$.\\Cofnięciem formy $\alpha$ w odwzorowaniu $h$ nazywamy formę $h^*\alpha \in T_pM$, taką, że $\left<h^*\alpha,v \right> = \left<\alpha,hv \right>\underset{v\in T_pM}{\forall} $ i caaa. Jeżeli $\alpha_1,\alpha_2,\ldots,\alpha_k \in \Lambda^1(N)$ i $v_1,\ldots,v_k\in T_p(M)$, to\[h^*(\alpha_1\land\ldots\land\alpha_k), v_1,\ldots,v_k \overset{\text{def}}{=} \begin{bmatrix} \left<h^*\alpha_1,v_1 \right>&\left<h^*\alpha_2,v_1 \right>&\ldots&\left<h^*\alpha_k,v_1 \right> \\\vdots &&&\\\left<h^*\alpha_k,v_k \right>&\left<h^*\alpha_k, v_k \right>&\ldots&\left<h^*\alpha_k,v_k \right>\end{bmatrix}.\]Czyli\[h^*(\alpha_1\land\ldots\land\alpha_k) = (h^*\alpha_1)\land(h^*\alpha_2)\land\ldots\land h^*(\alpha_k).\]\end{definicja}
-\begin{definicja}niech $M$ - rozmaitość wymiaru $n$, $g_{ij}$ - tensor metryczny na $M$, operacją $\sharp: T_pM \to T_p^*M$ taką, że dla $v = a^1 \frac{\partial }{\partial x^1} + \ldots + a^n \frac{\partial }{\partial x^n} $,\\\[v^{\sharp}=a^ig_{i1}dx^1 + a^ig_{i2}dx^2 + \ldots + a^ig_{in}dx^n, i=1,\ldots,n.\]zadaje izomorfizm między $T_pM$ a $T_p^*M$.\end{definicja}
-\begin{definicja}niech $M = \mathbb{R}^3$,\[\Lambda^0(M)\ni f \overset{\text{d}}{\to} df\in \Lambda^1(M) \overset{\flat}{\to} \left( df \right) ^\flat \in T_pM\]nazywamy gradientem funkcji $f$ : $\nabla f \overset{\text{def}}{=} \left( df \right) ^\flat$, gdzie $f: M\to \mathbb{R}^1$, $f$ - klasy $\mathcal{C}^k(M)$\end{definicja}\begin{definicja}Niech $M$ - rozmaitość, $\dim M = n$, $\left[ g_{ij} \right] $ - tensor metryczny. Operację $\Lambda^L(M)\to \Lambda^{n-L}(M)$ nazywamy gwiazdką "$\ast$" Hodge'a i definiujemy następująco:\begin{align*}\ast\left( dx^{i_1}\land dx^{i_2}\land \ldots \land dx^{i_L} \right) = \frac{\sqrt{g} }{(n-L)!} g^{i_1j_1}g^{i_2j_2}g^{i_Lj_L}\in _{j_1j_2\ldots j_L k_1k_2\ldots k_{n-L}}dx^{k_1}\land dx^{k_2}\land \ldots \land dx^{k_{n-1}},\end{align*}gdzie $\in _{i_1,\ldots,i_n} = \left\{ sgn(i_1,\ldots,i_n) \text{ jeżeli } i_m \neq i_p,\quad 0 \text{ w.p.p} \right\}$\end{definicja}\begin{definicja}$M = \mathbb{R}^3$\\niech $v\in T_pM$, operację\[rot(v) \overset{\text{def}}{=} \left( \ast\left( dv^\sharp \right)  \right) ^\flat\]nazywamy rotacją wektora $v$ i oznaczamy$\text{rot } v \overset{\text{ozn}}{=} \nabla\times v$.\\Operację \[\text{div }v \overset{\text{def}}{=} d\left( \ast v^\sharp \right)\]nazywamy dywergencją i oznaczamy $\text{div }v \overset{\text{ozn}}{=} \nabla \cdot v$.\\Uwaga: rotacji nie możemy wprowadzić np. na $M$ takim, że $\dim M = 4$, bo $\ast(\Lambda^2(M))\to \Lambda^2(M)$\end{definicja}
-
-\begin{definicja}Norma: niech $X$ - przestrzeń wektorowa.\\Odwzorowanie $||.||: \mathbb{X}\to \mathbb{R}$ nazywamy normą, jeżeli:\end{definicja}\begin{definicja}Pochodna mocna (trzecie podejście)\[\lim\limits_{h \to 0}\frac{f(x+h) - f(x)}{h} = f'(x_0), \text{ dla }x\in V\subset \mathbb{R}^{n}.\]- taka definicja jest niemożliwa (nie mamy dzielenia wektorów).\end{definicja}\begin{definicja}Niech $U \subset X, V\subset Y$\\$U,V\text{ - otwarte, }\quad T:U\to V; x,h\in U$Mówimy, że $T$ - różniczkowalne w punkcie $x_0$, jeżeli prawdziwy jest wzór $$\underset{h\in U}{\forall} \quad T(x_0+h) - T(x_0) = L_{x_0} (h) + r(x_0,h),$$gdzie $\frac{r(x_0,h)}{||h||}\to 0$, a $L_{x_0}$ - liniowe $: X\to Y$.\end{definicja}
-
-\begin{definicja}Pochodna mieszana\end{definicja}
-
-\begin{definicja}Niech $L: V\to W, L$ - liniowe, $(V,||.||_v),(W,||.||_w)$ - unormowane.Mówimy, że $L$ jest ograniczone, jeżeli$$\underset{A>0}{\exists},\underset{x\in V}{\forall} ||L(x)||_w \leq A||x||_v$$\end{definicja}\begin{definicja}Wielkość $\underset{A}{inf} \{\underset{x\in V}{\forall}||L(x)||_w \leq A||x||_v\}$ nazywamy normą odwzorowania $L$ i oznaczamy $A\overset{\text{ozn}}{=}||L||$.\end{definicja}\begin{definicja}Niech $U\subset \mathbb{R}^m$ - jest zbiorem wypukłym, jeżeli $\underset{a,b\in U}{\forall}.\quad [a,b]\overset{\text{def}}{=} \left \{ a(1-t)+bt, t\in[0,1] \right \} \subset U$\end{definicja}\begin{definicja}$\tilde x \in X$ nazywamy punktem stałym, jeżeli $P(\tilde x) = \tilde x$\end{definicja}
-
-\begin{definicja}Funkcje uwikłane\end{definicja}
-\begin{definicja}Ekstrema związane\\\end{definicja}\begin{definicja}Niech $f:\mathbb{R}^{n}\to\mathbb{R}^1$ i $M\subset \mathbb{R}^n$ - zbiór.\\Mówimy, że $f$ ma minimum/maksimum związane na zbiorze $M$, w punkcie $x_0\in M$, jeżeli\[\underset{r}{\exists} \underset{\substack{h\\  \Vert h \Vert < r \\ (x_0+h)\in M}}{\forall} f(x_0+h)\leq f(x_0).\]\end{definicja}
+\end{definicja}
+\begin{definicja}
+Niech $f:\mathbb{R}^{n}\to\mathbb{R}^1$ i $M\subset \mathbb{R}^n$ - zbiór.\\
+Mówimy, że $f$ ma minimum/maksimum związane na zbiorze $M$, w punkcie $x_0\in M$, jeżeli
+\[
+\underset{r}{\exists} \underset{\substack{h\\  \Vert h \Vert < r \\ (x_0+h)\in M}}{\forall} f(x_0+h)\leq f(x_0)
+.\]
+\end{definicja}
 \end{document}
-
-\begin{definicja}Niech $I\subset \mathbb{R}, \mathcal{O}\subset \mathbb{R}^n$ \\$f: I\times\mathbb{R}^n \to \mathcal{O}$ taka, że $t\in I, x\in \mathbb{R}^n, f(t,x) \to f(t,x)$\\Mówimy, że $f$ spełnia warunek Lipschitza, jeżeli\[\underset{L>0}{\exists}. \underset{t\in I}{\forall}. \underset{x,x'\in \mathcal{O}}{\forall}. \Vert f(t,x) - f(t,x')  \Vert \leq L \Vert x - x' \Vert.\]\end{definicja}
-
-\begin{definicja}Rezolwenta\\\end{definicja}
-
-
-\begin{definicja}Niech $X$ - zbiór a $F = \left\{ A_\alpha, \alpha\in\mathbb{R}, A_i, i\in\mathbb{N} \right\} $ - rodzina zbiorów. Mówimy, że $F$ jest pokryciem zbioru $X$, jeżeli $X\subset \bigcup_{i,\alpha}A_\alpha$. Jeżeli zbiory $A_\alpha$ są otwarte, to mówimy, że $F$ jest pokryciem otwartym, jeżeli ilość zbiorów $A_\alpha$ jest skończona, to mówimy, że pokrycie jest skończone. Dowolny podzbiór $F$ taki, że jest też pokryciem zbioru $X$ nazywamy podpokryciem.\end{definicja}\begin{definicja}Zbiór $X$ nazywamy zwartym, jeżeli z \textbf{każdego} pokrycia otwartego możemy wybrać skończone podpokrycie.\end{definicja}
-
-
-\begin{definicja}Niech $U$ - zbiór otwarty $\subset M$ i niech odwzorowanie $\varphi: U\to \mathbb{R}^n$ takie, że $\varphi$ - klasy $\mathcal{C}^1$, (czasami $\mathcal{C}^\infty$ ), $\varphi^{-1}$ - klasy $\mathcal{C}^1$, (czasami $\mathcal{C}^\infty$ ) nazywamy mapą.\\Uwaga: mapa \underline{nie musi} pokrywać całego zbioru $M$.\end{definicja}\begin{definicja}$(U^1,\varphi^1), (U^2,\varphi^2)$ - mapy na $M$.\\$U_1$ i $U_2$ nazywamy zgodnymi jeżeli\\$a)$ $U_1\cap U_2 = \phi$\\albo odwzorowanie $\varphi_2 \circ \varphi_1^{-1}: \varphi_1(U_1\cap U_2)\to \varphi_2(U_2\cap U_1)$ jest bijekcją (klasy powiedzmy sobie $\mathcal{C}^1, \mathcal{C}^{\infty}$ )\end{definicja}\begin{definicja}Kolekcję zgodnych map nazywamy atlasem. Zbiór $M$ wraz z atlasem, który pokrywa cały $M$ nazywamy \textbf{rozmaitością} (\textit{ang. manifold}).\end{definicja}
-\begin{definicja}(Ciągłość Heine)\\Niech $X\subset\mathbb{R}^n, x_{0} \in X, Y\subset\mathbb{R}^m$. Mówimy, że odwzorowanie $T: X\rightarrow Y$ jest ciągłe, jeżeli $$\underset{x_n \to x_0}{\forall}, T(x_{n})\rightarrow T(x_{0})$$\\UWAGA: $x_{0} = (x_{1}, x_{2}, ..., x_{n})$.\end{definicja}\begin{definicja}(Ciągłość Cauchy)\\Niech $x_{0}\in X$. Mówimy, że $T: X\to Y$ - ciągłe, jeżeli$$\underset{\epsilon > 0}{\forall} \quad\underset{\delta}{\exists} \quad\underset{x\in X}{\forall}, \quad d_{X} (x,x_{0}) < \delta \implies d_{Y} (T(x_{0}), T(x)) < \epsilon$$\end{definicja}
-\begin{definicja}Niech $p\in M$, $\sigma_1,\sigma_2$ - krzywe na $M$ takie, że $\sigma_1(0) = \sigma_2(0) = P$. Mówimy, że $\sigma_1$ i $\sigma_2$ są \underline{styczne w punkcie $P$}, jeżeli\[\left.\frac{d(\varphi_0\cdot \sigma_1(t))}{d t}\right|_{t=0} = \left.\frac{d(\varphi_0 \cdot \sigma_2(t))}{dt}\right|_{t=0}.\]\end{definicja}\begin{definicja}Zbiór wszystkich różniczkowań w punkcie $P$ oznaczamy przez $D_pM$\end{definicja}
-\begin{definicja}Wektorem kostycznym (albo jednoformą) nazywamy odwzorowanie liniowe  $\omega: T_pM\to\mathbb{R}$.Zbiór jednoform ($p\in M$) oznaczamy przez $T_p^* M$ (lub $\Lambda^1(M)$, $\Lambda^1(\theta), \theta\in M$)\end{definicja}\begin{definicja}Zbiór wszystkich odwzorowań $T_pM \times \ldots \times T_pM \to \mathbb{R}$ k - liniowych w każdej zmiennej i antysymetrycznych oznaczamy przez $\Lambda^k(M)$ i nazywamy k-formami.\end{definicja}\begin{definicja}Odwzorowanie $d: \Lambda^k(M)\to\Lambda^{k+1}(M)$ nazywamy różniczką zewnętrzną (ewentualnie pochodną zewnętrzną) i definiujemy następująco:\begin{align*}&df = \frac{\partial f}{\partial x^1} dx^1 + \frac{\partial f}{\partial x^2} dx^2 + \ldots + \frac{\partial f}{\partial x^n} dx^n, f: \theta \to \mathbb{R}\\&(\text{funkcje nazywamy zero-formami }f\in Lambda^0(\theta))\\&\omega\in\Lambda^p(\theta), \eta\in \Lambda^L(\theta) \implies d(\omega\land\eta) = d\omega\land\eta + (-1)^p\omega\land d\eta \\&dd\omega = 0, \omega\in\Lambda^k(\theta).\end{align*}\end{definicja}
-\begin{definicja}Niech $\alpha_1,\alpha_2,\ldots,\alpha_k\in T_p^*M\in\Lambda'(M)$, wówczas $\alpha_1\land\alpha_2\land\ldots\land\alpha_k\in \Lambda^k(M)$ i dla $v_1,v_2,\ldots,v_k\in T_p^*M$,\[\left<\alpha_1\land\alpha_2\land\ldots\land\alpha_k; v_1,v_2,\ldots,v_k \right> \overset{\text{def}}{=}  \begin{bmatrix} \alpha_1(v_1)\alpha_2(v_1)\ldots\alpha_k(v_1)\\ \vdots \\ \alpha_1(v_k)\alpha_2(v_k)\ldots\alpha_k(v_k) \end{bmatrix}.\]\end{definicja}
-\begin{definicja}Niech $M, N$ - rozmaitości, $h: M\to N$ i niech $p\in M, \alpha\in T^*_{h(p)}N$.\\Cofnięciem formy $\alpha$ w odwzorowaniu $h$ nazywamy formę $h^*\alpha \in T_pM$, taką, że $\left<h^*\alpha,v \right> = \left<\alpha,hv \right>\underset{v\in T_pM}{\forall} $ i caaa. Jeżeli $\alpha_1,\alpha_2,\ldots,\alpha_k \in \Lambda^1(N)$ i $v_1,\ldots,v_k\in T_p(M)$, to\[h^*(\alpha_1\land\ldots\land\alpha_k), v_1,\ldots,v_k \overset{\text{def}}{=} \begin{bmatrix} \left<h^*\alpha_1,v_1 \right>&\left<h^*\alpha_2,v_1 \right>&\ldots&\left<h^*\alpha_k,v_1 \right> \\\vdots &&&\\\left<h^*\alpha_k,v_k \right>&\left<h^*\alpha_k, v_k \right>&\ldots&\left<h^*\alpha_k,v_k \right>\end{bmatrix}.\]Czyli\[h^*(\alpha_1\land\ldots\land\alpha_k) = (h^*\alpha_1)\land(h^*\alpha_2)\land\ldots\land h^*(\alpha_k).\]\end{definicja}
-\begin{definicja}niech $M$ - rozmaitość wymiaru $n$, $g_{ij}$ - tensor metryczny na $M$, operacją $\sharp: T_pM \to T_p^*M$ taką, że dla $v = a^1 \frac{\partial }{\partial x^1} + \ldots + a^n \frac{\partial }{\partial x^n} $,\\\[v^{\sharp}=a^ig_{i1}dx^1 + a^ig_{i2}dx^2 + \ldots + a^ig_{in}dx^n, i=1,\ldots,n.\]zadaje izomorfizm między $T_pM$ a $T_p^*M$.\end{definicja}
-\begin{definicja}niech $M = \mathbb{R}^3$,\[\Lambda^0(M)\ni f \overset{\text{d}}{\to} df\in \Lambda^1(M) \overset{\flat}{\to} \left( df \right) ^\flat \in T_pM\]nazywamy gradientem funkcji $f$ : $\nabla f \overset{\text{def}}{=} \left( df \right) ^\flat$, gdzie $f: M\to \mathbb{R}^1$, $f$ - klasy $\mathcal{C}^k(M)$\end{definicja}\begin{definicja}Niech $M$ - rozmaitość, $\dim M = n$, $\left[ g_{ij} \right] $ - tensor metryczny. Operację $\Lambda^L(M)\to \Lambda^{n-L}(M)$ nazywamy gwiazdką "$\ast$" Hodge'a i definiujemy następująco:\begin{align*}\ast\left( dx^{i_1}\land dx^{i_2}\land \ldots \land dx^{i_L} \right) = \frac{\sqrt{g} }{(n-L)!} g^{i_1j_1}g^{i_2j_2}g^{i_Lj_L}\in _{j_1j_2\ldots j_L k_1k_2\ldots k_{n-L}}dx^{k_1}\land dx^{k_2}\land \ldots \land dx^{k_{n-1}},\end{align*}gdzie $\in _{i_1,\ldots,i_n} = \left\{ sgn(i_1,\ldots,i_n) \text{ jeżeli } i_m \neq i_p,\quad 0 \text{ w.p.p} \right\}$\end{definicja}\begin{definicja}$M = \mathbb{R}^3$\\niech $v\in T_pM$, operację\[rot(v) \overset{\text{def}}{=} \left( \ast\left( dv^\sharp \right)  \right) ^\flat\]nazywamy rotacją wektora $v$ i oznaczamy$\text{rot } v \overset{\text{ozn}}{=} \nabla\times v$.\\Operację \[\text{div }v \overset{\text{def}}{=} d\left( \ast v^\sharp \right)\]nazywamy dywergencją i oznaczamy $\text{div }v \overset{\text{ozn}}{=} \nabla \cdot v$.\\Uwaga: rotacji nie możemy wprowadzić np. na $M$ takim, że $\dim M = 4$, bo $\ast(\Lambda^2(M))\to \Lambda^2(M)$\end{definicja}
-
-\begin{definicja}Norma: niech $X$ - przestrzeń wektorowa.\\Odwzorowanie $||.||: \mathbb{X}\to \mathbb{R}$ nazywamy normą, jeżeli:\end{definicja}\begin{definicja}Pochodna mocna (trzecie podejście)\[\lim\limits_{h \to 0}\frac{f(x+h) - f(x)}{h} = f'(x_0), \text{ dla }x\in V\subset \mathbb{R}^{n}.\]- taka definicja jest niemożliwa (nie mamy dzielenia wektorów).\end{definicja}\begin{definicja}Niech $U \subset X, V\subset Y$\\$U,V\text{ - otwarte, }\quad T:U\to V; x,h\in U$Mówimy, że $T$ - różniczkowalne w punkcie $x_0$, jeżeli prawdziwy jest wzór $$\underset{h\in U}{\forall} \quad T(x_0+h) - T(x_0) = L_{x_0} (h) + r(x_0,h),$$gdzie $\frac{r(x_0,h)}{||h||}\to 0$, a $L_{x_0}$ - liniowe $: X\to Y$.\end{definicja}
-
-\begin{definicja}Pochodna mieszana\end{definicja}
-
-\begin{definicja}Niech $L: V\to W, L$ - liniowe, $(V,||.||_v),(W,||.||_w)$ - unormowane.Mówimy, że $L$ jest ograniczone, jeżeli$$\underset{A>0}{\exists},\underset{x\in V}{\forall} ||L(x)||_w \leq A||x||_v$$\end{definicja}\begin{definicja}Wielkość $\underset{A}{inf} \{\underset{x\in V}{\forall}||L(x)||_w \leq A||x||_v\}$ nazywamy normą odwzorowania $L$ i oznaczamy $A\overset{\text{ozn}}{=}||L||$.\end{definicja}\begin{definicja}Niech $U\subset \mathbb{R}^m$ - jest zbiorem wypukłym, jeżeli $\underset{a,b\in U}{\forall}.\quad [a,b]\overset{\text{def}}{=} \left \{ a(1-t)+bt, t\in[0,1] \right \} \subset U$\end{definicja}\begin{definicja}$\tilde x \in X$ nazywamy punktem stałym, jeżeli $P(\tilde x) = \tilde x$\end{definicja}
-
-\begin{definicja}Funkcje uwikłane\end{definicja}
-\begin{definicja}Ekstrema związane\\\end{definicja}\begin{definicja}Niech $f:\mathbb{R}^{n}\to\mathbb{R}^1$ i $M\subset \mathbb{R}^n$ - zbiór.\\Mówimy, że $f$ ma minimum/maksimum związane na zbiorze $M$, w punkcie $x_0\in M$, jeżeli\[\underset{r}{\exists} \underset{\substack{h\\  \Vert h \Vert < r \\ (x_0+h)\in M}}{\forall} f(x_0+h)\leq f(x_0).\]\end{definicja}
-
-\begin{definicja}Niech $I\subset \mathbb{R}, \mathcal{O}\subset \mathbb{R}^n$ \\$f: I\times\mathbb{R}^n \to \mathcal{O}$ taka, że $t\in I, x\in \mathbb{R}^n, f(t,x) \to f(t,x)$\\Mówimy, że $f$ spełnia warunek Lipschitza, jeżeli\[\underset{L>0}{\exists}. \underset{t\in I}{\forall}. \underset{x,x'\in \mathcal{O}}{\forall}. \Vert f(t,x) - f(t,x')  \Vert \leq L \Vert x - x' \Vert.\]\end{definicja}
-
-\begin{definicja}Rezolwenta\\\end{definicja}
-
-
-\begin{definicja}Niech $X$ - zbiór a $F = \left\{ A_\alpha, \alpha\in\mathbb{R}, A_i, i\in\mathbb{N} \right\} $ - rodzina zbiorów. Mówimy, że $F$ jest pokryciem zbioru $X$, jeżeli $X\subset \bigcup_{i,\alpha}A_\alpha$. Jeżeli zbiory $A_\alpha$ są otwarte, to mówimy, że $F$ jest pokryciem otwartym, jeżeli ilość zbiorów $A_\alpha$ jest skończona, to mówimy, że pokrycie jest skończone. Dowolny podzbiór $F$ taki, że jest też pokryciem zbioru $X$ nazywamy podpokryciem.\end{definicja}\begin{definicja}Zbiór $X$ nazywamy zwartym, jeżeli z \textbf{każdego} pokrycia otwartego możemy wybrać skończone podpokrycie.\end{definicja}
-
-
-\begin{definicja}Niech $U$ - zbiór otwarty $\subset M$ i niech odwzorowanie $\varphi: U\to \mathbb{R}^n$ takie, że $\varphi$ - klasy $\mathcal{C}^1$, (czasami $\mathcal{C}^\infty$ ), $\varphi^{-1}$ - klasy $\mathcal{C}^1$, (czasami $\mathcal{C}^\infty$ ) nazywamy mapą.\\Uwaga: mapa \underline{nie musi} pokrywać całego zbioru $M$.\end{definicja}\begin{definicja}$(U^1,\varphi^1), (U^2,\varphi^2)$ - mapy na $M$.\\$U_1$ i $U_2$ nazywamy zgodnymi jeżeli\\$a)$ $U_1\cap U_2 = \phi$\\albo odwzorowanie $\varphi_2 \circ \varphi_1^{-1}: \varphi_1(U_1\cap U_2)\to \varphi_2(U_2\cap U_1)$ jest bijekcją (klasy powiedzmy sobie $\mathcal{C}^1, \mathcal{C}^{\infty}$ )\end{definicja}\begin{definicja}Kolekcję zgodnych map nazywamy atlasem. Zbiór $M$ wraz z atlasem, który pokrywa cały $M$ nazywamy \textbf{rozmaitością} (\textit{ang. manifold}).\end{definicja}
-\begin{definicja}(Ciągłość Heine)\\Niech $X\subset\mathbb{R}^n, x_{0} \in X, Y\subset\mathbb{R}^m$. Mówimy, że odwzorowanie $T: X\rightarrow Y$ jest ciągłe, jeżeli $$\underset{x_n \to x_0}{\forall}, T(x_{n})\rightarrow T(x_{0})$$\\UWAGA: $x_{0} = (x_{1}, x_{2}, ..., x_{n})$.\end{definicja}\begin{definicja}(Ciągłość Cauchy)\\Niech $x_{0}\in X$. Mówimy, że $T: X\to Y$ - ciągłe, jeżeli$$\underset{\epsilon > 0}{\forall} \quad\underset{\delta}{\exists} \quad\underset{x\in X}{\forall}, \quad d_{X} (x,x_{0}) < \delta \implies d_{Y} (T(x_{0}), T(x)) < \epsilon$$\end{definicja}
-\begin{definicja}Niech $p\in M$, $\sigma_1,\sigma_2$ - krzywe na $M$ takie, że $\sigma_1(0) = \sigma_2(0) = P$. Mówimy, że $\sigma_1$ i $\sigma_2$ są \underline{styczne w punkcie $P$}, jeżeli\[\left.\frac{d(\varphi_0\cdot \sigma_1(t))}{d t}\right|_{t=0} = \left.\frac{d(\varphi_0 \cdot \sigma_2(t))}{dt}\right|_{t=0}.\]\end{definicja}\begin{definicja}Zbiór wszystkich różniczkowań w punkcie $P$ oznaczamy przez $D_pM$\end{definicja}
-\begin{definicja}Wektorem kostycznym (albo jednoformą) nazywamy odwzorowanie liniowe  $\omega: T_pM\to\mathbb{R}$.Zbiór jednoform ($p\in M$) oznaczamy przez $T_p^* M$ (lub $\Lambda^1(M)$, $\Lambda^1(\theta), \theta\in M$)\end{definicja}\begin{definicja}Zbiór wszystkich odwzorowań $T_pM \times \ldots \times T_pM \to \mathbb{R}$ k - liniowych w każdej zmiennej i antysymetrycznych oznaczamy przez $\Lambda^k(M)$ i nazywamy k-formami.\end{definicja}\begin{definicja}Odwzorowanie $d: \Lambda^k(M)\to\Lambda^{k+1}(M)$ nazywamy różniczką zewnętrzną (ewentualnie pochodną zewnętrzną) i definiujemy następująco:\begin{align*}&df = \frac{\partial f}{\partial x^1} dx^1 + \frac{\partial f}{\partial x^2} dx^2 + \ldots + \frac{\partial f}{\partial x^n} dx^n, f: \theta \to \mathbb{R}\\&(\text{funkcje nazywamy zero-formami }f\in Lambda^0(\theta))\\&\omega\in\Lambda^p(\theta), \eta\in \Lambda^L(\theta) \implies d(\omega\land\eta) = d\omega\land\eta + (-1)^p\omega\land d\eta \\&dd\omega = 0, \omega\in\Lambda^k(\theta).\end{align*}\end{definicja}
-\begin{definicja}Niech $\alpha_1,\alpha_2,\ldots,\alpha_k\in T_p^*M\in\Lambda'(M)$, wówczas $\alpha_1\land\alpha_2\land\ldots\land\alpha_k\in \Lambda^k(M)$ i dla $v_1,v_2,\ldots,v_k\in T_p^*M$,\[\left<\alpha_1\land\alpha_2\land\ldots\land\alpha_k; v_1,v_2,\ldots,v_k \right> \overset{\text{def}}{=}  \begin{bmatrix} \alpha_1(v_1)\alpha_2(v_1)\ldots\alpha_k(v_1)\\ \vdots \\ \alpha_1(v_k)\alpha_2(v_k)\ldots\alpha_k(v_k) \end{bmatrix}.\]\end{definicja}
-\begin{definicja}Niech $M, N$ - rozmaitości, $h: M\to N$ i niech $p\in M, \alpha\in T^*_{h(p)}N$.\\Cofnięciem formy $\alpha$ w odwzorowaniu $h$ nazywamy formę $h^*\alpha \in T_pM$, taką, że $\left<h^*\alpha,v \right> = \left<\alpha,hv \right>\underset{v\in T_pM}{\forall} $ i caaa. Jeżeli $\alpha_1,\alpha_2,\ldots,\alpha_k \in \Lambda^1(N)$ i $v_1,\ldots,v_k\in T_p(M)$, to\[h^*(\alpha_1\land\ldots\land\alpha_k), v_1,\ldots,v_k \overset{\text{def}}{=} \begin{bmatrix} \left<h^*\alpha_1,v_1 \right>&\left<h^*\alpha_2,v_1 \right>&\ldots&\left<h^*\alpha_k,v_1 \right> \\\vdots &&&\\\left<h^*\alpha_k,v_k \right>&\left<h^*\alpha_k, v_k \right>&\ldots&\left<h^*\alpha_k,v_k \right>\end{bmatrix}.\]Czyli\[h^*(\alpha_1\land\ldots\land\alpha_k) = (h^*\alpha_1)\land(h^*\alpha_2)\land\ldots\land h^*(\alpha_k).\]\end{definicja}
-\begin{definicja}niech $M$ - rozmaitość wymiaru $n$, $g_{ij}$ - tensor metryczny na $M$, operacją $\sharp: T_pM \to T_p^*M$ taką, że dla $v = a^1 \frac{\partial }{\partial x^1} + \ldots + a^n \frac{\partial }{\partial x^n} $,\\\[v^{\sharp}=a^ig_{i1}dx^1 + a^ig_{i2}dx^2 + \ldots + a^ig_{in}dx^n, i=1,\ldots,n.\]zadaje izomorfizm między $T_pM$ a $T_p^*M$.\end{definicja}
-\begin{definicja}niech $M = \mathbb{R}^3$,\[\Lambda^0(M)\ni f \overset{\text{d}}{\to} df\in \Lambda^1(M) \overset{\flat}{\to} \left( df \right) ^\flat \in T_pM\]nazywamy gradientem funkcji $f$ : $\nabla f \overset{\text{def}}{=} \left( df \right) ^\flat$, gdzie $f: M\to \mathbb{R}^1$, $f$ - klasy $\mathcal{C}^k(M)$\end{definicja}\begin{definicja}Niech $M$ - rozmaitość, $\dim M = n$, $\left[ g_{ij} \right] $ - tensor metryczny. Operację $\Lambda^L(M)\to \Lambda^{n-L}(M)$ nazywamy gwiazdką "$\ast$" Hodge'a i definiujemy następująco:\begin{align*}\ast\left( dx^{i_1}\land dx^{i_2}\land \ldots \land dx^{i_L} \right) = \frac{\sqrt{g} }{(n-L)!} g^{i_1j_1}g^{i_2j_2}g^{i_Lj_L}\in _{j_1j_2\ldots j_L k_1k_2\ldots k_{n-L}}dx^{k_1}\land dx^{k_2}\land \ldots \land dx^{k_{n-1}},\end{align*}gdzie $\in _{i_1,\ldots,i_n} = \left\{ sgn(i_1,\ldots,i_n) \text{ jeżeli } i_m \neq i_p,\quad 0 \text{ w.p.p} \right\}$\end{definicja}\begin{definicja}$M = \mathbb{R}^3$\\niech $v\in T_pM$, operację\[rot(v) \overset{\text{def}}{=} \left( \ast\left( dv^\sharp \right)  \right) ^\flat\]nazywamy rotacją wektora $v$ i oznaczamy$\text{rot } v \overset{\text{ozn}}{=} \nabla\times v$.\\Operację \[\text{div }v \overset{\text{def}}{=} d\left( \ast v^\sharp \right)\]nazywamy dywergencją i oznaczamy $\text{div }v \overset{\text{ozn}}{=} \nabla \cdot v$.\\Uwaga: rotacji nie możemy wprowadzić np. na $M$ takim, że $\dim M = 4$, bo $\ast(\Lambda^2(M))\to \Lambda^2(M)$\end{definicja}
-
-\begin{definicja}Norma: niech $X$ - przestrzeń wektorowa.\\Odwzorowanie $||.||: \mathbb{X}\to \mathbb{R}$ nazywamy normą, jeżeli:\end{definicja}\begin{definicja}Pochodna mocna (trzecie podejście)\[\lim\limits_{h \to 0}\frac{f(x+h) - f(x)}{h} = f'(x_0), \text{ dla }x\in V\subset \mathbb{R}^{n}.\]- taka definicja jest niemożliwa (nie mamy dzielenia wektorów).\end{definicja}\begin{definicja}Niech $U \subset X, V\subset Y$\\$U,V\text{ - otwarte, }\quad T:U\to V; x,h\in U$Mówimy, że $T$ - różniczkowalne w punkcie $x_0$, jeżeli prawdziwy jest wzór $$\underset{h\in U}{\forall} \quad T(x_0+h) - T(x_0) = L_{x_0} (h) + r(x_0,h),$$gdzie $\frac{r(x_0,h)}{||h||}\to 0$, a $L_{x_0}$ - liniowe $: X\to Y$.\end{definicja}
-
-\begin{definicja}Pochodna mieszana\end{definicja}
-
-\begin{definicja}Niech $L: V\to W, L$ - liniowe, $(V,||.||_v),(W,||.||_w)$ - unormowane.Mówimy, że $L$ jest ograniczone, jeżeli$$\underset{A>0}{\exists},\underset{x\in V}{\forall} ||L(x)||_w \leq A||x||_v$$\end{definicja}\begin{definicja}Wielkość $\underset{A}{inf} \{\underset{x\in V}{\forall}||L(x)||_w \leq A||x||_v\}$ nazywamy normą odwzorowania $L$ i oznaczamy $A\overset{\text{ozn}}{=}||L||$.\end{definicja}\begin{definicja}Niech $U\subset \mathbb{R}^m$ - jest zbiorem wypukłym, jeżeli $\underset{a,b\in U}{\forall}.\quad [a,b]\overset{\text{def}}{=} \left \{ a(1-t)+bt, t\in[0,1] \right \} \subset U$\end{definicja}\begin{definicja}$\tilde x \in X$ nazywamy punktem stałym, jeżeli $P(\tilde x) = \tilde x$\end{definicja}
-
-\begin{definicja}Funkcje uwikłane\end{definicja}
-\begin{definicja}Ekstrema związane\\\end{definicja}\begin{definicja}Niech $f:\mathbb{R}^{n}\to\mathbb{R}^1$ i $M\subset \mathbb{R}^n$ - zbiór.\\Mówimy, że $f$ ma minimum/maksimum związane na zbiorze $M$, w punkcie $x_0\in M$, jeżeli\[\underset{r}{\exists} \underset{\substack{h\\  \Vert h \Vert < r \\ (x_0+h)\in M}}{\forall} f(x_0+h)\leq f(x_0).\]\end{definicja}
