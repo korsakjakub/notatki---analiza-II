@@ -43,7 +43,7 @@
         &\Vert \psi' \Vert = r\cos^2 \varphi - (-r\sin^2 \varphi) = r
     .\end{align*}
     Chcemy pokazać, że jeżeli $\varphi: A\to A$, $A\subset\mathbb{R}^n$, $\varphi$ - klasy $\mathcal{C}^1, \varphi^{-1}$ - klasy $\mathcal{C}^1$, to możemy przedstawić $\varphi$ jako złożenie dwóch transformacji, z których pierwsza nie zmienia $n-1$ zmiennych a druga nie zmienia $1$ zmiennej (transformacje pierwotne/prymitywne albo inne ubogacające nazwy).
-    \begin{dowod}
+    \begin{proof}
         (coś w rodzaju dowodu)\\
         $\varphi$ możemy przedstawić jako
         \[
@@ -73,7 +73,7 @@
         .\]
         i $\det \eta' \neq 0$, więc istnieje $\eta^{-1}$. \\
         Czyli $\varphi = \varphi \circ \eta \circ \eta^{-1} = (\varphi \circ \eta ) \circ \eta^{-1} \quad\Box$
-    \end{dowod}
+    \end{proof}
 
     \begin{equation}
         \int_{-1}^{1}dx\int_{-\sqrt{1-x^2} }^{\sqrt{1-x^2} }dy f(x,y) = \int_0^1 r dr \int_0^{2\pi} d\varphi f(r,\varphi)
@@ -91,7 +91,7 @@
         \includegraphics[width=0.8\textwidth]{fig_46}
         \caption{$\Omega\to\Theta - f - \mathbb{R}$}
     \end{figure}
-    \begin{dowod}
+    \begin{proof}
         (przez indukcję względem wymiaru przestrzeni)\\
         \begin{itemize}
             \item dla $n=1$ - zrobione w I semetrze.
@@ -111,11 +111,86 @@
             Wówczas $K = \bigcup_{a\in[-1,1]}K_a$, zatem $\int_K f = \int_{-1}^1 da \int _{K_a} f$
 
         \end{obserwacja}
+    Ostatnio skończyliśmy na kroku $n-1\to n$ i wiemy, że dla $n-1$ wymiarów możemy napisać
+    \[
+        \int_{A\in \mathbb{R}^{n-1}}f(x)dx = \int_{B\in \mathbb{R}^{n-1}}f(\xi(t)) |\det \xi'|dt
+        .\]
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.3\textwidth]{fig_48}
+        \caption{Kółko $K$ składamy z kresek $K_a$ i mamy $\int_K f = \int da \int_{K_a} f$}
+        \label{fig:fig_48}
+    \end{figure}
 
+    \[
+        \int_{\Theta} f dx = \int_{\Omega}f(\xi(t))|\det \xi'|dt
+    .\]
+    Mając zbiór $\Theta$, zdefiniujmy zbiór $\Theta_a$, który jest zbiorem takich $x\in\Theta$, że na miejsca $x_i$ wstawimy wielkość $a$.
+    \[
+        \Theta_a = \left\{ x\in \mathbb{Q}, x = \left( x^1,x^2,\ldots,x^{i-1},a,x^{i+1},\ldots,x^n \right)  \right\}
+    .\]
+    \[
+        K = \left\{ (x,y), x^2+y^2 = 1 \right\}
+    .\]
+    \[
+        K_a = \left\{ (x,y)\in K, (x,y) = (x,a) \right\}, \left\{ (x,a), x^2+a^2 = 1 \right\}
+    .\]
+    Oznacza to, że
+    \[
+        \int_\Theta f dx = \int da \int_{\Theta_a}f(x^1,x^2,\ldots,x^{i-1},a,x^{i+1},\ldots,x^n) dx^1 dx^2 \ldots dx^{i-1} dx^{i+1}\ldots dx^n
+    .\]
+    Rozważmy $\xi: \Theta \to \Omega$ taką, że
+    \[
+        \begin{bmatrix} t_1\\ \vdots \\ t_n \end{bmatrix} \to \begin{bmatrix} \xi_1(t_1,\ldots,t_n)\\ \xi_2(t_1,\ldots,t_n) \\ \vdots \\ \xi_{i-1} \\ t_1 \\ \xi_{i+1} \\ \vdots \\ \xi_n(t_1,\ldots,t_n)
+    \end{bmatrix} \begin{bmatrix} x^1\\x^1\\ \vdots \\ x^i \\ \vdots \\ x^n \end{bmatrix}
+    .\]
+    Czyli $\xi$ nie zmienia jednej współrzędnej np.
+    $\begin{bmatrix}
+        x\\y
+    \end{bmatrix}
+    \to
+    \begin{bmatrix}
+        r\\x
+    \end{bmatrix}$.\\
+    Możemy więc zapisać transformację $\xi_a: \Theta_a\to\Omega_a$
+
+     \[
+         \begin{bmatrix} t_1\\ \vdots\\ t_{i-1}\\ t_{i+1} \\ \vdots \\ t_n \end{bmatrix} \to \begin{bmatrix} \xi_1(t_1,\ldots,t_n) \\ \xi_2(t_1,\ldots,t_n) \\ \vdots \\ \xi_{i-1}(\ldots) \\ \xi_{i+1}(\ldots) \\ \vdots \\ \xi_n(t_1,\ldots,t_n)\end{bmatrix}
+    .\]
+    Wówczas na mocy założenia indukcyjnego wiemy, że
+    \begin{align*}
+        &\int_{\Theta_a}f(x^1,\ldots,x^{i-1},a,x^{i+1},\ldots,x^n) dx^1 \ldots dx^{i-1} dx^{i+1} \ldots dx^n = \\
+        &\int_{\Omega_a} f(t_1,t_2,\ldots,t_{i-1},a,t_{i+1},\ldots,t_n) |\det \xi'_a | dt^1 dt_2 \ldots dt^{i-1} dt^{i+1} \ldots dt^n
+    .\end{align*}
+    Wówczas
+    \begin{align*}
+        &\int_{\Theta}f(x^1,\ldots,x^n)dx^n = \int_a da \int_{\Omega_a}f(t_1,\ldots,t_{i-1},a,t_{i+1},\ldots,t_n) |\det \xi'_a| \cdot (\pm 1) dt^1 \ldots dt^{i-1} dt^{i+1} \ldots dt^n\\
+        &= \begin{bmatrix} a=t_i \end{bmatrix} =\\
+        &= \int_{\Omega} f(t^1,t^2,\ldots,t^n)|\det \xi' | dt^1 \ldots dt^n
+.\end{align*}
+
+\[
+    \xi' = \begin{bmatrix} \frac{\partial \xi_1}{\partial t_1} & \frac{\partial \xi_2}{\partial t_2} & \ldots && \frac{\partial \xi_n}{\partial t_n}\\ 0 & \ldots & 1 & \ldots & 0 \\ \frac{\partial \xi_n}{\partial t_1} & \ldots &&& \frac{\partial \xi_n}{\partial t_n}  \end{bmatrix}
+.\]
+
+    \end{proof}
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.8\textwidth]{fig_47}
     \end{figure}
 
-    \end{dowod}
+    \begin{przyklad}
+        Policzmy całkę $I = \int_0^{\infty}e^{-x^2}dx$. Nie umiemy. Ale skoro nie umiemy policzyć $I$, to tym bardziej $I^2?$
+        \[
+            I^2 = \int_0^{\infty}e^{-x^2}dx \int_0^{\infty}e^{-y^2}dy = \int_{\Box} e^{-(x^2+y^2)}
+        .\]
+        Zamieńmy sobie zmienne: $x = r\cos \varphi,\quad y = r\sin \varphi$. $\psi: \begin{bmatrix} r\\\varphi\end{bmatrix}\to \begin{bmatrix} x\\y \end{bmatrix}  $, $|\psi'| = r$
+         Mamy
+         \begin{align*}
+             &I^2 = \int_0^{\infty}dr \int_0^{\frac{\pi}{2}}d\varphi e^{-r^2}r = \frac{\pi}{2} \lim\limits_{p\to +\infty} \int_0^p dr \cdot e^{-r^2} \cdot r = \frac{\pi}{2} \lim\limits_{p\to\infty} \left[ -\frac{1}{2}e^{-r^2} \right] _0^p\\
+             &\frac{\pi}{2}\left[ \lim\limits_{p\to\infty}\left[ -\frac{1}{2}e^{-p^2} \right] - \left[ -\frac{1}{2}e^{(0)^2} \right]  \right] = \frac{\pi}{2} \frac{1}{2} = \frac{\pi}{4}
+         \end{align*}
+         czyli $I^2 = \frac{\pi}{4} \implies I = \frac{\sqrt{\pi} }{2}$
+    \end{przyklad}
+
 \end{document}
