@@ -1,11 +1,10 @@
 #!/bin/sh
 
-directory=$(dirname -- "$(pwd)")
-dir2=$(ls ${directory}/tex | grep .tex)
+dir2=$(ls $(pwd)/tex | grep .tex)
 
 for i in ${dir2}
 do
-    echo ${directory}/tex/${i}
-    echo ${directory}/pdf/
-    pdflatex -output-directory ${directory}/pdf/ ${directory}/tex/${i}
+    echo $(pwd)/tex/$i
+    echo $(pwd)/pdf/
+    pdflatex -output-directory $(pwd)/pdf/ $(pwd)/tex/$i &> /dev/null
 done

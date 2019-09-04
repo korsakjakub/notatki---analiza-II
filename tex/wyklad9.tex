@@ -5,54 +5,23 @@
 }
 
 \begin{document}
-    \begin{large}
-        końcówka dowodu:
-    \end{large}
 
     \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{fig_21}
-        \caption{}
+        \caption{do poprzedniego wykładu}
         \label{fig:fig_21}
     \end{figure}
 
-    Dla $(x',y')\in \mathcal{V},$
-    \[
-        F^{-1}(x',y') = (a(x',y'),b(x',y'))
-    .\]
-    Wiemy, że $a: \mathbb{R}^{n+m}\to\mathbb{R}^{n}$ i $b: \mathbb{R}^{n+m}\to\mathbb{R}^m$ istnieją i są różniczkowalne, bo $F^{-1}$ istnieje. Co jeszcze wiemy o funkcjach $a$ i $b$?\\
-    Wiemy że  \[
-        (x',y') = F(F^{-1}(x',y') = F(\underbrace{a(x',y')}_{n} , \underbrace{b(x',y')}_{m})
-    .\]
-    Oznacza to, że
-    \[
-        a(x',y') = x'
-    .\]
-    Czyli $a(x',y')$ jest identycznością, czyli:
-    \[
-        (x',y') = F(x',b(x',y')) \implies x'=x \implies (x,y') = F(x,b(x,y'))
-    .\]
-    Czyli jeżeli $y=b(x,0)$, to wtedy
-    \[
-        F(x,y) = (x,0)\text{, czyli } (x,H(x,y)) = (x,0)
-    .\]
-    Czyli dla $y = (x,0)$ otrzymujemy, że
-    \[
-        H(x,y)=0
-    .\]
-    Jeżeli oznaczymy $b(x,0) \overset{\text{ozn}}{=} \varphi(x)$, to znaczy, że znaleźliśmy funkcję $\varphi(x), \varphi:\mathbb{R}^n\to\mathbb{R}^m$ taką, że \[
-        H(x,\varphi(x))=0 \quad\Box
-    .\]
+    \subsection{Ekstrema związane}
 
-    \begin{definicja}
-        Ekstrema związane\\
-
-    \end{definicja}
     przykład:
     \[
         f(x,y) = x+y,\quad G(x,y) = (x-1)^1 + (y-1)^2 - 1,\quad M= \left \{ (x,y)\in\mathbb{R}^2,G(x,y) = 0\right \}
     .\]
-    Szukamy minimum lub maksimum $f$ na $M$
+    Szukamy minimum lub maksimum $f$ na $M$\\
+    Rozważmy linię o stałej wartości $x+y$
+
     \begin{figure}
         \centering
         \includegraphics[width=0.8\textwidth]{fig_22}
@@ -60,7 +29,6 @@
         \label{fig:fig_22}
     \end{figure}
 
-    Rozważmy linię o stałej wartości $x+y$
     \begin{figure}
         \centering
         \includegraphics[width=0.7\textwidth]{fig_23}
@@ -81,12 +49,6 @@
         \caption{}
         \label{fig:fig_24}
     \end{figure}
-
-    \begin{large}
-        Ekstrema związane podejście I\\
-    \end{large}
-
-    \vspace{1cm}
 
     Niech $f(x,y):\mathbb{R}^2\to\mathbb{R}^1$ \\
     $G(x,y): \mathbb{R}^2\to\mathbb{R}^1$\\
@@ -146,7 +108,7 @@
     Wielkość $\lambda$ często nazywa się \textit{mnożnikiem Lagrange}
 
     \begin{obserwacja}
-        Do warunku (\ref{eq:eqy}) można dojść na sktóry przez funkcję $H(x,y) = f(x,y) - \lambda G(x,y)$ i badanie $H(x,y)$ tak, jakby była to funkcja $\mathbb{R}^2\to \mathbb{R}^1$ bez żadnych więzów.\\
+        Do warunku (\ref{eq:eqy}) można dojść na skróty przez funkcję $H(x,y) = f(x,y) - \lambda G(x,y)$ i badanie $H(x,y)$ tak, jakby była to funkcja $\mathbb{R}^2\to \mathbb{R}^1$ bez żadnych więzów.\\
         \[
             \frac{\partial H}{\partial x} = 0, \quad \frac{\partial H}{\partial y} = 0 \left( \text{ + warunek } G(x,y) = 0 \right)
         .\]

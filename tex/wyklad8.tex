@@ -7,13 +7,8 @@
 
 \begin{document}
 
-\begin{large}
-    Zabawki działające dzięki wnioskom z Tw. wyżej
-\end{large}
+    \subsection{Zabawki działające dzięki wnioskom z Tw. wyżej - funkcje uwikłane}
 
-\begin{definicja}
-    Funkcje uwikłane
-\end{definicja}
 \[
     x+y=1 \quad\text{(a)}
 .\]
@@ -191,14 +186,31 @@ napięcie rośnie (6 równań oho)
     H_x' g' = -H_y' \implies g' = -(H_x')^{-1}H_y'
 .\]
 
+\pagebreak
 \begin{tw}
     (o funkcji uwikłanej)\\
-    Niech $H:E\subset\mathbb{R}^{n+m}\to\mathbb{R}^{m},H\in\mathcal{C}^{1}$ na $E$. $(x_0,y_0)\in E, H(x_0,y_0)=0, (x_0,y_0) = (x_0^1,\ldots,x_0^n,y_0^1,\ldots,y_0^m), H$ - odwracalna.\\
-    Wówczas istnieje  $U\subset E$ takie, że $(x_0,y_0)\in U, \underset{W\subset \mathbb{R}^{n}}{\exists} $, że $x_0\in W, \underset{x\in W}{\forall} \underset{y}{\exists !} H(x,y) = 0, (x,y) \in U$.\\
-    Jeżeli $y= \varphi(x)$, to $\varphi:\mathbb{R}^{n}\to\mathbb{R}^{m}$ i $\varphi\in \mathcal{C}^{1}$ na $W$. $\varphi'(x) = -(H_y')^{-1}H_x'$
+    Niech
+    \begin{align*}
+        &H:E\subset\mathbb{R}^{n+m}\to\mathbb{R}^{m},\\
+        &H\in\mathcal{C}^{1} \text{ na } E. (x_0,y_0)\in E, \\
+        &H(x_0,y_0)=0, \\
+        &(x_0,y_0) = (x_0^1,\ldots,x_0^n,y_0^1,\ldots,y_0^m), \\
+        &H \text{ - odwracalna}.
+    .\end{align*}
+    Wówczas istnieje  $U\subset E$ takie, że $(x_0,y_0)\in U, \underset{W\subset \mathbb{R}^{n}}{\exists} $, że
+    \[
+        x_0\in W, \underset{x\in W}{\forall} \underset{y}{\exists !} H(x,y) = 0, (x,y) \in U.
+    \]
+    Jeżeli $y= \varphi(x)$, to
+    \[
+        \varphi:\mathbb{R}^{n}\to\mathbb{R}^{m} \text{ i } \varphi\in \mathcal{C}^{1}(W),
+    \]
+    \[
+         \varphi'(x) = -(H_y')^{-1}H_x'
+     .\]
 \end{tw}
 
-\begin{dowod}
+\begin{proof}
     Oznaczenia:
     \[
         H(x^1,\ldots,x^n,y^1,\ldots,y^m) = \begin{bmatrix}
@@ -252,6 +264,7 @@ H^m(x^1,\ldots,x^n,y^1,\ldots,y^m)\\
         \caption{}
         \label{fig:}
     \end{figure}
+
     Jeżeli $H_y'(x_0,y_0)$ - odwracalna, to $F'(x_0,y_0)$ - też.
     Oznacza to (na podstawie tw. o lokalnej odwracalności), że
     \[
@@ -262,7 +275,35 @@ H^m(x^1,\ldots,x^n,y^1,\ldots,y^m)\\
          F^{-1}(x,\alpha) = (a(x,\alpha),b(x,\alpha)), x,\alpha\in V
      .,\] gdzie $a(x,\alpha): \mathbb{R}^{m+n}\to\mathbb{R}^n,\quad b(x,\alpha):\mathbb{R}^{m+n}\to\mathbb{R}^m  $
 
-\end{dowod}
+    Dla $(x',y')\in \mathcal{V},$
+    \[
+        F^{-1}(x',y') = (a(x',y'),b(x',y'))
+    .\]
+    Wiemy, że $a: \mathbb{R}^{n+m}\to\mathbb{R}^{n}$ i $b: \mathbb{R}^{n+m}\to\mathbb{R}^m$ istnieją i są różniczkowalne, bo $F^{-1}$ istnieje. Co jeszcze wiemy o funkcjach $a$ i $b$?\\
+    Wiemy że  \[
+        (x',y') = F(F^{-1}(x',y') = F(\underbrace{a(x',y')}_{n} , \underbrace{b(x',y')}_{m})
+    .\]
+    Oznacza to, że
+    \[
+        a(x',y') = x'
+    .\]
+    Czyli $a(x',y')$ jest identycznością, czyli:
+    \[
+        (x',y') = F(x',b(x',y')) \implies x'=x \implies (x,y') = F(x,b(x,y'))
+    .\]
+    Czyli jeżeli $y=b(x,0)$, to wtedy
+    \[
+        F(x,y) = (x,0)\text{, czyli } (x,H(x,y)) = (x,0)
+    .\]
+    Czyli dla $y = (x,0)$ otrzymujemy, że
+    \[
+        H(x,y)=0
+    .\]
+    Jeżeli oznaczymy $b(x,0) \overset{\text{ozn}}{=} \varphi(x)$, to znaczy, że znaleźliśmy funkcję $\varphi(x), \varphi:\mathbb{R}^n\to\mathbb{R}^m$ taką, że \[
+        H(x,\varphi(x))=0
+    .\]
+
+\end{proof}
 
 \begin{figure}[h]
     \centering

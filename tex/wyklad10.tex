@@ -5,6 +5,7 @@
 }
 
 \begin{document}
+\textbf{Problem:}
     \[
         f:\mathbb{R}^n\to\mathbb{R}^1,\quad G:\mathbb{R}^n\to\mathbb{R}^m,\quad M=\left\{ x: G(x) = 0 \right\}
     .\]
@@ -16,7 +17,6 @@
                 G(x_1,\ldots,x_n) =
                 \begin{bmatrix}
                 G^1(x_1,\ldots,x_n)\\
-                G^2(x_1,\ldots,x_n)\\
                 \vdots\\
                 G^m(x_1,\ldots,x_n)
                 \end{bmatrix}
@@ -181,13 +181,22 @@ Oznacza to, że dla małych $\Vert h_\parallel \Vert$ o znaku decyduje \[
 .\]
 
 \begin{tw}
-    Niech $f:U\subset \mathbb{R}^n \to \mathbb{R}^1, f\in \mathcal{C}^2(U), G: U_2\subset\mathbb{R}^n\to\mathbb{R}^m, G\in \mathcal{C}^2(U_2), \underset{x_0}{\exists} G(x_0) = 0, G'(x_0)$ - ma rząd maksymalny $(m)$ oraz \[
+    Niech
+    \begin{align*}
+        &f:U\subset \mathbb{R}^n \to \mathbb{R}^1,\quad f\in \mathcal{C}^2(U), \\
+        &G: U_2\subset\mathbb{R}^n\to\mathbb{R}^m,\quad G\in \mathcal{C}^2(U_2),\\
+        &\underset{x_0}{\exists} G(x_0) = 0, \quad G'(x_0) \text{ - ma rząd maksymalny }(m)
+    .\end{align*}
+    oraz \[
         \underset{\Lambda}{\exists} \Lambda = \left[ \lambda_1,\ldots,\lambda_m \right], \lambda_i \in \mathbb{R}, f'(x_0) - \Lambda G'(x_0) = 0
     .\] to jeżeli
     \[
         (f''(x_0)-\Lambda G''(x_0))(h_\parallel,h_\parallel) > 0,
         h_\parallel \overset{\text{def}}{=} \left \{G'(x_0) h_\parallel = 0 \right \}
-    .\] to $f$ posiada w $x_0$ minimum lokalne $(<0$, to maksimum lokalne$)$ na zbiorze $M = \left\{ x\in \mathbb{R}^n, G(x) = 0 \right\} $
+    .\] to $f$ posiada w $x_0$ minimum lokalne $(<0$, to maksimum lokalne$)$ na zbiorze
+\[
+    M = \left\{ x\in \mathbb{R}^n, G(x) = 0 \right\}
+\]
 \end{tw}
 
 
