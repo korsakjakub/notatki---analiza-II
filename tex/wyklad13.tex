@@ -5,32 +5,37 @@
 }
 
 \begin{document}
-$\varepsilon = min \left\{ |t_0-a|,|t_0-b|,\frac{1}{L},\frac{r_2}{M} \right\} $\\
-$]t_0-\varepsilon,t_0+\varepsilon[$//Chcielibyśmy, żeby $\varepsilon$ nie zależał od punktu w którym zaczniemy. Rys. \ref{fig:fig_30}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{fig_30}
-    \caption{Czego byśmy chcieli.}
-    \label{fig:fig_30}
-\end{figure}
-
+\[
+    \varepsilon = min \left\{ |t_0-a|,|t_0-b|,\frac{1}{L},\frac{r_2}{M} \right\}
+\]
+\[
+    ]t_0-\varepsilon,t_0+\varepsilon[
+\]
+Chcielibyśmy, żeby $\varepsilon$ nie zależał od punktu w którym zaczniemy.\\
+Zauważmy, że
+\[
+    \Vert  A(t)x(t)+b(t)  \Vert \le L(\Vert x_0\Vert +r_2 ) +c
+\]
+zatem
 \begin{align*}
-    \Vert  A(t)x(t)+b(t)  \Vert \le L(\Vert x_0\Vert +r_2 ) +c\\
-    \frac{r_2}{M} \ge \frac{r_2}{L(\Vert x_0 \Vert +r_2)+c}=\\
-    \text{Połóżmy }r_2 = \Vert x_0 \Vert +c\\
-    = \frac{\Vert x_0 \Vert +c}{L(\Vert x_0 \Vert +\Vert x_0 \Vert +c)+c}=\\
-    \frac{\Vert x_0 \Vert +c}{L(2\Vert x_0 \Vert +c)+c}\ge \frac{\Vert x_0 \Vert +c}{L(2\Vert x_0 \Vert +c+c) + c + \Vert x_0 \Vert } = \\
-    \frac{1}{2L+1}\text{, zatem}\\
+    &\frac{r_2}{M} \ge \frac{r_2}{L(\Vert x_0 \Vert +r_2)+c}= \Bigg| \text{Połóżmy }r_2 = \Vert x_0 \Vert +c \Bigg| =\\
+    &= \frac{\Vert x_0 \Vert +c}{L(\Vert x_0 \Vert +\Vert x_0 \Vert +c)+c}=\\
+    &\frac{\Vert x_0 \Vert +c}{L(2\Vert x_0 \Vert +c)+c}\ge \frac{\Vert x_0 \Vert +c}{L(2\Vert x_0 \Vert +c+c) + c + \Vert x_0 \Vert } = \\
+    &\frac{1}{2L+1},
+\end{align*}
+zatem
+\[
     \varepsilon = min \left\{ |t_0-a|,|t_0-b|,\frac{1}{L},\frac{1}{2L+1} \right\}
-.\end{align*}
-($r_1$ - pomijamy, bo $A(t)$ -  ciągła na $[a,b]$.)
-Oznacza to, że wartość $\varepsilon$ nie zależy od x, zatem rozwiązanie początkowo określone na
-$]t_0-\varepsilon,t_0+\varepsilon[ \times K(x_0,r_2)$ możemy przedłużyć do określonego na całym $[a,b] \times X$ !
+\]
+($r_1$ - pomijamy, bo $A(t)$ -  ciągła na $[a,b]$).\\
+Oznacza to, że wartość $\varepsilon$ nie zależy od $x$, zatem rozwiązanie początkowo określone na
+\[
+    ]t_0-\varepsilon,t_0+\varepsilon[ \times K(x_0,r_2)
+\]
+możemy przedłużyć do określonego na całym $[a,b] \times X$ !
 
-\begin{definicja}
-    Rezolwenta\\
-\end{definicja}
-    Rozwiązaniem problemu
+    \subsection{Rezolwenta}
+    Rozwiązaniem problemu Cauchy
     \begin{align*}
         &\frac{dx}{dt} = A(t)x(t)+b(t)\\
         &x(t_0)=x_0
@@ -42,6 +47,7 @@ $]t_0-\varepsilon,t_0+\varepsilon[ \times K(x_0,r_2)$ możemy przedłużyć do o
     \caption{Mała zmiana może dać rozwiązanie w podobnym miejscu ale nie musi}
     \label{fig:fig_31}
 \end{figure}
+
 \begin{pytanie}
     Czy istnieje
     \[
@@ -51,24 +57,28 @@ $]t_0-\varepsilon,t_0+\varepsilon[ \times K(x_0,r_2)$ możemy przedłużyć do o
         x(t) = R(t,t_0)x_0?
     .\](Jeżeli $x_0,x(t)\in\mathbb{R}^n$)
 \end{pytanie}
-\begin{pytanie}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig_32}
+    \caption{Jak pośpimy minutę dłużej to nic się nie stanie (świat jest ciągły)}
+    \label{fig:fig_32}
+\end{figure}
+
+\begin{definicja}
     Jakie własności $R(t,t_0)$ powinno posiadać?
-\end{pytanie}
-    \begin{itemize}
+    \begin{enumerate}
         \item $R(t,t_0): \mathbb{R}^n\to\mathbb{R}^n, R$ - liniowy\label{eq:131}\\
             Bo jeżeli $x_1(t), x_1(t_0)=x_0^1$ i $x_2(t),x_2(t_0) = x_0^2$ są rozwiązaniem, to chcielibyśmy, by  $x_1(t) + x_2(t)$ też było rozwiązaniem z wartością początkową $x_0^1+x_0^2$. Rys \ref{fig:fig_32}
         \item funkcja $R(t,t_0)$
-            \begin{figure}
-                \centering
-                \includegraphics[width=0.8\textwidth]{fig_32}
-                \caption{Jak pośpimy minutę dłużej to nic się nie stanie (świat jest ciągły)}
-                \label{fig:fig_32}
-            \end{figure}
         \item $R(t,t_0) = R(t,s) R(s,t_0)$\\
             $\underset{t,t_0,s\in\mathcal{O}\subset\mathbb{R}}{\forall} $
-        \item $R(t_0,t_0) = \mathbb{I}$, bo $x(t) = R(t,t_0)x_0$\\
+        \item $R(t_0,t_0) = \mathbb{I}$, bo $x(t) = R(t,t_0)x_0$
             $\underset{t_0\in\mathcal{O}}{\forall} $ \\
-            Ad 3. Wstawiając $t_0$ do trzeciej kropki otrzymujemy $R(t_0,t_0)=R(t_0,s)R(s,t_0)\rightarrow \underset{t,s\in\mathcal{O}}{\forall} R(s,t) = R(t,s)^{-1}$
+            Ad 3. Wstawiając $t_0$ do trzeciej kropki otrzymujemy
+            \[
+                R(t_0,t_0)=R(t_0,s)R(s,t_0)\rightarrow \underset{t,s\in\mathcal{O}}{\forall} R(s,t) = R(t,s)^{-1}
+            \]
         \item
             \begin{align*}
                 &\frac{dR(t,to)}{dt} = A(t)R(t,t_0),\\
@@ -81,7 +91,9 @@ $]t_0-\varepsilon,t_0+\varepsilon[ \times K(x_0,r_2)$ możemy przedłużyć do o
                 &x(t_0)=x_0
             .\end{align*}
             bo $\frac{dx}{dt} = \frac{d}{dt}(R(t,t_0)x_0) = A(t)R(t,t_0)x_0=A(t)x(t)$ i $x(t_0)=R(t_0,t_0)x_0 = \mathbb{I}x_0 = x_0$
-    \end{itemize}
+    \end{enumerate}
+\end{definicja}
+
     Zatem na mocy twierdzenia o jednoznaczności rozwiązań wiemy, że założenie $x(t) = R(t,t_0)x_0$ da nam jednoznaczne rozwiązanie.
     \begin{pytanie}
         A co z $b(t)$? (ten wektorek co by to był, ale go nie ma)

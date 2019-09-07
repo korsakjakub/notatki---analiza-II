@@ -7,39 +7,40 @@
 \begin{document}
     \subsection{Równania różniczkowe}
     Interesuje nas następująca sytuacja:
-        $
-        \frac{dx}{dt} = f(t,x) \\
-        x(t_0)= x_0\\
-        x(1): [a,b]\to\mathbb{R}\\
-        f: [a,b]\times \mathbb{R}^n\to\mathbb{R}^n
-        $
-        \begin{przyklad}
-            \begin{align*}
-                \frac{dx}{dt} = -kx(t)\\
-                x(t) = c e^{-kt}
-            .\end{align*}
-        \end{przyklad}
-        Pytanie: czy to, że równanie jest pierwszego rzędu bardzo nam przeszkadza?\\
-        \begin{przyklad}
-            $\ddot{x} + \omega^2 x = 0\\
-            \dot{x} = p\\
-            \dot{p} = \ddot{x} = -\omega^2 x\\
-            \frac{d}{dt} \underbrace{\begin{bmatrix} x\\p \end{bmatrix}}_{\frac{d}{dt}x} =
-            \underbrace{\begin{bmatrix} 0&1\\ -\omega^2&0 \end{bmatrix}
-            \begin{bmatrix} x\\p \end{bmatrix}}_{f(x,t)}
-            $
 
-        \end{przyklad}
-        \begin{definicja}
-            Niech $I\subset \mathbb{R}, \mathcal{O}\subset \mathbb{R}^n$ \\
-            $f: I\times\mathbb{R}^n \to \mathcal{O}$ taka, że $t\in I, x\in \mathbb{R}^n, f(t,x) \to f(t,x)$\\
-            Mówimy, że $f$ spełnia warunek Lipschitza, jeżeli
-            \[
-                \underset{L>0}{\exists}. \underset{t\in I}{\forall}. \underset{x,x'\in \mathcal{O}}{\forall}. \Vert f(t,x) - f(t,x')  \Vert \leq L \Vert x - x' \Vert
-            .\]
-        \end{definicja}
+    \begin{align*}
+        &\frac{dx}{dt} = f(t,x) \\
+        &x(t_0)= x_0\\
+        &x(t): [a,b]\to\mathbb{R}\\
+        &f: [a,b]\times \mathbb{R}^n\to\mathbb{R}^n
+    .\end{align*}
+
+    \begin{przyklad}
+        \begin{align*}
+            &\frac{dx}{dt} = -kx(t)\\
+            &x(t) = c e^{-kt}
+        .\end{align*}
+    \end{przyklad}
+
+    \begin{przyklad}
+        \begin{align*}
+            &\ddot{x} + \omega^2 x = 0\\
+            &\dot{x} = p\\
+            &\dot{p} = \ddot{x} = -\omega^2 x\\
+            &\frac{d}{dt} \underbrace{\begin{bmatrix} x\\p \end{bmatrix}}_{\frac{d}{dt}x} = \underbrace{\begin{bmatrix} 0&1\\ -\omega^2&0 \end{bmatrix} \begin{bmatrix} x\\p \end{bmatrix}}_{f(x,t)}
+        .\end{align*}
+    \end{przyklad}
+
+    \begin{definicja}
+        Niech $I\subset \mathbb{R}, \mathcal{O}\subset \mathbb{R}^n$ \\
+        $f: I\times\mathbb{R}^n \to \mathcal{O}$ taka, że $t\in I, x\in \mathbb{R}^n, f(t,x) \to f(t,x')$\\
+        Mówimy, że $f$ spełnia warunek Lipschitza, jeżeli
+        \[
+            \underset{L>0}{\exists}. \underset{t\in I}{\forall}. \underset{x,x'\in \mathcal{O}}{\forall}. \Vert f(t,x) - f(t,x')  \Vert \leq L \Vert x - x' \Vert
+        .\]
+    \end{definicja}
         \begin{uwaga}
-            Znane $t,x$ nie występują w warunku Lipschitza na równych prawach
+            Zmienne $t,x$ nie występują w warunku Lipschitza na równych prawach
         \end{uwaga}
         \begin{pytanie}
             Czy jeżeli \[
@@ -48,42 +49,47 @@
             \underset{x,x'}{\forall}  \Vert f(x) - f(x') \Vert \leq L \Vert x - x' \Vert
             .\] to czy $f $ jest ciągła?
         \end{pytanie}
+
+        \pagebreak
         \begin{tw}
+            (problem Cauchy)\\
             Niech $[a,b] \subset \mathbb{R}, \mathcal{O}\subset\mathbb{R}^n, \mathcal{O}$ - domknięty i $f:[a,b]\times\mathcal{O}\to\mathcal{O}$ takie, że $f$ - ciągła na $[a,b]\times\mathcal{O}$ oraz $f$ spełnia warunek Lipschitza na $\mathcal{O}$, to znaczy:
             \[
-                \underset{L>0}{\exists}. \underset{t\in[a,b]}{\forall}. \underset{x,x'\in\mathcal{O}}{\forall} \Vert f(t,x) - f(t,x') \Vert \leq L \Vert x-x' \Vert
+                \underset{L>0}{\exists}\quad \underset{t\in[a,b]}{\forall}\quad \underset{x,x'\in\mathcal{O}}{\forall} \Vert f(t,x) - f(t,x') \Vert \leq L \Vert x-x' \Vert
             .\] Wówczas \[
-            \underset{t_0\in[a,b]}{\forall} . \underset{x_0\in\mathcal{O}}{\forall} . \underset{\varepsilon>0}{\exists} \text{, że dla } t\in ]t_0-\varepsilon, t_0+\varepsilon[
+            \underset{t_0\in[a,b]}{\forall}\quad \underset{x_0\in\mathcal{O}}{\forall}\quad \underset{\varepsilon>0}{\exists} \text{, że dla } t\in ]t_0-\varepsilon, t_0+\varepsilon[
             \]
             równanie ma jednoznaczne rozwiązania, które są ciągłe ze względu na $x_0$
             \begin{equation}
-            \begin{cases}\label{eq:eq21}
+            \begin{cases}\label{eq:cauchy}
                 \frac{dx}{dt} = f(t,x)\\
                 x(t_0) = x_0
             \end{cases}
             \end{equation}
         \end{tw}
+
         \begin{uwaga}
-            Problem \ref{eq:eq21} nazywamy problemem Cauchy.\\
             Ciągłość $f$ na $[a,b]\times\mathcal{O}$ jest mocniejszym warunkiem niż Lipschytzowalność na $\mathcal{O}$
         \end{uwaga}
+
         \begin{figure}[h]
             \centering
             \includegraphics[width=0.8\textwidth]{fig_27}
             \caption{}
             \label{fig:fig_27}
         \end{figure}
-        \begin{dowod}
+
+        \begin{proof}
             Skoro $f$ - ciągła na $[a,b]\times\mathcal{O}$, to znaczy, że $f$ jest ograniczona, czyli
             \[
-                \underset{M>0}{\exists} . \underset{y_1>0}{\exists}. \underset{y_2>0}{\exists},\quad \Vert f(t,x) \Vert \leq M
+                \underset{M>0}{\exists}\quad \underset{r_1>0}{\exists}\quad \underset{r_2>0}{\exists}\quad \Vert f(t,x) \Vert \leq M
             .\]
-            $t\in K(t_0,y_1), x\in K(x_0,y_2)$.\\
-            Zauważmy, że problem \ref{eq:eq21} możemy zapisać jako
+            $t\in K(t_0,r_1), x\in K(x_0,r_2)$.\\
+            Zauważmy, że problem (\ref{eq:cauchy}) możemy zapisać jako
             \begin{equation}\label{eq:eq22}
                 x(t) = x_0 + \int_{t_0}^t f(s,x(s)) ds
             \end{equation}
-            Czyli, jeżeli znajdziemy $x(t)$ takie, co spełnia \ref{eq:eq22}, to raslkdj problem \ref{eq:eq21}.\\
+            Czyli, jeżeli znajdziemy $x(t)$ takie, co spełnia (\ref{eq:eq22}), to rozwiążemy problem \ref{eq:cauchy}.\\
             Rozważmy odwzorowanie \[
                 \underset{g\in a}{P(g)(t)} = x_0 + \int_{t_0}^t f(s,g(s))ds
             .\]
@@ -100,8 +106,8 @@
             Czyli $\underset{x(t)\in A}{\exists}$ takie, że $P(x(t)) = x(t)$\\
             Oznaczałoby to, że \[
                 x(t) = -x_0 + \int_{t_0}^t f(s,x(s))ds
-            .\] Co więcej, gdyby $P$ było zwężające, to z zasady Banacha wiemy, że punkt stały jest tylko jeden. Zatem, jeżeli znajdziemy podzbiór $A$ taki, że $P$ - zwężające, to udowodnimy jednoznaczność. Problem \ref{eq:eq22}\\
-            Niech $E = \left\{ g\in \mathcal{C}([t_0-\varepsilon,t_0+\varepsilon],\mathbb{R}^n, \Vert g(t) - \overset{g_0(t)}{x_0} \Vert \underset{\text{ważne!}}{\leq} r_2 \right\} $, czyli \[
+            .\] Co więcej, gdyby $P$ było zwężające, to z zasady Banacha wiemy, że punkt stały jest tylko jeden. Zatem, jeżeli znajdziemy podzbiór $A$ taki, że $P$ - zwężające, to udowodnimy jednoznaczność. Problem (\ref{eq:eq22})\\
+            Niech $E = \left\{ g\in A, \Vert g(t) - \overset{g_0(t)}{x_0} \Vert \underset{\text{ważne!}}{\leq} r_2 \right\} $, czyli \[
                 g\in E \iff \underset{t_0-\varepsilon\leq t\leq t_0+\varepsilon}{sup} \Vert g(t) - x_0 \Vert \leq r_2
             .\] i \[
             g: [t_0-\varepsilon, t_0+\varepsilon]\to\mathbb{R}^n
@@ -109,33 +115,30 @@
             (domkniętość ze względu na zasdę Banacha $(x_0 \overset{\text{ozn}}{=} g_0(t) )$)
 
             Szukamy takiego $\varepsilon$, żeby:
-            \begin{align}
-                P(g)\in E \quad g\in E\label{eq:eq23}\\
-                P\text{ - zwężająca na }E\label{eq:eq24}
-            .\end{align}
-            bo jeżeli \ref{eq:eq24} jest spełniona, to wiemy, że istnieje punkt stały.\\
-            Jeżeli \ref{eq:eq23} jest spełniona, to wiemy, że punkt stały należy do  $E$\\
-            Warunek \ref{eq:eq23}:
+            \begin{enumerate}
+                \item $P(g)\in E \quad g\in E$\label{eq:eq23}
+                \item $P$ - zwężająca na $E$\label{eq:eq24}
+            \end{enumerate}
+            bo jeżeli (\ref{eq:eq24}) jest spełniona, to wiemy, że istnieje punkt stały.\\
+            Jeżeli (\ref{eq:eq23}) jest spełniona, to wiemy, że punkt stały należy do  $E$\\
+            Warunek (\ref{eq:eq23}):
             $P(g)\in E$, czyli
             \[
                 \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \Vert P(g(t)) - x_0 \Vert \leq r_2
             .\]
             czyli
-            \[
-                \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \Vert x_0 + \int_{t_0}^t f(s,g(s))ds - x_0 \Vert \leq \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \int_{t_0}^t \Vert f(s,g(s)) \Vert ds \leq
-            .\]
-            \[\underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} |t-t_0| M = \varepsilon M
-            .\]
-            Jeżeli chcemy aby $\varepsilon M \leq r_2$ \\
-            to znaczy, że $\varepsilon \leq \frac{r_2}{M}$ \\
-            i jednocześnie $\varepsilon\leq r_1$\\
-            czyli aby warunek \ref{eq:eq23} był spełniony
+            \begin{align*}
+                &\underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \Vert x_0 + \int_{t_0}^t f(s,g(s))ds - x_0 \Vert \leq \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \int_{t_0}^t \Vert f(s,g(s)) \Vert ds \leq\\
+                & \le \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} |t-t_0| M = \varepsilon M
+            .\end{align*}
+            Jeżeli chcemy aby $\varepsilon M \leq r_2$, to znaczy, że $\varepsilon \leq \frac{r_2}{M}$ i jednocześnie $\varepsilon\leq r_1$.\\
+            Czyli aby warunek (\ref{eq:eq23}) był spełniony to musi być:
             \[
                 \varepsilon < min \left\{ \frac{r_2}{M}, r_1 \right\}
             .\]
-            Warunek \ref{eq:eq24}. Chcemy aby $P$ było zwężające, czyli:
+        Warunek (\ref{eq:eq24}). Chcemy aby $P$ było zwężające, czyli:
             \[
-                \underset{g_1,g_2\in E}{\forall}  P(g_1) - P(g_2) \le q\Vert q_1-q_2 \Vert
+                \underset{g_1,g_2\in E}{\forall}  \left\Vert P(g_1) - P(g_2) \right\Vert \le q\Vert q_1-q_2 \Vert
             .\]
             Zatem:
             \[
@@ -148,10 +151,10 @@
                 \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \int_{t_0}^t L \Vert g_1-g_2 \Vert = \varepsilon L  \underset{\substack{\in E\\ \Vert g_1 - g_2 \Vert < 2r_2}}{\Vert g_1 - g_2 \Vert}
             .\]
             Zatem, jeżeli $P$ ma być zwężające na $E$, to $\varepsilon L < 1$, czyli $\varepsilon< \frac{1}{L}$ i $g\in E$\\
-            Zatem, aby istniało rozwiązanie jednoznaczne problemu \ref{eq:eq21} \[
-                \varepsilon < min \left\{ \frac{r_2}{M}, r_1, \frac{1}{L} \right\} \quad\Box
+            Zatem, aby istniało rozwiązanie jednoznaczne problemu \ref{eq:cauchy} \[
+                \varepsilon < min \left\{ \frac{r_2}{M}, r_1, \frac{1}{L} \right\}
             .\]
-        \end{dowod}
+        \end{proof}
         Do pełnego dowodu brakuje nam ciągłości rozwiązania ze względu na zmiany $x_0$
 
         Lemat:\\

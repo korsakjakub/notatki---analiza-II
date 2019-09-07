@@ -69,7 +69,7 @@ $$f(x_{n},y_{n}) = \frac{\frac{1}{n^{2}} \frac{1}{n^{2}}}{\frac{1}{n^{4}}+\frac{
     (Ciągłość Cauchy)\\
 $(X,d_{X})$ - przestrzeń wektorowa z metryką $d_{X},\\ (Y,d_{Y})$ - p.w. z metryką $d_{Y}$.\\
 Niech $x_{0}\in X$. Mówimy, że $T: X\to Y$ - ciągłe, jeżeli
-$$\underset{\epsilon > 0}{\forall} \quad\underset{\delta}{\exists} \quad\underset{x\in X}{\forall} d_{X} (x,x_{0}) < \delta \implies d_{Y} (T(x_{0}), T(x)) < \epsilon$$
+$$\underset{\varepsilon > 0}{\forall} \quad\underset{\delta}{\exists} \quad\underset{x\in X}{\forall} d_{X} (x,x_{0}) < \delta \implies d_{Y} (T(x_{0}), T(x)) < \varepsilon$$
 \end{definicja}
 
 \begin{proof}
@@ -84,23 +84,23 @@ Zakładamy, że
     oraz
     \begin{equation}
         \label{eq:p_1.1}
-        \underset{\epsilon > 0}{\exists}, \underset{\delta > 0}{\forall}, \underset{x\in X}{\exists} : d_{X} (x,x_{0}) < \delta \quad\land\quad d_{Y} (T(x),T(x_{0})) \geq \epsilon
+        \underset{\varepsilon > 0}{\exists}, \underset{\delta > 0}{\forall}, \underset{x\in X}{\exists} : d_{X} (x,x_{0}) < \delta \quad\land\quad d_{Y} (T(x),T(x_{0})) \geq \varepsilon
     \end{equation}
 
 Skoro $T(x_{n})\to T(x_{0}) \underset{x_n \to x_0}{\forall}$, to w szczególności warunek spełniony dla ciągu, który jest taki:
 
-    Skoro (\ref{eq:p_1.1}), to dla $\epsilon>0$ weźmy $\delta = 1$,
+    Skoro (\ref{eq:p_1.1}), to dla $\varepsilon>0$ weźmy $\delta = 1$,
 
 \begin{align*}
     &\delta=1:\\
-    &&\underset{x_1}{\exists} \quad d_{X} (x_{1},x_{0})<1 \land d_{Y} (T(x_{1}), T(x_{0})) \geq \epsilon \\
+    &&\underset{x_1}{\exists} \quad d_{X} (x_{1},x_{0})<1 \land d_{Y} (T(x_{1}), T(x_{0})) \geq \varepsilon \\
     &\delta=\frac{1}{2}:\\
-    &&\underset{x_2}{\exists} \quad d_{X} (x_{2},x_{0})<\frac{1}{2} \land d_{Y} (T(x_{2}), T(x_{0})) \geq \epsilon \\
+    &&\underset{x_2}{\exists} \quad d_{X} (x_{2},x_{0})<\frac{1}{2} \land d_{Y} (T(x_{2}), T(x_{0})) \geq \varepsilon \\
     &\delta=\frac{1}{3}:\\
-    &&\underset{x_3}{\exists} \quad d_{X} (x_{3},x_{0})<\frac{1}{3} \land d_{Y} (T(x_{3}), T(x_{0})) \geq \epsilon\\
+    &&\underset{x_3}{\exists} \quad d_{X} (x_{3},x_{0})<\frac{1}{3} \land d_{Y} (T(x_{3}), T(x_{0})) \geq \varepsilon\\
     &\vdots &\vdots\\
     &\delta=\frac{1}{n}:\\
-    &&\underset{x_n}{\exists} \quad d_{X}(x_{n},x_{0}) < \frac{1}{n} \land d_{Y} (T(x_{n}),T(x_{0})) \geq \epsilon
+    &&\underset{x_n}{\exists} \quad d_{X}(x_{n},x_{0}) < \frac{1}{n} \land d_{Y} (T(x_{n}),T(x_{0})) \geq \varepsilon
 .\end{align*}
 
 Zauważmy, że taki ciąg $x_{n} \to x_{0}$, ale $T(x_{n}) \not\rightarrow T(x_{0})$, więc mamy sprzeczność. $\Box$
@@ -108,7 +108,7 @@ Zauważmy, że taki ciąg $x_{n} \to x_{0}$, ale $T(x_{n}) \not\rightarrow T(x_{
     $\impliedby$ Wiemy, że
     \begin{equation}
         \label{eq:p_1.2}
-        \underset{x_n\to x_0}{\forall}\quad \underset{\varepsilon > 0}{\forall}\quad \underset{x}{\exists}\quad d_{X} (x,x_{0}) < \delta \implies d_{Y} (T(x),T(x_{0})) < \epsilon
+        \underset{x_n\to x_0}{\forall}\quad \underset{\varepsilon > 0}{\forall}\quad \underset{x}{\exists}\quad d_{X} (x,x_{0}) < \delta \implies d_{Y} (T(x),T(x_{0})) < \varepsilon
     ,
     \end{equation}
 czyli:
@@ -120,16 +120,16 @@ czyli:
 
 Chcemy pokazać, że $T(x_n) \to T(x_0)$, czyli, że
     \[
-        \underset{\epsilon_1 > 0}{\forall} \underset{N_1}{\exists} \underset{n>N_1}{\forall} \quad d_Y (T(x_n),T(x_0)) < \epsilon_1 (\text{dla } x_n \to x_0)
+        \underset{\varepsilon_1 > 0}{\forall} \underset{N_1}{\exists} \underset{n>N_1}{\forall} \quad d_Y (T(x_n),T(x_0)) < \varepsilon_1 (\text{dla } x_n \to x_0)
     \]
 
-    Przyjmijmy $\epsilon=\epsilon_1$. Oznacza to, że $\underset{\delta}{\exists}$ spełniająca warunek (\ref{eq:p_1.2}) dla $\epsilon_1$. Połóżmy $\delta_1=\delta$ we wzorze (\ref{eq:p_1.3}), czyli wiemy, że
+    Przyjmijmy $\varepsilon=\varepsilon_1$. Oznacza to, że $\underset{\delta}{\exists}$ spełniająca warunek (\ref{eq:p_1.2}) dla $\varepsilon_1$. Połóżmy $\delta_1=\delta$ we wzorze (\ref{eq:p_1.3}), czyli wiemy, że
     \[
         \underset{N}{\exists} \underset{n>N}{\forall} \quad d_X(x_n, x_0) < \delta_1,
     \]
     ale na mocy (\ref{eq:p_1.2}), wiemy, że
     \[
-        d_Y (T(x_n),T(x_0)) < \epsilon_1
+        d_Y (T(x_n),T(x_0)) < \varepsilon_1
     \]
 \end{proof}
 

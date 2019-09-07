@@ -11,7 +11,7 @@ Ostatnio zastanawialiśmy się nad taką sytuacją, że mieliśmy operator $P_a(
 \[
     c\in X: \left\{ c,P_a(c),P_a(P_a(c)) \to \tilde x(a) \right\}\text{, gdzie }P(\tilde x(a)) = \tilde x(a)
 .\]
-\begin{dowod}
+\begin{proof}
     Chcemy pokazać, że \[
         \underset{\varepsilon >0}{\forall} . \underset{\delta > 0}{\exists}. \underset{a'}{\forall}  d(a,a') < \delta \implies d(\tilde x(a),\tilde x(a')) < \varepsilon
     .\]
@@ -47,7 +47,7 @@ Ostatnio zastanawialiśmy się nad taką sytuacją, że mieliśmy operator $P_a(
        \[
            d(a',a) < \delta_1 \implies d(\tilde x(a'),\tilde x(a))<\varepsilon \quad\Box
        .\]
-\end{dowod}
+\end{proof}
 \begin{przyklad}
     (odwzorowanie zwężające)\\
     \[
@@ -121,6 +121,8 @@ Ostatnio zastanawialiśmy się nad taką sytuacją, że mieliśmy operator $P_a(
         \label{fig:fig_29}
     \end{figure}
 \end{przyklad}
+
+\pagebreak
 \begin{tw}
     Jeżeli odwzorowania
         \begin{align*}
@@ -132,9 +134,10 @@ Ostatnio zastanawialiśmy się nad taką sytuacją, że mieliśmy operator $P_a(
             \frac{d}{dt}x(t) = A(t)x(t) + b(t),\quad x(t_0) = x_0
         .\]
         Ma dla dowolnych $t_0\in[a,b], x_0\in X$ jednoznacznie określone rozwiązanie na $t\in]a,b[$\\
-        Czym to się różni od twierdzenia o jednoznaczności warunku Cauchy? Nie ma tutaj mowy o żadnej lipszycowalności. Zawężono za to klasę funkcji występującej w równaniu. Zamiast $]t_0-\varepsilon,t_0+\varepsilon[\times \mathcal{O}$, mamy $]a,b[ \times X$
+        Czym to się różni od twierdzenia o jednoznaczności warunku Cauchy? Nie ma tutaj mowy o żadnej lipszycowalności. Zawężono za to klasę funkcji występującej w równaniu.\\
+        Zamiast $]t_0-\varepsilon,t_0+\varepsilon[\times \mathcal{O}$, mamy $]a,b[ \times X$
 \end{tw}
-\begin{dowod}
+\begin{proof}
     Chcemy sprawdzić, czy $f(t,x) = A(t) x(t)+b(t)$ spełnia warunek Lipschitza. Wiemy, że  $A(t)$ i $b(t)$ są ciągłe na przedziale domkniętym $[a,b]$.
     Zatem, istnieje $\underset{t\in[a,b]}{\sup} \Vert b(t) \Vert = C$, a $A: X\to X$ i $A$ jest liniowe zatem istnieje norma tego odwzorowania
     \[
@@ -162,5 +165,5 @@ Ostatnio zastanawialiśmy się nad taką sytuacją, że mieliśmy operator $P_a(
 
 
 
-\end{dowod}
+\end{proof}
 \end{document}
