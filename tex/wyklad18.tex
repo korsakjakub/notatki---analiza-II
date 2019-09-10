@@ -5,192 +5,158 @@
 }
 
 \begin{document}
-    Chcemy wygenerować wzór na zamianę zmiennych.
-    Dawno dawno temu mogliśmy zrobić tak:
-    \[
-    \int_2^4 2xe^{x^2}dx =  \mid x^2 = t, 2xdx = dt  \mid=  \int_4^{16}e^{t}dt
-    .\]
-    Czyli w ogólności
-    \[
-        \int_{\varphi(a)}^{\varphi(b)}f(x)dx = \int_a^b f(\varphi(t))\varphi'(t)dt
-    .\]
-    Jak weźmiemy całkę
-    \[
-        \int f(x,y) dxdy = \int dx \int f(x,y)dy = \mid r=\sqrt{x^2+y^2} , \varphi = arctg(\frac{y}{x})   \mid =  \int dr \int d  \varphi f(r,\varphi) ??
-    .\]
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.8\textwidth]{fig_45}
-        \caption{zmieniamy zmienne pojedynczo a nie jednocześnie $(x,y)\to (x,\varphi)\to (r,\varphi)$}
-    \end{figure}
+    Ostatnio było:
     \begin{align*}
-    &\int dx \int dy f(x,y) = \Vert y = x \tg \varphi, dy = \frac{x}{\cos^2 \varphi}d \varphi \Vert = \int dx \int \frac{x}{\cos^2 \varphi} \varphi f(x,y(x,\varphi))= \\
-    &=\Vert x=r \cos \varphi, dx =dr \cos \varphi \Vert = \int d \varphi \int \frac{dr \cos\varphi r \cos \varphi}{\cos^2 \varphi} f(x(r,\varphi), y(x(r,\varphi))) =\\
-    &= \int d \varphi \int dr f(r,\varphi) r \text{, czyli } "??" = r
+        &A\subset D : \underset{x\in A}{\forall} \mathcal{O}(f,x)<\varepsilon; A - \text{kostka, to}\\
+        &\underset{\Pi}{\exists} | \overline{S}(f,\Pi) - \underline{S}(f,\Pi)| < \varepsilon |A|
     .\end{align*}
-    To teraz w drugą stronę. ($y\to r$), ( $x\to \varphi$ )
-    \begin{align*}
-        &\int \int f(x,y) dxdy = \Vert y = \sqrt{r^2 - x^2} , dy = \frac{2r dr}{2 \sqrt{r^2-x^2} } \Vert = \\
-        &= \int dx \int \frac{r dr}{\sqrt{r^2 - x^2} } f(x,y(x,r)) = \Vert x=r \cos \varphi, dx = -r \sin\varphi d\varphi \Vert = \\
-        &=-\int dr \int \frac{r \sin\varphi d \varphi r}{\sqrt{r^2 - x^2} } f(x(r,\varphi),y(x(r,\varphi),r)) = \\
-        &= -\int dr r^2 \int d\varphi \frac{\sin\varphi f(r,\varphi)}{\sqrt{r^2 - r^2 \cos^2 \varphi} } = -\int dr \int d\varphi f(r,\varphi) r
-    .\end{align*}
-    Dostaliśmy prawie to co trzeba ($r$ ). Tylko wpadł jakiś dziwny minus. Podobno minus zniknie gdy doprowadzimy do porządku granice zmiennej $\varphi$, bo $x = r \cos \varphi$ a $\cos$ jest malejący w tym przedziale. (tablica dalej nie działa - minęły 3 miesiące - z marsa by już doszła więc wysyłają pewnie z Saturna - MK$\texttrademark$)
-
-    Niech $\psi \begin{bmatrix} r\\\varphi \end{bmatrix} \to \begin{bmatrix} r \cos \varphi\\ r \sin \varphi \end{bmatrix}  $.
-    \begin{align*}
-        &\psi' = \begin{bmatrix} \cos \varphi &- r \sin \varphi\\ \sin \varphi & r \cos \varphi \end{bmatrix}\\
-        &\Vert \psi' \Vert = r\cos^2 \varphi - (-r\sin^2 \varphi) = r
-    .\end{align*}
-    Chcemy pokazać, że jeżeli $\varphi: A\to A$, $A\subset\mathbb{R}^n$, $\varphi$ - klasy $\mathcal{C}^1, \varphi^{-1}$ - klasy $\mathcal{C}^1$, to możemy przedstawić $\varphi$ jako złożenie dwóch transformacji, z których pierwsza nie zmienia $n-1$ zmiennych a druga nie zmienia $1$ zmiennej (transformacje pierwotne/prymitywne albo inne ubogacające nazwy).
-    \begin{proof}
-        (coś w rodzaju dowodu)\\
-        $\varphi$ możemy przedstawić jako
-        \[
-            \varphi \begin{bmatrix} t_1\\ \vdots \\ t_n \end{bmatrix} \to \begin{bmatrix} \varphi_1(t_1,\ldots,t_n)\\ \vdots \\ \varphi_n(t_1,\ldots,t_n) \end{bmatrix} = \begin{bmatrix} x_1 \\ \vdots \\ x_n \end{bmatrix}
-        .\]
-        \begin{pytanie}
-            Czy istnieje odwzorowanie $\Theta^{-1}: A\to A$ takie, że
-            \[
-                \Theta = \begin{bmatrix} t_1\\ \vdots \\ t_n \end{bmatrix} = \begin{bmatrix} t_1 \\ \vdots \\ t_{j-1} \\ \varphi_j(t_1,\ldots,t_n)\\ t_{j+1} \\ \vdots \\ t_n \end{bmatrix} = \begin{bmatrix} x_1 \\ \vdots \\ x_{j-1} \\ x_j \\ x_{j+1} \\ \vdots \\ x_n \end{bmatrix}
-            .\]
-            ($t_{i\neq j}$ ) mogą zostać zamiast zamieniać je na $x_i$.
-            Dlaczego interesuje nas czy istnieje funkcja odwrotna? Bo jeżeli istnieje, to możemy zapisać
-            \[
-                \varphi = \varphi \circ \Theta^{-1} \circ \Theta = \left(\varphi \circ \Theta^{-1}\right) \circ \Theta
-            .\]
-        \end{pytanie}
-        Wiemy, że $\varphi$ - klasy $\mathcal{C}^1$ i $\varphi^{-1}$ - klasy $\mathcal{C}^1$ i $\varphi: A\to A$. Mamy twierdzenie o lokalnej odwracalności!\\
-        $det \varphi' \neq 0$ , czyli w macierzy $\varphi'$ istnieje prznajmniej $1$ element niezerowy. (w rzeczywistości to zawsze będzie trochę więcej - nieśmiały warunek)
-
-        np. $\frac{\partial \varphi^i}{\partial t^i} \neq 0$. Oznacza to, że odwzorowanie
-        \[
-            \eta : \begin{bmatrix} t_1 \\ t_2 \\ \vdots \\ t_{i-1} \\t_i \\ t_{i+1} \\ \vdots \\ t_n \end{bmatrix} \to \begin{bmatrix} x_1\\ x_2 \\ \vdots \\ x_{j-1} \\ x_j = \varphi^i (t_1,\ldots,t_n) \\ \vdots \\ x_n \end{bmatrix}
-        .\]
-        Wtedy
-        \[
-            \eta' = \begin{bmatrix} 1&&&&\\ &1&&& \\ \ldots&\ldots& \frac{\partial \varphi^i}{\partial x^i} &\ldots&\ldots \\ &&&1& \\ &&&&1\end{bmatrix}
-        .\]
-        i $\det \eta' \neq 0$, więc istnieje $\eta^{-1}$. \\
-        Czyli $\varphi = \varphi \circ \eta \circ \eta^{-1} = (\varphi \circ \eta ) \circ \eta^{-1} \quad\Box$
-    \end{proof}
-
-    \begin{equation}
-        \int_{-1}^{1}dx\int_{-\sqrt{1-x^2} }^{\sqrt{1-x^2} }dy f(x,y) = \int_0^1 r dr \int_0^{2\pi} d\varphi f(r,\varphi)
-    \end{equation}
     \begin{tw}
-        (O zamianie zmiennych)\\
-        Niech $\Theta, \Omega$ - zbiory otwarte w $\mathbb{R}^n$ i $\xi: \Omega\to \Theta$, $f: \Theta\to \mathbb{R}$, $f$ - ograniczona i całkowalna. $\xi$ - klasy $\mathcal{C}^1$ na $\Omega$, $\xi^{-1}$ klasy $\mathcal{C}^{1}$ na $\Theta$. Wtedy
-        \begin{equation}
-            \int_{\Theta} f(x) dx =  \int_{\Omega} f(\xi(t)) | \det \xi'(t) | dt.
-        \end{equation}
-        $x=(x^1,\ldots,x^n)\in \Theta, t=(t^1,\ldots,t^n)\in \Omega$
+        (Lebesgue'a) niech $D$ - kostka, $D\subset \mathbb{R}^n$, $f: D\to \mathbb{R}$, $f$ - ograniczona.\\
+        Wówczas $f$ - (całkowalna na $D$ ) $\iff$ (zbiór nieciągłości funkcji $f$ jest miary Lebesgue'a zero)
     \end{tw}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.8\textwidth]{fig_46}
-        \caption{$\Omega\to\Theta - f - \mathbb{R}$}
-    \end{figure}
     \begin{proof}
-        (przez indukcję względem wymiaru przestrzeni)\\
-        \begin{itemize}
-            \item dla $n=1$ - zrobione w I semetrze.
-            \item zakładamy, że prawdziwy jest napis
-                \[
-                    \int_{A'\subset\mathbb{R}^{n-1}} f(x)dx = \int_{\Omega' \subset\mathbb{R}^{n-1}} f(\xi(t)) | det(\xi'(t)) |, (\xi: \mathbb{R}^{n-1}\to \mathbb{R}^{n-1})
-                .\]
-        \end{itemize}
-        Chcem pokazać, że prawdziwy jest napis
+        $\impliedby$ \\
+        Chcemy pokazać, że \[
+            \underset{\Pi}{\exists} |\overline{S}(f,\Pi) - \underline{S}(f,\Pi) | < \varepsilon
+        ,\]
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.8\textwidth]{fig_41}
+            \end{figure}
+        przy założeniu, że zbiór nieciągłośći jest miary L. zero.\\
+        Wprowadźmy zbiór $A_n = \left\{ x\in D, \mathcal{O}(f,x) \ge \frac{1}{n} \right\} $
         \[
-            \int_{A\subset\mathbb{R}} f(x) dx = \int_{\Omega \subset \mathbb{R}^n} f(\xi(t)) | det(\xi'(t)) |
+            \text{np. } A_2 = \left\{ x\in D, \mathcal{O}(f,x) \ge \frac{1}{2} \right\}
         .\]
-        Uwaga: wartośc bezwzględna oznacza, że musimy uważać przy rozstawianiu granic:\\
-        $\left( \int_a^b f \right) $ oznacza, że zakładamy, że $a\le b$. Dowód przeprowadzamy dla $\xi: \Theta\subset\mathbb{R}^n\to \Omega\subset\mathbb{R}^n$ takiego, że $\xi$ nie zamienia jednej zmiennej.
         \begin{obserwacja}
-            Niech $K = \left\{ (x,y), x^2+y^2 \le 1 \right\} $, niech $K_a = \left\{ (x,a), x^2+a^2 \le 1 \right\}.$\\
-            Wówczas $K = \bigcup_{a\in[-1,1]}K_a$, zatem $\int_K f = \int_{-1}^1 da \int _{K_a} f$
-
+            $A_1\subset A_2\subset A_3\subset \ldots$\\
+            a zbiór $A = \bigcup_{n=1}^{\infty}A_n$ będzie zbiorem wszystkich punktów nieciągłości funkcji $f$ na  $D$.\\
         \end{obserwacja}
-    Ostatnio skończyliśmy na kroku $n-1\to n$ i wiemy, że dla $n-1$ wymiarów możemy napisać
-    \[
-        \int_{A\in \mathbb{R}^{n-1}}f(x)dx = \int_{B\in \mathbb{R}^{n-1}}f(\xi(t)) |\det \xi'|dt
+            Tw. Lebesgue'a udowodnimy dla wybranego $A_n$, bo przeliczalna suma zbiórów miary L. zero też jest zbiorem miary L. zero.
+        \begin{uwaga}
+            Zbiór $A_n$ jest zbiorem domkniętym (bo lemat).\\
+            Wiemy, że $A_n$ jest zbiorem miary L. zero gdy itnieje $P_i \subset D$, ($P_i$ - kostki), że $A_n \subset \bigcup P_i $, $\sum |P_i |$ - dowolnie mała (skończona lub nieskończona suma).\\
+        \end{uwaga}
+        Niech $\varepsilon > 0$. Wiemy, że
+        \[
+        \underset{\varepsilon>0}{\forall} . \underset{N}{\exists} . \underset{n > N}{\forall} \frac{1}{n} < \varepsilon
+        .\] Wybierzmy zatem taki indeks $n$ dla zbioru $A_n$, że $\frac{1}{n} < \varepsilon$.
+        Wiemy, że $A_n$ - domknięty i ograniczony (bo $A_n \subset D$, a $D$ - kostka w $\mathbb{R}^n$), to znaczy, że $A_n$ jest zbiorem zwartym, a $\left\{ P_i \right\} $ jest jego pokryciem.
+        Możemy więc wybrać z niej skończone podpokrycie $\left\{ P_1, P_2, \ldots, P_k \right\} $ takie, że
+        \begin{align*}
+        &A_n \subset \bigcup_{j=1}^k P_j\\
+        &\sum_{j=1}^{k} |P_j| < \frac{1}{n}
+        .\end{align*}
+        (możemy tak zrobić, bo zawsze możemy wybrać taką rodzinę $\left\{ P_i \right\} $, że $\sum |P_i|$ - dowolnie mała.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.8\textwidth]{fig_42}
+        \end{figure}
+        Wybierzmy podział $\Pi$ zbioru $D$ taki, że $\Pi$ jest na tyle drobny, że odtwarza pokrycie $A_n$ zbioru $\bigcup P_j$. Oznacza to, że podział $\Pi$ możemy podzielić na dwa podziały
+        \begin{align*}
+            &\Pi = \Pi_1 \cup \Pi_2 \text{, takie że}\\
+            &\Delta\\
+            &\Pi_1 \cap \left\{ \bigcup_{j} P_j \right\} \neq \phi\\
+            &\text{oraz } \Pi_2 \cap \left\{ \bigcup_{j} P_j \right\} = \phi
+        .\end{align*}
+        $\Delta$ : każda kostka z $\left\{ P_j \right\} $ składa się z kostek należących do $\Pi_1$
+
+        $|\overline{S}(f,\Pi) - \underline{S}(f,\Pi)| = |\overline{S}(f,\Pi_1) - \underline(f,\Pi_1) + \overline{S}(f,\Pi_2) - \underline{S}(f,\Pi_2)|$, ale
+        \begin{equation}\label{eq:Q}
+            \overline{S}(f,\Pi_1) - \underline{S}(f,\Pi_1) = \sum_{Q_i\in\Pi_i}(\underset{x\in Q_i}{sup} f - \underset{x\in Q_I}{inf} f) Q_i |
+        \end{equation}
+        Gdzie wiemy, że $\sum |Q_i| < \frac{1}{n}$, a $f$ - ograniczona na $D$ czyli
+        \[
+            \underset{M}{\exists} .\underset{x\in D}{\forall} |f(x)| < \frac{M}{4}
+        .\] Czyli
+        \[
+        |\underset{x\in D}{\sup} f - \underset{x\in D}{\inf} f | < M
+        .\] Zatem
+        \[
+            \text{(\ref{eq:Q})} \le M \cdot \sum |Q_i| \le M \cdot  \frac{1}{n}
         .\]
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.3\textwidth]{fig_48}
-        \caption{Kółko $K$ składamy z kresek $K_a$ i mamy $\int_K f = \int da \int_{K_a} f$}
-        \label{fig:fig_48}
-    \end{figure}
+        Ale
+        \begin{align*}
+            &\overline{S}(f,\Pi_2) - \underline{S}(f,\Pi_2) = \sum_{R_j \in \Pi_2}(\underset{x\in R_j}{\sup} f - \underset{x\in R_j}{\inf} f) |R_j|\\
+            &\le \frac{1}{n} \sum |R_j| \le \frac{1}{n} |D|
+        .\end{align*}
+        Zatem
+        \[
+            |\overline{S}(f,\Pi) - \underline{S}(f,\Pi) \le M \cdot \frac{1}{n} + \frac{1}{n} |D| = \frac{1}{n} \cdot  const
+        .\]
+        czyli możemy tak zwiększyć $n$, że $\underset{\varepsilon>0}{\forall} \frac{1}{n}\cdot const < \varepsilon \quad\Box$\\
+        Dlaczego wynika z tego prawdziwość dowodu dla całego $A$?\\
+        np. dla $A_{2019}$ działa, ale co dalej. Bo $A_k$ dla $k>n$ też spełniają warunek, że $\frac{1}{k}\cdot const < \varepsilon$, a $A_j$ dla $j<n$ jest takie, że $A_j \subset A_n$
 
-    \[
-        \int_{\Theta} f dx = \int_{\Omega}f(\xi(t))|\det \xi'|dt
-    .\]
-    Mając zbiór $\Theta$, zdefiniujmy zbiór $\Theta_a$, który jest zbiorem takich $x\in\Theta$, że na miejsca $x_i$ wstawimy wielkość $a$.
-    \[
-        \Theta_a = \left\{ x\in \mathbb{Q}, x = \left( x^1,x^2,\ldots,x^{i-1},a,x^{i+1},\ldots,x^n \right)  \right\}
-    .\]
-    \[
-        K = \left\{ (x,y), x^2+y^2 = 1 \right\}
-    .\]
-    \[
-        K_a = \left\{ (x,y)\in K, (x,y) = (x,a) \right\}, \left\{ (x,a), x^2+a^2 = 1 \right\}
-    .\]
-    Oznacza to, że
-    \[
-        \int_\Theta f dx = \int da \int_{\Theta_a}f(x^1,x^2,\ldots,x^{i-1},a,x^{i+1},\ldots,x^n) dx^1 dx^2 \ldots dx^{i-1} dx^{i+1}\ldots dx^n
-    .\]
-    Rozważmy $\xi: \Theta \to \Omega$ taką, że
-    \[
-        \begin{bmatrix} t_1\\ \vdots \\ t_n \end{bmatrix} \to \begin{bmatrix} \xi_1(t_1,\ldots,t_n)\\ \xi_2(t_1,\ldots,t_n) \\ \vdots \\ \xi_{i-1} \\ t_1 \\ \xi_{i+1} \\ \vdots \\ \xi_n(t_1,\ldots,t_n)
-    \end{bmatrix} \begin{bmatrix} x^1\\x^1\\ \vdots \\ x^i \\ \vdots \\ x^n \end{bmatrix}
-    .\]
-    Czyli $\xi$ nie zmienia jednej współrzędnej np.
-    $\begin{bmatrix}
-        x\\y
-    \end{bmatrix}
-    \to
-    \begin{bmatrix}
-        r\\x
-    \end{bmatrix}$.\\
-    Możemy więc zapisać transformację $\xi_a: \Theta_a\to\Omega_a$
+        $\implies$\\
+        Wiemy, że $f$ - całkowalne, czyli
+        \[
+            \underset{\varepsilon>0}{\forall} . \underset{\Pi}{\exists} |\overset{S}(f,\Pi) - \underset{S}(f,\Pi) | < \varepsilon / n
+        .\] (chcemy pokazać, że $A_n$ jest zbiorem miary L. zero)
 
-     \[
-         \begin{bmatrix} t_1\\ \vdots\\ t_{i-1}\\ t_{i+1} \\ \vdots \\ t_n \end{bmatrix} \to \begin{bmatrix} \xi_1(t_1,\ldots,t_n) \\ \xi_2(t_1,\ldots,t_n) \\ \vdots \\ \xi_{i-1}(\ldots) \\ \xi_{i+1}(\ldots) \\ \vdots \\ \xi_n(t_1,\ldots,t_n)\end{bmatrix}
-    .\]
-    Wówczas na mocy założenia indukcyjnego wiemy, że
-    \begin{align*}
-        &\int_{\Theta_a}f(x^1,\ldots,x^{i-1},a,x^{i+1},\ldots,x^n) dx^1 \ldots dx^{i-1} dx^{i+1} \ldots dx^n = \\
-        &\int_{\Omega_a} f(t_1,t_2,\ldots,t_{i-1},a,t_{i+1},\ldots,t_n) |\det \xi'_a | dt^1 dt_2 \ldots dt^{i-1} dt^{i+1} \ldots dt^n
-    .\end{align*}
-    Wówczas
-    \begin{align*}
-        &\int_{\Theta}f(x^1,\ldots,x^n)dx^n = \int_a da \int_{\Omega_a}f(t_1,\ldots,t_{i-1},a,t_{i+1},\ldots,t_n) |\det \xi'_a| \cdot (\pm 1) dt^1 \ldots dt^{i-1} dt^{i+1} \ldots dt^n\\
-        &= \begin{bmatrix} a=t_i \end{bmatrix} =\\
-        &= \int_{\Omega} f(t^1,t^2,\ldots,t^n)|\det \xi' | dt^1 \ldots dt^n
-.\end{align*}
-
-\[
-    \xi' = \begin{bmatrix} \frac{\partial \xi_1}{\partial t_1} & \frac{\partial \xi_2}{\partial t_2} & \ldots && \frac{\partial \xi_n}{\partial t_n}\\ 0 & \ldots & 1 & \ldots & 0 \\ \frac{\partial \xi_n}{\partial t_1} & \ldots &&& \frac{\partial \xi_n}{\partial t_n}  \end{bmatrix}
-.\]
-
+        \begin{align*}
+            &\Pi = \left\{ T_i \right\}\\
+            &\frac{\varepsilon}{n} > |\overline{S}(f,\Pi) - \underline{S}(f,\Pi)| = \\
+            &\sum | \underset{x\in T_i}{\sup} f - \underset{x\in T_i}{\inf} f| |T_i|
+            (*)
+        .\end{align*}
+        z podziału $T_i$ wybieram takie kostki $P_i$, że $|\underset{x\in P_i}{\sup} f - \underset{x\in P_i}{\inf} f \ge \frac{1}{n}$.\\
+        Wówczas
+        \begin{align*}
+            &(*) \ge \sum_{P_i} \frac{1}{n} | P_i | = \frac{1}{n} \sum |P_i|\\
+            &\text{czyli } \underset{\varepsilon>0}{\forall} \frac{\varepsilon}{n} > \frac{1}{n} \sum |P_i|\text{, gdzie $P_i$ jest pokryciem $A_n$}
+        .\end{align*}
+        Czyli $A_n$ jest zbiorem miary L. zero $\quad\Box$
     \end{proof}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.8\textwidth]{fig_47}
-    \end{figure}
 
     \begin{przyklad}
-        Policzmy całkę $I = \int_0^{\infty}e^{-x^2}dx$. Nie umiemy. Ale skoro nie umiemy policzyć $I$, to tym bardziej $I^2?$
+        $f(x,y) = x \sin(xy), \quad A=[0,1]\times[0,1]$\\
+        $\int_A f \overset{\text{?}}{=} \int_{0}^{1} \varphi_1(x)dx \overset{\text{?}}{=} \int_0^1 \varphi_2(y)dy$,\\
+        gdzie $\varphi_1(x) = \int_0^1 x\sin(xy)dy$, $\varphi_2(y) = \int_0^1 x\sin(xy)dx$
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\textwidth]{fig_43}
+            \caption{życie było by proste gdybyśmy mogli tak robić}
+        \end{figure}
         \[
-            I^2 = \int_0^{\infty}e^{-x^2}dx \int_0^{\infty}e^{-y^2}dy = \int_{\Box} e^{-(x^2+y^2)}
+            \int_{A}f = \int_0^1 dx \int_0^1 dy f(x,y) \overset{\text{?}}{=} \int_0^1dy \int_0^1dx f(x,y)
         .\]
-        Zamieńmy sobie zmienne: $x = r\cos \varphi,\quad y = r\sin \varphi$. $\psi: \begin{bmatrix} r\\\varphi\end{bmatrix}\to \begin{bmatrix} x\\y \end{bmatrix}  $, $|\psi'| = r$
-         Mamy
-         \begin{align*}
-             &I^2 = \int_0^{\infty}dr \int_0^{\frac{\pi}{2}}d\varphi e^{-r^2}r = \frac{\pi}{2} \lim\limits_{p\to +\infty} \int_0^p dr \cdot e^{-r^2} \cdot r = \frac{\pi}{2} \lim\limits_{p\to\infty} \left[ -\frac{1}{2}e^{-r^2} \right] _0^p\\
-             &\frac{\pi}{2}\left[ \lim\limits_{p\to\infty}\left[ -\frac{1}{2}e^{-p^2} \right] - \left[ -\frac{1}{2}e^{(0)^2} \right]  \right] = \frac{\pi}{2} \frac{1}{2} = \frac{\pi}{4}
-         \end{align*}
-         czyli $I^2 = \frac{\pi}{4} \implies I = \frac{\sqrt{\pi} }{2}$
     \end{przyklad}
+    \begin{tw}
+        (Fubiniego)\\
+        Niech $f: A\times B\to \mathbb{R}$. $A\subset\mathbb{R}^l, B\subset\mathbb{R}^k, A\times B\subset\mathbb{R}^n$, $f$ - ograniczona i całkowalna na $A\times B$. Oznaczmy $x^l\in A, y^k\in B$, $A,B$ - kostki.\\
+        Niech \[
+            \varphi(x) = \overline{\int_B}f(x^l,y^k)dy^k, \psi(x) = \underline{\int_B} f(x^l, y^k)dy^k
+        .\]
+        Wówczas \[
+        \int_{A\times B} f = \int_A \varphi = \int_A \psi
+        .\]
+        \begin{uwaga}
+            całkowalnośc na $A\times B$ nie oznacza całkowalności na np. $B$.
+        \end{uwaga}
+    \end{tw}
+    \begin{proof}
+        Niech $\left\{ Q_i \right\} = \Pi_1$ - podział zbioru $A$, $\left\{ R_j \right\} = \Pi_2$ - podział zbioru $B$.\\
+        Wówczas  $\Pi_1 \times \Pi_2$ - podział $A\times B$.
+        \begin{align*}
+            &\underline{S}(f,\Pi_1\times \Pi_2) = \\
+            &= \sum_{\substack{Q_i\\ R_j}} \underset{\substack{x\in Q_i\\ y\in R_j}}{\inf} f(x,y) |Q_i| |R_j| \le\\
+            &\sum_{Q_i}\sum_{R_j} \underset{x\in Q_i}{\inf} \underset{y\in R_j}{\inf} f(x,y) |Q_i| |R_j|\le\\
+            &\le \sum_{Q_i}\underset{x\in Q_i}{\inf} \underset{\text{suma dolna dla $\psi(x)$}}{\sum_{R_j}\underset{y\in R_j}{\inf} f(x,y) |R_j| |Q_i|}\le\\
+            &\le\sum_{Q_i}\underset{\text{bo suma dolna $\le$ całki dolnej}}{\underset{x\in Q_i}{\inf} \psi(x) |Q_i|} = \underset{S}(\psi,\Pi_1)
+        .\end{align*}
+        Ale $\underline{\int_A}\psi(x) = \underset{\Pi}{\sup} \left| \sum_{Q_i}\underset{x\in Q_i}{\inf} \psi(x) | Q_i | \right|$.\\
+        Czyli $\underline{S}(f,\Pi_1\times\Pi_2) \le \underline{S}(\psi,\Pi_1)$. Analogicznie możemy pokazać, że\\
+        \[\underline{S}(\psi,\Pi_1)\le\underline{S}(\varphi,\Pi_1)\le\overline{S}(\varphi,\Pi_1) \le\overline{S}(f,\Pi_1\times\Pi_2).\]
+        Zatem
+        \[
+            \underline{S}(f,\Pi_1\times\Pi_2) \le \underline{\underline{S}(\psi,\Pi_1)} \le \overline{S}(\psi, \Pi_1) \le \underline{\overline{S}(\varphi,\Pi_1)} \le \overline{S}(f,\Pi_1\times\Pi_2)
+        .\]
+        Skoro $f$ - całkowalna na $A\times B$, to
+    \[
+        \underset{\varepsilon>0}{\forall} .\underset{\Pi}{\exists} |\overline{S}(f,\Pi) - \underline{S}(f,\Pi)|<\varepsilon
+    .\]
+    Co oznacza, że $\int_A \psi$ i $\int_B \varphi$ - istnieją i wynoszą $\int_{A\times B} f \quad\Box$
 
+    \end{proof}
 \end{document}

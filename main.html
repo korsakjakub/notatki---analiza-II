@@ -11,7 +11,7 @@
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
-      body{width:60%;margin:auto;}
+      img{width:50%;}
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   <!--[if lt IE 9]>
@@ -57,32 +57,32 @@ Niech <span class="math inline">\(X\subset\mathbb{R}^n, x_{0} \in X, Y\subset\ma
 </figure>
 <p>(Ciągłość Cauchy)<br />
 <span class="math inline">\((X,d_{X})\)</span> - przestrzeń wektorowa z metryką <span class="math inline">\(d_{X},\\ (Y,d_{Y})\)</span> - p.w. z metryką <span class="math inline">\(d_{Y}\)</span>.<br />
-Niech <span class="math inline">\(x_{0}\in X\)</span>. Mówimy, że <span class="math inline">\(T: X\to Y\)</span> - ciągłe, jeżeli <span class="math display">\[\underset{\epsilon &gt; 0}{\forall} \quad\underset{\delta}{\exists} \quad\underset{x\in X}{\forall} d_{X} (x,x_{0}) &lt; \delta \implies d_{Y} (T(x_{0}), T(x)) &lt; \epsilon\]</span></p>
+Niech <span class="math inline">\(x_{0}\in X\)</span>. Mówimy, że <span class="math inline">\(T: X\to Y\)</span> - ciągłe, jeżeli <span class="math display">\[\underset{\varepsilon &gt; 0}{\forall} \quad\underset{\delta}{\exists} \quad\underset{x\in X}{\forall} d_{X} (x,x_{0}) &lt; \delta \implies d_{Y} (T(x_{0}), T(x)) &lt; \varepsilon\]</span></p>
 <p>Heine <span class="math inline">\(\iff\)</span> Cauchy</p>
 <p><span class="math display">\[\implies_{(\text{przez sprzeczność})}\]</span></p>
 <p>Zakładamy, że <span class="math display">\[\underset{x_n \to x_0}{\forall} T(x_{n}) \to T(x_{0})\]</span> oraz <span class="math display">\[\label{eq:p_1.1}
-        \underset{\epsilon &gt; 0}{\exists}, \underset{\delta &gt; 0}{\forall}, \underset{x\in X}{\exists} : d_{X} (x,x_{0}) &lt; \delta \quad\land\quad d_{Y} (T(x),T(x_{0})) \geq \epsilon\]</span></p>
+        \underset{\varepsilon &gt; 0}{\exists}, \underset{\delta &gt; 0}{\forall}, \underset{x\in X}{\exists} : d_{X} (x,x_{0}) &lt; \delta \quad\land\quad d_{Y} (T(x),T(x_{0})) \geq \varepsilon\]</span></p>
 <p>Skoro <span class="math inline">\(T(x_{n})\to T(x_{0}) \underset{x_n \to x_0}{\forall}\)</span>, to w szczególności warunek spełniony dla ciągu, który jest taki:</p>
-<p>Skoro (<a href="#eq:p_1.1" data-reference-type="ref" data-reference="eq:p_1.1">[eq:p_1.1]</a>), to dla <span class="math inline">\(\epsilon&gt;0\)</span> weźmy <span class="math inline">\(\delta = 1\)</span>,</p>
+<p>Skoro (<a href="#eq:p_1.1" data-reference-type="ref" data-reference="eq:p_1.1">[eq:p_1.1]</a>), to dla <span class="math inline">\(\varepsilon&gt;0\)</span> weźmy <span class="math inline">\(\delta = 1\)</span>,</p>
 <p><span class="math display">\[\begin{aligned}
     &amp;\delta=1:\\
-    &amp;&amp;\underset{x_1}{\exists} \quad d_{X} (x_{1},x_{0})&lt;1 \land d_{Y} (T(x_{1}), T(x_{0})) \geq \epsilon \\
+    &amp;&amp;\underset{x_1}{\exists} \quad d_{X} (x_{1},x_{0})&lt;1 \land d_{Y} (T(x_{1}), T(x_{0})) \geq \varepsilon \\
     &amp;\delta=\frac{1}{2}:\\
-    &amp;&amp;\underset{x_2}{\exists} \quad d_{X} (x_{2},x_{0})&lt;\frac{1}{2} \land d_{Y} (T(x_{2}), T(x_{0})) \geq \epsilon \\
+    &amp;&amp;\underset{x_2}{\exists} \quad d_{X} (x_{2},x_{0})&lt;\frac{1}{2} \land d_{Y} (T(x_{2}), T(x_{0})) \geq \varepsilon \\
     &amp;\delta=\frac{1}{3}:\\
-    &amp;&amp;\underset{x_3}{\exists} \quad d_{X} (x_{3},x_{0})&lt;\frac{1}{3} \land d_{Y} (T(x_{3}), T(x_{0})) \geq \epsilon\\
+    &amp;&amp;\underset{x_3}{\exists} \quad d_{X} (x_{3},x_{0})&lt;\frac{1}{3} \land d_{Y} (T(x_{3}), T(x_{0})) \geq \varepsilon\\
     &amp;\vdots &amp;\vdots\\
     &amp;\delta=\frac{1}{n}:\\
-    &amp;&amp;\underset{x_n}{\exists} \quad d_{X}(x_{n},x_{0}) &lt; \frac{1}{n} \land d_{Y} (T(x_{n}),T(x_{0})) \geq \epsilon
+    &amp;&amp;\underset{x_n}{\exists} \quad d_{X}(x_{n},x_{0}) &lt; \frac{1}{n} \land d_{Y} (T(x_{n}),T(x_{0})) \geq \varepsilon
 .\end{aligned}\]</span></p>
 <p>Zauważmy, że taki ciąg <span class="math inline">\(x_{n} \to x_{0}\)</span>, ale <span class="math inline">\(T(x_{n}) \not\rightarrow T(x_{0})\)</span>, więc mamy sprzeczność. <span class="math inline">\(\Box\)</span></p>
 <p><span class="math inline">\(\impliedby\)</span> Wiemy, że <span class="math display">\[\label{eq:p_1.2}
-        \underset{x_n\to x_0}{\forall}\quad \underset{\varepsilon &gt; 0}{\forall}\quad \underset{x}{\exists}\quad d_{X} (x,x_{0}) &lt; \delta \implies d_{Y} (T(x),T(x_{0})) &lt; \epsilon
+        \underset{x_n\to x_0}{\forall}\quad \underset{\varepsilon &gt; 0}{\forall}\quad \underset{x}{\exists}\quad d_{X} (x,x_{0}) &lt; \delta \implies d_{Y} (T(x),T(x_{0})) &lt; \varepsilon
     ,\]</span> czyli:</p>
 <p><span class="math display">\[\label{eq:p_1.3}
     \underset{\delta_1}{\forall} \quad\underset{N}{\exists} \quad\underset{n&gt;N}{\forall} \quad d_{X} (x_{n}, x_{0}) &lt; \delta_{1}\]</span></p>
-<p>Chcemy pokazać, że <span class="math inline">\(T(x_n) \to T(x_0)\)</span>, czyli, że <span class="math display">\[\underset{\epsilon_1 &gt; 0}{\forall} \underset{N_1}{\exists} \underset{n&gt;N_1}{\forall} \quad d_Y (T(x_n),T(x_0)) &lt; \epsilon_1 (\text{dla } x_n \to x_0)\]</span></p>
-<p>Przyjmijmy <span class="math inline">\(\epsilon=\epsilon_1\)</span>. Oznacza to, że <span class="math inline">\(\underset{\delta}{\exists}\)</span> spełniająca warunek (<a href="#eq:p_1.2" data-reference-type="ref" data-reference="eq:p_1.2">[eq:p_1.2]</a>) dla <span class="math inline">\(\epsilon_1\)</span>. Połóżmy <span class="math inline">\(\delta_1=\delta\)</span> we wzorze (<a href="#eq:p_1.3" data-reference-type="ref" data-reference="eq:p_1.3">[eq:p_1.3]</a>), czyli wiemy, że <span class="math display">\[\underset{N}{\exists} \underset{n&gt;N}{\forall} \quad d_X(x_n, x_0) &lt; \delta_1,\]</span> ale na mocy (<a href="#eq:p_1.2" data-reference-type="ref" data-reference="eq:p_1.2">[eq:p_1.2]</a>), wiemy, że <span class="math display">\[d_Y (T(x_n),T(x_0)) &lt; \epsilon_1\]</span></p>
+<p>Chcemy pokazać, że <span class="math inline">\(T(x_n) \to T(x_0)\)</span>, czyli, że <span class="math display">\[\underset{\varepsilon_1 &gt; 0}{\forall} \underset{N_1}{\exists} \underset{n&gt;N_1}{\forall} \quad d_Y (T(x_n),T(x_0)) &lt; \varepsilon_1 (\text{dla } x_n \to x_0)\]</span></p>
+<p>Przyjmijmy <span class="math inline">\(\varepsilon=\varepsilon_1\)</span>. Oznacza to, że <span class="math inline">\(\underset{\delta}{\exists}\)</span> spełniająca warunek (<a href="#eq:p_1.2" data-reference-type="ref" data-reference="eq:p_1.2">[eq:p_1.2]</a>) dla <span class="math inline">\(\varepsilon_1\)</span>. Połóżmy <span class="math inline">\(\delta_1=\delta\)</span> we wzorze (<a href="#eq:p_1.3" data-reference-type="ref" data-reference="eq:p_1.3">[eq:p_1.3]</a>), czyli wiemy, że <span class="math display">\[\underset{N}{\exists} \underset{n&gt;N}{\forall} \quad d_X(x_n, x_0) &lt; \delta_1,\]</span> ale na mocy (<a href="#eq:p_1.2" data-reference-type="ref" data-reference="eq:p_1.2">[eq:p_1.2]</a>), wiemy, że <span class="math display">\[d_Y (T(x_n),T(x_0)) &lt; \varepsilon_1\]</span></p>
 <h2 id="różniczkowalność"> Różniczkowalność: </h2>
 <p>Pochodna cząstkowa:<br />
 Niech <span class="math inline">\(\mathcal{O}\subset\mathbb{R}^{n}, \mathcal{O}\)</span> - otwarty, <span class="math inline">\(f: \mathcal{O}\to\mathbb{R}^{1}, x\in\mathbb{Q}, x_0 = (x_1^0,x_2^0,\dots,x_n^0)\)</span>.<br />
@@ -90,6 +90,7 @@ Mówimy, że <span class="math inline">\(f\)</span> ma w punkcie <span class="ma
 <figure>
 <img src="img/fig_2.png" alt="Problemy: Umiemy tak jak po lewej, ale nic nie potrafimy zrobić z tym po prawej" style="width:80.0%" /><figcaption>Problemy: Umiemy tak jak po lewej, ale nic nie potrafimy zrobić z tym po prawej</figcaption>
 </figure>
+<p><span id="fig:fig_2" label="fig:fig_2">[fig:fig_2]</span></p>
 <p>Pochodna cząstkowa<br />
 Niech <span class="math inline">\(\mathbb{R}^{2}\to\mathbb{R}^{1}\)</span>. <span class="math display">\[\begin{aligned}
         &amp;\frac{\partial}{\partial x} f = \lim\limits_{h \to 0}\frac{f(x+h,y) - f(x,y)}{h},\\
@@ -429,9 +430,6 @@ x \neq x_0
 <figure>
 <img src="img/fig_12.png" alt="istnieje otoczenie, dla którego f(x)&gt;f(x_0) (nie musi być styczne!)" style="width:50.0%" /><figcaption>istnieje otoczenie, dla którego <span class="math inline">\(f(x)&gt;f(x_0)\)</span> (nie musi być styczne!)</figcaption>
 </figure>
-<figure>
-<img src="img/fig_13.png" alt="" id="fig:" style="width:80.0%" /><figcaption><span label="fig:"></span></figcaption>
-</figure>
 <p>jeżeli <span class="math inline">\(f: \mathcal{O} \rightarrow \mathbb{R}, \mathcal{O}\)</span> - otwarty, <span class="math inline">\(x_0 \in \mathcal{O}, f\)</span> - posiada w <span class="math inline">\(x_0\)</span> minimum lub maksimum lokalne, to <span class="math display">\[\frac{\partial f}{\partial x^i} (x_0) = 0, i = 1,\dots,n\]</span> działa tylko w prawo, bo możliwe są punkty przegięcia (siodła)</p>
 <p><strong>Uwaga:</strong> jeżeli <span class="math inline">\(f: U\to \mathbb{R}\)</span> i <span class="math inline">\(U\)</span> - domknięta, to należy zbadać zachowanie funkcji osobno na <span class="math inline">\(int(U)\)</span> oraz na <span class="math inline">\(U - \{int(U)\}\)</span></p>
 <p>Niech <span class="math inline">\(g_h (t) = f(x_0+th) \text{ i } g: [0,\epsilon [ \to \mathbb{R}\)</span>.<br />
@@ -688,11 +686,13 @@ Zbiór <span class="math inline">\(U\)</span> - otwarty (bo tak go zdefiniowali�
 <figure>
 <img src="img/fig_18.png" alt="Trochę jak listy do św. Mikołaja (??)" style="width:80.0%" /><figcaption>Trochę jak listy do św. Mikołaja (??)</figcaption>
 </figure>
+<p><span id="fig:fig_18" label="fig:fig_18">[fig:fig_18]</span></p>
 <p>Weźmy <span class="math inline">\(y\in K(y_0,\lambda r)\)</span>. Zauważmy, że <span class="math inline">\(\varphi_{y_1}(x_1)\)</span> - zwężające, jeżeli <span class="math inline">\(y_1\in V, x_1\in U\)</span><br />
 Jeżeli pokażemy, że dla <span class="math inline">\(\Vert y-y_0\Vert &lt; \lambda r, \varphi_y(x)\)</span> - zwężająca na <span class="math inline">\(K(x_0,r)\subset U\)</span>, to będziemy wiedzieli, że <span class="math inline">\(\Vert y - y_0 \Vert &lt; \lambda r\)</span> oraz <span class="math inline">\(y\in V \iff K(y_0,\lambda r)\subset V\)</span></p>
 <figure>
 <img src="img/fig_19.png" alt="Nie ok." style="width:60.0%" /><figcaption>Nie ok.</figcaption>
 </figure>
+<p><span id="fig:fig_19" label="fig:fig_19">[fig:fig_19]</span></p>
 <p>Żeby pokazać, że <span class="math inline">\(\varphi_y(x)\)</span> - zwężające na <span class="math inline">\(K(x_0,r)\)</span>, zbadamy tę wielkośc dla <span class="math inline">\(x\in K(x_0,r)\)</span>. <span class="math inline">\(\Vert \varphi_y(x) - x_0 \Vert\)</span>, chcielibyśmy, aby <span class="math inline">\(\Vert \varphi_y(x) - x_0 \Vert \leq r\)</span> i <span class="math inline">\(\Vert y - y_0 \Vert &lt; \lambda r\)</span>, ale z drugiej strony <span class="math display">\[\Vert \varphi_y(x) - x_0 \Vert = \Vert \varphi_y(x) - \varphi_y(x_0) + \varphi_y(x_0) - x_0 \Vert \leq \Vert \varphi_y(x) - \varphi_y(x_0) \Vert + \Vert \varphi y(x_0 - x_0) \Vert.\]</span></p>
 <p>Ale <span class="math display">\[\Vert \varphi_y(x_0) - x_0 \Vert \leq \Vert (f&#39;(a))^{-1} \Vert \Vert y - y_0 \Vert \leq \frac{1}{2\lambda} \lambda r = \frac{r}{2},\]</span> więc <span class="math display">\[\Vert \varphi_y(x) - x_0 \Vert \leq r,\]</span> jeżeli <span class="math display">\[\Vert y - y_0 \Vert &lt; \lambda r, \Vert x - x_0 \Vert \leq r
 .\]</span></p>
@@ -700,6 +700,7 @@ Jeżeli pokażemy, że dla <span class="math inline">\(\Vert y-y_0\Vert &lt; \la
 <figure>
 <img src="img/fig_20.png" style="width:50.0%" />
 </figure>
+<p><span id="fig:fig_20" label="fig:fig_20">[fig:fig_20]</span></p>
 <p><strong>Część III</strong><br />
 Szukamy <span class="math inline">\(g: V\to U\)</span><br />
 Skoro <span class="math inline">\(f\)</span> - bijekcja między <span class="math inline">\(U\)</span> i <span class="math inline">\(V\)</span>, to znaczy, że <span class="math inline">\(\underset{g: V\to U}{\exists}f(g(x)) = x \underset{x\in V}{\forall}\)</span>.<br />
@@ -876,6 +877,7 @@ Wiemy że <span class="math display">\[(x&#39;,y&#39;) = F(F^{-1}(x&#39;,y&#39;)
 <figure>
 <img src="img/fig_21.png" alt="do poprzedniego wykładu" /><figcaption>do poprzedniego wykładu</figcaption>
 </figure>
+<p><span id="fig:fig_21" label="fig:fig_21">[fig:fig_21]</span></p>
 <h2 id="ekstrema-związane">Ekstrema związane</h2>
 <p>przykład: <span class="math display">\[f(x,y) = x+y,\quad G(x,y) = (x-1)^1 + (y-1)^2 - 1,\quad M= \left \{ (x,y)\in\mathbb{R}^2,G(x,y) = 0\right \}
     .\]</span> Szukamy minimum lub maksimum <span class="math inline">\(f\)</span> na <span class="math inline">\(M\)</span><br />
@@ -883,15 +885,18 @@ Rozważmy linię o stałej wartości <span class="math inline">\(x+y\)</span></p
 <figure>
 <img src="img/fig_22.png" alt="G(x,y) i sznurek o stałej długości w polu grawitacyjnym" style="width:80.0%" /><figcaption><span class="math inline">\(G(x,y)\)</span> i sznurek o stałej długości w polu grawitacyjnym</figcaption>
 </figure>
+<p><span id="fig:fig_22" label="fig:fig_22">[fig:fig_22]</span></p>
 <figure>
 <img src="img/fig_23.png" alt="Biedronka łazi po obręczy rowerowej z włączonym wentylatorem, gdzie wyląduje???" style="width:70.0%" /><figcaption>Biedronka łazi po obręczy rowerowej z włączonym wentylatorem, gdzie wyląduje???</figcaption>
 </figure>
+<p><span id="fig:fig_23" label="fig:fig_23">[fig:fig_23]</span></p>
 <p>Niech <span class="math inline">\(f:\mathbb{R}^{n}\to\mathbb{R}^1\)</span> i <span class="math inline">\(M\subset \mathbb{R}^n\)</span> - zbiór.<br />
 Mówimy, że <span class="math inline">\(f\)</span> ma minimum/maksimum związane na zbiorze <span class="math inline">\(M\)</span>, w punkcie <span class="math inline">\(x_0\in M\)</span>, jeżeli <span class="math display">\[\underset{r}{\exists} \underset{\substack{h\\  \Vert h \Vert &lt; r \\ (x_0+h)\in M}}{\forall} f(x_0+h)\leq f(x_0)
     .\]</span></p>
 <figure>
 <img src="img/fig_24.png" style="width:60.0%" />
 </figure>
+<p><span id="fig:fig_24" label="fig:fig_24">[fig:fig_24]</span></p>
 <p>Niech <span class="math inline">\(f(x,y):\mathbb{R}^2\to\mathbb{R}^1\)</span><br />
 <span class="math inline">\(G(x,y): \mathbb{R}^2\to\mathbb{R}^1\)</span><br />
 <span class="math inline">\(M = \left\{ (x,y), G(x,y) = 0 \right\}\)</span> Szukamy minimum/maksimum <span class="math inline">\(f\)</span>. Można wyliczyć <span class="math inline">\(y(x)\)</span> z więzów, wstawić do <span class="math inline">\(f\)</span> i zbadać ekstrema funkcji jednej zmiennej <span class="math inline">\(g(x) = f(x,y(x))\)</span>. Kiedy nie umiemy wyliczyć <span class="math inline">\(y(x)\)</span> z więzów, możemy założyć, że <span class="math inline">\(y(x)\)</span> jednak istnieje i <span class="math inline">\(G(x,y(x)) = 0\)</span>. Wtedy: <span class="math display">\[\frac{\partial G}{\partial x} + \frac{\partial G}{\partial y} \frac{\partial y}{\partial x} = 0
@@ -925,6 +930,7 @@ Odpowiedź: lepiej inaczej…(XD), to znaczy, potrzebujemy nowego języka.</p>
 <figure>
 <img src="img/fig_25.png" style="width:80.0%" />
 </figure>
+<p><span id="fig:fig_25" label="fig:fig_25">[fig:fig_25]</span></p>
 <h1 id="wykład-29.03.2019">Wykład (29.03.2019)</h1>
 <p><strong>Problem:</strong> <span class="math display">\[f:\mathbb{R}^n\to\mathbb{R}^1,\quad G:\mathbb{R}^n\to\mathbb{R}^m,\quad M=\left\{ x: G(x) = 0 \right\}
     .\]</span> Badamy różnicę <span class="math inline">\(f(x_0+h) - f(x_0)\)</span> (jest fajna bo możemy ją rozwinąć ze wzoru Taylora)<br />
@@ -996,6 +1002,7 @@ Próbujemy ożenić te języki. Zbadajmy <span class="math inline">\(G&#39;(x)\)
 <figure>
 <img src="img/fig_26.png" alt="biedronka i szprycha" style="width:80.0%" /><figcaption>biedronka i szprycha</figcaption>
 </figure>
+<p><span id="fig:fig_26" label="fig:fig_26">[fig:fig_26]</span></p>
 <p><span class="math display">\[f(x_0+h) - f(x_0) = f(x_0 + h_\perp + h_\parallel) - f(x_0)
 .\]</span> W małym otoczeniu <span class="math inline">\(h\)</span> będzie bardziej decydował <span class="math inline">\(h_\parallel\)</span>, bo zawsze mogę zmniejszyć <span class="math inline">\(h\)</span> i w efekcie <span class="math inline">\(h_\perp\)</span> się zmniejszy</p>
 <p>Wiemy, że <span class="math display">\[f(x_0+h) - f(x_0) = f&#39;(x_0) h + \frac{1}{2!} f&#39;&#39;(x_0)(h,h) + r_1(x_0,h)
@@ -1025,75 +1032,79 @@ Próbujemy ożenić te języki. Zbadajmy <span class="math inline">\(G&#39;(x)\)
     .\]</span> to <span class="math inline">\(f\)</span> posiada w <span class="math inline">\(x_0\)</span> minimum lokalne <span class="math inline">\((&lt;0\)</span>, to maksimum lokalne<span class="math inline">\()\)</span> na zbiorze <span class="math display">\[M = \left\{ x\in \mathbb{R}^n, G(x) = 0 \right\}\]</span></p>
 <h1 id="wykład-02.04.2019">Wykład (02.04.2019)</h1>
 <h2 id="równania-różniczkowe">Równania różniczkowe</h2>
-<p>Interesuje nas następująca sytuacja: <span class="math inline">\(\frac{dx}{dt} = f(t,x) \\
-        x(t_0)= x_0\\
-        x(1): [a,b]\to\mathbb{R}\\
-        f: [a,b]\times \mathbb{R}^n\to\mathbb{R}^n\)</span></p>
+<p>Interesuje nas następująca sytuacja:</p>
 <p><span class="math display">\[\begin{aligned}
-                \frac{dx}{dt} = -kx(t)\\
-                x(t) = c e^{-kt}
-            .\end{aligned}\]</span></p>
-<p>Pytanie: czy to, że równanie jest pierwszego rzędu bardzo nam przeszkadza?<br />
-</p>
-<p><span class="math inline">\(\ddot{x} + \omega^2 x = 0\\
-            \dot{x} = p\\
-            \dot{p} = \ddot{x} = -\omega^2 x\\
-            \frac{d}{dt} \underbrace{\begin{bmatrix} x\\p \end{bmatrix}}_{\frac{d}{dt}x} =
-            \underbrace{\begin{bmatrix} 0&amp;1\\ -\omega^2&amp;0 \end{bmatrix}
-            \begin{bmatrix} x\\p \end{bmatrix}}_{f(x,t)}\)</span></p>
+        &amp;\frac{dx}{dt} = f(t,x) \\
+        &amp;x(t_0)= x_0\\
+        &amp;x(t): [a,b]\to\mathbb{R}\\
+        &amp;f: [a,b]\times \mathbb{R}^n\to\mathbb{R}^n
+    .\end{aligned}\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+            &amp;\frac{dx}{dt} = -kx(t)\\
+            &amp;x(t) = c e^{-kt}
+        .\end{aligned}\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+            &amp;\ddot{x} + \omega^2 x = 0\\
+            &amp;\dot{x} = p\\
+            &amp;\dot{p} = \ddot{x} = -\omega^2 x\\
+            &amp;\frac{d}{dt} \underbrace{\begin{bmatrix} x\\p \end{bmatrix}}_{\frac{d}{dt}x} = \underbrace{\begin{bmatrix} 0&amp;1\\ -\omega^2&amp;0 \end{bmatrix} \begin{bmatrix} x\\p \end{bmatrix}}_{f(x,t)}
+        .\end{aligned}\]</span></p>
 <p>Niech <span class="math inline">\(I\subset \mathbb{R}, \mathcal{O}\subset \mathbb{R}^n\)</span><br />
-<span class="math inline">\(f: I\times\mathbb{R}^n \to \mathcal{O}\)</span> taka, że <span class="math inline">\(t\in I, x\in \mathbb{R}^n, f(t,x) \to f(t,x)\)</span><br />
+<span class="math inline">\(f: I\times\mathbb{R}^n \to \mathcal{O}\)</span> taka, że <span class="math inline">\(t\in I, x\in \mathbb{R}^n, f(t,x) \to f(t,x&#39;)\)</span><br />
 Mówimy, że <span class="math inline">\(f\)</span> spełnia warunek Lipschitza, jeżeli <span class="math display">\[\underset{L&gt;0}{\exists}. \underset{t\in I}{\forall}. \underset{x,x&#39;\in \mathcal{O}}{\forall}. \Vert f(t,x) - f(t,x&#39;)  \Vert \leq L \Vert x - x&#39; \Vert
-            .\]</span></p>
-<p>Znane <span class="math inline">\(t,x\)</span> nie występują w warunku Lipschitza na równych prawach</p>
+        .\]</span></p>
+<p>Zmienne <span class="math inline">\(t,x\)</span> nie występują w warunku Lipschitza na równych prawach</p>
 <p>Czy jeżeli <span class="math display">\[f:\mathcal{O}\to\mathcal{O}\text{ takie, że } \underset{L&gt;0}{\exists}
             .\]</span> że <span class="math display">\[\underset{x,x&#39;}{\forall}  \Vert f(x) - f(x&#39;) \Vert \leq L \Vert x - x&#39; \Vert
             .\]</span> to czy <span class="math inline">\(f\)</span> jest ciągła?</p>
-<p>Niech <span class="math inline">\([a,b] \subset \mathbb{R}, \mathcal{O}\subset\mathbb{R}^n, \mathcal{O}\)</span> - domknięty i <span class="math inline">\(f:[a,b]\times\mathcal{O}\to\mathcal{O}\)</span> takie, że <span class="math inline">\(f\)</span> - ciągła na <span class="math inline">\([a,b]\times\mathcal{O}\)</span> oraz <span class="math inline">\(f\)</span> spełnia warunek Lipschitza na <span class="math inline">\(\mathcal{O}\)</span>, to znaczy: <span class="math display">\[\underset{L&gt;0}{\exists}. \underset{t\in[a,b]}{\forall}. \underset{x,x&#39;\in\mathcal{O}}{\forall} \Vert f(t,x) - f(t,x&#39;) \Vert \leq L \Vert x-x&#39; \Vert
-            .\]</span> Wówczas <span class="math display">\[\underset{t_0\in[a,b]}{\forall} . \underset{x_0\in\mathcal{O}}{\forall} . \underset{\varepsilon&gt;0}{\exists} \text{, że dla } t\in ]t_0-\varepsilon, t_0+\varepsilon[\]</span> równanie ma jednoznaczne rozwiązania, które są ciągłe ze względu na <span class="math inline">\(x_0\)</span> <span class="math display">\[\begin{cases}\label{eq:eq21}
+<p>(problem Cauchy)<br />
+Niech <span class="math inline">\([a,b] \subset \mathbb{R}, \mathcal{O}\subset\mathbb{R}^n, \mathcal{O}\)</span> - domknięty i <span class="math inline">\(f:[a,b]\times\mathcal{O}\to\mathcal{O}\)</span> takie, że <span class="math inline">\(f\)</span> - ciągła na <span class="math inline">\([a,b]\times\mathcal{O}\)</span> oraz <span class="math inline">\(f\)</span> spełnia warunek Lipschitza na <span class="math inline">\(\mathcal{O}\)</span>, to znaczy: <span class="math display">\[\underset{L&gt;0}{\exists}\quad \underset{t\in[a,b]}{\forall}\quad \underset{x,x&#39;\in\mathcal{O}}{\forall} \Vert f(t,x) - f(t,x&#39;) \Vert \leq L \Vert x-x&#39; \Vert
+            .\]</span> Wówczas <span class="math display">\[\underset{t_0\in[a,b]}{\forall}\quad \underset{x_0\in\mathcal{O}}{\forall}\quad \underset{\varepsilon&gt;0}{\exists} \text{, że dla } t\in ]t_0-\varepsilon, t_0+\varepsilon[\]</span> równanie ma jednoznaczne rozwiązania, które są ciągłe ze względu na <span class="math inline">\(x_0\)</span> <span class="math display">\[\begin{cases}\label{eq:cauchy}
                 \frac{dx}{dt} = f(t,x)\\
                 x(t_0) = x_0
             \end{cases}\]</span></p>
-<p>Problem <a href="#eq:eq21" data-reference-type="ref" data-reference="eq:eq21">[eq:eq21]</a> nazywamy problemem Cauchy.<br />
-Ciągłość <span class="math inline">\(f\)</span> na <span class="math inline">\([a,b]\times\mathcal{O}\)</span> jest mocniejszym warunkiem niż Lipschytzowalność na <span class="math inline">\(\mathcal{O}\)</span></p>
+<p>Ciągłość <span class="math inline">\(f\)</span> na <span class="math inline">\([a,b]\times\mathcal{O}\)</span> jest mocniejszym warunkiem niż Lipschytzowalność na <span class="math inline">\(\mathcal{O}\)</span></p>
 <figure>
 <img src="img/fig_27.png" style="width:80.0%" />
 </figure>
-<p>Skoro <span class="math inline">\(f\)</span> - ciągła na <span class="math inline">\([a,b]\times\mathcal{O}\)</span>, to znaczy, że <span class="math inline">\(f\)</span> jest ograniczona, czyli <span class="math display">\[\underset{M&gt;0}{\exists} . \underset{y_1&gt;0}{\exists}. \underset{y_2&gt;0}{\exists},\quad \Vert f(t,x) \Vert \leq M
-            .\]</span> <span class="math inline">\(t\in K(t_0,y_1), x\in K(x_0,y_2)\)</span>.<br />
-Zauważmy, że problem <a href="#eq:eq21" data-reference-type="ref" data-reference="eq:eq21">[eq:eq21]</a> możemy zapisać jako <span class="math display">\[\label{eq:eq22}
-                x(t) = x_0 + \int_{t_0}^t f(s,x(s)) ds\]</span> Czyli, jeżeli znajdziemy <span class="math inline">\(x(t)\)</span> takie, co spełnia <a href="#eq:eq22" data-reference-type="ref" data-reference="eq:eq22">[eq:eq22]</a>, to raslkdj problem <a href="#eq:eq21" data-reference-type="ref" data-reference="eq:eq21">[eq:eq21]</a>.<br />
+<p><span id="fig:fig_27" label="fig:fig_27">[fig:fig_27]</span></p>
+<p>Skoro <span class="math inline">\(f\)</span> - ciągła na <span class="math inline">\([a,b]\times\mathcal{O}\)</span>, to znaczy, że <span class="math inline">\(f\)</span> jest ograniczona, czyli <span class="math display">\[\underset{M&gt;0}{\exists}\quad \underset{r_1&gt;0}{\exists}\quad \underset{r_2&gt;0}{\exists}\quad \Vert f(t,x) \Vert \leq M
+            .\]</span> <span class="math inline">\(t\in K(t_0,r_1), x\in K(x_0,r_2)\)</span>.<br />
+Zauważmy, że problem (<a href="#eq:cauchy" data-reference-type="ref" data-reference="eq:cauchy">[eq:cauchy]</a>) możemy zapisać jako <span class="math display">\[\label{eq:eq22}
+                x(t) = x_0 + \int_{t_0}^t f(s,x(s)) ds\]</span> Czyli, jeżeli znajdziemy <span class="math inline">\(x(t)\)</span> takie, co spełnia (<a href="#eq:eq22" data-reference-type="ref" data-reference="eq:eq22">[eq:eq22]</a>), to rozwiążemy problem <a href="#eq:cauchy" data-reference-type="ref" data-reference="eq:cauchy">[eq:cauchy]</a>.<br />
 Rozważmy odwzorowanie <span class="math display">\[\underset{g\in a}{P(g)(t)} = x_0 + \int_{t_0}^t f(s,g(s))ds
             .\]</span> <span class="math display">\[A = \left\{ C: [t-r_1, t_0+r_1]\to \mathbb{R}^n \right\}\text{ funkcja ciągła na kuli o wartościach w }\mathbb{R}^n
             .\]</span></p>
 <figure>
 <img src="img/fig_28.png" style="width:80.0%" />
 </figure>
+<p><span id="fig:fig_28" label="fig:fig_28">[fig:fig_28]</span></p>
 <p>Co by było, gdyby <span class="math inline">\(P\)</span> miało punkt stały? Czyli <span class="math inline">\(\underset{x(t)\in A}{\exists}\)</span> takie, że <span class="math inline">\(P(x(t)) = x(t)\)</span><br />
 Oznaczałoby to, że <span class="math display">\[x(t) = -x_0 + \int_{t_0}^t f(s,x(s))ds
-            .\]</span> Co więcej, gdyby <span class="math inline">\(P\)</span> było zwężające, to z zasady Banacha wiemy, że punkt stały jest tylko jeden. Zatem, jeżeli znajdziemy podzbiór <span class="math inline">\(A\)</span> taki, że <span class="math inline">\(P\)</span> - zwężające, to udowodnimy jednoznaczność. Problem <a href="#eq:eq22" data-reference-type="ref" data-reference="eq:eq22">[eq:eq22]</a><br />
-Niech <span class="math inline">\(E = \left\{ g\in \mathcal{C}([t_0-\varepsilon,t_0+\varepsilon],\mathbb{R}^n, \Vert g(t) - \overset{g_0(t)}{x_0} \Vert \underset{\text{ważne!}}{\leq} r_2 \right\}\)</span>, czyli <span class="math display">\[g\in E \iff \underset{t_0-\varepsilon\leq t\leq t_0+\varepsilon}{sup} \Vert g(t) - x_0 \Vert \leq r_2
+            .\]</span> Co więcej, gdyby <span class="math inline">\(P\)</span> było zwężające, to z zasady Banacha wiemy, że punkt stały jest tylko jeden. Zatem, jeżeli znajdziemy podzbiór <span class="math inline">\(A\)</span> taki, że <span class="math inline">\(P\)</span> - zwężające, to udowodnimy jednoznaczność. Problem (<a href="#eq:eq22" data-reference-type="ref" data-reference="eq:eq22">[eq:eq22]</a>)<br />
+Niech <span class="math inline">\(E = \left\{ g\in A, \Vert g(t) - \overset{g_0(t)}{x_0} \Vert \underset{\text{ważne!}}{\leq} r_2 \right\}\)</span>, czyli <span class="math display">\[g\in E \iff \underset{t_0-\varepsilon\leq t\leq t_0+\varepsilon}{sup} \Vert g(t) - x_0 \Vert \leq r_2
             .\]</span> i <span class="math display">\[g: [t_0-\varepsilon, t_0+\varepsilon]\to\mathbb{R}^n
             .\]</span> i <span class="math inline">\(g\)</span> - ciągła.<br />
 (domkniętość ze względu na zasdę Banacha <span class="math inline">\((x_0 \overset{\text{ozn}}{=} g_0(t) )\)</span>)</p>
-<p>Szukamy takiego <span class="math inline">\(\varepsilon\)</span>, żeby: <span class="math display">\[\begin{aligned}
-                P(g)\in E \quad g\in E\label{eq:eq23}\\
-                P\text{ - zwężająca na }E\label{eq:eq24}
-            .\end{aligned}\]</span> bo jeżeli <a href="#eq:eq24" data-reference-type="ref" data-reference="eq:eq24">[eq:eq24]</a> jest spełniona, to wiemy, że istnieje punkt stały.<br />
-Jeżeli <a href="#eq:eq23" data-reference-type="ref" data-reference="eq:eq23">[eq:eq23]</a> jest spełniona, to wiemy, że punkt stały należy do <span class="math inline">\(E\)</span><br />
-Warunek <a href="#eq:eq23" data-reference-type="ref" data-reference="eq:eq23">[eq:eq23]</a>: <span class="math inline">\(P(g)\in E\)</span>, czyli <span class="math display">\[\underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \Vert P(g(t)) - x_0 \Vert \leq r_2
-            .\]</span> czyli <span class="math display">\[\underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \Vert x_0 + \int_{t_0}^t f(s,g(s))ds - x_0 \Vert \leq \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \int_{t_0}^t \Vert f(s,g(s)) \Vert ds \leq
-            .\]</span> <span class="math display">\[\underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} |t-t_0| M = \varepsilon M
-            .\]</span> Jeżeli chcemy aby <span class="math inline">\(\varepsilon M \leq r_2\)</span><br />
-to znaczy, że <span class="math inline">\(\varepsilon \leq \frac{r_2}{M}\)</span><br />
-i jednocześnie <span class="math inline">\(\varepsilon\leq r_1\)</span><br />
-czyli aby warunek <a href="#eq:eq23" data-reference-type="ref" data-reference="eq:eq23">[eq:eq23]</a> był spełniony <span class="math display">\[\varepsilon &lt; min \left\{ \frac{r_2}{M}, r_1 \right\}
-            .\]</span> Warunek <a href="#eq:eq24" data-reference-type="ref" data-reference="eq:eq24">[eq:eq24]</a>. Chcemy aby <span class="math inline">\(P\)</span> było zwężające, czyli: <span class="math display">\[\underset{g_1,g_2\in E}{\forall}  P(g_1) - P(g_2) \le q\Vert q_1-q_2 \Vert
+<p>Szukamy takiego <span class="math inline">\(\varepsilon\)</span>, żeby:</p>
+<ol>
+<li><p><span class="math inline">\(P(g)\in E \quad g\in E\)</span><span id="eq:eq23" label="eq:eq23">[eq:eq23]</span></p></li>
+<li><p><span class="math inline">\(P\)</span> - zwężająca na <span class="math inline">\(E\)</span><span id="eq:eq24" label="eq:eq24">[eq:eq24]</span></p></li>
+</ol>
+<p>bo jeżeli (<a href="#eq:eq24" data-reference-type="ref" data-reference="eq:eq24">[eq:eq24]</a>) jest spełniona, to wiemy, że istnieje punkt stały.<br />
+Jeżeli (<a href="#eq:eq23" data-reference-type="ref" data-reference="eq:eq23">[eq:eq23]</a>) jest spełniona, to wiemy, że punkt stały należy do <span class="math inline">\(E\)</span><br />
+Warunek (<a href="#eq:eq23" data-reference-type="ref" data-reference="eq:eq23">[eq:eq23]</a>): <span class="math inline">\(P(g)\in E\)</span>, czyli <span class="math display">\[\underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \Vert P(g(t)) - x_0 \Vert \leq r_2
+            .\]</span> czyli <span class="math display">\[\begin{aligned}
+                &amp;\underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \Vert x_0 + \int_{t_0}^t f(s,g(s))ds - x_0 \Vert \leq \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \int_{t_0}^t \Vert f(s,g(s)) \Vert ds \leq\\
+                &amp; \le \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} |t-t_0| M = \varepsilon M
+            .\end{aligned}\]</span> Jeżeli chcemy aby <span class="math inline">\(\varepsilon M \leq r_2\)</span>, to znaczy, że <span class="math inline">\(\varepsilon \leq \frac{r_2}{M}\)</span> i jednocześnie <span class="math inline">\(\varepsilon\leq r_1\)</span>.<br />
+Czyli aby warunek (<a href="#eq:eq23" data-reference-type="ref" data-reference="eq:eq23">[eq:eq23]</a>) był spełniony to musi być: <span class="math display">\[\varepsilon &lt; min \left\{ \frac{r_2}{M}, r_1 \right\}
+            .\]</span> Warunek (<a href="#eq:eq24" data-reference-type="ref" data-reference="eq:eq24">[eq:eq24]</a>). Chcemy aby <span class="math inline">\(P\)</span> było zwężające, czyli: <span class="math display">\[\underset{g_1,g_2\in E}{\forall}  \left\Vert P(g_1) - P(g_2) \right\Vert \le q\Vert q_1-q_2 \Vert
             .\]</span> Zatem: <span class="math display">\[\Vert P(g_1) - P(g_2) \Vert  = \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \Vert x_0 + \int_{t_0}^t f(s,g_1(s))ds - (x_0 + \int_{t_0}^t f(s,g_2(s))ds \Vert =
             .\]</span> <span class="math display">\[\underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \Vert \int_{t_0}^t f(s,g_1(s)) - f(s,g_2(s)) ds \Vert \le \underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \int_{t_0}^t \Vert f(s,g_1(s)) - f(s,g_2(s)) \Vert ds \le
             .\]</span> <span class="math display">\[\underset{t_0-\varepsilon\leq t_0\leq t_0+\varepsilon}{sup} \int_{t_0}^t L \Vert g_1-g_2 \Vert = \varepsilon L  \underset{\substack{\in E\\ \Vert g_1 - g_2 \Vert &lt; 2r_2}}{\Vert g_1 - g_2 \Vert}
             .\]</span> Zatem, jeżeli <span class="math inline">\(P\)</span> ma być zwężające na <span class="math inline">\(E\)</span>, to <span class="math inline">\(\varepsilon L &lt; 1\)</span>, czyli <span class="math inline">\(\varepsilon&lt; \frac{1}{L}\)</span> i <span class="math inline">\(g\in E\)</span><br />
-Zatem, aby istniało rozwiązanie jednoznaczne problemu <a href="#eq:eq21" data-reference-type="ref" data-reference="eq:eq21">[eq:eq21]</a> <span class="math display">\[\varepsilon &lt; min \left\{ \frac{r_2}{M}, r_1, \frac{1}{L} \right\} \quad\Box
+Zatem, aby istniało rozwiązanie jednoznaczne problemu <a href="#eq:cauchy" data-reference-type="ref" data-reference="eq:cauchy">[eq:cauchy]</a> <span class="math display">\[\varepsilon &lt; min \left\{ \frac{r_2}{M}, r_1, \frac{1}{L} \right\}
             .\]</span></p>
 <p>Do pełnego dowodu brakuje nam ciągłości rozwiązania ze względu na zmiany <span class="math inline">\(x_0\)</span></p>
 <p>Lemat:<br />
@@ -1161,12 +1172,14 @@ Niech <span class="math inline">\(\tilde x(a)\)</span> taki, że <span class="ma
 <figure>
 <img src="img/fig_29.png" style="width:80.0%" />
 </figure>
+<p><span id="fig:fig_29" label="fig:fig_29">[fig:fig_29]</span></p>
 <p>Jeżeli odwzorowania <span class="math display">\[\begin{aligned}
             &amp;t\in [a,b]\to A(t)\\
             &amp;t\in [a,b]\to b(t)
         .\end{aligned}\]</span> Gdzie <span class="math inline">\(A(t)\in L(x,x), b(t) : \mathbb{R}^1\to X\)</span> są ciągłe, to równanie <span class="math display">\[\frac{d}{dt}x(t) = A(t)x(t) + b(t),\quad x(t_0) = x_0
         .\]</span> Ma dla dowolnych <span class="math inline">\(t_0\in[a,b], x_0\in X\)</span> jednoznacznie określone rozwiązanie na <span class="math inline">\(t\in]a,b[\)</span><br />
-Czym to się różni od twierdzenia o jednoznaczności warunku Cauchy? Nie ma tutaj mowy o żadnej lipszycowalności. Zawężono za to klasę funkcji występującej w równaniu. Zamiast <span class="math inline">\(]t_0-\varepsilon,t_0+\varepsilon[\times \mathcal{O}\)</span>, mamy <span class="math inline">\(]a,b[ \times X\)</span></p>
+Czym to się różni od twierdzenia o jednoznaczności warunku Cauchy? Nie ma tutaj mowy o żadnej lipszycowalności. Zawężono za to klasę funkcji występującej w równaniu.<br />
+Zamiast <span class="math inline">\(]t_0-\varepsilon,t_0+\varepsilon[\times \mathcal{O}\)</span>, mamy <span class="math inline">\(]a,b[ \times X\)</span></p>
 <p>Chcemy sprawdzić, czy <span class="math inline">\(f(t,x) = A(t) x(t)+b(t)\)</span> spełnia warunek Lipschitza. Wiemy, że <span class="math inline">\(A(t)\)</span> i <span class="math inline">\(b(t)\)</span> są ciągłe na przedziale domkniętym <span class="math inline">\([a,b]\)</span>. Zatem, istnieje <span class="math inline">\(\underset{t\in[a,b]}{\sup} \Vert b(t) \Vert = C\)</span>, a <span class="math inline">\(A: X\to X\)</span> i <span class="math inline">\(A\)</span> jest liniowe zatem istnieje norma tego odwzorowania <span class="math display">\[\underset{t\in[a,b]}{\sup} \Vert A(t) \Vert = L
     .\]</span> Zatem <span class="math display">\[\underset{t\in[a,b]}{\forall} \Vert A(t)x + b(t) - (A(t) x&#39; + b(t) \Vert = \Vert A(t)(x-x&#39;) \Vert \le \underset{t\in[a,b]}{\sup} \Vert A(t) \Vert \Vert x-x&#39; \Vert = L \Vert x-x&#39; \Vert
     .\]</span> Z twierdzenia o jednoznaczności wiemy, że istnieją przedziały <span class="math inline">\(]t_0-\varepsilon,t_0+\varepsilon[\)</span> oraz <span class="math inline">\(\mathcal{O} = K(x_0,r_2)\)</span> takie, że dla <span class="math display">\[\label{eq:esion}
@@ -1178,45 +1191,38 @@ Ale <span class="math inline">\(\Vert A(t)x + b(t) \Vert \le \Vert A(t)x\Vert + 
         &amp;\le L r_2 + L \Vert x_0 \Vert +C
     .\end{aligned}\]</span></p>
 <h1 id="wykład-09.04.2019">Wykład (09.04.2019)</h1>
-<p><span class="math inline">\(\varepsilon = min \left\{ |t_0-a|,|t_0-b|,\frac{1}{L},\frac{r_2}{M} \right\}\)</span><br />
-<span class="math inline">\(]t_0-\varepsilon,t_0+\varepsilon[\)</span>//Chcielibyśmy, żeby <span class="math inline">\(\varepsilon\)</span> nie zależał od punktu w którym zaczniemy. Rys. <a href="#fig:fig_30" data-reference-type="ref" data-reference="fig:fig_30">[fig:fig_30]</a></p>
-<figure>
-<img src="img/fig_30.png" alt="Czego byśmy chcieli." style="width:80.0%" /><figcaption>Czego byśmy chcieli.</figcaption>
-</figure>
-<p><span class="math display">\[\begin{aligned}
-    \Vert  A(t)x(t)+b(t)  \Vert \le L(\Vert x_0\Vert +r_2 ) +c\\
-    \frac{r_2}{M} \ge \frac{r_2}{L(\Vert x_0 \Vert +r_2)+c}=\\
-    \text{Połóżmy }r_2 = \Vert x_0 \Vert +c\\
-    = \frac{\Vert x_0 \Vert +c}{L(\Vert x_0 \Vert +\Vert x_0 \Vert +c)+c}=\\
-    \frac{\Vert x_0 \Vert +c}{L(2\Vert x_0 \Vert +c)+c}\ge \frac{\Vert x_0 \Vert +c}{L(2\Vert x_0 \Vert +c+c) + c + \Vert x_0 \Vert } = \\
-    \frac{1}{2L+1}\text{, zatem}\\
-    \varepsilon = min \left\{ |t_0-a|,|t_0-b|,\frac{1}{L},\frac{1}{2L+1} \right\}
-.\end{aligned}\]</span> (<span class="math inline">\(r_1\)</span> - pomijamy, bo <span class="math inline">\(A(t)\)</span> - ciągła na <span class="math inline">\([a,b]\)</span>.) Oznacza to, że wartość <span class="math inline">\(\varepsilon\)</span> nie zależy od x, zatem rozwiązanie początkowo określone na <span class="math inline">\(]t_0-\varepsilon,t_0+\varepsilon[ \times K(x_0,r_2)\)</span> możemy przedłużyć do określonego na całym <span class="math inline">\([a,b] \times X\)</span> !</p>
-<p>Rezolwenta<br />
-</p>
-<p>Rozwiązaniem problemu <span class="math display">\[\begin{aligned}
+<p><span class="math display">\[\varepsilon = min \left\{ |t_0-a|,|t_0-b|,\frac{1}{L},\frac{r_2}{M} \right\}\]</span> <span class="math display">\[]t_0-\varepsilon,t_0+\varepsilon[\]</span> Chcielibyśmy, żeby <span class="math inline">\(\varepsilon\)</span> nie zależał od punktu w którym zaczniemy.<br />
+Zauważmy, że <span class="math display">\[\Vert  A(t)x(t)+b(t)  \Vert \le L(\Vert x_0\Vert +r_2 ) +c\]</span> zatem <span class="math display">\[\begin{aligned}
+    &amp;\frac{r_2}{M} \ge \frac{r_2}{L(\Vert x_0 \Vert +r_2)+c}= \Bigg| \text{Połóżmy }r_2 = \Vert x_0 \Vert +c \Bigg| =\\
+    &amp;= \frac{\Vert x_0 \Vert +c}{L(\Vert x_0 \Vert +\Vert x_0 \Vert +c)+c}=\\
+    &amp;\frac{\Vert x_0 \Vert +c}{L(2\Vert x_0 \Vert +c)+c}\ge \frac{\Vert x_0 \Vert +c}{L(2\Vert x_0 \Vert +c+c) + c + \Vert x_0 \Vert } = \\
+    &amp;\frac{1}{2L+1},\end{aligned}\]</span> zatem <span class="math display">\[\varepsilon = min \left\{ |t_0-a|,|t_0-b|,\frac{1}{L},\frac{1}{2L+1} \right\}\]</span> (<span class="math inline">\(r_1\)</span> - pomijamy, bo <span class="math inline">\(A(t)\)</span> - ciągła na <span class="math inline">\([a,b]\)</span>).<br />
+Oznacza to, że wartość <span class="math inline">\(\varepsilon\)</span> nie zależy od <span class="math inline">\(x\)</span>, zatem rozwiązanie początkowo określone na <span class="math display">\[]t_0-\varepsilon,t_0+\varepsilon[ \times K(x_0,r_2)\]</span> możemy przedłużyć do określonego na całym <span class="math inline">\([a,b] \times X\)</span> !</p>
+<h2 id="rezolwenta">Rezolwenta</h2>
+<p>Rozwiązaniem problemu Cauchy <span class="math display">\[\begin{aligned}
         &amp;\frac{dx}{dt} = A(t)x(t)+b(t)\\
         &amp;x(t_0)=x_0
     .\end{aligned}\]</span> jest funkcja <span class="math inline">\(x(t,t_0,x_0)\)</span></p>
 <figure>
 <img src="img/fig_31.png" alt="Mała zmiana może dać rozwiązanie w podobnym miejscu ale nie musi" style="width:80.0%" /><figcaption>Mała zmiana może dać rozwiązanie w podobnym miejscu ale nie musi</figcaption>
 </figure>
+<p><span id="fig:fig_31" label="fig:fig_31">[fig:fig_31]</span></p>
 <p>Czy istnieje <span class="math display">\[R(t,t_0): \mathbb{R}^n\to\mathbb{R}^n
     .\]</span> Takie, że <span class="math display">\[x(t) = R(t,t_0)x_0?
     .\]</span>(Jeżeli <span class="math inline">\(x_0,x(t)\in\mathbb{R}^n\)</span>)</p>
-<p>Jakie własności <span class="math inline">\(R(t,t_0)\)</span> powinno posiadać?</p>
-<ul>
-<li><p><span class="math inline">\(R(t,t_0): \mathbb{R}^n\to\mathbb{R}^n, R\)</span> - liniowy<span id="eq:131" label="eq:131">[eq:131]</span><br />
-Bo jeżeli <span class="math inline">\(x_1(t), x_1(t_0)=x_0^1\)</span> i <span class="math inline">\(x_2(t),x_2(t_0) = x_0^2\)</span> są rozwiązaniem, to chcielibyśmy, by <span class="math inline">\(x_1(t) + x_2(t)\)</span> też było rozwiązaniem z wartością początkową <span class="math inline">\(x_0^1+x_0^2\)</span>. Rys <a href="#fig:fig_32" data-reference-type="ref" data-reference="fig:fig_32">[fig:fig_32]</a></p></li>
-<li><p>funkcja <span class="math inline">\(R(t,t_0)\)</span></p>
 <figure>
 <img src="img/fig_32.png" alt="Jak pośpimy minutę dłużej to nic się nie stanie (świat jest ciągły)" style="width:80.0%" /><figcaption>Jak pośpimy minutę dłużej to nic się nie stanie (świat jest ciągły)</figcaption>
 </figure>
+<p><span id="fig:fig_32" label="fig:fig_32">[fig:fig_32]</span></p>
+<p>Jakie własności <span class="math inline">\(R(t,t_0)\)</span> powinno posiadać?</p>
+<ol>
+<li><p><span class="math inline">\(R(t,t_0): \mathbb{R}^n\to\mathbb{R}^n, R\)</span> - liniowy<span id="eq:131" label="eq:131">[eq:131]</span><br />
+Bo jeżeli <span class="math inline">\(x_1(t), x_1(t_0)=x_0^1\)</span> i <span class="math inline">\(x_2(t),x_2(t_0) = x_0^2\)</span> są rozwiązaniem, to chcielibyśmy, by <span class="math inline">\(x_1(t) + x_2(t)\)</span> też było rozwiązaniem z wartością początkową <span class="math inline">\(x_0^1+x_0^2\)</span>. Rys <a href="#fig:fig_32" data-reference-type="ref" data-reference="fig:fig_32">[fig:fig_32]</a></p></li>
+<li><p>funkcja <span class="math inline">\(R(t,t_0)\)</span></p></li>
 <li><p><span class="math inline">\(R(t,t_0) = R(t,s) R(s,t_0)\)</span><br />
 <span class="math inline">\(\underset{t,t_0,s\in\mathcal{O}\subset\mathbb{R}}{\forall}\)</span></p></li>
-<li><p><span class="math inline">\(R(t_0,t_0) = \mathbb{I}\)</span>, bo <span class="math inline">\(x(t) = R(t,t_0)x_0\)</span><br />
-<span class="math inline">\(\underset{t_0\in\mathcal{O}}{\forall}\)</span><br />
-Ad 3. Wstawiając <span class="math inline">\(t_0\)</span> do trzeciej kropki otrzymujemy <span class="math inline">\(R(t_0,t_0)=R(t_0,s)R(s,t_0)\rightarrow \underset{t,s\in\mathcal{O}}{\forall} R(s,t) = R(t,s)^{-1}\)</span></p></li>
+<li><p><span class="math inline">\(R(t_0,t_0) = \mathbb{I}\)</span>, bo <span class="math inline">\(x(t) = R(t,t_0)x_0\)</span> <span class="math inline">\(\underset{t_0\in\mathcal{O}}{\forall}\)</span><br />
+Ad 3. Wstawiając <span class="math inline">\(t_0\)</span> do trzeciej kropki otrzymujemy <span class="math display">\[R(t_0,t_0)=R(t_0,s)R(s,t_0)\rightarrow \underset{t,s\in\mathcal{O}}{\forall} R(s,t) = R(t,s)^{-1}\]</span></p></li>
 <li><p><span class="math display">\[\begin{aligned}
                 &amp;\frac{dR(t,to)}{dt} = A(t)R(t,t_0),\\
                 &amp;R(t_0,t_0) = \mathbb{I}
@@ -1224,7 +1230,7 @@ Ad 3. Wstawiając <span class="math inline">\(t_0\)</span> do trzeciej kropki ot
                 &amp;\frac{dx}{dt}=A(t)x(t)\\
                 &amp;x(t_0)=x_0
             .\end{aligned}\]</span> bo <span class="math inline">\(\frac{dx}{dt} = \frac{d}{dt}(R(t,t_0)x_0) = A(t)R(t,t_0)x_0=A(t)x(t)\)</span> i <span class="math inline">\(x(t_0)=R(t_0,t_0)x_0 = \mathbb{I}x_0 = x_0\)</span></p></li>
-</ul>
+</ol>
 <p>Zatem na mocy twierdzenia o jednoznaczności rozwiązań wiemy, że założenie <span class="math inline">\(x(t) = R(t,t_0)x_0\)</span> da nam jednoznaczne rozwiązanie.</p>
 <p>A co z <span class="math inline">\(b(t)\)</span>? (ten wektorek co by to był, ale go nie ma)</p>
 <p>Chcemy rozwiązać problem <span class="math display">\[\begin{aligned}
@@ -1287,8 +1293,8 @@ Dowód: <span class="math display">\[\frac{R(t+h,t_0) -R(t,t_0)}{h} = \frac{1}{h
         &amp;e^{A}v = e^{\lambda t}v
     .\end{aligned}\]</span></p>
 <p>Jeżeli zatem przdstawimy warunek początkowy jako sumę: <span class="math display">\[\begin{aligned}
-    \overline{x_0} = x_0&#39; + x_0^2 + \ldots + x_0^n\\
-    e^{A(t-t_0)}\overline{x_0} = sum_{i=1}^{n}e^{A(t-t_0)}x_0^i = sum_{i=1}^n e^{\lambda_i(t-t_0)}x_0^i\\
+    &amp;\overline{x_0} = x_0&#39; + x_0^2 + \ldots + x_0^n\\
+    &amp;e^{A(t-t_0)} \overline{x_0} = sum_{i=1}^{n}e^{A(t-t_0)}x_0^i = sum_{i=1}^n e^{\lambda_i(t-t_0)}x_0^i\\
 .\end{aligned}\]</span></p>
 <p>najogólniesza postać <span class="math inline">\(\lambda_j\)</span>(pierwiastki równania <span class="math inline">\(w(\lambda) = 0\)</span>) to <span class="math display">\[\lambda_j = a_j + ib_j
     .\]</span></p>
@@ -1356,9 +1362,8 @@ Dowód: <span class="math display">\[\frac{R(t+h,t_0) -R(t,t_0)}{h} = \frac{1}{h
 W bazie wektorów własnych macierz <span class="math inline">\(e^{At}\)</span> wygląda tak (zakładamy <span class="math inline">\(n\)</span> wartości własnych): <span class="math display">\[\det \begin{bmatrix} e^{\lambda_1 t}&amp;\ldots&amp;0\\ \vdots&amp;\ddots&amp;\vdots \\ 0 &amp;\ldots&amp;e^{\lambda_n t} \end{bmatrix} = e^{t(\lambda_1+\ldots+\lambda_n)} = e^{t* Tr A} \neq 0
 .\]</span></p>
 <h1 id="wykład-30.04.2019">Wykład (30.04.2019)</h1>
-<p>Pytanie:<br />
-Czy kolumny <span class="math inline">\(R(t,t_0)\)</span> są liniowo niezależne <span class="math inline">\(\underset{t,t_0\in [a,b]}{\forall}\)</span>?<br />
-Wiemy, że <span class="math inline">\(R(t,t_0) = \mathbb{I} = \begin{bmatrix} 1&amp;0&amp;\ldots&amp;0\\ \vdots&amp;1&amp;\ddots&amp;\vdots \\ \vdots&amp;\dots&amp;\ddots&amp;\vdots \\ 0&amp;\dots&amp;\dots&amp;1 \end{bmatrix}\)</span>.<br />
+<p>Czy kolumny <span class="math inline">\(R(t,t_0)\)</span> są liniowo niezależne <span class="math inline">\(\underset{t,t_0\in [a,b]}{\forall}\)</span>?</p>
+<p>Wiemy, że <span class="math inline">\(R(t,t_0) = \mathbb{I} = \begin{bmatrix} 1&amp;0&amp;\ldots&amp;0\\ \vdots&amp;1&amp;\ddots&amp;\vdots \\ \vdots&amp;\dots&amp;\ddots&amp;\vdots \\ 0&amp;\dots&amp;\dots&amp;1 \end{bmatrix}\)</span>.<br />
 Chcielibyśmy, żeby <span class="math inline">\(\underset{t,t_0\in[a,b] }{\forall} \det R(t,t_0) \neq 0\)</span>.</p>
 <p>Przypomnienie z algebry:<br />
 Z macierzą <span class="math inline">\(\begin{bmatrix} a_{11}&amp;\ldots&amp;a_{1n}\\ \vdots &amp; &amp; \vdots \\a_{n1} &amp;\dots&amp; a_{n} \end{bmatrix}\)</span> możemy związać macierz <span class="math inline">\(D = \begin{bmatrix} D_{11}&amp;\ldots&amp;D_{1n}\\ \vdots &amp;&amp;\vdots \\ D_{n1} &amp; \ldots &amp; D_{nn} \end{bmatrix}\)</span>.<br />
@@ -1669,6 +1674,7 @@ Wówczas <span class="math inline">\(K = \bigcup_{a\in[-1,1]}K_a\)</span>, zatem
 <figure>
 <img src="img/fig_48.png" alt="Kółko K składamy z kresek K_a i mamy \int_K f = \int da \int_{K_a} f" style="width:30.0%" /><figcaption>Kółko <span class="math inline">\(K\)</span> składamy z kresek <span class="math inline">\(K_a\)</span> i mamy <span class="math inline">\(\int_K f = \int da \int_{K_a} f\)</span></figcaption>
 </figure>
+<p><span id="fig:fig_48" label="fig:fig_48">[fig:fig_48]</span></p>
 <p><span class="math display">\[\int_{\Theta} f dx = \int_{\Omega}f(\xi(t))|\det \xi&#39;|dt
     .\]</span> Mając zbiór <span class="math inline">\(\Theta\)</span>, zdefiniujmy zbiór <span class="math inline">\(\Theta_a\)</span>, który jest zbiorem takich <span class="math inline">\(x\in\Theta\)</span>, że na miejsca <span class="math inline">\(x_i\)</span> wstawimy wielkość <span class="math inline">\(a\)</span>. <span class="math display">\[\Theta_a = \left\{ x\in \mathbb{Q}, x = \left( x^1,x^2,\ldots,x^{i-1},a,x^{i+1},\ldots,x^n \right)  \right\}
     .\]</span> <span class="math display">\[K = \left\{ (x,y), x^2+y^2 = 1 \right\}
@@ -1737,6 +1743,7 @@ Zatem czy <span class="math inline">\(\varphi_2 \circ \varphi_{1}^{-1}(x) = \sqr
 <p>Weźmy krzywą <span class="math inline">\(\sigma(t) = \begin{bmatrix} \cos(t) \\ \sin(t) \\ t \end{bmatrix} , p = \begin{bmatrix} 1\\0\\0 \end{bmatrix}\)</span>.<br />
 <span class="math display">\[\sigma&#39;(t) = \begin{bmatrix} -\sin(t)\\ \cos(t)\\ 1 \end{bmatrix}, \sigma&#39;(0) = \begin{bmatrix} 0\\1\\1 \end{bmatrix}
         .\]</span></p>
+<p><span id="fig:fig_52" label="fig:fig_52">[fig:fig_52]</span></p>
 <p>Niech <span class="math inline">\(f(p) = C \underset{p\in M}{\forall}\)</span>. Ile wynosi <span class="math inline">\(v(f)?\)</span> <span class="math display">\[\begin{aligned}
             &amp;v(f) = v(c) = v(c \cdot 1) = c \cdot v(1) = \\
             &amp;=  c \cdot v(1\cdot 1) = c \cdot (1 \cdot v(1) + 1v(1)) =\\
@@ -1761,6 +1768,7 @@ Odpowiedź: NIE DA SIĘ</p>
         &amp;\underset{\alpha\in\mathbb{R}}{\forall} (\alpha \bowtie v_1)f = \alpha \cdot v_1(f) \\
     .\end{aligned}\]</span></p>
 <p>Co to znaczy, że <span class="math inline">\(f\)</span> - klasy <span class="math inline">\(C^{\infty}(M)\)</span>?</p>
+<p><span id="fig:fig_53" label="fig:fig_53">[fig:fig_53]</span></p>
 <p>Jeżeli <span class="math inline">\(\psi \circ f \circ \varphi^{-1}\)</span> - jest klasy <span class="math inline">\(\mathcal{C}^{\infty}\)</span>.<br />
 Związek między <span class="math inline">\(T_pM\)</span>, a <span class="math inline">\(D_pM\)</span> :<br />
 Niech <span class="math inline">\(v = 5e_x + 6e_y \in T_pM\)</span>. Czy znajdziemy odwzorowanie z <span class="math inline">\(T_pM\)</span> do <span class="math inline">\(D_pM\)</span>, (które dokładnie jednemu <span class="math inline">\(v\)</span> przyporządkowałoby jeden element).<span class="math inline">\(\rightarrow\)</span> izomorfizm między <span class="math inline">\(T_pM\)</span> i <span class="math inline">\(D_pM\)</span>.</p>
@@ -1892,7 +1900,9 @@ Niech <span class="math inline">\(M = \mathbb{R}^3, f:\mathbb{R}^3\to\mathbb{R}^
 <span class="math inline">\(p = \begin{bmatrix} 1\\2 \end{bmatrix} , h_*(p) = 3\)</span><br />
 <span class="math inline">\(M = \mathbb{R}^1\)</span>, <span class="math inline">\(N = \mathbb{R}^3\)</span>, <span class="math inline">\(h(t) = \begin{bmatrix} \cos t \\ \sin t \\ t \end{bmatrix}, p = \frac{\pi}{2}\)</span>.<br />
 <span class="math inline">\(h_x(\frac{\pi}{2}) = \begin{bmatrix} \cos \frac{\pi}{2}\\ \sin \frac{\pi}{2} \\ \frac{\pi}{2} \end{bmatrix}\)</span></p>
+<p><span id="fig:fig_54" label="fig:fig_54">[fig:fig_54]</span></p>
 <p>Niech <span class="math inline">\(\sigma(t)\)</span> - krzywa na <span class="math inline">\(M\)</span>. Pchnięciem krzywej <span class="math inline">\(\sigma\)</span> w odwzorowaniu <span class="math inline">\(h\)</span> nazywamy krzywą <span class="math inline">\(h_*(\sigma(t)) \overset{\text{def}}{=} h(\sigma(t))\)</span></p>
+<p><span id="fig:" label="fig:">[fig:]</span></p>
 <p>Niech <span class="math inline">\(f: N\to \mathbb{R}^2\)</span>. Cofnięciem funkcji <span class="math inline">\(f\)</span> w odwzorowaniu <span class="math inline">\(h\)</span> nazywamy funkcję <span class="math display">\[h^*f(p) = f(h(p))
 .\]</span></p>
 <p><span class="math inline">\(M = \mathbb{R}^2, N = \mathbb{R}, f: N\to \mathbb{R}^2, f(t) = \begin{bmatrix} 2t\\t \end{bmatrix}, h(x,y) = x+y\)</span>. <span class="math display">\[h^*f(x,y) = f(h(x,y)) = \begin{bmatrix} 2(x+y)\\x+y \end{bmatrix}
@@ -1916,6 +1926,7 @@ Niech <span class="math inline">\(M = \mathbb{R}^3, f:\mathbb{R}^3\to\mathbb{R}^
 <span class="math display">\[h_* v = \left[ 1,2 \right] \begin{bmatrix} 2\\3 \end{bmatrix} = 2\cdot 1+ 6 = 8 \frac{\partial }{\partial t}
 .\]</span></p>
 <p>Niech <span class="math inline">\(\alpha\in \Lambda^1(?)\)</span> - pytanie: czy formy się pcha, czy cofa?</p>
+<p><span id="fig:fig_56" label="fig:fig_56">[fig:fig_56]</span></p>
 <h1 id="wykład-31.05.2019">Wykład (31.05.2019)</h1>
 <p>(na pchnięcie wektora)<br />
 Niech <span class="math inline">\(M = \mathbb{R}^1, N=\mathbb{R}^3, h(t) = \begin{bmatrix} f(t)\\g(t)\\r(t) \end{bmatrix}\)</span><br />
@@ -1923,6 +1934,7 @@ Niech <span class="math inline">\(p\in \mathbb{R}^1\)</span>, niech <span class=
 <span class="math display">\[h_x \sigma = \begin{bmatrix} f(at+p)\\g(at+p)\\r(at+p) \end{bmatrix}, h_x v = [h_x \sigma], \frac{d}{dt}(\tilde h_x \sigma)\vert_{t=0}
         .\]</span> <span class="math display">\[h_xv = \begin{bmatrix} af&#39;(p)\\ ag&#39;(p) \\ ar&#39;(p) \end{bmatrix} = af&#39;(p) \frac{\partial }{\partial x} + ag&#39;(p) \frac{\partial }{\partial y} + ar&#39;(p) \frac{\partial }{\partial z}
         .\]</span></p>
+<p><span id="fig:fig_57" label="fig:fig_57">[fig:fig_57]</span></p>
 <p>Niech <span class="math inline">\(M, N\)</span> - rozmaitości, <span class="math inline">\(h: M\to N\)</span> i niech <span class="math inline">\(p\in M, \alpha\in T^*_{h(p)}N\)</span>.<br />
 Cofnięciem formy <span class="math inline">\(\alpha\)</span> w odwzorowaniu <span class="math inline">\(h\)</span> nazywamy formę <span class="math inline">\(h^*\alpha \in T_pM\)</span>, taką, że <span class="math inline">\(\left&lt;h^*\alpha,v \right&gt; = \left&lt;\alpha,hv \right&gt;\underset{v\in T_pM}{\forall}\)</span> i ciągła. Jeżeli <span class="math inline">\(\alpha_1,\alpha_2,\ldots,\alpha_k \in \Lambda^1(N)\)</span> i <span class="math inline">\(v_1,\ldots,v_k\in T_p(M)\)</span>, to <span class="math display">\[h^*(\alpha_1\land\ldots\land\alpha_k), v_1,\ldots,v_k \overset{\text{def}}{=} \begin{bmatrix} \left&lt;h^*\alpha_1,v_1 \right&gt;&amp;\left&lt;h^*\alpha_2,v_1 \right&gt;&amp;\ldots&amp;\left&lt;h^*\alpha_k,v_1 \right&gt; \\
             \vdots &amp;&amp;&amp;\\
@@ -1930,6 +1942,8 @@ Cofnięciem formy <span class="math inline">\(\alpha\)</span> w odwzorowaniu <sp
         \end{bmatrix}
     .\]</span> Czyli <span class="math display">\[h^*(\alpha_1\land\ldots\land\alpha_k) = (h^*\alpha_1)\land(h^*\alpha_2)\land\ldots\land h^*(\alpha_k)
     .\]</span></p>
+<p><span id="fig:fig_58" label="fig:fig_58">[fig:fig_58]</span></p>
+<p><span id="fig:fig_59" label="fig:fig_59">[fig:fig_59]</span></p>
 <p>(wstępny)<br />
 Niech <span class="math inline">\(\alpha = 3(x^2+y^2)dx - 2xdy + 2z^2dz, \alpha\in \Lambda^1(N)\)</span> (jednoformy nad <span class="math inline">\(N\)</span>, <span class="math inline">\(\dim N = 3\)</span>, chociaż można dać więcej jak się chce).<br />
 <span class="math inline">\(h(t) = \begin{bmatrix} \sin(t)\\ \cos(t)\\ t \end{bmatrix}\)</span>. Czym jest <span class="math inline">\(h^*\alpha\)</span>?<br />
@@ -1972,6 +1986,7 @@ Niech <span class="math inline">\(\alpha = 3(x^2+y^2)dx - 2xdy + 2z^2dz, \alpha\
             &amp;E&#39;_y = \gamma E_y\\
             &amp;B&#39;_z = \gamma v E_y
         .\end{aligned}\]</span></p>
+<p><span id="fig:fig_60" label="fig:fig_60">[fig:fig_60]</span></p>
 <p>Obserwacja: Niech <span class="math inline">\(\alpha \in \Lambda^1(N)\)</span>, <span class="math inline">\(\dim N = k\)</span>, niech <span class="math inline">\(M\)</span> - rozmaitość, <span class="math inline">\(\dim M = n\)</span> i <span class="math inline">\(h: M\to N\)</span>. Wówczas <span class="math display">\[h^*f\in \Lambda^0(M)
     .\]</span> Oraz <span class="math display">\[d(h^*f) = h^*(df)
     .\]</span></p>

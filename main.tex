@@ -1,6 +1,6 @@
-\documentclass{article}
+\documentclass[a5paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[margin=1.25in]{geometry}
+\usepackage[margin=0.2in]{geometry}
 \usepackage{mdframed}
 \usepackage{subfiles}
 \usepackage{subcaption}
@@ -17,7 +17,7 @@
 \usepackage{transparent}
 
 \newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
+    \def\svgwidth{0.8\columnwidth}
     \IfFileExists{img/#1.pdf_tex}{
         \import{"img/"}{#1.pdf_tex}
     }
@@ -119,5 +119,8 @@
 \pagebreak
 \section{Wykład (11.06.2019)}
 \subfile{tex/wyklad26.tex}
+\pagebreak
+\section{Wykład (11.06.2019)}
+\subfile{tex/wyklad27.tex}
 
 \end{document}
