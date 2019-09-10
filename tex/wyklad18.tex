@@ -91,7 +91,7 @@
         $\implies$\\
         Wiemy, że $f$ - całkowalne, czyli
         \[
-            \underset{\varepsilon>0}{\forall} . \underset{\Pi}{\exists} |\overset{S}(f,\Pi) - \underset{S}(f,\Pi) | < \varepsilon / n
+            \underset{\varepsilon>0}{\forall} . \underset{\Pi}{\exists} |\overline{S}(f,\Pi) - \underline{S}(f,\Pi) | < \varepsilon / n
         .\] (chcemy pokazać, że $A_n$ jest zbiorem miary L. zero)
 
         \begin{align*}
@@ -143,7 +143,7 @@
             &= \sum_{\substack{Q_i\\ R_j}} \underset{\substack{x\in Q_i\\ y\in R_j}}{\inf} f(x,y) |Q_i| |R_j| \le\\
             &\sum_{Q_i}\sum_{R_j} \underset{x\in Q_i}{\inf} \underset{y\in R_j}{\inf} f(x,y) |Q_i| |R_j|\le\\
             &\le \sum_{Q_i}\underset{x\in Q_i}{\inf} \underset{\text{suma dolna dla $\psi(x)$}}{\sum_{R_j}\underset{y\in R_j}{\inf} f(x,y) |R_j| |Q_i|}\le\\
-            &\le\sum_{Q_i}\underset{\text{bo suma dolna $\le$ całki dolnej}}{\underset{x\in Q_i}{\inf} \psi(x) |Q_i|} = \underset{S}(\psi,\Pi_1)
+            &\le\sum_{Q_i}\underset{\text{bo suma dolna $\le$ całki dolnej}}{\underset{x\in Q_i}{\inf} \psi(x) |Q_i|} = \underline{S}(\psi,\Pi_1)
         .\end{align*}
         Ale $\underline{\int_A}\psi(x) = \underset{\Pi}{\sup} \left| \sum_{Q_i}\underset{x\in Q_i}{\inf} \psi(x) | Q_i | \right|$.\\
         Czyli $\underline{S}(f,\Pi_1\times\Pi_2) \le \underline{S}(\psi,\Pi_1)$. Analogicznie możemy pokazać, że\\
